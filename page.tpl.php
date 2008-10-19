@@ -31,8 +31,8 @@
  * @see layout.css
  */ 
 ?>
-<body id="genesis_1" <?php print $page_classes; ?> <?php // print 'grid' ;?>>
-  <div id="container" class="width <?php print $body_classes; ?>">
+<body id="genesis_1" <?php print $page_classes; ?>>
+  <div id="container" class="width <?php print $body_classes; ?> <?php // print 'grid' ;?>">
 
     <?php if (!empty($leaderboard)): ?>
 		    <div id="leaderboard">
