@@ -1,0 +1,42 @@
+/* $Id$ */
+
+/**
+	* @file ie.css
+	* Internet Explorer hacks and work-arounds.
+	*/
+
+/**
+ * Add your IE hacks and work-arounds here.
+	*/
+
+
+
+
+
+
+
+/**
+ * DONT TOUCH BELOW
+	*/
+/* Prevent unnessary scrollbars */
+#container {overflow-y: hidden;}
+/* Trigger hasLayout */
+#columns {zoom: 1;}
+/* Fix incorrect styling of legend in IE6 */
+* html legend {margin:-18px -8px 16px 0; padding:0;}
+/* Fix ol numbers */
+ol {margin-left:2em;}
+/* Fix wrong line-height */
+sup {vertical-align: text-top;}
+sub {vertical-align: text-bottom;}
+/* Fix IE7 code elements */
+html>body p code {*white-space: normal;}
+/* Set proper horizontal rule margins */
+hr {margin: -8px auto 11px;}
+/* Tabs CSS fixes for IE */
+ul.primary li a,
+ul.primary li a .tab,
+ul.secondary li a,
+ul.secondary li a .tab {_display: inline;_di\splay: inline-block;}
+ul.primary,
+ul.secondary {_width: 100%;_w\idth: auto;}

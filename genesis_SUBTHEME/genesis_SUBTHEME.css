@@ -1,0 +1,850 @@
+/* $Id$ */
+
+/**
+	* @file genesis_SUBTHEME.css
+	* This stylesheet provides the main styles for this theme.
+	*/
+
+/**
+	* Remove unused styles for performace.
+	*/
+
+/***********************************************************
+ *                          Body
+ **********************************************************/
+body {} /* see layout.css */
+
+
+/***********************************************************
+ *                     The wrapper divs
+ **********************************************************/
+/**
+	* Be careful how you modify these, see layout.css first.
+	*/
+#container {}
+#columns   {}
+#content   {}
+#main-content  {}
+#content-inner {}
+
+
+/***********************************************************
+ *                     Width Setting
+ **********************************************************/
+/**
+	* Over ride the default width (80em - see layout.css).
+	* 80 * 12 = 960px
+	*
+	* Genesis supports both Fluid and Fixed width values.
+	*
+	* For a Liquid layout use precentages, e.g
+	* .width {width: 85%;}
+	*
+	* For Fixed width theme, use ems or pixels, e.g
+	* .width {width: 960px;}
+	* .width {width: 80em;}
+	*/
+.width {width: 80em;}
+
+
+/***********************************************************
+ *                       Regions
+ **********************************************************/
+#leaderboard       {}
+#header-blocks     {}
+
+#sidebar-left      {}
+#sidebar-right     {}
+
+#secondary-content {}
+#tertiary-content  {}
+
+#content-top       {}
+#content-bottom    {}
+
+#footer            {}
+
+
+/***********************************************************
+ *                   The INNER divs
+ **********************************************************/
+/**
+	* In most instances you'll use these to set padding for 
+	* the containing element.
+	*
+	* The default (see layout.css)
+	* .inner {padding: 0.7em;}
+	*
+	* NOTE: You can over-ride the default .inner for nodes, blocks,
+	* and comments using div.node-inner, div.block-inner & 
+	* div.comment-inner which are listed in their relevant sections.
+	*/
+.inner {}
+
+.nav-inner {}
+.primary-inner {}
+.secondary-inner {}
+
+.header-blocks-inner {}
+
+#sidebar-left .inner  {}
+#sidebar-right .inner {}
+
+#secondary-content .inner {}
+#tertiary-content .inner  {}
+
+
+/***********************************************************
+ *                 Global Link Styles
+ **********************************************************/
+a:link    {}
+a:visited {}
+a:hover   {}
+a:active  {}
+a.active  {}
+
+
+/***********************************************************
+ *                    HTML elements 
+ **********************************************************/
+/** 
+	* Add any html elements you require. Use base.css as a guide.
+	*/
+h1.title   {}
+h2.title   {}
+h2.title a {}
+h3.title   {}
+h3.title a {}
+p          {}
+blockquote {}
+
+
+/***********************************************************
+ *                       Header 
+ **********************************************************/
+/**
+	* Branding, Logo, Site name & Slogan.
+	*/
+#header        {}
+#header .inner {}
+#branding      {}
+#logo          {}
+
+h1#site-name,
+div#site-name  {}
+
+#site-name a:link,
+#site-name a:visited {}
+#site-name a:hover   {}
+
+#site-slogan   {}
+
+
+/***********************************************************
+ *                        Search
+ **********************************************************/
+#search .form-submit  {}
+#search-box-top       {}
+#search-box-inner     {}
+#search-box-inner #edit-search-theme-form-1 {}
+#search-box-inner #edit-search-theme-form-1:hover,
+#search-box-inner #edit-search-theme-form-1:focus {}
+#search-box-top label {}
+
+/* Reset form element margins to allow more precise positioning */
+#search-box-top form,
+#search-box-top div.form-item {margin: 0;} 
+
+/* Search Results Page - see .box */
+.section-search #search-form {}
+.section-search #search-form {}
+
+
+/***********************************************************
+ *               Primary & Secondary Links
+ **********************************************************/
+/**
+	* Implimentation of Primary and Secondary Links.
+	*/
+
+/**
+	* #nav is the containing div for Prmiary & Secondary Links.
+	*/
+#nav       {
+  clear: both; 
+		margin: 1.5em 0;
+}
+
+#nav-inner {}
+
+/**
+	* Primary Links Positioning
+	*
+	* Default is aligned left - uncomment either of these
+	* to set the primary links Right or Center.
+	*/
+/* Align Right */
+/*
+#primary .primary-inner {float: right;}
+*/
+/* Align Center */
+/*
+#primary .primary-inner {display: table; margin: 0 auto; text-align: center;}
+*/
+
+/**
+	* Primary Links Style
+	* Example styles to get you started.
+	*/
+#primary { 
+  height: 2em;
+	 padding: 0;
+	 background: #f7f7f7;
+}
+
+.primary-inner {}
+
+#primary ul.links {
+  margin: 0;
+}
+
+#primary ul.links li {
+  margin: 0; 
+  padding: 0;
+}
+
+/* First & Last classes can be styled seperately. */
+#primary ul.links li.first {}
+#primary ul.links li.last {}
+
+#primary ul.links li a {
+  font-weight: bold;
+	 text-decoration: none;
+	 padding: 0.25em 1em;
+	 display: inline-block;
+	 white-space: nowrap;
+}
+
+#primary ul.links li a:hover,
+#primary ul.links li a.active {
+  background: #666;
+	 color: #FFF;
+}
+
+
+/**
+	* Secondary Links Positioning
+	*
+	* Default is aligned left - uncomment either of these
+	* to set the secondary links Right or Center.
+	*/
+/* Align Right */
+/*
+#secondary .secondary-inner {float: right;}
+*/
+/* Align Center */
+/*
+#secondary .secondary-inner {display: table; margin: 0 auto; text-align: center;}
+*/
+
+/**
+	* Secondary Links Style
+	*/
+#secondary {
+  height: 2em;
+	 padding: 0;
+	 background: #CCC;
+}
+
+.secondary-inner {}
+
+#secondary ul.links,
+#secondary ul.links li {
+  margin: 0; 
+	 padding: 0;
+}
+
+/* First & Last classes can be styled seperately. */
+#secondary ul.links li.first {}
+#secondary ul.links li.last {}
+
+#secondary ul.links li a:link,
+#secondary ul.links li a:visited,
+#secondary ul.links li a:active {
+	 font-weight: bold;
+	 text-decoration: none;
+  padding: 0.25em 1em;
+	 display: inline-block;
+	 white-space: nowrap;
+}
+
+#secondary ul.links li a:hover {
+  text-decoration: underline;
+}
+
+
+/***********************************************************
+ *                      Breadcrumb
+ **********************************************************/
+/**
+	* Genesis places the breadcrumb directly below the header, 
+	* giving it the full width of theme to expand in to.
+	*/
+#breadcrumb {
+  margin: 0;
+}
+.breadcrumb {
+  margin: 0 0.42em 0 0.7em;
+  padding-bottom: 0.3em;
+}
+
+
+/***********************************************************
+ *                       Mission
+ **********************************************************/
+#mission {}
+
+
+/***********************************************************
+ *                        Nodes
+ **********************************************************/
+/** 
+	* Implimentation of node styles.
+	*/
+.node {
+  margin: 0 0 0.7em 0; 
+	 padding: 0 0 1.42em 0;
+}
+
+/* Over-ride default .inner styles. */
+.node-inner {}
+
+.node h2 { 
+  font-weight: bold;
+	 margin-bottom: 0;
+}
+
+.node h2 a:link,
+.node h2 a:visited,
+.node h2 a:active {
+  text-decoration: none;
+}
+
+.node h2 a:hover {
+  text-decoration: underline;
+}
+
+.node div.picture {
+  float: left;
+  margin: 0.3em 0.5em 0.1em 0;
+}
+
+.node div.submitted {
+  color: #888;
+	 margin: 0 0 0.4em 0;	
+}
+
+.node ul.links {
+  font-size: 0.95em;
+  display: block; 
+	 text-align: right;
+}
+
+/* Theme the node teaser seperatly. */
+.node-teaser {
+  margin: 0 0 0.7em 0;
+  padding: 0 0 1.417em 0;
+}
+
+.node-teaser .node-inner {}
+
+/* Colorize unpublised nodes for admins. */
+.node-unpublished {
+  background-color: #FFF4F4; 
+ 	padding: 0.2em;
+}
+
+.node div.unpublished {
+  font: bold 3em Arial, Helvetica, sans-serif;
+  text-align: center;
+  color: #FFE9E7;
+  padding: 0.3em;
+}
+
+/* Theme Sticky nodes. */
+.sticky {}
+
+/* Theme node types. */
+.node-type-blog  {}
+.node-type-page  {}
+.node-type-story {}
+.node-type-forum {}
+.node-type-book  {} 
+ 
+/* Theme nodes that belong to the author. */
+.node-mine {}
+
+
+/***********************************************************
+ *                       Blocks
+ **********************************************************/
+/** 
+	* Implimentation of block styles.
+	* Styles set here will be inherited by all blocks.
+	*/
+.block {
+  padding: 0.35em;
+  margin: 0 0 0.7em;
+  clear: both;
+}
+
+/* Over-ride default .inner styles. */
+.block-inner {}
+
+.block h2 {
+  font-size: 1.2em; 
+	 font-weight: bold;
+}
+
+.block .content {
+  padding: 0.4em 0.4em 0.4em 0;
+}
+
+.block ul.menu {
+  margin-left: 0;
+}
+
+.block ul.menu li {
+  margin: 0 0 0 1.6em;
+  padding: 0 0 0.4em;
+}
+
+tr .block {
+  border: none; /* Blocks page table. */
+}
+
+/**
+	* Style an Individual Block
+	*
+	* If you need to modify the styles for a particular block, 
+	* use the blocks ID, for example;
+	* 
+	* #block-block-1 {}
+	*/
+
+/**
+	* Region Specific Block Styles
+	*
+	* You can target blocks in one or more regions and 
+	* style them differently. 
+	*
+	* Use the first two examples as guide for all regions. 
+	*/
+#sidebar-left .block {}
+#sidebar-left .block h2 {}
+#sidebar-left .block-inner {}
+#sidebar-left .block .content {}
+
+#sidebar-right .block {}
+#sidebar-right .block h2 {}
+#sidebar-right .block-inner {}
+#sidebar-right .block .content {}
+
+#leaderboard .block       {}
+#header-blocks .block     {}
+#secondary-content .block {}
+#tertiary-content .block  {}
+#content-top .block       {}
+#content-bottom .block    {}
+#footer .block            {}
+
+/**
+	* Block Odd & Even Styles (Zebra)
+	* Each region can have alternating styles for Odd and Even 
+	* count blocks, such as;
+	*/
+#sidebar-left .odd   {}
+#sidebar-left .even  {}
+
+#sidebar-right .odd  {}
+#sidebar-right .even {}
+
+/**
+	* Alternative Approach to Region Block Styling
+	*
+	* Blocks are aware of what region they are in, so its
+	* possible to use chained selectors such as;
+	*
+	* .block.odd.right {}
+	*/
+
+/**
+	* Drupal Core Blocks 
+	* This is most of the core blocks as far as I can remember, 
+	* please post an issue if I have missed any :)
+	*/
+#block-system-0  {} /* Powered by Drupal block */
+ 
+#block-user-0    {} /* Login block             */
+#block-user-1    {} /* Navigation Menu block   */
+#block-user-2    {} /* Who's New block         */
+#block-user-3    {} /* Who's Online block      */
+
+#block-comment-0 {} /* Recent Comments block   */
+
+#block-search-0  {} /* Search form block       */
+
+#block-forum-0   {} /* Active Forum topics     */
+#block-forum-1   {} /* New Forum topics        */
+
+#block-blog-0    {} /* Recent Blog posts       */
+
+#block-node-0    {} /* Syndicate block         */
+
+#block-locale-0  {} /* Language Switcher block */
+
+/* The class selector applies to all blocks of these types */
+.block-book {} 
+.block-aggregator {}
+
+
+/***********************************************************
+ *                     Comments
+ **********************************************************/
+/** 
+	* Implimentation of comment styles.
+	*/
+div.comment {
+  margin: 0 0 0.7em 0;
+	 padding: 0.35em; 
+}
+
+/* Over-ride default .inner styles. */
+.comment-inner {}
+
+div.indented {
+  margin-left: 2em;
+}
+
+div.comment h3.title {
+	 margin-bottom: 0.1em;
+}
+
+h3#comment-number {
+  margin-top: 1em;
+}
+
+div.comment h3.title a:link,
+div.comment h3.title a:visited,
+div.comment h3.title a:active {
+  text-decoration: none;
+}
+
+div.comment h3.title a:hover {
+  text-decoration: underline;
+}
+
+div.comment .picture {
+  float: right; 
+	 margin: 0.3em 0 0.1em 0.3em;
+}
+
+div.comment .picture img {
+	padding: 0;
+}
+
+div.comment .submitted {
+  font-size: 0.9em; 
+	 margin: 0.17em 0;
+}
+
+div.comment .links {
+  font-size: 0.95em; 
+	 text-align: right; 
+	 clear: both;
+}
+
+/* Zebra styles for comments. */
+div.comment.odd  {}
+div.comment.even {}
+
+/* Style comments depending on the comment author. */
+div.comment.comment-by-author {}
+div.comment.comment-by-anon   {}
+div.comment.comment-mine      {}
+
+
+/***********************************************************
+ *                     Forum
+ **********************************************************/
+#forum table {}
+#forum tr td.forum {}
+#forum div.indent  {}
+
+
+/***********************************************************
+ *                     Books
+ **********************************************************/
+/** 
+	* Book navigation styles to get you started.
+	*/
+.book-navigation {}
+.book-navigation ul {}
+.book-navigation ul li {}
+.book-navigation ul li a {}
+.book-navigation .page-links {}
+.book-navigation .page-links a {}
+.book-navigation .page-links a.page-up {}
+.book-navigation .page-links a.page-next {}
+.book-navigation .page-links a.page-previous {}
+
+
+/***********************************************************
+ *                    Polls
+ **********************************************************/
+.poll .text {}
+.poll .bar {} /*poll bar background */
+.poll .bar .foreground {}
+.poll .links   {}
+.poll .percent {}
+.poll .total   {}
+.poll .vote-form {}
+
+
+/***********************************************************
+ *                       Lists
+ **********************************************************/
+/** 
+	* Global list styles
+	*/
+
+ul li {}
+ol li {} 
+
+li.leaf {}
+
+ul.menu li, .item-list ul li {
+  margin: 0;
+	 padding: 0;
+}
+
+ul.menu li ul {
+  margin-bottom: 0;
+}
+
+.block ul, ul.menu, .item-list ul {
+  margin: 0 1em 0.375em 1.42em; 
+	 padding: 0;
+}
+
+ul li.expanded  {}
+ul li.collapsed {}
+
+
+/***********************************************************
+ *                      Box
+ **********************************************************/
+/* Search form on the results page, includes advanced search*/
+.section-search .box {}
+.section-search .box-inner {}
+.section-search .box h2    {}
+
+/* Comment form on a seperate page */
+.section-comment .box {}
+.section-comment .box-inner {}
+.section-comment .box h2    {}
+
+/* Comment form below content */
+#comments .box {}
+#comments .box-inner {}
+#comments .box h2    {}
+
+/* Generic box selectors */
+.box {}
+.box-inner {}
+.box h2    {}
+.box .content   {}
+.box form       {}
+.box .form-item {}
+.box fieldset   {}
+
+
+/***********************************************************
+ *               Footer, Footer Message
+ **********************************************************/
+/** 
+	* Basic styles for the footer.
+	*/
+#foot-wrapper { 
+  text-align: center;
+	 margin: 0.25em 0;
+	 padding: 0.7em;
+}
+
+#footer a, 
+#footer-message a {
+  padding: 0.42em;
+}
+
+/**
+	* Attribution link 
+	*/
+p.attribution {margin: 0.2em 0; font-size: 0.9em;}
+#footer-message p.attribution a {color: #EEE}
+#footer-message p.attribution a:hover {color: #CCC}
+
+
+/***********************************************************
+ *                     Pager 
+ **********************************************************/
+.item-list ul.pager                   {}
+.item-list ul.pager li                {}
+.item-list ul.pager li.pager-item     {}
+.item-list ul.pager li.first          {}
+.item-list ul.pager li.last           {}
+.item-list ul.pager li.pager-current  {}
+.item-list ul.pager li.pager-first    {}
+.item-list ul.pager li.pager-previous {}
+.item-list ul.pager li.pager-next     {}
+.item-list ul.pager li.pager-last     {}
+
+.item-list ul.pager li a:link    {}
+.item-list ul.pager li a:visited {}
+.item-list ul.pager li a:hover   {}
+.item-list ul.pager li a:active  {}
+.item-list ul.pager li a.active  {}
+
+
+/***********************************************************
+ *                 RSS Feed Icon
+ **********************************************************/
+#feed-icon     {}
+#feed-icon img {}
+#feed-icon a.feed-icon {}
+
+
+/***********************************************************
+ *                    Tables
+ **********************************************************/
+/** 
+	* The selector groupings are from Garland which offers a
+	* sensible starting point for styling Drupal tables.
+	*/
+table        {}
+
+table a      {}
+
+thead th     {}
+
+th a:link, 
+th a:visited {}
+
+td, th       {}
+
+tr.even,
+tr.odd,
+tbody th     {}
+
+tr.odd, 
+tr.info      {}
+
+tr.even      {}
+
+tr.drag      {}
+
+tr.drag-previous {}
+
+tr.odd td.active  {}
+
+tr.even td.active {}
+
+td.region, td.module, td.container td.category {}
+
+tr:first-child td.region,
+tr:first-child td.module, 
+tr:first-child td.container {}
+
+
+/***********************************************************
+ *                   Form elements
+ **********************************************************/
+/**
+	* Theming form elements can be an exercise in self-flagellation.
+	* Lets let base.css & Drupal do the hard work and just set very 
+	* basic over-rides.
+	*/
+fieldset {}
+ 
+fieldset legend {}
+
+html.js fieldset.collapsible legend a {}
+html.js fieldset.collapsed legend a   {}
+
+.tips {}
+
+
+/***********************************************************
+ *                    Messages
+ **********************************************************/
+/**
+	* Drupal + base.css do a good job of messages already, but
+	* you can over-ride all of it. See the Genesis Darkmatter theme
+	* as an example. 
+	*/
+div.messages.success {}
+
+.status {}
+
+.error    {}
+div.error {}
+
+.notice {}
+
+div.help    {}
+.help ul li {}
+
+.warning    {}
+div.warning, 
+tr.warning  {}
+div.warning {}
+
+div.error, tr.error, 
+span.form-required, span.marker {}
+
+.ok    {}
+div.ok {}
+div.ok, tr.ok {}
+
+
+/***********************************************************
+ *                     Admin
+ **********************************************************/
+/**
+	* <body> class to target most admin pages.
+	*/
+.section-admin {}
+
+/**
+	* Module page specific styles.
+	*/
+div.admin-dependencies, 
+div.admin-required {}
+span.admin-enabled {}
+span.admin-disabled {}
+
+/**
+	* The region notices on the block admin page.
+	*/
+.block-region {}
+
+
+/***********************************************************
+ *                   Buttons
+ **********************************************************/
+button, 
+.pushbutton, 
+.form-submit {}
+
+button:hover, 
+.pushbutton:hover, 
+.form-submit:hover {}

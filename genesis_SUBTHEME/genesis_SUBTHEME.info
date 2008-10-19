@@ -1,0 +1,51 @@
+  ; $Id$
+
+	 ; Change the name, description and stylesheet file name to 
+	 ; match your new themes name.
+		
+name         = Genesis SUBTHEME
+description  = My Kickn' Sub-theme
+
+
+	 ; Change the Stylesheet name to your themes name. E.g genesis_mytheme.css
+		
+stylesheets[all][] = genesis_SUBTHEME.css
+
+
+  ; Do not change any of this.
+		
+core         = 6.x
+engine       = phptemplate
+screenshot   = screenshot.png
+base theme   = genesis
+
+
+	 ; You can define new Regions here, the default Genesis regions
+	 ; are included here by default.
+		
+regions[leaderboard]        = Leaderboard
+regions[header]             = Header Blocks
+regions[secondary_content]  = Secondary Content
+regions[content_top]        = Content top
+regions[content]            = Main Content
+regions[content_bottom]     = Content bottom
+regions[tertiary_content]   = Tertiary Content
+regions[left]               = Sidebar Left
+regions[right]              = Sidebar Right
+regions[footer]             = Footer
+
+
+  ; The "features" control which of these check boxes display on the
+  ; admin/build/themes configuration page. This is useful for 
+  ; suppressing check boxes for elements not used by your theme.
+  
+features[] = logo
+features[] = name
+features[] = slogan
+features[] = mission
+features[] = node_user_picture
+features[] = comment_user_picture
+features[] = search
+features[] = favicon
+features[] = primary_links
+features[] = secondary_links
