@@ -33,7 +33,7 @@ body {
 	* Uncomment the grid class on the body element in page.tpl.php
 	* to show the grid when adjusting the vertical flow.
 	*/
-body.grid {background: url(images/gridtile.gif) repeat left top;}
+.grid {background: url(images/gridtile.gif) repeat left top;}
 
 
 /***********************************************************
