@@ -14,7 +14,6 @@
  **********************************************************/
 body {} /* see layout.css */
 
-
 /***********************************************************
  *                     The wrapper divs
  **********************************************************/
@@ -53,8 +52,8 @@ body {} /* see layout.css */
 #leaderboard       {}
 #header-blocks     {}
 
-#sidebar-left      {}
-#sidebar-right     {}
+#sidebar-left      {background: #FFFFEA;}
+#sidebar-right     {background: #F9FBFC;}
 
 #secondary-content {}
 #tertiary-content  {}
@@ -127,7 +126,7 @@ blockquote {}
 	*/
 #header        {}
 #header .inner {}
-#branding      {}
+#branding      {float: left; width: auto;}
 #logo          {}
 
 h1#site-name,
@@ -144,8 +143,8 @@ div#site-name  {}
  *                        Search
  **********************************************************/
 #search .form-submit  {}
-#search-box-top       {}
-#search-box-inner     {}
+#search-box-top       {float: right;}
+#search-box-inner     {padding: 1.5em 0;}
 #search-box-inner #edit-search-theme-form-1 {}
 #search-box-inner #edit-search-theme-form-1:hover,
 #search-box-inner #edit-search-theme-form-1:focus {}
@@ -172,7 +171,7 @@ div#site-name  {}
 	*/
 #nav       {
   clear: both; 
-		margin: 1.5em 0;
+		margin: 0.75em 0;
 }
 
 #nav-inner {}
@@ -197,9 +196,9 @@ div#site-name  {}
 	* Example styles to get you started.
 	*/
 #primary { 
-  height: 2em;
+  height: 2.25em;
 	 padding: 0;
-	 background: #f7f7f7;
+	 background: #FFFFEA;
 }
 
 .primary-inner {}
@@ -220,15 +219,14 @@ div#site-name  {}
 #primary ul.links li a {
   font-weight: bold;
 	 text-decoration: none;
-	 padding: 0.25em 1em;
+	 padding: 0.375em 0.75em;
 	 display: inline-block;
 	 white-space: nowrap;
 }
 
 #primary ul.links li a:hover,
 #primary ul.links li a.active {
-  background: #666;
-	 color: #FFF;
+  background: #F9FBFC;
 }
 
 
@@ -251,9 +249,9 @@ div#site-name  {}
 	* Secondary Links Style
 	*/
 #secondary {
-  height: 2em;
+  height: 2.25em;
 	 padding: 0;
-	 background: #CCC;
+	 background: #F9FBFC;
 }
 
 .secondary-inner {}
@@ -273,7 +271,7 @@ div#site-name  {}
 #secondary ul.links li a:active {
 	 font-weight: bold;
 	 text-decoration: none;
-  padding: 0.25em 1em;
+  padding: 0.375em 0.75em;
 	 display: inline-block;
 	 white-space: nowrap;
 }
@@ -294,15 +292,19 @@ div#site-name  {}
   margin: 0;
 }
 .breadcrumb {
-  margin: 0 0.42em 0 0.7em;
-  padding-bottom: 0.3em;
+  margin: 0;
+  padding: 0 0 0.75em 0;
 }
 
 
 /***********************************************************
  *                       Mission
  **********************************************************/
-#mission {}
+#mission {
+  margin: 0 0 1.5em 0;
+		padding: 0 0.375em;
+		font-weight: bold;
+}
 
 
 /***********************************************************
@@ -312,17 +314,12 @@ div#site-name  {}
 	* Implimentation of node styles.
 	*/
 .node {
-  margin: 0 0 0.7em 0; 
-	 padding: 0 0 1.42em 0;
 }
 
 /* Over-ride default .inner styles. */
 .node-inner {}
 
-.node h2 { 
-  font-weight: bold;
-	 margin-bottom: 0;
-}
+.node h2 {}
 
 .node h2 a:link,
 .node h2 a:visited,
@@ -341,19 +338,16 @@ div#site-name  {}
 
 .node div.submitted {
   color: #888;
-	 margin: 0 0 0.4em 0;	
+	 margin: 0;	
 }
 
 .node ul.links {
-  font-size: 0.95em;
   display: block; 
 	 text-align: right;
 }
 
 /* Theme the node teaser seperatly. */
 .node-teaser {
-  margin: 0 0 0.7em 0;
-  padding: 0 0 1.417em 0;
 }
 
 .node-teaser .node-inner {}
@@ -393,21 +387,18 @@ div#site-name  {}
 	* Styles set here will be inherited by all blocks.
 	*/
 .block {
-  padding: 0.35em;
-  margin: 0 0 0.7em;
+  padding: 0;
+  margin: 0 0 1em;
   clear: both;
 }
 
 /* Over-ride default .inner styles. */
 .block-inner {}
 
-.block h2 {
-  font-size: 1.2em; 
-	 font-weight: bold;
-}
+.block h2 {}
 
 .block .content {
-  padding: 0.4em 0.4em 0.4em 0;
+  padding: 0;
 }
 
 .block ul.menu {
@@ -415,8 +406,8 @@ div#site-name  {}
 }
 
 .block ul.menu li {
-  margin: 0 0 0 1.6em;
-  padding: 0 0 0.4em;
+  margin: 0 0 0 1.5em;
+  padding: 0;
 }
 
 tr .block {
@@ -515,8 +506,8 @@ tr .block {
 	* Implimentation of comment styles.
 	*/
 div.comment {
-  margin: 0 0 0.7em 0;
-	 padding: 0.35em; 
+  margin: 0 0 0.375em 0;
+	 padding: 0.375em; 
 }
 
 /* Over-ride default .inner styles. */
@@ -527,11 +518,11 @@ div.indented {
 }
 
 div.comment h3.title {
-	 margin-bottom: 0.1em;
+	 margin-bottom: 0;
 }
 
 h3#comment-number {
-  margin-top: 1em;
+  margin-top: 1.5em;
 }
 
 div.comment h3.title a:link,
@@ -554,12 +545,10 @@ div.comment .picture img {
 }
 
 div.comment .submitted {
-  font-size: 0.9em; 
-	 margin: 0.17em 0;
+	 margin: 0;
 }
 
 div.comment .links {
-  font-size: 0.95em; 
 	 text-align: right; 
 	 clear: both;
 }
@@ -617,25 +606,15 @@ div.comment.comment-mine      {}
 /** 
 	* Global list styles
 	*/
+	
+.block ul, ul.menu, .item-list ul {}
 
 ul li {}
 ol li {} 
 
 li.leaf {}
-
-ul.menu li, .item-list ul li {
-  margin: 0;
-	 padding: 0;
-}
-
-ul.menu li ul {
-  margin-bottom: 0;
-}
-
-.block ul, ul.menu, .item-list ul {
-  margin: 0 1em 0.375em 1.42em; 
-	 padding: 0;
-}
+ul.menu li {} 
+.item-list ul li {}
 
 ul li.expanded  {}
 ul li.collapsed {}
@@ -677,13 +656,13 @@ ul li.collapsed {}
 	*/
 #foot-wrapper { 
   text-align: center;
-	 margin: 0.25em 0;
-	 padding: 0.7em;
+	 margin: 0.375em 0;
+	 padding: 0.75em;
 }
 
 #footer a, 
 #footer-message a {
-  padding: 0.42em;
+  padding: 0.375em;
 }
 
 /**

@@ -33,8 +33,11 @@ body {
 	* Uncomment the grid class on the body element in page.tpl.php
 	* to show the grid when adjusting the vertical flow.
 	*/
-.grid {background: url(images/gridtile.gif) repeat left top;}
-
+/*.grid {background: url(images/gridtile.gif) repeat left top;}*/
+/* force the admin menu down 2 line heights */
+body.admin-menu {
+  margin-top:24px !important;
+}
 
 /***********************************************************
  *                        Reset
@@ -94,14 +97,12 @@ a:active  {text-decoration: underline;}
 /**
 	* Headings 
 	*/
-h1,
-h2 {font-weight: normal;}
 h1 {font-size: 2em  ; line-height: 1.5; margin-bottom: 0.375em;}
 h2 {font-size: 1.5em; line-height: 1  ; margin-bottom: 0;}
 h3,
 h4,
 h5,
-h6 {font-size: 1em  ; font-weight: bold;}
+h6 {font-size: 1em ;}
 
 h1 img, h2 img, h3 img, 
 h4 img, h5 img, h6 img {margin: 0;}
@@ -110,13 +111,22 @@ h4 img, h5 img, h6 img {margin: 0;}
 	* Text elements 
 	*/
 p            {margin: 0 0 1.5em;}
-blockquote   {font-size: 1em; margin: 1.5em; font-style: italic; margin: 0 0 1.5em 0; padding: 0 0 0 3em;}
+blockquote   {
+  font-size: 1em; 
+		margin: 1.5em; 
+		font-style: italic;  /* LTR */
+		margin: 0 0 1.5em 0;
+		padding: 0 0 0 3em;  /* LTR */
+}
 blockquote p {margin: 0;}
 strong       {font-weight: bold;}
 em,dfn       {font-style:  italic;}
 dfn          {font-weight: bold;}
 sup, sub     {line-height: 0;}
-address      {margin: 0 0 1.5em; font-style: italic;}
+address      {
+  margin: 0 0 1.5em; 
+		font-style: italic; /* LTR */
+}
 del          {color:#666; }
 pre,code     {margin: 1.5em 0; white-space: pre;}
 pre,code,tt  {font: 1em 'andale mono', 'lucida console', monospace; line-height: 1.5;} 
@@ -126,8 +136,8 @@ pre,code,tt  {font: 1em 'andale mono', 'lucida console', monospace; line-height:
 	*/
 h1#site-name, div#site-name {
   font-size: 2em  ; 
-	line-height: 1.5; 
-	margin-bottom: 0;
+	 line-height: 1.5; 
+	 margin-bottom: 0;
 }
 
 
@@ -137,7 +147,7 @@ h1#site-name, div#site-name {
 li ul, 
 li ol    {margin:0 1.5em;}
 
-ul, ol   {margin: 0 1em 1.5em 1.5em;}
+ul, ol   {margin: 0 1em 1.5em 1.5em;} /* LTR */
 
 ul       {list-style-type: disc;}
 ol       {list-style-type: decimal;}
@@ -146,23 +156,29 @@ dl, dd   {margin: 0 0 1.5em 0;}
 dl dt    {font-weight: bold;}
 
 li.leaf       {margin:0; padding:0;}
-ul.links      {margin: 0 0 1.5em 0; padding: 0;}
+ul.links      {margin: 0; padding: 0;}
 ul.menu li ul {margin-bottom: 0;}
 
 .block ul, ul.menu, .item-list ul {
-  margin: 0 1.5em 1.5em; padding: 0;
+  margin: 0 1em 1.5em 0; /* LTR */
+		padding: 0;
+}
+
+.block ul li, ul.menu li, .item-list ul li {
+  margin: 0 0 0 1.5em; /* LTR */
+  padding: 0;
 }
 
 
 /***********************************************************
  *                     Forms
  **********************************************************/
-form {margin: 0 0 1em 0;}
+form {margin: 0 0 1.5em 0;}
 
 input.text, 
 input.title,
 textarea, 
-select {margin:0.5em 0; border: 1px solid #C0C0C0;}
+select {margin:0.375em 0; border: 1px solid #C0C0C0;}
 
 input.text:focus, 
 input.title:focus,
@@ -170,7 +186,7 @@ textarea:focus,
 select:focus {border: 1px solid #666;}
 
 input.text, 
-input.title {padding: 0.42em;}
+input.title {padding: 0.375em;}
 
 input.title {font-size: 1.5em;}
 
@@ -190,7 +206,7 @@ span.marker {color: #8A1F11;}
 div.form-item div.description img {margin: 0;}
 
 input.form-text, 
-textarea {padding: 0.2em; border: 1px solid #CCC;}
+textarea {padding: 0.1875em; border: 1px solid #CCC;}
 
 textarea, 
 input {
@@ -202,17 +218,17 @@ input {
 div.form-item {margin-bottom: 1.5em; margin-top: 1.5em;}
 
 .form-item strong.error   {display: block;}
-.form-item textarea.error {padding: 0.2em;}
+.form-item textarea.error {padding: 0.1875em;}
 .form-item .description   {font-size: 0.9em; line-height: 1.667em;}
-form .form-submit         {margin-top: 0.5em; }
+form .form-submit         {}
 label                     {font-weight: bold;}
 
-#node-admin-filter ul {padding: 0.4em 0;}
-#edit-operation-wrapper select {margin: 0.4em ;}
+#node-admin-filter ul {padding: 0.375em 0;}
+#edit-operation-wrapper select {margin: 0.375em ;}
 
 textarea {
   height: auto;
-  padding: 0.25em;
+  padding: 0.1875em;
 }
 div.resizable-textarea textarea {margin-top: 0;}
 
@@ -220,21 +236,21 @@ div.resizable-textarea textarea {margin-top: 0;}
  * Collapsible fieldsets, from Garland.
  */
 fieldset {
-  margin: 1em 0;
-  padding: 1em;
+  margin: 1.5em 0;
+  padding: 0.75em;
   border: 1px solid #dadada;
   background: transparent;
 }
 
 /* Targets IE 7. Fixes background image in field sets. */
 *:first-child+html fieldset {
-  padding: 0 1em 1em;
+  padding: 0 1em 0.75em;
   background-position: 0 .75em;
   background-color: transparent;
 }
 
 *:first-child+html fieldset > .description, *:first-child+html fieldset .fieldset-wrapper .description {
-  padding-top: 1em;
+  padding-top: 1.5em;
 }
 
 /* Fix legend in Firefox */
@@ -249,7 +265,7 @@ fieldset legend {
 html.js fieldset.collapsed {
   background: transparent;
   padding-top: 0;
-  padding-bottom: .6em;
+  padding-bottom: .75em;
 }
 
 html.js fieldset.collapsible legend a {
@@ -265,8 +281,8 @@ html.js fieldset.collapsed legend a {
 
 .tips {
   font-size: 1em;
-  margin-left: 3em;
-  padding: 0.17em 0.25em 0.17em 1.33em;
+  margin-left: 3em; /* LTR */
+  padding: 0.1875em 0.375em 0.1875em 1.5em; /* LTR */
 }
 
 
@@ -274,10 +290,10 @@ html.js fieldset.collapsed legend a {
  *                   Tables
  **********************************************************/
 table        {margin: 1em 0; width: 100%;}
-thead th     {font-weight: bold;  border-bottom: 2px solid #d3e7f4; color: #494949;}
+thead th     {font-weight: bold;  border-bottom: 0.1875em solid #d3e7f4; color: #494949;}
 th a:link, 
 th a:visited {color: #6f9dbd;}
-td, th       {padding: 0.3em 0.5em;}
+td, th       {padding: 0.375em 0.5em;}
 tr.even,
 tr.odd,
 tbody th     {border: solid #d3e7f4; border-width: 1px 0;}
@@ -312,14 +328,14 @@ tr:first-child td.container {border-top-width: 0;}
 
 div.node-unpublished {
   background-color: #FFF4F4;
-  padding: 0.25em;
+  padding: 0.375em;
 }
 
 div.node div.unpublished {
   font: bold 3em Arial, Helvetica, sans-serif;
   text-align: center;
   color: #FFE9E7;
-  padding: 0.25em;
+  padding: 0.375em;
 }
 
 
@@ -347,14 +363,14 @@ div.node div.unpublished {
 
 div.comment-unpublished {
   background-color: #FFF4F4!important;
-  padding: 0.2em;
+  padding: 0.375em;
 }
 
 div.comment div.unpublished {
   font: bold 3em Arial, Helvetica, sans-serif;
   text-align: center;
   color: #FFE9E7;
-  padding: 0.3em;
+  padding: 0.375em;
 }
 
 
@@ -377,7 +393,7 @@ div.block {position: relative;}
 div.block div.edit {
   display: none;
   position: absolute;
-  right: 0;
+  right: 0; /* LTR */
   top: 0;
   z-index: 40;
   border: 1px solid #eee;
@@ -413,23 +429,23 @@ span.admin-disabled {}
  *            Align elements on a default install
  **********************************************************/
 /* Adjust primary and secondary li padding */
-#nav ul.links li {padding: 0 0.7em;}
+#nav ul.links li {padding: 0 0.75em;}
 
 /* Adjust the breadcrumb */
-#breadcrumb {padding-left: 0.7em;}
+#breadcrumb {padding-left: 0.75em;} /* LTR */
 
 
 /***********************************************************
  *                     Book
  **********************************************************/
 .book-navigation .page-links {
-  padding: 0.7em;
-  margin-bottom: 1.4em;
+  padding: 0.75em;
+  margin-bottom: 1.5em;
   border: none;
 }
 
 .book-navigation .menu {
-  padding: 1.42em 0 0 3em;
+  padding: 1.5em 0 0 3em;
   margin: 0 0 1.5em 0;
 }
 
@@ -453,7 +469,7 @@ ul.primary {
 }
 
 ul.primary li {
-	float: left;
+	float: left; /* LTR */
 	margin: 0;
 	padding: 0;
 }
@@ -514,10 +530,10 @@ ul.secondary {
 }
 
 ul.secondary li {
-	float: left;
-	margin: 0 5px 0 0;
+	float: left; /* LTR */
+	margin: 0 5px 0 0; /* LTR */
 	padding: 5px 0;
-	border-right: none;
+	border-right: none; /* LTR */
 }
 
 ul.secondary a {
@@ -554,7 +570,10 @@ ul.secondary a.active:hover {
 /***********************************************************
  *                   Profile
  **********************************************************/
-.profile .picture {float: right; margin: 2em 0 1em 0.5em;}
+.profile .picture {
+  float: right; 
+		margin: 2em 0 1em 0.5em; /* LTR */
+}
 
 /* Fix alignment on user profile page*/
 .profile dt {margin: 1.4em 0 0 0;}
@@ -584,7 +603,7 @@ div.messages ul {
   font-weight: bold;
   background: url(images/loading.gif) no-repeat 12px 1px;
   display: none;
-  padding-left: 36px;
+  padding-left: 36px; /* LTR */
 }
 
 #saving p {

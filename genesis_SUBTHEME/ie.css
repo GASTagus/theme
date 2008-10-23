@@ -37,6 +37,6 @@ hr {margin: -8px auto 11px;}
 ul.primary li a,
 ul.primary li a .tab,
 ul.secondary li a,
-ul.secondary li a .tab {_display: inline;_di\splay: inline-block;}
+ul.secondary li a .tab {_display: inline;_di\splay: inline-block; cursor: pointer;}
 ul.primary,
 ul.secondary {_width: 100%;_w\idth: auto;}
