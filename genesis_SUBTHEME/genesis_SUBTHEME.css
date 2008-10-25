@@ -401,6 +401,9 @@ div#site-name  {}
   padding: 0;
 }
 
+.block ul {}
+.block ul li {}
+
 .block ul.menu {
   margin-left: 0;
 }
