@@ -26,7 +26,7 @@
 <?php
 /**
  * Change the body id selector to your preferred layout.
- * E.g body id="genesis_5"
+ * E.g body id="genesis_1"
  *
  * @see layout.css
  */ 
