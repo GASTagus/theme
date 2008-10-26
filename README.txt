@@ -69,9 +69,7 @@
 		Drupal convention of themeName_preprocess_hook.
 		
 		
-		For extensive online help see the Genesis documentation:
-		
-		http://drupal.org/ (help pages under constuction)
+		For online help see the Genesis documentation: http://drupal.org/node/323404
 		
 		
 		
