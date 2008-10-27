@@ -135,9 +135,10 @@ pre,code,tt  {font: 1em 'andale mono', 'lucida console', monospace; line-height:
 	* Site name
 	*/
 h1#site-name, div#site-name {
-  font-size: 2em  ; 
+  font-size: 2em; 
 	 line-height: 1.5; 
 	 margin-bottom: 0;
+		font-weight: bold;
 }
 
 
@@ -212,7 +213,10 @@ textarea,
 input {
   font-family: Arial, Verdana, Helvetica, sans-serif;
   font-size: 1em;
-  /*vertical-align: text-bottom;*/
+}
+
+input {
+  margin:0.4em 0.1875em 0 0.1875em;
 }
 
 div.form-item {margin-bottom: 1.5em; margin-top: 1.5em;}
