@@ -25,7 +25,7 @@
 <?php
 /**
  * Change the body id selector to your preferred layout.
- * E.g body id="genesis_5"
+ * E.g body id="genesis_1"
  *
  * @see layout.css
  */ 
@@ -43,25 +43,14 @@
       <div class="inner">
         <div id="branding">
 
-										<?php if (!empty($logo)): ?>
-												<div id="logo">
-														<a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home">
-																<img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
-														</a>
-												</div>
+										<?php if (!empty($site_logo)): ?>
+												<div id="logo"><?php print $site_logo; ?></div>
 										<?php endif; ?>
 
-										<?php if (!empty($site_name)): ?>
-												<?php $tag = $is_front ? 'h1' : 'div'; ?>
-												<<?php print $tag; ?> id="site-name">
-												  <a href="<?php print $base_path; ?>" title="<?php print t('Home'); ?>" rel="home">
-														  <?php print $site_name; ?>
-													 </a>
-										  </<?php print $tag; ?>>
-										<?php endif; ?>
-		
+										<?php if (!empty($site_name)): print $site_name; endif; ?>
+
 										<?php if (!empty($site_slogan)): ?>
-												<div id="site-slogan"><em><?php print $site_slogan; ?></em></div>
+												<div id="site-slogan"><?php print $site_slogan; ?></div>
 										<?php endif; ?>
 
         </div> <!-- /branding -->
@@ -125,7 +114,9 @@
 						<div id="content">
 								<div id="content-inner">
 	
-										<?php if (!empty($mission)): ?><div id="mission"><?php print $mission; ?></div><?php endif; ?>
+										<?php if (!empty($mission)): ?>
+										  <div id="mission"><?php print $mission; ?></div>
+									 <?php endif; ?>
 	
 										<?php if ($content_top): ?>
 												<div id="content-top">
@@ -134,8 +125,12 @@
 										<?php endif; ?>
 	
 										<div id="main-content">
-												<?php if (!empty($title)): ?><h1 class="title" id="page-title"><?php print $title; ?></h1><?php endif; ?>
-												<?php if (!empty($tabs)): ?><div class="tabs"><?php print $tabs; ?></div><?php endif; ?>
+												<?php if (!empty($title)): ?>
+												  <h1 class="page-title" id="page-title"><?php print $title; ?></h1>
+												<?php endif; ?>
+												<?php if (!empty($tabs)): ?>
+												  <div class="tabs"><?php print $tabs; ?></div>
+												<?php endif; ?>
 												<?php if (!empty($messages)): print $messages; endif; ?>
 												<?php if (!empty($help)): print $help; endif; ?>
 												<?php print $content; ?>
@@ -156,18 +151,18 @@
 								</div>
 						</div>
 
-						<?php if ($left): ?>
+						<?php if (!empty($left)): ?>
 								<div id="sidebar-left">
 										<div class="inner">
-										  <?php if ($language->dir == 'rtl') { print $right; } else { print $left; } ?>
+												<?php print $left; ?>
 										</div>
 								</div> <!-- /sidebar-left -->
 						<?php endif; ?>
 
-						<?php if ($right): ?>
+						<?php if (!empty($right)): ?>
 								<div id="sidebar-right">
 										<div class="inner">
-									   <?php if ($language->dir == 'rtl') { print $left; } else { print $right; } ?>
+												<?php print $right; ?>
 										</div>
 								</div> <!-- /sidebar-right -->
 						<?php endif; ?>
