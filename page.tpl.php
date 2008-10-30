@@ -30,7 +30,7 @@
  * @see layout.css
  */ 
 ?>
-<body id="genesis_2" <?php print $page_classes; ?>>
+<body id="genesis_1" <?php print $page_classes; ?>>
   <div id="container" class="width <?php print $body_classes; ?> <?php // print 'grid' ;?>">
 
     <?php if (!empty($leaderboard)): ?>
