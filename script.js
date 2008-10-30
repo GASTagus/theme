@@ -20,7 +20,7 @@ Genesis.formCheck = function() {
     $(this).hide();
     $("#saving").show();
     var notice = function() {
-      $('<p id="saving-notice">Not saving? Wait a few seconds, reload this page, and try again. Every now and then the internet hiccups too :-)</p>').appendTo("#saving").fadeIn();
+      $('<p id="saving-notice">Not saving? Wait a few seconds, reload this page, and try again.</p>').appendTo("#saving").fadeIn();
     };
     // append notice if form saving isn't work, perhaps a timeout issue
     setTimeout(notice, 24000);
