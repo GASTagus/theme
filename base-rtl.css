@@ -1,114 +1,95 @@
+@charset "utf-8";
 /* $Id$ */
 
 /**
 	* @file base-rtl.css
 	* Right to Left language support.
 	*/
+	
+/**
+ * These styles will enable rudimentay RTL support in Genesis
+	* and its subthemes. However, there are serious layout issues
+	* in Internet Explorer and this is not accounted for.
+	* Use is at your own risk and is not supported.
+ */
 
-html {
-  direction: rtl;
-}
-
-body {
-		direction: rtl;
-}
+html, body {direction:rtl}
+/* begin bidirectionality, this solved some issues with IE7 */
+bdo[dir=ltr] {direction:ltr; unicode-bidi:bidi-override}
+bdo[dir=rtl] {direction:rtl; unicode-bidi:bidi-override}
+*[dir=ltr] {direction:ltr; unicode-bidi:embed}
+*[dir=rtl] {direction:rtl; unicode-bidi:embed}
+/* Force unicode-bidi:embed for any browser misinterpreting the spec */
+address, blockquote, body, dd, div, dl, dt, fieldset,
+form, frame, frameset, h1, h2, h3, h4, h5, h6, iframe,
+noscript, noframes, object, ol, p, ul, applet, center,
+dir, hr, menu, pre, li, table, tr, thead, tbody, tfoot,
+col, colgroup, td, th, caption, a {unicode-bidi:embed}
 
 
 /***********************************************************
  *                 HTML Elements
  **********************************************************/
-
-/**
-	* Text elements 
-	*/
-
-blockquote   {
-  font-style: normal; /**/
-		padding: 0 3em 0 0; /**/
-}
-
-address      {
-  font-style: normal; /**/
+blockquote {
+  font-style: normal;
+		padding: 0 3em 0 0;
 }
 
 
 /***********************************************************
  *                     Lists
  **********************************************************/
+/*ul, ol {margin: 0 1.5em 1.5em 1em;}*/
 
-ul, ol   {margin: 0 1.5em 1.5em 1em;} /**/
-
-.block ul, ul.menu, .item-list ul {
-  margin: 0 0 1.5em 1em; /**/
-}
-
-.block ul li, ul.menu li, .item-list ul li {
-  margin: 0 1.5em 0 0; /**/
-}
+.block ul {margin: 0 1.5em 0 0 ;}
+.item-list ul {margin: 0 1.5em 0 0;}
+.block ul.menu {margin: 0;}
 
 
 /***********************************************************
  *                     Forms
  **********************************************************/
 html.js fieldset.collapsible legend a {
-  padding-left: 1em; /**/
-  background: url(images/arrow-down.gif) no-repeat 100% 50%; /**/
+  padding-left: 1em;
+  background: url(images/arrow-down.gif) no-repeat 100% 50%;
 }
 
 html.js fieldset.collapsed legend a {
-  background: url(images/arrow-right.gif) no-repeat 100% 50%; /**/
+  background: url(images/arrow-right-rtl.gif) no-repeat 100% 50%;
 }
 
 .tips {
-  margin-right: 3em; /**/
-  padding: 0.17em 1.33em 0.17em 0.25em; /**/
+  margin-right: 3em;
+  padding: 0.17em 1.33em 0.17em 0.25em;
 }
-
 
 /***********************************************************
  *                  Blocks 
  **********************************************************/
-
-div.block div.edit {
-  left: 0; /**/
-}
-
-
-/***********************************************************
- *            Align elements on a default install
- **********************************************************/
-
-#breadcrumb {padding-right: 0.7em;} /**/
-
+.logged-in div.block div.edit {left: 0;}
 
 /***********************************************************
  *                    Tabs 
  **********************************************************/
-
-ul.primary li {
-	float: right; /**/
-}
+ul.primary li {float: right;}
 
 ul.secondary li {
-	float: right; /**/
-	margin: 0 0 0 5px; /**/
-	border-left: none; /**/
+	float: right;
+	margin: 0 0 0 5px;
+	border-left: none;
 }
-
 
 /***********************************************************
  *                   Profile
  **********************************************************/
 .profile .picture {
-  float: right;  /**/
-		margin: 2em 0.5em 1em 0; /**/
+  float: right; 
+		margin: 2em 0.5em 1em 0;
 }
 
-
 /***********************************************************
- *                   Messages
+ *                   Tables
  **********************************************************/
-
-#saving {
-  padding-right: 36px; /**/
+caption, th, td {
+  text-align: right;
 }
