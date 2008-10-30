@@ -13,7 +13,7 @@
   <div class="node-inner inner">
 
 		<?php if ($page == 0): ?>
-			<h2 class="title"><a href="<?php print $node_url; ?>" rel="bookmark"><?php print $title; ?></a></h2>
+			<h2 class="node-title"><a href="<?php print $node_url; ?>" rel="bookmark"><?php print $title; ?></a></h2>
 		<?php endif; ?>
 
 		<?php if ($unpublished): ?>
@@ -33,7 +33,9 @@
 			</div>
 		<?php endif; ?>
 
-		<?php print $content; ?>
+  <div class="node-content">
+		  <?php print $content; ?>
+  </div>
 
 		<?php if (count($taxonomy)): ?>
 			<div class="tags"><?php print $terms; ?></div>

@@ -1,0 +1,33 @@
+/* $Id$ */
+
+/**
+	* @file reset.css
+	* Reset browser CSS and set global styles.
+	*/
+
+/***********************************************************
+ *                        Reset
+ **********************************************************/
+/**
+	* Based originally on Eric Meyers reset and Tripoli.
+	*/
+body {line-height: 1.5;} /* unitless line height */
+
+html, body, div, span, a, img,
+q, blockquote, del, dfn, em,
+label, legend,
+object, iframe,
+caption, tbody, tfoot, thead, tr {
+  margin: 0; padding: 0; border: none;
+}
+
+/* Remove possible quote marks (") from <q>, <blockquote>. */
+blockquote:before, 
+blockquote:after, 
+q:before, q:after {content: "";}
+blockquote, q     {quotes: "" "";}
+
+/* Remove annoying border on linked images. */
+a img {border: none;}
+
+abbr, acronym {border: none;}

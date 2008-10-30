@@ -1,0 +1,38 @@
+
+
+/***********************************************************
+ *                   Tables
+ **********************************************************/
+
+/* Tables still need 'cellspacing="0"' in the markup. */
+table           {border-collapse: collapse; border-spacing: 0;}
+caption, th, td {text-align: left; font-weight: normal;}
+table, td, th   {vertical-align: middle;}
+
+table        {margin: 1em 0; padding: 0; width: 100%;}
+thead th     {font-weight: bold; border-bottom: 0.1875em solid #d3e7f4; color: #494949;}
+th a:link, 
+th a:visited {color: #6f9dbd;}
+td, th       {padding: 0.375em 0.5em; margin: 0;}
+tr.even,
+tr.odd,
+tbody th     {border: solid #d3e7f4; border-width: 1px 0;}
+tr.odd, 
+tr.info      {background-color: #edf5fa;}
+tr.even      {background-color: #fff;}
+tr.drag          {background-color: #fffff0;}
+tr.drag-previous {background-color: #ffd;}
+tr.odd td.active  {background-color: #ddecf5;}
+tr.even td.active {background-color: #e6f1f7;}
+
+td.region, td.module, td.container td.category {
+  border-top: 1.5em solid #fff;
+  border-bottom: 1px solid #b4d7f0;
+  background-color: #d4e7f3;
+  color: #455067;
+  font-weight: bold;
+}
+
+tr:first-child td.region,
+tr:first-child td.module, 
+tr:first-child td.container {border-top-width: 0;}

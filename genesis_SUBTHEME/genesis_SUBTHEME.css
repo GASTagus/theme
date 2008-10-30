@@ -12,7 +12,7 @@
 /***********************************************************
  *                          Body
  **********************************************************/
-body {} /* see layout.css */
+body {}
 
 /***********************************************************
  *                     The wrapper divs
@@ -24,7 +24,6 @@ body {} /* see layout.css */
 #columns   {}
 #content   {}
 #main-content  {}
-#content-inner {}
 
 
 /***********************************************************
@@ -78,7 +77,8 @@ body {} /* see layout.css */
 	* and comments using div.node-inner, div.block-inner & 
 	* div.comment-inner which are listed in their relevant sections.
 	*/
-.inner {}
+.inner         {padding: 0 0.375em;}
+#content-inner {padding: 0 0.375em;}
 
 .nav-inner {}
 .primary-inner {}
@@ -107,14 +107,14 @@ a.active  {}
  *                    HTML elements 
  **********************************************************/
 /** 
-	* Add any html elements you require. Use base.css as a guide.
+	* Add any html elements you require. Use type.css as a guide.
 	*/
-h1.title   {}
-h2.title   {}
-h2.title a {}
-h3.title   {}
-h3.title a {}
-p          {}
+h1   {}
+h2   {}
+h2 a {}
+h3   {}
+h3 a {}
+p    {}
 blockquote {}
 
 
@@ -313,13 +313,12 @@ div#site-name  {}
 /** 
 	* Implimentation of node styles.
 	*/
-.node {
-}
+.node {margin: 0 0 1.5em;}
 
 /* Over-ride default .inner styles. */
 .node-inner {}
 
-.node h2 {}
+.node h2.node-title {}
 
 .node h2 a:link,
 .node h2 a:visited,
@@ -341,29 +340,18 @@ div#site-name  {}
 	 margin: 0;	
 }
 
+/* Node content wrapper. */
+.node .node-content {}
+
 .node ul.links {
   display: block; 
 	 text-align: right;
 }
 
 /* Theme the node teaser seperatly. */
-.node-teaser {
-}
-
+.node-teaser {}
 .node-teaser .node-inner {}
 
-/* Colorize unpublised nodes for admins. */
-.node-unpublished {
-  background-color: #FFF4F4; 
- 	padding: 0.2em;
-}
-
-.node div.unpublished {
-  font: bold 3em Arial, Helvetica, sans-serif;
-  text-align: center;
-  color: #FFE9E7;
-  padding: 0.3em;
-}
 
 /* Theme Sticky nodes. */
 .sticky {}
@@ -388,30 +376,24 @@ div#site-name  {}
 	*/
 .block {
   padding: 0;
-  margin: 0 0 1em;
+  margin: 0 0 1.5em;
   clear: both;
 }
 
 /* Over-ride default .inner styles. */
 .block-inner {}
 
-.block h2 {}
+.block h2.block-title {}
 
-.block .content {
+/* Block content wrapper. */
+.block .block-content {
   padding: 0;
 }
 
 .block ul {}
 .block ul li {}
-
-.block ul.menu {
-  margin-left: 0;
-}
-
-.block ul.menu li {
-  margin: 0 0 0 1.5em;
-  padding: 0;
-}
+.block ul.menu {}
+.block ul.menu li {}
 
 tr .block {
   border: none; /* Blocks page table. */
@@ -437,12 +419,12 @@ tr .block {
 #sidebar-left .block {}
 #sidebar-left .block h2 {}
 #sidebar-left .block-inner {}
-#sidebar-left .block .content {}
+#sidebar-left .block .block-content {}
 
 #sidebar-right .block {}
 #sidebar-right .block h2 {}
 #sidebar-right .block-inner {}
-#sidebar-right .block .content {}
+#sidebar-right .block .block-content {}
 
 #leaderboard .block       {}
 #header-blocks .block     {}
@@ -514,13 +496,13 @@ div.comment {
 }
 
 /* Over-ride default .inner styles. */
-.comment-inner {}
+div.comment-inner {}
 
 div.indented {
-  margin-left: 2em;
+  margin-left: 2em; /* RTL */
 }
 
-div.comment h3.title {
+div.comment h3.comment-title {
 	 margin-bottom: 0;
 }
 
@@ -528,19 +510,19 @@ h3#comment-number {
   margin-top: 1.5em;
 }
 
-div.comment h3.title a:link,
-div.comment h3.title a:visited,
-div.comment h3.title a:active {
+div.comment h3.comment-title a:link,
+div.comment h3.comment-title a:visited,
+div.comment h3.comment-title a:active {
   text-decoration: none;
 }
 
-div.comment h3.title a:hover {
+div.comment h3.comment-title a:hover {
   text-decoration: underline;
 }
 
 div.comment .picture {
-  float: right; 
-	 margin: 0.3em 0 0.1em 0.3em;
+  float: right; /* RTL */
+	 margin: 0.3em 0 0.1em 0.3em; /* RTL */
 }
 
 div.comment .picture img {
@@ -550,6 +532,9 @@ div.comment .picture img {
 div.comment .submitted {
 	 margin: 0;
 }
+
+/* Comment content wrapper. */
+div.comment .comment-content {}
 
 div.comment .links {
 	 text-align: right; 
@@ -604,51 +589,31 @@ div.comment.comment-mine      {}
 
 
 /***********************************************************
- *                       Lists
- **********************************************************/
-/** 
-	* Global list styles
-	*/
-	
-.block ul, ul.menu, .item-list ul {}
-
-ul li {}
-ol li {} 
-
-li.leaf {}
-ul.menu li {} 
-.item-list ul li {}
-
-ul li.expanded  {}
-ul li.collapsed {}
-
-
-/***********************************************************
  *                      Box
  **********************************************************/
 /* Search form on the results page, includes advanced search*/
 .section-search .box {}
 .section-search .box-inner {}
-.section-search .box h2    {}
+.section-search .box h2.box-title    {}
 
 /* Comment form on a seperate page */
 .section-comment .box {}
 .section-comment .box-inner {}
-.section-comment .box h2    {}
+.section-comment .box h2.box-title    {}
 
 /* Comment form below content */
 #comments .box {}
 #comments .box-inner {}
-#comments .box h2    {}
+#comments .box h2.box-title    {}
 
 /* Generic box selectors */
 .box {}
 .box-inner {}
-.box h2    {}
-.box .content   {}
-.box form       {}
-.box .form-item {}
-.box fieldset   {}
+.box h2.box-title {}
+.box .box-content {}
+.box form         {}
+.box .form-item   {}
+.box fieldset     {}
 
 
 /***********************************************************
@@ -826,6 +791,15 @@ span.admin-disabled {}
 	*/
 .block-region {}
 
+/* Experimental workaround for the theme list page for narrow themes.
+   When both sidebars are active, the left sidebar overlaps the theme list table,
+			this forces the sidebars to be a set hight with scroll */
+body.page-admin-build-themes #sidebar-left,
+body.page-admin-build-themes #sidebar-right,
+body.page-admin-build-themes-select #sidebar-left,
+body.page-admin-build-themes-select #sidebar-right {
+  height: 240px; overflow: scroll;
+}
 
 /***********************************************************
  *                   Buttons

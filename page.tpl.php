@@ -9,16 +9,15 @@
  * @see template_preprocess_page()
  */
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php print $language->language ?>" lang="<?php print $language->language ?>" dir="<?php print $language->dir ?>">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php print $language->language; ?>" lang="<?php print $language->language; ?>" dir="<?php print $language->dir; ?>">
 
 <head>
   <title><?php print $head_title; ?></title>
   <?php print $head; ?>
   <?php print $styles; ?>
   <!--[if IE]>
-    <link rel="stylesheet" href="<?php print $base_path . $directory; ?>/ie.css" type="text/css">
+    <link rel="stylesheet" href="<?php print $base_path . $directory; ?>/ie.css" type="text/css" />
   <![endif]-->
   <?php print $scripts; ?>
   <script type="text/javascript"><?php /* Needed to avoid Flash of Unstyled Content in IE */ ?> </script>
@@ -31,7 +30,7 @@
  * @see layout.css
  */ 
 ?>
-<body id="genesis_1" <?php print $page_classes; ?>>
+<body id="genesis_2" <?php print $page_classes; ?>>
   <div id="container" class="width <?php print $body_classes; ?> <?php // print 'grid' ;?>">
 
     <?php if (!empty($leaderboard)): ?>
@@ -157,18 +156,18 @@
 								</div>
 						</div>
 
-						<?php if (!empty($left)): ?>
+						<?php if ($left): ?>
 								<div id="sidebar-left">
 										<div class="inner">
-												<?php print $left; ?>
+										  <?php if ($language->dir == 'rtl') { print $right; } else { print $left; } ?>
 										</div>
 								</div> <!-- /sidebar-left -->
 						<?php endif; ?>
 
-						<?php if (!empty($right)): ?>
+						<?php if ($right): ?>
 								<div id="sidebar-right">
 										<div class="inner">
-												<?php print $right; ?>
+									   <?php if ($language->dir == 'rtl') { print $left; } else { print $right; } ?>
 										</div>
 								</div> <!-- /sidebar-right -->
 						<?php endif; ?>

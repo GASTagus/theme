@@ -48,10 +48,10 @@ function genesis_preprocess_page(&$vars, $hook) {
         $page_classes[] = 'node-full-view'; // Add 'node-full-view'
       }
     }
-				// Dont print this if we're viewing the front page
-    if (!$vars['is_front']) {
+				// No print on front page
+				if (!$vars['is_front']) {
       $vars['page_classes'] = 'class="'. implode(' ', $page_classes) .'"'; // Concatenate with spaces
-    }
+				}
 
   // Primary and Secondary Links wrapper class.
   if ($vars['primary_links'] && $vars['secondary_links']) {
@@ -63,7 +63,7 @@ function genesis_preprocess_page(&$vars, $hook) {
   if (!$vars['primary_links'] && $vars['secondary_links']) {
     $vars['nav_class'] = 'with-secondary';
   }
-		
+
 }
 
 /**
