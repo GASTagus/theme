@@ -27,7 +27,7 @@ div.messages ul {
 #saving {
   font-size: 1em;
   font-weight: bold;
-  background: url(images/loading.gif) no-repeat 12px 1px;
+  background: url(../images/loading.gif) no-repeat 12px 1px;
   display: none;
   padding-left: 36px; /* LTR */
 }
