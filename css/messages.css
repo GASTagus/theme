@@ -1,101 +1,45 @@
 /* $Id$ */
 
 /**
-	* @file messages.css
-	* Basic styles for messages.
-	*/
+ * @file messages.css
+ * Basic styles for messages.
+ */
 
 /***********************************************************
- *                   Messages
- **********************************************************/
-div.messages {
-  font-weight: bold;
-  margin-bottom: 1.5em;
-  padding: 0.67em;
-}
+*                   Messages
+**********************************************************/
+div.messages         {font-weight: bold; margin-bottom: 1.5em; padding: 0.75em;}
+div.messages.success {color: #55872E; background: #F1F8EB; border: 1px solid #7AC142;}
+div.messages ul      {margin: 0 0 0 2em;}
 
-div.messages.success {
-  color: #55872E;
-  background: #F1F8EB;
-  border: 1px solid #7AC142; 
-}
+.status {color: #264409; background: #E6EFC2; border: 1px solid #C6D880;}
+.error  {color: #8A1F11; background: #FFCCCC; border: 1px solid #DD7777;}
+.notice {color: #514721; background: #FFF6BF; border-color: #FFD324;}
 
-div.messages ul {
-  margin: 0 0 0 2em;
-}
-
-#saving {
-  font-size: 1em;
-  font-weight: bold;
-  background: url(../images/loading.gif) no-repeat 12px 1px;
-  display: none;
-  padding-left: 36px; /* LTR */
-}
-
-#saving p {
-  margin: 0;
-}
-
-#saving-notice {
-  font-size: 0.9em;
-  font-style: italic;
-  background: #FFC;
-}
-
-.status {
-  color: #264409;
-  background: #E6EFC2;
-  border: 1px solid #C6D880;
-}
-
-.error { 
-  color: #8a1f11;
-  background: #FBE3E4; 
-  border: 1px solid #8a1f11; 
-}
-
-div.error {}
-
-.notice { 
-  color: #514721; 
-  background: #FFF6BF; 
-  border-color: #FFD324; 
-}
-
-.error, .notice, .status { 
-  margin-bottom: 1em;
-  padding: 0.8em; 
-}
+.error, .notice, .status {margin-bottom: 1em; padding: 0.75em;}
 
 .error a    {color: #8a1f11; text-decoration: underline;}
 .notice a   {color: #514721; text-decoration: underline;}
 .success a  {color: #264409; text-decoration: underline;}
 
-div.help {
-  background: #FFC;
-  margin-bottom: 1.5em;
-  padding: 0.75em; 
-  border: 1px solid #FEDE01;
-}
+div.help {background: #FFC;margin-bottom: 1.5em;padding: 0.75em; border: 1px solid #FEDE01;}
 
-.block-region {
-  background-color: transparent;
-  border: 1px dashed red;
-  color: red;
+.block-region {background-color: transparent;border: 1px dashed red;color: red;font-weight: bold;}
+
+/* animated saving thingee */
+#saving {
+  font-size: 1em;
   font-weight: bold;
+  background: url(../images/loading.gif) no-repeat 12px 1px;
+  display: none;
+  padding-left: 36px;
 }
+#saving p {margin: 0;}
+#saving-notice {font-size: 0.9em;font-style: italic;background: #FFC;}
 
-/*
-.help ul li {}
-
-.warning    {}
-div.warning, 
-tr.warning  {}
-div.warning {}
-
+/* Un-used helpers.
+.help ul li {} div.error {}
+.warning    {} div.warning, tr.warning  {} div.warning {}
 div.error, tr.error, span.form-required, span.marker {}
-
-.ok {}
-div.ok {}
-div.ok, tr.ok {}
+.ok {} div.ok {} div.ok, tr.ok {}
 */

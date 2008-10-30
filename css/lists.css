@@ -1,13 +1,13 @@
 /* $Id$ */
 
 /**
-	* @file lists.css
-	* Global list styles.
-	*/
+ * @file lists.css
+ * Global list reset.
+ */
 
 /***********************************************************
- *                     Lists
- **********************************************************/
+*                     Lists
+**********************************************************/
 ul, ol {
   margin: 0;
   padding: 0; 
@@ -44,13 +44,13 @@ ul.menu li, li.expanded, li.collapsed, li.leaf {
   margin: 0; padding: 0;
 }
 
-ul          { list-style-type: disc; }
-ul ul       { list-style-type: circle; }
-ul ul ul    { list-style-type: square; }
-ul ul ul ul { list-style-type: circle; }
-ol          { list-style-type: decimal; }
-ol ol       { list-style-type: lower-alpha; }
-ol ol ol    { list-style-type: decimal; }
+ul          {list-style-type: disc;}
+ul ul       {list-style-type: circle;}
+ul ul ul    {list-style-type: square;}
+ul ul ul ul {list-style-type: circle;}
+ol          {list-style-type: decimal;}
+ol ol       {list-style-type: lower-alpha;}
+ol ol ol    {list-style-type: decimal;}
 
 dt,
 dd {margin: 0; padding: 0;}

@@ -1,13 +1,13 @@
 /* $Id$ */
 
 /**
-	* @file forms.css
-	* Basic styles for forms.
-	*/
+ * @file forms.css
+ * Basic styles for forms.
+ */
 
 /***********************************************************
- *                     Forms
- **********************************************************/
+*                     Forms
+**********************************************************/
 form {margin: 0 0 1.5em 0; padding: 0;}
 
 input.text, 
@@ -22,56 +22,34 @@ select:focus {border: 1px solid #666;}
 
 input.text, 
 input.title {padding: 0.375em;}
-
 input.title {font-size: 1.5em;}
 
-div.error, 
-tr.error, 
 span.form-required, 
 span.marker {color: #8A1F11;}
 
-.form-item input.error, 
-.form-item textarea.error, 
-.form-item select.error {
-  color: #8A1F11;
-  background: #FFCCCC;
-  border: 1px solid #DD7777;
-}
-
 div.form-item div.description img {margin: 0;}
-
 input.form-text, 
-textarea {padding: 0.1875em; border: 1px solid #CCC;}
-
+textarea {padding: 0.1875em; height: auto; border: 1px solid #CCC;}
 textarea, 
-input {
-  font-family: Arial, Verdana, Helvetica, sans-serif;
-  font-size: 1em;
-}
-
-input {
-  margin: 0.4em 0.1875em 0 0.1875em;
-}
-
-div.form-item {margin-bottom: 1.5em; margin-top: 1.5em;}
-
+input    {font: 1em normal Arial, Helvetica, sans-serif;}
+input    {margin: 0.4em 0.1875em 0 0.1875em;}
+div.form-item             {margin-bottom: 1.5em; margin-top: 1.5em;}
 .form-item strong.error   {display: block;}
 .form-item textarea.error {padding: 0.1875em;}
 .form-item .description   {font-size: 0.9em; line-height: 1.667em;}
 form .form-submit         {}
 label                     {font-weight: bold;}
-
 #node-admin-filter ul {padding: 0.375em 0;}
 #edit-operation-wrapper select {margin: 0.375em ;}
-
-textarea {
-  height: auto;
-  padding: 0.1875em;
-}
 div.resizable-textarea textarea {margin-top: 0;}
+.tips {
+  font-size: 1em;
+  margin-left: 3em; /* LTR */
+  padding: 0.1875em 0.375em 0.1875em 1.5em; /* LTR */
+}
 
 /**
- * Collapsible fieldsets, from Garland.
+ * Collapsible fieldsets, mostly from Garland.
  */
 fieldset {
   margin: 1.5em 0;
@@ -79,47 +57,33 @@ fieldset {
   border: 1px solid #dadada;
   background: transparent;
 }
-
-/* Targets IE 7. Fixes background image in field sets. */
+/* Targets IE 7. Fixes background image in field sets (if one is set). */
 *:first-child+html fieldset {
   padding: 0 1em 0.75em;
   background-position: 0 .75em;
   background-color: transparent;
 }
-
 *:first-child+html fieldset > .description, *:first-child+html fieldset .fieldset-wrapper .description {
   padding-top: 1.5em;
 }
-
 /* Fix legend in Firefox */
 fieldset legend {
   display: block;
 }
-
 *:first-child+html fieldset legend, *:first-child+html fieldset.collapsed legend {
   display: inline;
 }
-
 html.js fieldset.collapsed {
   background: transparent;
   padding-top: 0;
   padding-bottom: .75em;
 }
-
 html.js fieldset.collapsible legend a {
   color: #0066B3;
   padding-left: 1em; /* LTR */
   background: url(../images/arrow-down.gif) no-repeat 0% 50%; /* LTR */
 }
-
 html.js fieldset.collapsed legend a {
   color: #0066B3;
   background: url(../images/arrow-right.gif) no-repeat 0% 50%; /* LTR */
 }
-
-.tips {
-  font-size: 1em;
-  margin-left: 3em; /* LTR */
-  padding: 0.1875em 0.375em 0.1875em 1.5em; /* LTR */
-}
-

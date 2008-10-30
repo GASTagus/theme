@@ -1,17 +1,17 @@
 /* $Id$ */
 
 /**
-	* @file grid.css
-	* Show baseline grid guides.
-	*/
-	
+ * @file grid.css
+ * Show baseline grid guides.
+ */
+
 /***********************************************************
- *                        Grid
- **********************************************************/
+*                        Grid
+**********************************************************/
 /**
-	* Uncomment the grid class on the body element in page.tpl.php
-	* to show the grid when adjusting the vertical flow.
-	*/
+ * Uncomment the grid class on the body element in page.tpl.php
+ * to show the grid when adjusting the vertical flow.
+ */
 
 .grid {background: url(images/gridtile.gif) repeat left top;}
 

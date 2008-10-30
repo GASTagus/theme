@@ -1,64 +1,51 @@
 /* $Id$ */
 
 /**
-	* @file type.css
-	* Foundation styles for type elements.
-	*/
+  * @file type.css
+  * Reset styles for typographical elements.
+  */
 
 /***********************************************************
- *                        Type
- **********************************************************/
+*                        Type
+**********************************************************/
 /**
-	* Most values are in em's.
-	*
-	* If you need to set a font size for an element, set it on the element in
-	* your subtheme. E.g h1.title {font-size: 3em;}
-	*
-	* The font-size percentage is of 16px. (0.75 * 16px = 12px).
-	*
-	* You may find this "px to em" calculator helpful - http://riddle.pl/emcalc/
-	*/
+ * The font-size is 75% of 16px. (0.75 * 16px = 12px).
+ * You may find this "px to em" calculator helpful;
+ * http://riddle.pl/emcalc/
+ */
 body { 
   font-size: 75%;
-  font-family: Arial, Helvetica, sans-serif; /* LTR */
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 /**
-	* Headings 
-	*/
+ * Headings 
+ */
 h1 {font-size: 2em  ; line-height: 1.5; margin: 0; padding: 0;}
 h2 {font-size: 1.5em; line-height: 1  ; margin: 0; padding: 0;}
-h3,
-h4,
-h5,
-h6 {font-size: 1em ; margin: 0; padding: 0;}
+h3, h4, h5, h6 {font-size: 1em ; margin: 0; padding: 0;}
 
 h1 img, h2 img, h3 img, 
 h4 img, h5 img, h6 img {margin: 0; padding: 0;}
 
 /**
-	* Text elements 
-	*/
-p            {margin: 0 0 1.5em; padding: 0;}
-blockquote   {
-  font-size: 1em; 
-		margin: 1.5em; 
-		font-style: italic;  /* LTR */
-		margin: 0 0 1.5em 0;
-		padding: 0 0 0 3em;  /* LTR */
+ * Text elements 
+ */
+blockquote {
+  font-style: italic;  /* LTR */
+  margin: 0 0 1.5em 0;
+  padding: 0 0 0 3em;  /* LTR */
 }
-blockquote p {margin: 0;}
-strong       {font-weight: bold;}
-em,dfn       {font-style:  italic;}
-dfn          {font-weight: bold;}
-sup, sub     {line-height: 0;}
-address      {
-  margin: 0 0 1.5em; 
-		padding: 0;
-}
-del          {color:#666; }
-pre,code     {margin: 1.5em 0; padding: 0; white-space: pre;}
-pre,code,tt  {font: 1em 'andale mono', 'lucida console', monospace; line-height: 1.5;} 
+
+p             {margin: 0 0 1.5em; padding: 0;}
+blockquote p  {margin: 0;}
+strong        {font-weight: bold;}
+em, dfn       {font-style:  italic;}
+dfn           {font-weight: bold;}
+sup, sub      {line-height: 0;}
+del           {color:#666; }
+pre, code     {margin: 1.5em 0; padding: 0; white-space: pre;}
+pre, code, tt {font: 1em 'andale mono', 'lucida console', monospace; line-height: 1.5;} 
 
 /* Preserve line-height and selector appearance */
 sup {vertical-align:text-top;}
@@ -67,5 +54,5 @@ sub {vertical-align:text-bottom;}
 /* Mitigate relative shrinkage */
 li li, li p, td p, blockquote p {font-size:1em;} 
 
-/* Remove border bottom, usually I dont want the border */
+/* Remove border bottom */
 abbr, acronym {border: none;}
