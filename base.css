@@ -1,73 +1,27 @@
 /* $Id$ */
 
 /**
-	* @file base.css
-	* Reset browser CSS and set global styles.
-	*/
-
-/**
-	* Comment out what you dont need or want.
-	* This is likely to be moved to .info once Drupal gets better
-	* handling of large numbers of stylesheets - http://drupal.org/node/228818
-	*/
-@import url("css/forms.css");
-@import url("css/lists.css");
-@import url("css/messages.css");
-@import url("css/tables.css");
-@import url("css/tabs.css");
-@import url("css/type.css");
-
+ * @file base.css
+ * Helper classes.
+ */
 
 /***********************************************************
- *                     Grid 
- **********************************************************/
+*                     Grid 
+**********************************************************/
 /**
-	* Uncomment to show the grid, also uncomment the grid class on the #contanier wrapper
-	* in your subthemes page.tpl.php
-	*/
+ * Uncomment to show the grid, also uncomment the grid class 
+ * on the #contanier wrapper in your subthemes page.tpl.php
+ */
 /*@import url("css/grid.css");*/
 
 
 /***********************************************************
- *                    Header 
- **********************************************************/
-
-h1#site-name,
-div#site-name  {
-  font-size: 2em ;
-		line-height: 1.5;
-		margin: 0;
-		padding: 0;
-		font-weight: bold;
-}
-
-/***********************************************************
- *                     Node
- **********************************************************/
-div.node-unpublished {
-  background-color: #FFF4F4;
-  padding: 0.375em;
-}
-
-div.node div.unpublished {
-  font: bold 3em Arial, Helvetica, sans-serif;
-  text-align: center;
-  color: #FFE9E7;
-  padding: 0.375em;
-}
-
-
-/***********************************************************
- *                    Blocks 
- **********************************************************/
-/* blocks page table */
-tr .block {border: none;}
-
+*                    Blocks 
+**********************************************************/
 /**
-	* Edit links for blocks.
-	*/
+ * Edit links for blocks.
+ */
 div.block {position: relative;}
-
 div.block div.edit {
   display: none;
   position: absolute;
@@ -79,77 +33,18 @@ div.block div.edit {
   font-size: 11px;
   background-color: #fff;
 }
-
 div.block:hover div.edit {display: block;}
-
 .block .node,
 .block .comment {margin-bottom: 0;}
 
-
-/***********************************************************
- *                  Comments
- **********************************************************/
-div.comment-unpublished {
-  background-color: #FFF4F4!important;
-  padding: 0.375em;
-}
-
-div.comment div.unpublished {
-  font: bold 3em Arial, Helvetica, sans-serif;
-  text-align: center;
-  color: #FFE9E7;
-  padding: 0.375em;
-}
+/* blocks page table */
+tr .block {border: none;}
 
 
 /***********************************************************
- *                  Forum
- **********************************************************/
-#forum table       {width: 100%;}
-
-#forum tr td.forum { 
-  background-position: 5px 5px!important; 
-  background-position: 5px 5px;
-  padding-left: 1.67em; 
-}
-
-#forum tr td.forum .name {padding-left: 0.375em;}
-
-#forum div.indent  {margin-left: 0.5em;}
-
-
-/***********************************************************
- *                     Book
- **********************************************************/
-.book-navigation .page-links {
-  padding: 0.75em;
-  margin-bottom: 1.5em;
-  border: none;
-}
-
-.book-navigation .menu {
-  padding: 1.5em 0 0 3em;
-  margin: 0 0 1.5em 0;
-}
-
-
-/***********************************************************
- *                   Profile
- **********************************************************/
-.profile .picture {
-  float: right; 
-		margin: 2em 0 1em 0.5em; /* LTR */
-}
-
-/* Fix alignment on user profile page*/
-.profile dt {margin: 1.4em 0 0 0;}
-
-
-/***********************************************************
- *                  Admin, Misc.
- **********************************************************/
+*                  Admin, Misc.
+**********************************************************/
 div.admin       {padding-top: 0;}
-
 div.admin-panel {padding: 1.5em 0 0 0;}
 div.admin-panel .body {padding: 0;}
 div.admin-panel .description {margin: 0 0 1.5em 0; padding: 0;}
@@ -161,10 +56,3 @@ div.admin .right {margin:0;}
 #node-admin-filter ul li {list-style: none;}
 
 .more-help-link {font-size: 0.9em; line-height: 1.667em;}
-
-/*span.admin-disabled {}*/
-
-
-
-
-

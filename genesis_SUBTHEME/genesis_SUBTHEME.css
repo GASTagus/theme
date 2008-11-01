@@ -102,6 +102,12 @@ a:hover   {}
 a:active  {}
 a.active  {}
 
+/* Drupal sets this to black. */
+li a.active  {}
+
+/* Remove borders on linked images. */
+a img {border: none;}
+
 
 /***********************************************************
  *                    HTML elements 
@@ -109,7 +115,7 @@ a.active  {}
 /** 
 	* Add any html elements you require. Use type.css as a guide.
 	*/
-h1   {}
+h1#page-title {}
 h2   {}
 h2 a {}
 h3   {}
@@ -130,7 +136,13 @@ blockquote {}
 #logo          {}
 
 h1#site-name,
-div#site-name  {}
+div#site-name  {
+  font-size: 2em ;
+		line-height: 1.5;
+		margin: 0;
+		padding: 0;
+		font-weight: bold;
+}
 
 #site-name a:link,
 #site-name a:visited {}
@@ -490,6 +502,9 @@ tr .block {
 /** 
 	* Implimentation of comment styles.
 	*/
+/* Comment wrapper */
+#comments {}
+	
 div.comment {
   margin: 0 0 0.375em 0;
 	 padding: 0.375em; 
@@ -552,11 +567,28 @@ div.comment.comment-mine      {}
 
 
 /***********************************************************
+ *                   Profile
+ **********************************************************/
+.profile .picture {
+  float: right; 
+		margin: 2em 0 1em 0.5em; /* LTR */
+}
+
+/* Fix alignment on user profile page*/
+.profile dt {margin: 1.4em 0 0 0;}
+
+
+/***********************************************************
  *                     Forum
  **********************************************************/
-#forum table {}
-#forum tr td.forum {}
-#forum div.indent  {}
+#forum table       {width: 100%;}
+#forum tr td.forum { 
+  background-position: 5px 5px!important; 
+  background-position: 5px 5px;
+  padding-left: 1.67em; 
+}
+#forum tr td.forum .name {padding-left: 0.375em;}
+#forum div.indent  {margin-left: 0.5em;}
 
 
 /***********************************************************
@@ -569,12 +601,19 @@ div.comment.comment-mine      {}
 .book-navigation ul {}
 .book-navigation ul li {}
 .book-navigation ul li a {}
-.book-navigation .page-links {}
+.book-navigation .page-links {
+  padding: 0.75em;
+  margin-bottom: 1.5em;
+  border: none;
+}
 .book-navigation .page-links a {}
 .book-navigation .page-links a.page-up {}
 .book-navigation .page-links a.page-next {}
 .book-navigation .page-links a.page-previous {}
-
+.book-navigation .menu {
+  padding: 1.5em 0 0 3em;
+  margin: 0 0 1.5em 0;
+}
 
 /***********************************************************
  *                    Polls

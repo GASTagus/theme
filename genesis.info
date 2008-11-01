@@ -27,9 +27,17 @@ regions[footer]             = Footer
   ; "handheld". See http://www.w3.org/TR/CSS21/media.html#media-types for a full
   ; list of stylesheet media types in CSS 2.1.
 
-stylesheets[all][] = reset.css
+stylesheets[all][] = css/type.css
+stylesheets[all][] = css/forms.css
+stylesheets[all][] = css/messages.css
+stylesheets[all][] = css/lists.css
+stylesheets[all][] = css/tables.css
+stylesheets[all][] = css/tabs.css
 stylesheets[all][] = base.css
 stylesheets[all][] = layout.css
+
+ ; Uncomment the reset if you are using it to override Genesis framework defaults.
+;stylesheets[all][] = reset.css
 
 
   ; The "features" control which of these check boxes display on the

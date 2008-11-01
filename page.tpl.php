@@ -126,7 +126,7 @@
 	
 										<div id="main-content">
 												<?php if (!empty($title)): ?>
-												  <h1 class="page-title" id="page-title"><?php print $title; ?></h1>
+												  <h1 id="page-title"><?php print $title; ?></h1>
 												<?php endif; ?>
 												<?php if (!empty($tabs)): ?>
 												  <div class="tabs"><?php print $tabs; ?></div>
