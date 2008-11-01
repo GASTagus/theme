@@ -12,21 +12,34 @@ div.messages         {font-weight: bold; margin-bottom: 1.5em; padding: 0.75em;}
 div.messages.success {color: #55872E; background: #F1F8EB; border: 1px solid #7AC142;}
 div.messages ul      {margin: 0 0 0 2em;}
 
+.error, .notice, .status {margin-bottom: 1em; padding: 0.75em;}
 .status {color: #264409; background: #E6EFC2; border: 1px solid #C6D880;}
 .error  {color: #8A1F11; background: #FFCCCC; border: 1px solid #DD7777;}
 .notice {color: #514721; background: #FFF6BF; border-color: #FFD324;}
+.error a   {color: #8a1f11; text-decoration: underline;}
+.notice a  {color: #514721; text-decoration: underline;}
+.success a {color: #264409; text-decoration: underline;}
 
-.error, .notice, .status {margin-bottom: 1em; padding: 0.75em;}
+div.help {
+  background: #FFC;
+		margin-bottom: 1.5em;
+		padding: 0.75em; 
+		border: 1px solid #FEDE01;
+}
 
-.form-item strong.error em {display: block; font-weight: bold; color: red; font-size: 1.2em;}
+.form-item strong.error em {
+  display: block; 
+		font-weight: bold; 
+		color: red; 
+		font-size: 1.2em;
+}
 
-.error a    {color: #8a1f11; text-decoration: underline;}
-.notice a   {color: #514721; text-decoration: underline;}
-.success a  {color: #264409; text-decoration: underline;}
-
-div.help {background: #FFC;margin-bottom: 1.5em;padding: 0.75em; border: 1px solid #FEDE01;}
-
-.block-region {background-color: transparent;border: 1px dashed red;color: red;font-weight: bold;}
+.block-region {
+  background-color: transparent;
+		border: 1px dashed red;
+		color: red;
+		font-weight: bold;
+}
 
 /* Highlight unpulished nodes and comments*/
 div.node-unpublished,
@@ -43,7 +56,6 @@ div.comment div.unpublished {
   padding: 0.375em;
 }
 
-
 /* Animated saving throbber */
 #saving {
   font-size: 1em;
@@ -54,9 +66,6 @@ div.comment div.unpublished {
 }
 #saving p {margin: 0;}
 #saving-notice {font-size: 0.9em;font-style: italic;background: #FFC;}
-
-
-
 
 /* Un-used helpers.
 .help ul li {} div.error {}

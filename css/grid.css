@@ -12,7 +12,6 @@
  * Uncomment the grid class on the body element in page.tpl.php
  * to show the grid when adjusting the vertical flow.
  */
-
 .grid {background: url(images/gridtile.gif) repeat left top;}
 
 /* force the admin menu down 2 line heights */
