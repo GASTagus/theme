@@ -37,7 +37,6 @@ li {margin: 0; padding: 0;}
 .item-list ul li {
   margin: 0;
   padding: 0;
-  list-style: inherit;
 }
 
 ul.menu li, li.expanded, li.collapsed, li.leaf {

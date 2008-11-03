@@ -8,10 +8,10 @@
 /**
  * Main Containers
  */
-html, body {margin: 0; pardding: 0;}
+html, body {margin: 0; padding: 0;}
 
 /* Automatic centering for widths less than 100% */
-#container {margin: 0 auto; overflow-y: hidden;} 
+#container {margin: 0 auto;} 
 
 /* Without this everything fails */
 #content   {float: left; width: 100%;}

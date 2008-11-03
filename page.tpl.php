@@ -31,78 +31,93 @@
  */ 
 ?>
 <body id="genesis_1" <?php print $page_classes; ?>>
-  <div id="container" class="width <?php print $body_classes; ?> <?php // print 'grid' ;?>">
+  <div id="container" class="width <?php print $body_classes; ?> <?php //print 'grid' ;?>">
 
     <?php if (!empty($leaderboard)): ?>
 		    <div id="leaderboard">
 			     <?php print $leaderboard; ?>
 		    </div>
     <?php endif; ?>
-
-    <div id="header" class="clear-block">
-      <div class="inner">
-        <div id="branding">
-
-										<?php if (!empty($site_logo)): ?>
-												<div id="logo"><?php print $site_logo; ?></div>
+				
+    <div id="header-nav" class="<?php print $header_classes; ?>">
+				
+						<div id="header" class="clear-block">
+								<div class="header-inner inner">
+								
+										<?php if ($site_logo || $site_name || $site_slogan): ?>
+												<div id="branding">
+														<?php
+														/**
+															* See "function genesis_preprocess_page" if you need to modify 
+															* the HTML for the logo and site_name. To customise, use your 
+															* subthemes preprocess_page function.
+															*/
+														?>
+														<?php if (!empty($site_logo)): ?>
+																<div id="logo"><?php print $site_logo; ?></div>
+														<?php endif; ?>
+				
+														<?php if (!empty($site_name)): print $site_name; endif; ?>
+				
+														<?php if (!empty($site_slogan)): ?>
+																<div id="site-slogan"><?php print $site_slogan; ?></div>
+														<?php endif; ?>
+														
+												</div> <!-- /branding -->
 										<?php endif; ?>
-
-										<?php if (!empty($site_name)): print $site_name; endif; ?>
-
-										<?php if (!empty($site_slogan)): ?>
-												<div id="site-slogan"><?php print $site_slogan; ?></div>
+		
+										<?php if (!empty($search_box)): ?>
+												<div id="search-box-top">
+														<div id="search-box-inner">
+																<?php print $search_box; ?>
+														</div>
+												</div>
+										<?php endif; ?> <!-- /search-box -->
+		
+										<?php if (!empty($header)): ?>
+												<div id="header-blocks">
+														<div class="header-blocks-inner">
+																<?php print $header; ?>
+														</div>
+												</div>
 										<?php endif; ?>
-
-        </div> <!-- /branding -->
-
-								<?php if (!empty($search_box)): ?>
-										<div id="search-box-top">
-												<div id="search-box-inner">
-														<?php print $search_box; ?>
-												</div>
+		
+								</div> <!-- /header-inner -->
+						</div>  <!-- /header -->
+		
+						<?php if ($primary_menu || $secondary_menu): ?>
+								<div id="nav" class="menu <?php print $nav_class; ?>">
+										<div class="nav-inner">
+				
+												<?php if (!empty($primary_menu)): ?>
+														<div id="primary" class="clear-block">
+														  <div class="primary-inner">
+																  <?php print $primary_menu; ?>
+														  </div>
+														</div>
+												<?php endif; ?>
+				
+												<?php if (!empty($secondary_menu)): ?>
+														<div id="secondary" class="clear-block">
+														  <div class="secondary-inner">
+																  <?php print $secondary_menu; ?>
+																</div>
+														</div>
+												<?php endif; ?>
+				
 										</div>
-								<?php endif; ?> <!-- /search-box -->
-
-								<?php if (!empty($header)): ?>
-										<div id="header-blocks">
-												<div class="header-blocks-inner">
-														<?php print $header; ?>
-												</div>
-										</div>
-								<?php endif; ?>
-
-      </div> <!-- /header-inner -->
-    </div>  <!-- /header -->
-
-	   <div id="nav" class="menu <?php print $nav_class; ?>">
-				  <div class="nav-inner">
-
-								<?php if (!empty($primary_links)): ?>
-									<div id="primary" class="clear-block">
-											<div class="primary-inner">
-												<?php print theme('links', $primary_links, array('class' => 'links primary-links')); ?>
-										</div>
-									</div>
-								<?php endif; ?>
-
-								<?php if (!empty($secondary_links)): ?>
-									<div id="secondary" class="clear-block">
-											<div class="secondary-inner">
-												<?php print theme('links', $secondary_links, array('class' => 'links secondary-links')); ?>
-										</div>
-									</div>
-								<?php endif; ?>
-
-      </div>
-    </div> <!-- /navigation -->
-
+								</div> <!-- /navigation -->
+						<?php endif; ?>
+				
+    </div> <!-- /header-nav -->
+				
 				<?php if (!empty($breadcrumb)): ?>
 						<div id="breadcrumb">
 								<?php print $breadcrumb; ?>
 						</div> <!-- /breadcrumb -->
 				<?php endif; ?>
 		
-				<?php if ($secondary_content): ?>
+				<?php if (!empty($secondary_content)): ?>
 						<div id="secondary-content" class="clear">
 								<div class="inner">
 										<?php print $secondary_content; ?>
@@ -118,7 +133,7 @@
 										  <div id="mission"><?php print $mission; ?></div>
 									 <?php endif; ?>
 	
-										<?php if ($content_top): ?>
+										<?php if (!empty($content_top)): ?>
 												<div id="content-top">
 														<?php print $content_top; ?>
 												</div> <!-- /content_top -->
@@ -136,7 +151,7 @@
 												<?php print $content; ?>
 										</div>
 	
-										<?php if ($content_bottom): ?>
+										<?php if (!empty($content_bottom)): ?>
 												<div id="content-bottom">
 														<?php print $content_bottom; ?>
 												</div> <!-- /content_bottom -->
@@ -169,7 +184,7 @@
 
 				</div> <!-- /col wrapper -->
 
-				<?php if ($tertiary_content): ?>
+				<?php if (!empty($tertiary_content)): ?>
 						<div id="tertiary-content" class="clear">
 								<div class="inner">
 										<?php print $tertiary_content; ?>
@@ -177,20 +192,27 @@
 						</div> <!-- /tertiary_content -->
 				<?php endif; ?>
 
-				<div id="foot-wrapper">
-
-						<div id="footer">
-								<?php if (!empty($footer)): print $footer; endif; ?>
-						</div> <!-- /footer -->
-
-						<div id="footer-message">
-								<?php if (!empty($footer_message)): print $footer_message; endif; ?>
-						</div> <!-- /footer-message -->
-
-						<?php print $closure ?>
-
-				</div> <!-- /foot-wrapper -->
-
+    <?php if ($footer || $footer_message): ?>
+						<div id="foot-wrapper">
+				
+								<?php if (!empty($footer)): ?>
+										<div id="footer">
+												<?php print $footer; ?>
+										</div> <!-- /footer -->
+								<?php endif; ?>
+								
+								<?php if (!empty($footer_message)): ?>
+								<div id="footer-message">
+										<?php print $footer_message; ?>
+								</div> <!-- /footer-message -->
+								<?php endif; ?>
+		
+						</div> <!-- /foot-wrapper -->
+    <?php endif; ?>
+				
   </div> <!-- /container -->
+		
+		<?php print $closure ?>
+		
 </body>
 </html>

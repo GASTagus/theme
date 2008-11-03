@@ -4,10 +4,9 @@
 	* @file ie.css
 	* Internet Explorer hacks and work-arounds.
 	*/
-	
 /**
-	* Dont change, over-ride.
-	* Override these in your subthemes ie.css file.
+	* Dont change, over-ride!
+	* Override these if necessary in your subthemes ie.css file.
 	*/
 /* Prevent unnessary scrollbars */
 #container {overflow-y: hidden;}

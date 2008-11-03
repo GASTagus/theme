@@ -6,10 +6,9 @@ core         = 6.x
 engine       = phptemplate
 screenshot   = screenshot.png
 
-  ; The regions defined in the page.tpl.php files.  The name in
-  ; brackets is the name of the variable. The text after the 
-  ; = sign is the short description you see on the block 
-  ; configuration page.
+  ; The regions defined in the page.tpl.php files. The name in brackets is the 
+		; name of the variable. The text after the = sign is the short description 
+		; you see on the block configuration page.
 	
 regions[leaderboard]        = Leaderboard
 regions[header]             = Header Blocks
@@ -27,22 +26,33 @@ regions[footer]             = Footer
   ; "handheld". See http://www.w3.org/TR/CSS21/media.html#media-types for a full
   ; list of stylesheet media types in CSS 2.1.
 
+  ; The mini-stylesheets - comment these out if you are using all-in-one.css
 stylesheets[all][] = css/type.css
 stylesheets[all][] = css/forms.css
 stylesheets[all][] = css/messages.css
 stylesheets[all][] = css/lists.css
 stylesheets[all][] = css/tables.css
 stylesheets[all][] = css/tabs.css
+stylesheets[all][] = css/block-edit.css
+stylesheets[all][] = css/admin.css
+
+  ; Core styles
 stylesheets[all][] = base.css
 stylesheets[all][] = layout.css
 
- ; Uncomment the reset if you are using it to override Genesis framework defaults.
+  ; Use the reset to override Genesis default styles - uncomment to use.
 ;stylesheets[all][] = reset.css
 
+  ; Uncomment to show the grid, uncomment the grid class in page.tpl.php also.
+;stylesheets[all][] = css/grid.css
 
-  ; The "features" control which of these check boxes display on the
-  ; admin/build/themes configuration page. This is useful for 
-  ; suppressing check boxes for elements not used by your theme.
+		; To work around IE7's 31 max stylesheets issue uncomment all-in-one.css and 
+		; comment out all the mini-stylesheets.
+;stylesheets[all][] = css/all-in-one.css
+
+  ; The "features" control which check boxes display on the admin/build/themes 
+		; configuration page. This is useful for suppressing check boxes for elements 
+		; not used by your theme.
   
 features[] = logo
 features[] = name

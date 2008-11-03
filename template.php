@@ -27,7 +27,11 @@ function genesis_preprocess_page(&$vars, $hook) {
     $vars['help'] = '';
   }
 		
-		// Set vars for the logo and site_name to clean up page.tpl.php
+		/**
+		 * Most themes theme the logo, site_name, primary and secodarday links directly in page.tpl.php. 
+			* Genesis follows the idea of only printing variables in templates.
+		 */
+		// Set vars for the logo and site_name.
 		if ($vars['logo']) {
 		  $vars['site_logo'] = 
 				  '<a href="'. $vars['front_page'] .'" title="'. t('Home'). '" rel="home">
@@ -43,33 +47,53 @@ function genesis_preprocess_page(&$vars, $hook) {
 				  </'. $tag .'>';
   }
 		
-  // Wrapper Classes. Allows advanced theming based on path, node type etc.
+		// Theme primary and secondary links.
+		$vars['primary_menu'] = theme('links', $vars['primary_links'], array('class' => 'links primary-links'));
+		$vars['secondary_menu'] = theme('links', $vars['secondary_links'], array('class' => 'links secondary-links'));
+		
+  // Wrapper classes.
   $page_classes = array();
   if (!$vars['is_front']) {
-    // Add classes for each page and section
+    // Add classes for each page and section.
     $path = drupal_get_path_alias($_GET['q']);
     list($section, ) = explode('/', $path, 2);
     $page_classes[] = genesis_id_safe('page-'. $path);
     $page_classes[] = genesis_id_safe('section-'. $section);
       if (arg(0) == 'node') {
         if (arg(1) == 'add') {
-          $page_classes[] = 'section-node-add'; // Add 'section-node-add'
+          $page_classes[] = 'section-node-add'; // Add 'section-node-add'.
         }
         elseif (is_numeric(arg(1)) && (arg(2) == 'edit' || arg(2) == 'delete')) {
-          $page_classes[] = 'section-node-'. arg(2); // Add 'section-node-edit' or 'section-node-delete'
+          $page_classes[] = 'section-node-'. arg(2); // Add 'section-node-edit' or 'section-node-delete'.
         }
       }
-      // Add a unique class when viewing a node
+      // Add node-full-view class when viewing a node.
       if (arg(0) == 'node' && is_numeric(arg(1))) {
         $page_classes[] = 'node-full-view'; // Add 'node-full-view'
       }
     }
-				// No print on front page
+				// Don't print on the front page.
 				if (!$vars['is_front']) {
-      $vars['page_classes'] = 'class="'. implode(' ', $page_classes) .'"'; // Concatenate with spaces
+      $vars['page_classes'] = 'class="'. implode(' ', $page_classes) .'"'; // Concatenate with spaces.
 				}
-
-  // Primary and Secondary Links wrapper class.
+		
+		// Helper classes for header-nav elements.
+		$header_classes = array();
+		if ($vars['site_logo'] || $vars['site_name'] || $vars['site_slogan'] || $vars['search_box'] || $vars['header']) {
+				$header_classes[] = 'with-header';
+		}
+		else {
+				$header_classes[] = 'without-header';
+		}
+		if ($vars['primary_links'] || $vars['secondary_links']) {
+				$header_classes[] = 'with-nav';
+		}
+		else {
+				$header_classes[] = 'without-nav';
+		}
+		$vars['header_classes'] = implode(' ', $header_classes); // Concatenate with spaces.
+		
+  // Primary and Secondary links wrapper class.
   if ($vars['primary_links'] && $vars['secondary_links']) {
     $vars['nav_class'] = 'primary-secondary';
   }
@@ -79,7 +103,7 @@ function genesis_preprocess_page(&$vars, $hook) {
   if (!$vars['primary_links'] && $vars['secondary_links']) {
     $vars['nav_class'] = 'with-secondary';
   }
-
+		
 }
 
 /**
@@ -107,16 +131,16 @@ function genesis_preprocess_node(&$vars, $hook) {
     $vars['unpublished'] = FALSE;
   }
   if ($vars['node']->uid && $vars['node']->uid == $user->uid) {
-    // Node is authored by current user
+    // Node is authored by current user.
     $node_classes[] = 'node-mine';
   }
   if ($vars['teaser']) {
-    // Node is displayed as teaser
+    // Node is displayed as teaser.
     $node_classes[] = 'node-teaser';
   }
   // Class for node type: "node-type-page", "node-type-story", "node-type-my-custom-type", etc.
   $node_classes[] = 'node-type-'. $vars['node']->type;
-  $vars['node_classes'] = implode(' ', $node_classes); // Concatenate with spaces
+  $vars['node_classes'] = implode(' ', $node_classes); // Concatenate with spaces.
 
   // Customised dates; set new variables so themers can use $submitted as per normal.
   $vars['long_date']  = format_date($vars['node']->created, 'custom', "l, F j, Y - H:i");
@@ -136,7 +160,7 @@ function genesis_preprocess_node(&$vars, $hook) {
 function genesis_preprocess_comment(&$vars, $hook) {
   global $user;
 
-  // We load the node object that the current comment is attached to
+  // We load the node object that the current comment is attached to.
   $node = node_load($vars['comment']->nid);
   // If the author of this comment is equal to the author of the node, we
   // set a variable so we can theme this comment uniquely.
@@ -157,20 +181,20 @@ function genesis_preprocess_comment(&$vars, $hook) {
     $vars['unpublished'] = FALSE;
   }
   if ($vars['author_comment']) {
-    // Comment is by the node author
+    // Comment is by the node author.
     $comment_classes[] = 'comment-by-author';
   }
   if ($vars['comment']->uid == 0) {
-    // Comment is by an anonymous user
+    // Comment is by an anonymous user.
     $comment_classes[] = 'comment-by-anon';
   }
   if ($user->uid && $vars['comment']->uid == $user->uid) {
-    // Comment was posted by current user
+    // Comment was posted by current user.
     $comment_classes[] = 'comment-mine';
   }
   $vars['comment_classes'] = implode(' ', $comment_classes);
 
-  // If comment subjects are disabled, don't display 'em
+  // If comment subjects are disabled, don't display them.
   if (variable_get('comment_subject_field', 1) == 0) {
     $vars['title'] = '';
   }
@@ -204,15 +228,15 @@ function genesis_preprocess_block(&$vars, $hook) {
   $vars['block_classes'] = implode(' ', $block_classes);
 
   if (user_access('administer blocks')) {
-    // Display 'edit block' for custom blocks
+    // Display 'edit block' for custom blocks.
     if ($block->module == 'block') {
       $edit_links[] = l( t('edit block'), 'admin/build/block/configure/'. $block->module .'/'. $block->delta, array('title' => t('edit the content of this block'), 'class' => 'block-edit'), drupal_get_destination(), NULL, FALSE, TRUE);
     }
-    // Display 'configure' for other blocks
+    // Display 'configure' for other blocks.
     else {
       $edit_links[] = l(t('configure'), 'admin/build/block/configure/'. $block->module .'/'. $block->delta, array('title' => t('configure this block'), 'class' => 'block-config'), drupal_get_destination(), NULL, FALSE, TRUE);
     }
-    // Display 'edit menu' for menu blocks
+    // Display 'edit menu' for menu blocks.
     if (($block->module == 'menu' || ($block->module == 'user' && $block->delta == 1)) && user_access('administer menu')) {
       $edit_links[] = l(t('edit menu'), 'admin/build/menu', array('title' => t('edit the menu that defines this block'), 'class' => 'block-edit-menu'), drupal_get_destination(), NULL, FALSE, TRUE);
     }
@@ -257,7 +281,7 @@ function genesis_menu_item_link($link) {
     $link['localized_options'] = array();
   }
 
-  // If an item is a LOCAL TASK, render it as a tab
+  // If an item is a LOCAL TASK, render it as a tab.
   if ($link['type'] & MENU_IS_LOCAL_TASK) {
     $link['title'] = '<span class="tab">'. check_plain($link['title']) .'</span>';
     $link['localized_options']['html'] = TRUE;
@@ -283,10 +307,10 @@ function genesis_menu_local_tasks() {
 }
 
 /**
- * Theme override for user_picture
+ * Theme override for user_picture.
  *
  * @return
- *  The un-themed variable
+ *  The un-themed variable.
  */
 function phptemplate_user_picture(&$account) {
   if (variable_get('user_pictures', 0)) {

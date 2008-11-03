@@ -32,14 +32,12 @@ input.form-text,
 textarea {padding: 0.1875em; height: auto; border: 1px solid #CCC;}
 textarea, 
 input    {font: 1em normal Arial, Helvetica, sans-serif;}
-input    {margin: 0.4em 0.1875em 0 0.1875em;}
-div.form-item             {margin-bottom: 1.5em; margin-top: 1.5em;}
+input    {margin: 0.375em 0.1875em 0 0.1875em;}
+div.form-item             {margin-bottom: 1em; margin-top: 1em;}
 .form-item strong.error   {display: block;}
 .form-item textarea.error {padding: 0.1875em;}
 .form-item .description   {font-size: 0.9em; line-height: 1.667em;}
-form .form-submit         {}
-label  {font-weight: bold; margin: 0; padding: 0;}
-legend {margin: 0; padding: 0;}
+label, legend {margin: 0; padding: 0;}
 #node-admin-filter ul {padding: 0.375em 0;}
 #edit-operation-wrapper select {margin: 0.375em ;}
 div.resizable-textarea textarea {margin-top: 0;}
@@ -50,7 +48,7 @@ div.resizable-textarea textarea {margin-top: 0;}
 }
 
 /**
- * Collapsible fieldsets, mostly from Garland.
+ * Fieldsets, mostly from Garland.
  */
 fieldset {
   margin: 1.5em 0;
@@ -70,6 +68,7 @@ fieldset {
 /* Fix legend in Firefox */
 fieldset legend {
   display: block;
+		font-weight: bold;
 }
 *:first-child+html fieldset legend, *:first-child+html fieldset.collapsed legend {
   display: inline;

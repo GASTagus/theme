@@ -21,6 +21,15 @@
 			<?php print $block->content ?>
 		</div>
 	
+  <?php
+		/**
+		 * To disable block edit links for your subtheme, 
+			* copy this file to your subtheme and either 
+			* remove or comment out the $edit_links variable.
+			* You should unset the block-edit.css in your
+			* genesis_subtheme.info file also.
+		 */
+		?>
 		<?php print $edit_links; ?>
 		
  </div>

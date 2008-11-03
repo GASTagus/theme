@@ -9,12 +9,12 @@
 	* Remove unused styles for performace.
 	*/
 
-/***********************************************************
+/**********************************************************
  *                          Body
  **********************************************************/
 body {}
 
-/***********************************************************
+/**********************************************************
  *                     The wrapper divs
  **********************************************************/
 /**
@@ -26,7 +26,7 @@ body {}
 #main-content  {}
 
 
-/***********************************************************
+/**********************************************************
  *                     Width Setting
  **********************************************************/
 /**
@@ -45,25 +45,31 @@ body {}
 .width {width: 80em;}
 
 
-/***********************************************************
+/**********************************************************
  *                       Regions
  **********************************************************/
-#leaderboard       {}
-#header-blocks     {}
+/* Leaderboard is a full width region at the very top, ideal for displaying banners. */
+#leaderboard   {}
 
-#sidebar-left      {background: #FFFFEA;}
-#sidebar-right     {background: #F9FBFC;}
+/* Header blocks region is embeed in the header, usefull for displaying small banners etc. */
+#header-blocks {}
 
+/* Sidebars - sidebar layout is highly configurable, see layout.css */
+#sidebar-left  {}
+#sidebar-right {}
+
+/* Secondary content is a full width region between the header and the main columns. */
 #secondary-content {}
+
+/* Tertiary content is a full width region above the footer, below the main content. */
 #tertiary-content  {}
 
-#content-top       {}
-#content-bottom    {}
+/* Content top and bottom are above and below the main content, within the main content col. */
+#content-top    {}
+#content-bottom {}
 
-#footer            {}
 
-
-/***********************************************************
+/**********************************************************
  *                   The INNER divs
  **********************************************************/
 /**
@@ -93,7 +99,7 @@ body {}
 #tertiary-content .inner  {}
 
 
-/***********************************************************
+/**********************************************************
  *                 Global Link Styles
  **********************************************************/
 a:link    {}
@@ -109,31 +115,48 @@ li a.active  {}
 a img {border: none;}
 
 
-/***********************************************************
+/**********************************************************
  *                    HTML elements 
  **********************************************************/
 /** 
 	* Add any html elements you require. Use type.css as a guide.
 	*/
-h1#page-title {}
-h2   {}
-h2 a {}
-h3   {}
-h3 a {}
-p    {}
+h1 {}
+h2 {}
+h3 {}
+h4 {}
+h5 {}
+h6 {}
+p  {}
 blockquote {}
 
+/* The main title on each page. */
+h1#page-title {}
 
-/***********************************************************
+
+/**********************************************************
  *                       Header 
  **********************************************************/
 /**
 	* Branding, Logo, Site name & Slogan.
 	*/
-#header        {}
+#header-nav {}
+
+/* Conditional classes for theming the header */
+#header-nav.with-header    {}
+#header-nav.without-header {}
+#header-nav.with-nav       {}
+#header-nav.without-nav    {}
+
+#header {}
 #header .inner {}
-#branding      {float: left; width: auto;}
-#logo          {}
+#header .header-inner {}
+
+#branding {
+  float: left; width: auto;
+}
+
+#logo {}
 
 h1#site-name,
 div#site-name  {
@@ -148,21 +171,27 @@ div#site-name  {
 #site-name a:visited {}
 #site-name a:hover   {}
 
-#site-slogan   {}
+#site-slogan {}
 
 
-/***********************************************************
+/**********************************************************
  *                        Search
  **********************************************************/
-#search .form-submit  {}
-#search-box-top       {float: right;}
-#search-box-inner     {padding: 1.5em 0;}
+/* Float the serch box right. */
+#search-box-top {
+  float: right;
+}
+/* Pad the serch box 1.5em top and bottom. */
+#search-box-inner {padding: 1.5em 0;}
+
 #search-box-inner #edit-search-theme-form-1 {}
 #search-box-inner #edit-search-theme-form-1:hover,
 #search-box-inner #edit-search-theme-form-1:focus {}
-#search-box-top label {}
 
-/* Reset form element margins to allow more precise positioning */
+#search-box-top label {}
+#search .form-submit  {}
+
+/* Reset form element margins to allow more precise positioning. */
 #search-box-top form,
 #search-box-top div.form-item {margin: 0;} 
 
@@ -171,11 +200,14 @@ div#site-name  {
 .section-search #search-form {}
 
 
-/***********************************************************
+/**********************************************************
  *               Primary & Secondary Links
  **********************************************************/
 /**
 	* Implimentation of Primary and Secondary Links.
+	*
+ * Primary & Secondary Links are colored by default so you 
+	* can easily identify them.
 	*/
 
 /**
@@ -186,6 +218,13 @@ div#site-name  {
 		margin: 0.75em 0;
 }
 
+/**
+ * Classes to support any nav menu configuration 
+	*/
+#nav.primary-secondary {} /* Both primary and secondary menus */
+#nav.with-primary      {} /* Primary menu only */
+#nav.with-secondary    {} /* Secondary menu only */
+
 #nav-inner {}
 
 /**
@@ -194,11 +233,13 @@ div#site-name  {
 	* Default is aligned left - uncomment either of these
 	* to set the primary links Right or Center.
 	*/
-/* Align Right */
+	
+/* FLOAT PRIMARY RIGHT */
 /*
 #primary .primary-inner {float: right;}
 */
-/* Align Center */
+
+/* ALIGN PRIMARY CENTER */
 /*
 #primary .primary-inner {display: table; margin: 0 auto; text-align: center;}
 */
@@ -210,17 +251,13 @@ div#site-name  {
 #primary { 
   height: 2.25em;
 	 padding: 0;
-	 background: #FFFFEA;
+	 background: #FFFF99; /* Default yellow for dev only. */
 }
 
 .primary-inner {}
 
-#primary ul.links {
-  margin: 0;
-}
-
+#primary ul.links {}
 #primary ul.links li {
-  margin: 0; 
   padding: 0;
 }
 
@@ -238,7 +275,7 @@ div#site-name  {
 
 #primary ul.links li a:hover,
 #primary ul.links li a.active {
-  background: #F9FBFC;
+  background: #99CCFF; /* Default blue for dev only. */
 }
 
 
@@ -248,11 +285,13 @@ div#site-name  {
 	* Default is aligned left - uncomment either of these
 	* to set the secondary links Right or Center.
 	*/
-/* Align Right */
+
+/* FLOAT SECONDARY RIGHT */
 /*
 #secondary .secondary-inner {float: right;}
 */
-/* Align Center */
+
+/* ALIGN SECONDARY CENTER */
 /*
 #secondary .secondary-inner {display: table; margin: 0 auto; text-align: center;}
 */
@@ -263,15 +302,14 @@ div#site-name  {
 #secondary {
   height: 2.25em;
 	 padding: 0;
-	 background: #F9FBFC;
+	 background: #99CCFF; /* Default blue for dev only. */
 }
 
 .secondary-inner {}
 
 #secondary ul.links,
 #secondary ul.links li {
-  margin: 0; 
-	 padding: 0;
+  padding: 0;
 }
 
 /* First & Last classes can be styled seperately. */
@@ -293,7 +331,22 @@ div#site-name  {
 }
 
 
-/***********************************************************
+/**********************************************************
+ *                       Menus
+ **********************************************************/
+ul.menu {}
+ul.menu li {}
+
+ul.menu li.leaf {}
+ul.menu li.collapsed {}
+ul.menu li.expanded  {}
+ul.menu li.active-trail {}
+
+ul.menu li.first {}
+ul.menu li.last  {}
+
+
+/**********************************************************
  *                      Breadcrumb
  **********************************************************/
 /**
@@ -309,7 +362,7 @@ div#site-name  {
 }
 
 
-/***********************************************************
+/**********************************************************
  *                       Mission
  **********************************************************/
 #mission {
@@ -319,12 +372,13 @@ div#site-name  {
 }
 
 
-/***********************************************************
+/**********************************************************
  *                        Nodes
  **********************************************************/
 /** 
 	* Implimentation of node styles.
 	*/
+/* 1.5em margin bottom on nodes preserves the vertical grid. */
 .node {margin: 0 0 1.5em;}
 
 /* Over-ride default .inner styles. */
@@ -366,20 +420,24 @@ div#site-name  {
 
 
 /* Theme Sticky nodes. */
-.sticky {}
+.node .sticky {}
 
 /* Theme node types. */
 .node-type-blog  {}
 .node-type-page  {}
 .node-type-story {}
 .node-type-forum {}
-.node-type-book  {} 
+.node-type-book  {}
+.node-type-poll  {}
+
+/* Clear the user picture on Polls. */
+.node-type-poll .node-content {clear: both;}
  
 /* Theme nodes that belong to the author. */
 .node-mine {}
 
 
-/***********************************************************
+/**********************************************************
  *                       Blocks
  **********************************************************/
 /** 
@@ -402,10 +460,9 @@ div#site-name  {
   padding: 0;
 }
 
+/* Block lists */
 .block ul {}
 .block ul li {}
-.block ul.menu {}
-.block ul.menu li {}
 
 tr .block {
   border: none; /* Blocks page table. */
@@ -496,7 +553,7 @@ tr .block {
 .block-aggregator {}
 
 
-/***********************************************************
+/**********************************************************
  *                     Comments
  **********************************************************/
 /** 
@@ -566,32 +623,46 @@ div.comment.comment-by-anon   {}
 div.comment.comment-mine      {}
 
 
-/***********************************************************
+/**********************************************************
  *                   Profile
  **********************************************************/
+/* Position the user picture on the right in user profiles */
 .profile .picture {
   float: right; 
 		margin: 2em 0 1em 0.5em; /* LTR */
 }
 
 /* Fix alignment on user profile page*/
-.profile dt {margin: 1.4em 0 0 0;}
+.profile dt {
+  margin: 1.4em 0 0 0;
+}
 
 
-/***********************************************************
+/**********************************************************
  *                     Forum
  **********************************************************/
-#forum table       {width: 100%;}
+#forum table {
+  width: 100%;
+}
+
+/* Position forum icons. */
 #forum tr td.forum { 
   background-position: 5px 5px!important; 
   background-position: 5px 5px;
   padding-left: 1.67em; 
 }
-#forum tr td.forum .name {padding-left: 0.375em;}
-#forum div.indent  {margin-left: 0.5em;}
+
+/* Add padding left to the forum name. */
+#forum tr td.forum .name {
+  padding-left: 0.375em;
+}
+
+#forum div.indent  {
+  margin-left: 0.5em;
+}
 
 
-/***********************************************************
+/**********************************************************
  *                     Books
  **********************************************************/
 /** 
@@ -615,37 +686,41 @@ div.comment.comment-mine      {}
   margin: 0 0 1.5em 0;
 }
 
-/***********************************************************
+/**********************************************************
  *                    Polls
  **********************************************************/
-.poll .text {}
-.poll .bar {} /*poll bar background */
+/* Poll bar background. */
+.poll .bar  {}  
+
+/* Poll bar forground, the colored bar indicating poll votes. */
 .poll .bar .foreground {}
+
+.poll .text    {}
 .poll .links   {}
 .poll .percent {}
 .poll .total   {}
 .poll .vote-form {}
 
 
-/***********************************************************
+/**********************************************************
  *                      Box
  **********************************************************/
-/* Search form on the results page, includes advanced search*/
+/* Search form on the results page, includes advanced search. */
 .section-search .box {}
 .section-search .box-inner {}
 .section-search .box h2.box-title    {}
 
-/* Comment form on a seperate page */
+/* Comment form on a seperate page. */
 .section-comment .box {}
 .section-comment .box-inner {}
 .section-comment .box h2.box-title    {}
 
-/* Comment form below content */
+/* Comment form below content. */
 #comments .box {}
 #comments .box-inner {}
 #comments .box h2.box-title    {}
 
-/* Generic box selectors */
+/* Generic box selectors. */
 .box {}
 .box-inner {}
 .box h2.box-title {}
@@ -655,7 +730,7 @@ div.comment.comment-mine      {}
 .box fieldset     {}
 
 
-/***********************************************************
+/**********************************************************
  *               Footer, Footer Message
  **********************************************************/
 /** 
@@ -666,6 +741,9 @@ div.comment.comment-mine      {}
 	 margin: 0.375em 0;
 	 padding: 0.75em;
 }
+
+#footer {}
+#footer-message {}
 
 #footer a, 
 #footer-message a {
@@ -680,11 +758,19 @@ p.attribution {margin: 0.2em 0; font-size: 0.9em;}
 #footer-message p.attribution a:hover {color: #CCC}
 
 
-/***********************************************************
+/**********************************************************
  *                     Pager 
  **********************************************************/
-.item-list ul.pager                   {}
-.item-list ul.pager li                {}
+/* The first 2 classes provide the base pager styles. */
+.item-list ul.pager    {}
+.item-list ul.pager li {}
+
+/* Theme the various states of pager links. */
+.item-list ul.pager li a:link    {}
+.item-list ul.pager li a:visited {}
+.item-list ul.pager li a:hover   {}
+
+/* .pager-current is the current page. */
 .item-list ul.pager li.pager-item     {}
 .item-list ul.pager li.first          {}
 .item-list ul.pager li.last           {}
@@ -694,14 +780,8 @@ p.attribution {margin: 0.2em 0; font-size: 0.9em;}
 .item-list ul.pager li.pager-next     {}
 .item-list ul.pager li.pager-last     {}
 
-.item-list ul.pager li a:link    {}
-.item-list ul.pager li a:visited {}
-.item-list ul.pager li a:hover   {}
-.item-list ul.pager li a:active  {}
-.item-list ul.pager li a.active  {}
 
-
-/***********************************************************
+/**********************************************************
  *                 RSS Feed Icon
  **********************************************************/
 #feed-icon     {}
@@ -709,39 +789,34 @@ p.attribution {margin: 0.2em 0; font-size: 0.9em;}
 #feed-icon a.feed-icon {}
 
 
-/***********************************************************
+/**********************************************************
  *                    Tables
  **********************************************************/
 /** 
 	* The selector groupings are from Garland which offers a
 	* sensible starting point for styling Drupal tables.
 	*/
-table        {}
+table {}
+table a {}
 
-table a      {}
-
-thead th     {}
-
+thead th {}
 th a:link, 
 th a:visited {}
-
-td, th       {}
+td, th {}
 
 tr.even,
 tr.odd,
-tbody th     {}
+tbody th {}
 
 tr.odd, 
-tr.info      {}
+tr.info  {}
 
-tr.even      {}
+tr.even  {}
 
-tr.drag      {}
-
+tr.drag  {}
 tr.drag-previous {}
 
 tr.odd td.active  {}
-
 tr.even td.active {}
 
 td.region, td.module, td.container td.category {}
@@ -753,7 +828,7 @@ tr:first-child td.container {}
 table.system-status-report th {}
 
 
-/***********************************************************
+/**********************************************************
  *                   Form elements
  **********************************************************/
 /**
@@ -776,7 +851,7 @@ input.form-text, textarea {}
 
 
 
-/***********************************************************
+/**********************************************************
  *                    Messages
  **********************************************************/
 /**
@@ -809,7 +884,7 @@ div.ok {}
 div.ok, tr.ok {}
 
 
-/***********************************************************
+/**********************************************************
  *                     Admin
  **********************************************************/
 /**
@@ -840,7 +915,7 @@ body.page-admin-build-themes-select #sidebar-right {
   height: 240px; overflow: scroll;
 }
 
-/***********************************************************
+/**********************************************************
  *                   Buttons
  **********************************************************/
 button, 

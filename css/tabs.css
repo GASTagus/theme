@@ -12,6 +12,7 @@
  * RTL supported stylised tabs for local tasks.
  */
 div.tabs   {margin: 0 0 5px 0;}
+/* Primary local tasks */
 ul.primary {
   margin: 0;
   padding: 0 0 0 10px;
@@ -66,6 +67,7 @@ ul.primary li.active a .tab,
 ul.primary li.active a:hover .tab {
   background: url(../images/tabs/tab-right.png) no-repeat right 0;
 }
+/* Secondary local tasks */
 ul.secondary {
   margin: 0;
   padding: 0 0 0 5px;

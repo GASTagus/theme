@@ -12,7 +12,7 @@ description  = My Kickn' Sub-theme
 stylesheets[all][] = genesis_SUBTHEME.css
 
 
-  ; Do not change any of this.
+  ; Do not change core, engine, screenshot or base theme - these are required defaults.
 		
 core         = 6.x
 engine       = phptemplate
@@ -33,6 +33,18 @@ regions[tertiary_content]   = Tertiary Content
 regions[left]               = Sidebar Left
 regions[right]              = Sidebar Right
 regions[footer]             = Footer
+
+
+  ; Uncomment to unset any of the Genesis core CSS files.
+
+;stylesheets[all][] = css/type.css
+;stylesheets[all][] = css/forms.css
+;stylesheets[all][] = css/messages.css
+;stylesheets[all][] = css/lists.css
+;stylesheets[all][] = css/tables.css
+;stylesheets[all][] = css/tabs.css
+;stylesheets[all][] = base.css
+;stylesheets[all][] = layout.css
 
 
   ; The "features" control which of these check boxes display on the
