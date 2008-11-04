@@ -1,0 +1,461 @@
+/* $Id$ */
+
+/**
+  * @file all-in-one.css
+  * Genesis mini CSS sheets aggregated into one file.
+		*
+		* Includes an exact copy of the following stylesheets:
+		* type.css
+		* tabs.css
+		* tables.css
+		* messages.css
+		* lists.css
+		* forms.css
+		* block-edit.css
+		* admin.css
+		*
+		* USAGE
+		* 1) Unset the mini stylesheets in genesis.info by commenting them out.
+		* 2) Enable all-in-one.css by uncommenting it in genesis.info
+		*
+		* The file is useful for working around IE7's 31 max stylesheets issue
+		* when you cannot turn on CSS aggregation in Performance settings.
+  */
+
+/*********************************************************
+*                        Type
+**********************************************************/
+body {
+ font-family: Arial, Helvetica, sans-serif;
+ line-height: 1.5; /* unitless line height */
+}
+
+h1 {font-size: 2em  ; line-height: 1; margin: 0 0 0.5em 0; padding: 0;}
+h2 {font-size: 1.5em; line-height: 1  ; margin: 0; padding: 0;}
+h3, h4, h5, h6 {font-size: 1em ; margin: 0; padding: 0;}
+
+h1 img, h2 img, h3 img, 
+h4 img, h5 img, h6 img {margin: 0; padding: 0;}
+
+a             {margin: 0; padding: 0;}
+p             {margin: 0 0 1.5em; padding: 0;}
+blockquote p  {margin: 0;}
+strong        {font-weight: bold;}
+em, dfn       {font-style:  italic; margin: 0; padding: 0;}
+dfn           {font-weight: bold;}
+sup, sub      {line-height: 0;}
+del           {color:#666; margin: 0; padding: 0;}
+pre, code     {margin: 1.5em 0; padding: 0; white-space: pre;}
+pre, code, tt {font: 1em 'andale mono', 'lucida console', monospace; line-height: 1.5;} 
+
+/* Preserve line-height and selector appearance */
+sup {vertical-align:text-top;}
+sub {vertical-align:text-bottom;}
+
+/* Mitigate relative shrinkage */
+li li, li p, td p, blockquote p {font-size:1em;} 
+
+/* Remove border bottom */
+abbr, acronym {border: none;}
+
+blockquote, q {
+  font-style: italic;  /* LTR */
+  margin: 0 0 1.5em 0;
+  padding: 0 0 0 3em;  /* LTR */
+}
+/* Remove possible quote marks (") from <q>, <blockquote>. */
+blockquote:before, 
+blockquote:after, 
+q:before, q:after {content: "";}
+blockquote, q     {quotes: "" "";}
+
+
+/*********************************************************
+*                    Tabs 
+**********************************************************/
+/**
+ * RTL supported stylised tabs for local tasks.
+ */
+div.tabs   {margin: 0 0 5px 0;}
+ul.primary {
+  margin: 0;
+  padding: 0 0 0 10px;
+  border-width: 0;
+  list-style: none;
+  white-space: nowrap;
+  line-height: normal;
+  background: url(../images/tabs/tab-bar.png) repeat-x left bottom;
+}
+ul.primary li {
+  float: left; /* LTR */
+  margin: 0;
+  padding: 0;
+}
+ul.primary li a {
+  display: block;
+  height: 24px;
+  margin: 0;
+  padding: 0 0 0 4px; /* width of tableft.png */
+  border-width: 0;
+  font-weight: bold;
+  text-decoration: none;
+  color: #777;
+  background-color: transparent;
+  background: url(../images/tabs/tab-left.png) no-repeat left -42px;
+}
+ul.primary li a .tab {
+  display: block;
+  height: 20px; /* 24px (parent) - 4px (padding) */
+  margin: 0;
+  padding: 4px 13px 0 6px;
+  border-width: 0;
+  line-height: 20px;
+  background: url(../images/tabs/tab-right.png) no-repeat right -42px;
+}
+ul.primary li a:hover {
+  border-width: 0;
+  background-color: transparent;
+  background: url(../images/tabs/tab-left.png) no-repeat left 0;
+}
+ul.primary li a:hover .tab {
+  background: url(../images/tabs/tab-right.png) no-repeat right 0;
+}
+ul.primary li.active a,
+ul.primary li.active a:hover {
+  border-width: 0;
+  color: #000;
+  background-color: transparent;
+  background: url(../images/tabs/tab-left.png) no-repeat left 0;
+}
+ul.primary li.active a .tab,
+ul.primary li.active a:hover .tab {
+  background: url(../images/tabs/tab-right.png) no-repeat right 0;
+}
+ul.secondary {
+  margin: 0;
+  padding: 0 0 0 5px;
+  border-bottom: 1px solid #c0c0c0;
+  list-style: none;
+  white-space: nowrap;
+  background: url(../images/tabs/tab-sec-bg.png) repeat-x left top;
+}
+ul.secondary li {
+  float: left; /* LTR */
+  margin: 0 5px 0 0; /* LTR */
+  padding: 5px 0;
+  border-right: none; /* LTR */
+}
+ul.secondary a {
+  display: block;
+  height: 24px;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #c0c0c0;
+  text-decoration: none;
+  color: #777;
+  background: url(../images/tabs/tab-sec.png) repeat-x left -56px;
+}
+ul.secondary a .tab {
+  display: block;
+  height: 18px; /* 24px (parent) - 6px (padding) */
+  margin: 0;
+  padding: 3px 8px;
+  line-height: 18px;
+}
+ul.secondary a:hover {
+  background: url(../images/tabs/tab-sec.png) repeat-x left bottom;
+}
+ul.secondary a.active,
+ul.secondary a.active:hover {
+  border: 1px solid #c0c0c0;
+  color: #000;
+  background: url(../images/tabs/tab-sec.png) repeat-x left top;
+}
+
+
+/**********************************************************
+ *                   Tables
+ **********************************************************/
+table           {border-collapse: collapse; border-spacing: 0;}
+caption, th, td {text-align: left; font-weight: normal;}
+table, td, th   {vertical-align: middle;}
+tbody, tfoot, thead, tr {margin: 0; padding: 0;}
+table    {margin: 1em 0; padding: 0; width: 100%;}
+thead th {font-weight: bold; border-bottom: 0.1875em solid #C0C0C0; color: #494949;}
+th a:link, 
+th a:visited {}
+td, th   {padding: 0.375em 0.5em; margin: 0;}
+tr.even,
+tr.odd,
+tbody th {border: solid #CCC; border-width: 1px 0;}
+tr.odd, 
+tr.info {background-color: #F7F7F7;}
+tr.even {background-color: #FFF;}
+
+tr.drag {background-color: #FFFFF0;}
+tr.drag-previous  {background-color: #FFD;}
+
+tr.odd td.active  {background-color: #EEE;}
+tr.even td.active {background-color: #F7F7F7;}
+
+td.region, td.module, td.container td.category {
+  background-color: #EEE;
+  border-bottom: 1px solid #CCC;
+  border-top: 1.5em solid #FFF;
+  color: #222;
+  font-weight: bold;
+}
+
+tr:first-child td.region,
+tr:first-child td.module, 
+tr:first-child td.container {border-top-width: 0;}
+
+
+/*********************************************************
+*                   Messages
+**********************************************************/
+div.messages         {font-weight: bold; margin-bottom: 1.5em; padding: 0.75em;}
+div.messages.success {color: #55872E; background: #F1F8EB; border: 1px solid #7AC142;}
+div.messages ul      {margin: 0 0 0 2em;}
+
+.error, .notice, .status {margin-bottom: 1em; padding: 0.75em;}
+.status {color: #264409; background: #E6EFC2; border: 1px solid #C6D880;}
+.error  {color: #8A1F11; background: #FFCCCC; border: 1px solid #DD7777;}
+.notice {color: #514721; background: #FFF6BF; border-color: #FFD324;}
+.error a   {color: #8a1f11; text-decoration: underline;}
+.notice a  {color: #514721; text-decoration: underline;}
+.success a {color: #264409; text-decoration: underline;}
+
+div.help {
+  background: #FFC;
+		margin-bottom: 1.5em;
+		padding: 0.75em; 
+		border: 1px solid #FEDE01;
+}
+
+.form-item strong.error em {
+  display: block; 
+		font-weight: bold; 
+		color: red; 
+		font-size: 1.2em;
+}
+
+.block-region {
+  background-color: transparent;
+		border: 1px dashed red;
+		color: red;
+		font-weight: bold;
+}
+
+/* Highlight unpulished nodes and comments*/
+div.node-unpublished,
+div.comment-unpublished {
+  background-color: #FFF4F4;
+  padding: 0.375em;
+}
+
+div.node div.unpublished,
+div.comment div.unpublished {
+  font: bold 3em Arial, Helvetica, sans-serif;
+  text-align: center;
+  color: #FFE9E7;
+  padding: 0.375em;
+}
+
+/* Animated saving throbber */
+#saving {
+  font-size: 1em;
+  font-weight: bold;
+  background: url(../images/loading.gif) no-repeat 12px 1px;
+  display: none;
+  padding-left: 36px;
+}
+#saving p {margin: 0;}
+#saving-notice {font-size: 0.9em;font-style: italic;background: #FFC;}
+
+/* Un-used helpers.
+.help ul li {} div.error {}
+.warning    {} div.warning, tr.warning  {} div.warning {}
+div.error, tr.error, span.form-required, span.marker {}
+.ok {} div.ok {} div.ok, tr.ok {}
+*/
+
+
+/*********************************************************
+*                     Lists
+**********************************************************/
+ul, ol {
+  margin: 0;
+  padding: 0; 
+}
+
+.block ul {
+  margin: 0 0 0 1.5em; /* RTL */
+  padding: 0 ; 
+}
+
+.item-list ul {
+  margin: 0 0 0 1.5em; /* RTL */
+  padding: 0 ;  
+}
+
+ul ul, ul ol,
+ol ol, ol ul,
+.block ul ul, .block ul ol,
+.block ol ol, .block ol ul,
+.item-list ul ul, .item-list ul ol,
+.item-list ol ol, .item-list ol ul {
+  margin: 0 0 0 1.5em;
+}
+
+li {margin: 0; padding: 0;}
+
+.item-list ul li {
+  margin: 0;
+  padding: 0;
+  list-style: inherit;
+}
+
+ul.menu li, li.expanded, li.collapsed, li.leaf {
+  margin: 0; padding: 0;
+}
+
+ul          {list-style-type: disc;}
+ul ul       {list-style-type: circle;}
+ul ul ul    {list-style-type: square;}
+ul ul ul ul {list-style-type: circle;}
+ol          {list-style-type: decimal;}
+ol ol       {list-style-type: lower-alpha;}
+ol ol ol    {list-style-type: decimal;}
+
+dt,
+dd {margin: 0; padding: 0;}
+
+
+/*********************************************************
+*                     Forms
+**********************************************************/
+form {margin: 0 0 1.5em 0; padding: 0;}
+
+input.text, 
+input.title,
+textarea, 
+select {margin:0.375em 0; border: 1px solid #C0C0C0;}
+
+input.text:focus, 
+input.title:focus,
+textarea:focus, 
+select:focus {border: 1px solid #666;}
+
+input.text, 
+input.title {padding: 0.375em;}
+input.title {font-size: 1.5em;}
+
+span.form-required, 
+span.marker {color: #8A1F11;}
+
+div.form-item div.description img {margin: 0;}
+input.form-text, 
+textarea {padding: 0.1875em; height: auto; border: 1px solid #CCC;}
+textarea, 
+input    {font: 1em normal Arial, Helvetica, sans-serif;}
+input    {margin: 0.4em 0.1875em 0 0.1875em;}
+div.form-item             {margin-bottom: 1.5em; margin-top: 1.5em;}
+.form-item strong.error   {display: block;}
+.form-item textarea.error {padding: 0.1875em;}
+.form-item .description   {font-size: 0.9em; line-height: 1.667em;}
+form .form-submit         {}
+label  {font-weight: bold; margin: 0; padding: 0;}
+legend {margin: 0; padding: 0;}
+#node-admin-filter ul {padding: 0.375em 0;}
+#edit-operation-wrapper select {margin: 0.375em ;}
+div.resizable-textarea textarea {margin-top: 0;}
+.tips {
+  font-size: 1em;
+  margin-left: 3em; /* LTR */
+  padding: 0.1875em 0.375em 0.1875em 1.5em; /* LTR */
+}
+
+/**
+ * Collapsible fieldsets, mostly from Garland.
+ */
+fieldset {
+  margin: 1.5em 0;
+  padding: 0.75em;
+  border: 1px solid #dadada;
+  background: transparent;
+}
+/* Targets IE 7. Fixes background image in field sets (if one is set). */
+*:first-child+html fieldset {
+  padding: 0 1em 0.75em;
+  background-position: 0 .75em;
+  background-color: transparent;
+}
+*:first-child+html fieldset > .description, *:first-child+html fieldset .fieldset-wrapper .description {
+  padding-top: 1.5em;
+}
+/* Fix legend in Firefox */
+fieldset legend {
+  display: block;
+}
+*:first-child+html fieldset legend, *:first-child+html fieldset.collapsed legend {
+  display: inline;
+}
+html.js fieldset.collapsed {
+  background: transparent;
+  padding-top: 0;
+  padding-bottom: .75em;
+}
+html.js fieldset.collapsible legend a {
+  color: #0066B3;
+  padding-left: 1em; /* LTR */
+  background: url(../images/arrow-down.gif) no-repeat 0% 50%; /* LTR */
+}
+html.js fieldset.collapsed legend a {
+  color: #0066B3;
+  background: url(../images/arrow-right.gif) no-repeat 0% 50%; /* LTR */
+}
+
+
+/*********************************************************
+*                    Block Edit
+**********************************************************/
+/**
+ * Edit links for blocks.
+ */
+div.block {position: relative;}
+div.block div.edit {
+  display: none;
+  position: absolute;
+  right: 0; /* LTR */
+  top: 0;
+  z-index: 40;
+  border: 1px solid #eee;
+  padding: 0 2px;
+  font-size: 11px;
+  background-color: #fff;
+}
+div.block:hover div.edit {display: block;}
+.block .node,
+.block .comment {margin-bottom: 0;}
+
+/* blocks page table */
+tr .block {border: none;}
+
+
+/*********************************************************
+*                  Admin, Misc.
+**********************************************************/
+div.admin       {padding-top: 0;}
+div.admin-panel {padding: 1.5em 0 0 0;}
+div.admin-panel .body {padding: 0;}
+div.admin-panel .description {margin: 0 0 1.5em 0; padding: 0;}
+
+div.admin .left,
+div.admin .right {margin:0;}
+
+#user-admin-filter ul li,
+#node-admin-filter ul li {list-style: none;}
+
+.more-help-link {font-size: 0.9em; line-height: 1.667em;}
+

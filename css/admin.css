@@ -1,0 +1,22 @@
+/* $Id$ */
+
+/**
+ * @file admin.css
+ * Basic styles for admin sections.
+ */
+
+/***********************************************************
+*                  Admin, Misc.
+**********************************************************/
+div.admin       {padding-top: 0;}
+div.admin-panel {padding: 1.5em 0 0 0;}
+div.admin-panel .body {padding: 0;}
+div.admin-panel .description {margin: 0 0 1.5em 0; padding: 0;}
+
+div.admin .left,
+div.admin .right {margin:0;}
+
+#user-admin-filter ul li,
+#node-admin-filter ul li {list-style: none;}
+
+.more-help-link {font-size: 0.9em; line-height: 1.667em;}
