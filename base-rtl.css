@@ -31,11 +31,11 @@ col, colgroup, td, th, caption, a {unicode-bidi:embed}
  *                     Header
  **********************************************************/
 #branding {
-  float:right!important;
+  float: right!important;
 }
 
 #search-box-top {
-  float:left!important;
+  float: left!important;
 }
 
 /**********************************************************
