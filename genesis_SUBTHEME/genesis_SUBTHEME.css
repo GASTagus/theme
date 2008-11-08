@@ -107,6 +107,7 @@ a:visited {}
 a:hover   {}
 a:active  {}
 a.active  {}
+a.active-trail {}
 
 /* Drupal sets this to black. */
 li a.active  {}
@@ -274,10 +275,13 @@ div#site-name  {
 }
 
 #primary ul.links li a:hover,
-#primary ul.links li a.active {
+#primary ul.links li a.active,
+#primary ul.links li a.active-trail  {
   background: #99CCFF; /* Default blue for dev only. */
 }
 
+/* Set unique active-trail styles */
+/*#primary ul.links li a.active-trail {}*/
 
 /**
 	* Secondary Links Positioning
@@ -317,8 +321,7 @@ div#site-name  {
 #secondary ul.links li.last {}
 
 #secondary ul.links li a:link,
-#secondary ul.links li a:visited,
-#secondary ul.links li a:active {
+#secondary ul.links li a:visited {
 	 font-weight: bold;
 	 text-decoration: none;
   padding: 0.375em 0.75em;
@@ -326,10 +329,14 @@ div#site-name  {
 	 white-space: nowrap;
 }
 
-#secondary ul.links li a:hover {
+#secondary ul.links li a:hover,
+#secondary ul.links li a.active,
+#secondary ul.links li a.active-trail {
   text-decoration: underline;
 }
 
+/* Set unique active-trail styles */
+/*#secondary ul.links li a.active-trail {}*/
 
 /**********************************************************
  *                       Menus
