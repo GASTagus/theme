@@ -23,14 +23,14 @@ body {}
 #container {}
 #columns   {}
 #content   {}
-#main-content  {}
+#main-content {}
 
 
 /**********************************************************
  *                     Width Setting
  **********************************************************/
 /**
-	* Over ride the default width (80em - see layout.css).
+	* Over-ride the default width (80em - see layout.css).
 	* 80 * 12 = 960px
 	*
 	* Genesis supports both Fluid and Fixed width values.
@@ -48,55 +48,57 @@ body {}
 /**********************************************************
  *                       Regions
  **********************************************************/
+/**
+	* Most regions have an .inner div to set paddings or other
+	* design contingencies.
+	*/
 /* Leaderboard is a full width region at the very top, ideal for displaying banners. */
 #leaderboard   {}
 
-/* Header blocks region is embeed in the header, usefull for displaying small banners etc. */
+/* Header blocks region is embedded in the header, usefull for displaying small banners. */
 #header-blocks {}
+.header-blocks-inner {}
 
-/* Sidebars - sidebar layout is highly configurable, see layout.css */
-#sidebar-left  {}
+/* Sidebars - sidebar layout is highly configurable, see layout.css. */
+#sidebar-left {}
+#sidebar-left .inner {}
+
 #sidebar-right {}
+#sidebar-right .inner {}
 
 /* Secondary content is a full width region between the header and the main columns. */
 #secondary-content {}
+#secondary-content .inner {}
 
 /* Tertiary content is a full width region above the footer, below the main content. */
-#tertiary-content  {}
+#tertiary-content {}
+#tertiary-content .inner {}
 
-/* Content top and bottom are above and below the main content, within the main content col. */
+/* Content top and bottom are above and below the main content, within the main content column. */
 #content-top    {}
 #content-bottom {}
 
 
 /**********************************************************
- *                   The INNER divs
+ *                    Global padding
  **********************************************************/
 /**
-	* In most instances you'll use these to set padding for 
-	* the containing element.
+	* You can set a Global value using .inner and override it 
+	* using a more specific selector such as "#sidebar-left .inner".
 	*
-	* The default (see layout.css)
-	* .inner {padding: 0.7em;}
+	* In most instances you'll use this to set padding for 
+	* the contained elements. Toggle .inner with firebug to see
+	* how the layout changes (especially when viewing a node).
 	*
 	* NOTE: You can over-ride the default .inner for nodes, blocks,
 	* and comments using div.node-inner, div.block-inner & 
 	* div.comment-inner which are listed in their relevant sections.
 	*/
+/* Global default inner padding */
 .inner         {padding: 0 0.375em;}
+
+/* #content-inner is the main content wrapper */
 #content-inner {padding: 0 0.375em;}
-
-.nav-inner {}
-.primary-inner {}
-.secondary-inner {}
-
-.header-blocks-inner {}
-
-#sidebar-left .inner  {}
-#sidebar-right .inner {}
-
-#secondary-content .inner {}
-#tertiary-content .inner  {}
 
 
 /**********************************************************
@@ -120,7 +122,8 @@ a img {border: none;}
  *                    HTML elements 
  **********************************************************/
 /** 
-	* Add any html elements you require. Use type.css as a guide.
+	* Add any html elements you require. 
+	* Use genesis/css/type.css as a guide.
 	*/
 h1 {}
 h2 {}
@@ -143,13 +146,14 @@ h1#page-title {}
 	*/
 #header-nav {}
 
-/* Conditional classes for theming the header */
+/* Conditional classes for theming the header. */
 #header-nav.with-header    {}
 #header-nav.without-header {}
 #header-nav.with-nav       {}
 #header-nav.without-nav    {}
 
 #header {}
+/* Over-ride default .inner styles. */
 #header .inner {}
 #header .header-inner {}
 
@@ -182,6 +186,7 @@ div#site-name  {
 #search-box-top {
   float: right;
 }
+
 /* Pad the serch box 1.5em top and bottom. */
 #search-box-inner {padding: 1.5em 0;}
 
@@ -212,7 +217,7 @@ div#site-name  {
 	*/
 
 /**
-	* #nav is the containing div for Prmiary & Secondary Links.
+	* #nav is the containing div for Primary & Secondary Links.
 	*/
 #nav       {
   clear: both; 
@@ -220,12 +225,13 @@ div#site-name  {
 }
 
 /**
- * Classes to support any nav menu configuration 
+ * Classes to support any nav menu configuration.
 	*/
-#nav.primary-secondary {} /* Both primary and secondary menus */
-#nav.with-primary      {} /* Primary menu only */
-#nav.with-secondary    {} /* Secondary menu only */
+#nav.primary-secondary {} /* Both primary and secondary menus. */
+#nav.with-primary      {} /* Primary menu only. */
+#nav.with-secondary    {} /* Secondary menu only. */
 
+/* There is no global .inner on the nav div. */
 #nav-inner {}
 
 /**
@@ -255,6 +261,7 @@ div#site-name  {
 	 background: #FFFF99; /* Default yellow for dev only. */
 }
 
+/* Over-ride default .inner styles. */
 .primary-inner {}
 
 #primary ul.links {}
@@ -262,14 +269,16 @@ div#site-name  {
   padding: 0;
 }
 
-/* First & Last classes can be styled seperately. */
+/* First & Last classes can be styled seperatly. */
 #primary ul.links li.first {}
 #primary ul.links li.last {}
 
-#primary ul.links li a {
+#primary ul.links li a:link,
+#primary ul.links li a:visited {
   font-weight: bold;
 	 text-decoration: none;
 	 padding: 0.375em 0.75em;
+		margin: 0 -0.2175em 0 0; /* RTL */
 	 display: inline-block;
 	 white-space: nowrap;
 }
@@ -309,6 +318,7 @@ div#site-name  {
 	 background: #99CCFF; /* Default blue for dev only. */
 }
 
+/* Over-ride default .inner styles. */
 .secondary-inner {}
 
 #secondary ul.links,
@@ -316,7 +326,7 @@ div#site-name  {
   padding: 0;
 }
 
-/* First & Last classes can be styled seperately. */
+/* First & Last classes can be styled seperatly. */
 #secondary ul.links li.first {}
 #secondary ul.links li.last {}
 
@@ -325,6 +335,7 @@ div#site-name  {
 	 font-weight: bold;
 	 text-decoration: none;
   padding: 0.375em 0.75em;
+		margin: 0 -0.2175em 0 0; /* RTL */
 	 display: inline-block;
 	 white-space: nowrap;
 }
@@ -359,6 +370,8 @@ ul.menu li.last  {}
 /**
 	* Genesis places the breadcrumb directly below the header, 
 	* giving it the full width of theme to expand in to.
+	* You can eaisly drag the breadcrumb html to the main 
+	* content colum if you need to.
 	*/
 #breadcrumb {
   margin: 0;
@@ -391,6 +404,7 @@ ul.menu li.last  {}
 /* Over-ride default .inner styles. */
 .node-inner {}
 
+/* Node title on teasers and other lists. */
 .node h2.node-title {}
 
 .node h2 a:link,
@@ -460,6 +474,7 @@ ul.menu li.last  {}
 /* Over-ride default .inner styles. */
 .block-inner {}
 
+/* Default node title. */
 .block h2.block-title {}
 
 /* Block content wrapper. */
@@ -555,7 +570,7 @@ tr .block {
 
 #block-locale-0  {} /* Language Switcher block */
 
-/* The class selector applies to all blocks of these types */
+/* The class selector applies to all blocks of these types. */
 .block-book {} 
 .block-aggregator {}
 
@@ -581,6 +596,7 @@ div.indented {
   margin-left: 2em; /* RTL */
 }
 
+/* The title of each comment. */
 div.comment h3.comment-title {
 	 margin-bottom: 0;
 }
@@ -633,13 +649,13 @@ div.comment.comment-mine      {}
 /**********************************************************
  *                   Profile
  **********************************************************/
-/* Position the user picture on the right in user profiles */
+/* Position the user picture on the right in user profiles. */
 .profile .picture {
   float: right; 
-		margin: 2em 0 1em 0.5em; /* LTR */
+		margin: 2em 0 1em 0.5em; /* RTL */
 }
 
-/* Fix alignment on user profile page*/
+/* Fix alignment on user profile page. */
 .profile dt {
   margin: 1.4em 0 0 0;
 }
@@ -758,11 +774,11 @@ div.comment.comment-mine      {}
 }
 
 /**
-	* Attribution link 
+	* Attribution link.
 	*/
-p.attribution {margin: 0.2em 0; font-size: 0.9em;}
-#footer-message p.attribution a {color: #EEE}
-#footer-message p.attribution a:hover {color: #CCC}
+p.attribution {}
+#footer-message p.attribution a {}
+#footer-message p.attribution a:hover {}
 
 
 /**********************************************************
@@ -777,7 +793,7 @@ p.attribution {margin: 0.2em 0; font-size: 0.9em;}
 .item-list ul.pager li a:visited {}
 .item-list ul.pager li a:hover   {}
 
-/* .pager-current is the current page. */
+/* Note: .pager-current is for the current page. */
 .item-list ul.pager li.pager-item     {}
 .item-list ul.pager li.first          {}
 .item-list ul.pager li.last           {}
@@ -791,7 +807,7 @@ p.attribution {margin: 0.2em 0; font-size: 0.9em;}
 /**********************************************************
  *                 RSS Feed Icon
  **********************************************************/
-#feed-icon     {}
+#feed-icon {}
 #feed-icon img {}
 #feed-icon a.feed-icon {}
 
@@ -840,8 +856,8 @@ table.system-status-report th {}
  **********************************************************/
 /**
 	* Theming form elements can be an exercise in self-flagellation.
-	* Lets let base.css & Drupal do the hard work and just set very 
-	* basic over-rides.
+	* Let forms.css & Drupal do the hard work and just set very 
+	* basic style over-rides.
 	*/
 fieldset {}
  
@@ -862,9 +878,9 @@ input.form-text, textarea {}
  *                    Messages
  **********************************************************/
 /**
-	* Drupal + base.css do a good job of messages already, but
-	* you can over-ride all of it. See the Genesis Darkmatter theme
-	* as an example. 
+	* Drupal + messages.css do a good job of messages already, but
+	* you can over-ride all of it. See the Genesis Darkmatter or Typo #1 
+	* theme as examples. 
 	*/
 div.messages.success {}
 
@@ -912,9 +928,11 @@ span.admin-disabled {}
 	*/
 .block-region {}
 
-/* Experimental workaround for the theme list page for narrow themes.
-   When both sidebars are active, the left sidebar overlaps the theme list table,
-			this forces the sidebars to be a set hight with scroll */
+/** 
+ * Experimental workaround for the theme list page for very narrow themes.
+ * When both sidebars are active, the left sidebar overlaps the theme list table,
+	* this forces the sidebars to be a set height with scroll bars. 
+ */
 body.page-admin-build-themes #sidebar-left,
 body.page-admin-build-themes #sidebar-right,
 body.page-admin-build-themes-select #sidebar-left,
@@ -925,6 +943,9 @@ body.page-admin-build-themes-select #sidebar-right {
 /**********************************************************
  *                   Buttons
  **********************************************************/
+/**
+	* Restyle form buttons.
+	*/
 button, 
 .pushbutton, 
 .form-submit {}
