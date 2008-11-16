@@ -34,7 +34,7 @@
   <div id="container" class="width <?php print $body_classes; ?> <?php //print 'grid' ;?>">
 
     <?php if (!empty($leaderboard)): ?>
-		    <div id="leaderboard">
+		    <div id="leaderboard" class="region">
 			     <?php print $leaderboard; ?>
 		    </div>
     <?php endif; ?>
@@ -75,7 +75,7 @@
 										<?php endif; ?> <!-- /search-box -->
 		
 										<?php if (!empty($header)): ?>
-												<div id="header-blocks">
+												<div id="header-blocks" class="region">
 														<div class="header-blocks-inner">
 																<?php print $header; ?>
 														</div>
@@ -118,7 +118,7 @@
 				<?php endif; ?>
 		
 				<?php if (!empty($secondary_content)): ?>
-						<div id="secondary-content" class="clear">
+						<div id="secondary-content" class="region clear">
 								<div class="inner">
 										<?php print $secondary_content; ?>
 								</div>
@@ -134,7 +134,7 @@
 									 <?php endif; ?>
 	
 										<?php if (!empty($content_top)): ?>
-												<div id="content-top">
+												<div id="content-top" class="region">
 														<?php print $content_top; ?>
 												</div> <!-- /content_top -->
 										<?php endif; ?>
@@ -152,7 +152,7 @@
 										</div>
 	
 										<?php if (!empty($content_bottom)): ?>
-												<div id="content-bottom">
+												<div id="content-bottom" class="region">
 														<?php print $content_bottom; ?>
 												</div> <!-- /content_bottom -->
 										<?php endif; ?>
@@ -167,7 +167,7 @@
 						</div>
 
 						<?php if (!empty($left)): ?>
-								<div id="sidebar-left">
+								<div id="sidebar-left" class="sidebar">
 										<div class="inner">
 												<?php print $left; ?>
 										</div>
@@ -175,7 +175,7 @@
 						<?php endif; ?>
 
 						<?php if (!empty($right)): ?>
-								<div id="sidebar-right">
+								<div id="sidebar-right" class="sidebar">
 										<div class="inner">
 												<?php print $right; ?>
 										</div>
@@ -185,7 +185,7 @@
 				</div> <!-- /col wrapper -->
 
 				<?php if (!empty($tertiary_content)): ?>
-						<div id="tertiary-content" class="clear">
+						<div id="tertiary-content" class="region clear">
 								<div class="inner">
 										<?php print $tertiary_content; ?>
 								</div> 
@@ -196,7 +196,7 @@
 						<div id="foot-wrapper">
 				
 								<?php if (!empty($footer)): ?>
-										<div id="footer">
+										<div id="footer" class="region">
 												<?php print $footer; ?>
 										</div> <!-- /footer -->
 								<?php endif; ?>
