@@ -12,12 +12,12 @@
 //drupal_rebuild_theme_registry();
 
 /**
- * Override or insert preprocess variables into page templates.
+ * Override or insert variables into page templates.
  *
  * @param $vars
  *   A sequential array of variables to pass to the theme template.
  * @param $hook
- *   The name of the theme function being called ("page" in this case.)
+ *   The name of the theme function being called.
  */
 function genesis_preprocess_page(&$vars, $hook) {
   global $theme;
@@ -26,11 +26,7 @@ function genesis_preprocess_page(&$vars, $hook) {
   if ($vars['help'] == "<div class=\"help\"><p></p>\n</div>") {
     $vars['help'] = '';
   }
-		
-		/**
-		 * Most themes theme the logo, site_name, primary and secodarday links directly in page.tpl.php. 
-			* Genesis follows the idea of only printing variables in templates.
-		 */
+
 		// Set vars for the logo and site_name.
 		if ($vars['logo']) {
 		  $vars['site_logo'] = 
@@ -38,7 +34,7 @@ function genesis_preprocess_page(&$vars, $hook) {
 						  <img src="'. $vars['logo'] .'" alt="'. t('Home') .'" />
 						</a>';
 		}
-		
+
 		if ($vars['site_name']) {
 		  $tag = $vars['is_front'] ? 'h1' : 'div';
 	   $vars['site_name'] = 	
@@ -46,12 +42,12 @@ function genesis_preprocess_page(&$vars, $hook) {
 				    <a href="'. $vars['front_page'] .'" title="'. t('Home') .'" rel="home">'. $vars['site_name'] .'</a>
 				  </'. $tag .'>';
   }
-		
+
 		// Theme primary and secondary links.
 		$vars['primary_menu'] = theme('links', $vars['primary_links'], array('class' => 'links primary-links'));
 		$vars['secondary_menu'] = theme('links', $vars['secondary_links'], array('class' => 'links secondary-links'));
-		
-  // Wrapper classes.
+
+  // Wrapper classes set on the body.
   $page_classes = array();
   if (!$vars['is_front']) {
     // Add classes for each page and section.
@@ -59,24 +55,24 @@ function genesis_preprocess_page(&$vars, $hook) {
     list($section, ) = explode('/', $path, 2);
     $page_classes[] = genesis_id_safe('page-'. $path);
     $page_classes[] = genesis_id_safe('section-'. $section);
-      if (arg(0) == 'node') {
-        if (arg(1) == 'add') {
-          $page_classes[] = 'section-node-add'; // Add 'section-node-add'.
-        }
-        elseif (is_numeric(arg(1)) && (arg(2) == 'edit' || arg(2) == 'delete')) {
-          $page_classes[] = 'section-node-'. arg(2); // Add 'section-node-edit' or 'section-node-delete'.
-        }
-      }
-      // Add node-full-view class when viewing a node.
-      if (arg(0) == 'node' && is_numeric(arg(1))) {
-        $page_classes[] = 'node-full-view'; // Add 'node-full-view'
-      }
-    }
-				// Don't print on the front page.
-				if (!$vars['is_front']) {
-      $vars['page_classes'] = 'class="'. implode(' ', $page_classes) .'"'; // Concatenate with spaces.
+				if (arg(0) == 'node') {
+						if (arg(1) == 'add') {
+								$page_classes[] = 'section-node-add'; // Add 'section-node-add'.
+						}
+						elseif (is_numeric(arg(1)) && (arg(2) == 'edit' || arg(2) == 'delete')) {
+								$page_classes[] = 'section-node-'. arg(2); // Add 'section-node-edit' or 'section-node-delete'.
+						}
 				}
-		
+				// Add node-full-view class when viewing a node.
+				if (arg(0) == 'node' && is_numeric(arg(1))) {
+						$page_classes[] = 'node-full-view'; // Add 'node-full-view'
+				}
+		}
+		// Don't print on the front page.
+		if (!$vars['is_front']) {
+				$vars['page_classes'] = 'class="'. implode(' ', $page_classes) .'"'; // Concatenate with spaces.
+		}
+
 		// Helper classes for header-nav elements.
 		$header_classes = array();
 		if ($vars['site_logo'] || $vars['site_name'] || $vars['site_slogan'] || $vars['search_box'] || $vars['header']) {
@@ -107,13 +103,12 @@ function genesis_preprocess_page(&$vars, $hook) {
 }
 
 /**
- * Override or insert preprocess variables into the node templates.
+ * Override or insert variables into the node templates.
  *
  * @param $vars
  *   A sequential array of variables to pass to the theme template.
  * @param $hook
- *   The name of the theme function being called ("node" in this case.)
- *
+ *   The name of the theme function being called.
  */
 function genesis_preprocess_node(&$vars, $hook) {
   global $user;
@@ -142,28 +137,22 @@ function genesis_preprocess_node(&$vars, $hook) {
   $node_classes[] = 'node-type-'. $vars['node']->type;
   $vars['node_classes'] = implode(' ', $node_classes); // Concatenate with spaces.
 
-  // Customised dates; set new variables so themers can use $submitted as per normal.
-  $vars['long_date']  = format_date($vars['node']->created, 'custom', "l, F j, Y - H:i");
-  $vars['short_date'] = format_date($vars['node']->created, 'custom', "F j, Y");
-
 }
 
 /**
- * Override or insert preprocess variables into the comment templates.
+ * Override or insert variables in comment templates.
  *
  * @param $vars
  *   A sequential array of variables to pass to the theme template.
  * @param $hook
- *   The name of the theme function being called ("comment" in this case.)
- *
+ *   The name of the theme function being called.
  */
 function genesis_preprocess_comment(&$vars, $hook) {
   global $user;
 
-  // We load the node object that the current comment is attached to.
+  // Load the node object that the current comment is attached to.
   $node = node_load($vars['comment']->nid);
-  // If the author of this comment is equal to the author of the node, we
-  // set a variable so we can theme this comment uniquely.
+  // If the author is equal to the author of the node, set a variable.
   $vars['author_comment'] = $vars['comment']->uid == $node->uid ? TRUE : FALSE;
 
   $comment_classes = array();
@@ -199,21 +188,15 @@ function genesis_preprocess_comment(&$vars, $hook) {
     $vars['title'] = '';
   }
 
-  // Set comment vars for the customised dates.
-  $vars['long_date']  = format_date($vars['node']->created, 'custom', "l, F j, Y - H:i");
-  $vars['short_date'] = format_date($vars['node']->created, 'custom', "F j, Y");
-
 }
 
 /**
- * Override or insert PHPTemplate variables into the block templates.
+ * Override or insert variables into block templates.
  *
  * @param $vars
  *   A sequential array of variables to pass to the theme template.
  * @param $hook
- *   The name of the theme function being called ("block" in this case.)
- *
- * @see http://drupal.org/project/zen
+ *   The name of the theme function being called.
  */
 function genesis_preprocess_block(&$vars, $hook) {
   $block = $vars['block'];
@@ -221,10 +204,8 @@ function genesis_preprocess_block(&$vars, $hook) {
   // Special classes for blocks
   $block_classes = array();
   $block_classes[] = 'block-'. $block->module;
-  $block_classes[] = 'region-'. $vars['block_zebra'];
-  $block_classes[] = $vars['zebra'];
-  $block_classes[] = 'region-count-'. $vars['block_id'];
-  $block_classes[] = 'count-'. $vars['id'];
+  $block_classes[] = 'block-'. $vars['block_zebra'];
+		$block_classes[] = $block->region;
   $vars['block_classes'] = implode(' ', $block_classes);
 
   if (user_access('administer blocks')) {
@@ -247,14 +228,7 @@ function genesis_preprocess_block(&$vars, $hook) {
 }
 
 /**
- * Converts a string to a suitable html ID attribute.
- *
- * http://www.w3.org/TR/html4/struct/global.html#h-7.5.2 specifies what makes a
- * valid ID attribute in HTML. This function:
- *
- * - Ensure an ID starts with an alpha character by optionally adding an 'n'.
- * - Replaces any character except A-Z, numbers, and underscores with dashes.
- * - Converts entire string to lowercase.
+ * Converts a string to an id.
  *
  * @param $string
  *   The string
@@ -264,10 +238,8 @@ function genesis_preprocess_block(&$vars, $hook) {
  * @see http://drupal.org/project/zen
  */
 function genesis_id_safe($string) {
-  // Replace with dashes anything that isn't A-Z, numbers, dashes, or underscores.
   $string = strtolower(preg_replace('/[^a-zA-Z0-9_-]+/', '-', $string));
-  // If the first character is not a-z, add 'n' in front.
-  if (!ctype_lower($string{0})) { // Don't use ctype_alpha since its locale aware.
+  if (!ctype_lower($string{0})) {
     $string = 'id'. $string;
   }
   return $string;
@@ -280,7 +252,7 @@ function genesis_menu_item_link($link) {
   if (empty($link['localized_options'])) {
     $link['localized_options'] = array();
   }
-
+		
   // If an item is a LOCAL TASK, render it as a tab.
   if ($link['type'] & MENU_IS_LOCAL_TASK) {
     $link['title'] = '<span class="tab">'. check_plain($link['title']) .'</span>';
@@ -348,7 +320,7 @@ function phptemplate_breadcrumb($breadcrumb) {
  * for a bug in Drupal 6.0-6.4: #252430 (Allow BASETHEME_ prefix in preprocessor 
  * function names).
  *
- * Sub-themes Also use this function by calling it from their HOOK_theme() in
+ * Sub-themes also use this function by calling it from their HOOK_theme() in
  * order to get around a design limitation in Drupal 6: #249532 (Allow subthemes
  * to have preprocess hooks without tpl files.)
  *
