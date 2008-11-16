@@ -9,7 +9,10 @@
  * Add your IE hacks and work-arounds here.
 	*/
 
-
+/* IE work-around for sliding door tabs. */
+/*
+#primary ul.links li a {*padding: 0 0 0 10px;}
+*/
 
 
 
