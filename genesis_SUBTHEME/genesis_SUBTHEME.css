@@ -12,6 +12,14 @@
 /**********************************************************
  *                          Body
  **********************************************************/
+/**
+ * Set global color, background & font family.
+	*
+	* FONT SIZE
+	* Genesis sizes everything in ems relative to 12px. If you set
+	* a font size here you will change the width of sidebars and all
+	* the default widths, paddings, margins and typographical styles!
+	*/
 body {}
 
 /**********************************************************
@@ -30,7 +38,7 @@ body {}
  *                     Width Setting
  **********************************************************/
 /**
-	* Over-ride the default width (80em - see layout.css).
+	* Override the default width (80em - see layout.css).
 	* 80 * 12 = 960px
 	*
 	* Genesis supports both Fluid and Fixed width values.
@@ -48,6 +56,9 @@ body {}
 /**********************************************************
  *                       Regions
  **********************************************************/
+/* Target all regions with this low specifity selector. */
+.region {}
+
 /**
 	* Most regions have an .inner div to set paddings or other
 	* design contingencies.
@@ -58,13 +69,6 @@ body {}
 /* Header blocks region is embedded in the header, usefull for displaying small banners. */
 #header-blocks {}
 .header-blocks-inner {}
-
-/* Sidebars - sidebar layout is highly configurable, see layout.css. */
-#sidebar-left {}
-#sidebar-left .inner {}
-
-#sidebar-right {}
-#sidebar-right .inner {}
 
 /* Secondary content is a full width region between the header and the main columns. */
 #secondary-content {}
@@ -80,19 +84,25 @@ body {}
 
 
 /**********************************************************
+ *                      Sidebars
+ **********************************************************/
+	/* Target both sidebars with this low specifity selector. */
+.sidebar {}
+
+/* Target a specific sidebar or its sidebar-inner. */
+#sidebar-left {}
+#sidebar-left .inner {}
+
+#sidebar-right {}
+#sidebar-right .inner {}
+
+
+/**********************************************************
  *                    Global padding
  **********************************************************/
 /**
-	* You can set a Global value using .inner and override it 
+	* You can set a global value using .inner and override it 
 	* using a more specific selector such as "#sidebar-left .inner".
-	*
-	* In most instances you'll use this to set padding for 
-	* the contained elements. Toggle .inner with firebug to see
-	* how the layout changes (especially when viewing a node).
-	*
-	* NOTE: You can over-ride the default .inner for nodes, blocks,
-	* and comments using div.node-inner, div.block-inner & 
-	* div.comment-inner which are listed in their relevant sections.
 	*/
 /* Global default inner padding */
 .inner         {padding: 0 0.375em;}
@@ -142,7 +152,7 @@ h1#page-title {}
  *                       Header 
  **********************************************************/
 /**
-	* Branding, Logo, Site name & Slogan.
+	* #header-nav wraps #header and #nav.
 	*/
 #header-nav {}
 
@@ -152,17 +162,20 @@ h1#page-title {}
 #header-nav.with-nav       {}
 #header-nav.without-nav    {}
 
+/* #header wraps #branding, #search-box-top and the #header-blocks region. */
 #header {}
+
 /* Over-ride default .inner styles. */
 #header .inner {}
 #header .header-inner {}
 
-#branding {
-  float: left; width: auto;
-}
+/* #branding wraps #logo, #site-name and #site-slogan. */
+#branding {float: left;}
 
+/* Logo. */
 #logo {}
 
+/* h1 is for the front page only, all others use the div. */
 h1#site-name,
 div#site-name  {
   font-size: 2em ;
@@ -176,6 +189,7 @@ div#site-name  {
 #site-name a:visited {}
 #site-name a:hover   {}
 
+/* Site slogan. */
 #site-slogan {}
 
 
@@ -183,9 +197,7 @@ div#site-name  {
  *                        Search
  **********************************************************/
 /* Float the serch box right. */
-#search-box-top {
-  float: right;
-}
+#search-box-top {float: right;}
 
 /* Pad the serch box 1.5em top and bottom. */
 #search-box-inner {padding: 1.5em 0;}
@@ -256,38 +268,35 @@ div#site-name  {
 	* Example styles to get you started.
 	*/
 #primary { 
-  height: 2.25em;
 	 padding: 0;
 	 background: #FFFF99; /* Default yellow for dev only. */
+		font-weight: bold;
 }
 
-/* Over-ride default .inner styles. */
 .primary-inner {}
 
-#primary ul.links {}
-#primary ul.links li {
-  padding: 0;
+/* Modify the margin to positing the menu. */
+#primary ul.links {
+ 	margin: 0; /* RTL */
 }
 
-/* First & Last classes can be styled seperatly. */
-#primary ul.links li.first {}
-#primary ul.links li.last {}
+/* Modify the margin to set tab spacings. */
+#primary ul.links li {
+		display: inline;
+		list-style: none;
+		line-height: 3;
+		padding: 0;
+		margin: 0 1em;
+}
 
-#primary ul.links li a:link,
-#primary ul.links li a:visited {
-  font-weight: bold;
-	 text-decoration: none;
-	 padding: 0.375em 0.75em;
-		margin: 0 -0.2175em 0 0; /* RTL */
-	 display: inline-block;
-	 white-space: nowrap;
+#primary ul.links li a {
+		text-decoration: none;
+		white-space: nowrap;
 }
 
 #primary ul.links li a:hover,
 #primary ul.links li a.active,
-#primary ul.links li a.active-trail  {
-  background: #99CCFF; /* Default blue for dev only. */
-}
+#primary ul.links li a.active-trail {text-decoration: underline;}
 
 /* Set unique active-trail styles */
 /*#primary ul.links li a.active-trail {}*/
@@ -312,46 +321,45 @@ div#site-name  {
 /**
 	* Secondary Links Style
 	*/
-#secondary {
-  height: 2.25em;
+#secondary { 
 	 padding: 0;
 	 background: #99CCFF; /* Default blue for dev only. */
+		font-weight: bold;
 }
 
-/* Over-ride default .inner styles. */
 .secondary-inner {}
 
-#secondary ul.links,
+/* Modify the margin to positing the menu. */
+#secondary ul.links {
+	 margin: 0; /* RTL */
+}
+
+/* Modify the margin to set tab spacings. */
 #secondary ul.links li {
-  padding: 0;
+		display: inline;
+		list-style: none;
+		line-height: 3;
+		padding: 0;
+		margin: 0 1em;
 }
-
-/* First & Last classes can be styled seperatly. */
-#secondary ul.links li.first {}
-#secondary ul.links li.last {}
-
-#secondary ul.links li a:link,
-#secondary ul.links li a:visited {
-	 font-weight: bold;
-	 text-decoration: none;
-  padding: 0.375em 0.75em;
-		margin: 0 -0.2175em 0 0; /* RTL */
-	 display: inline-block;
-	 white-space: nowrap;
+#secondary ul.links li a {
+		text-decoration: none;
+		white-space: nowrap;
 }
-
 #secondary ul.links li a:hover,
 #secondary ul.links li a.active,
-#secondary ul.links li a.active-trail {
-  text-decoration: underline;
-}
+#secondary ul.links li a.active-trail {text-decoration: underline;}
 
 /* Set unique active-trail styles */
 /*#secondary ul.links li a.active-trail {}*/
 
+
 /**********************************************************
  *                       Menus
  **********************************************************/
+/**
+ * Prefix these with the block id to style one menu only.
+	*/
 ul.menu {}
 ul.menu li {}
 
@@ -485,6 +493,8 @@ ul.menu li.last  {}
 /* Block lists */
 .block ul {}
 .block ul li {}
+.block .item-list ul {}
+.block .item-list ul li {}
 
 tr .block {
   border: none; /* Blocks page table. */
@@ -504,9 +514,11 @@ tr .block {
 	*
 	* You can target blocks in one or more regions and 
 	* style them differently. 
-	*
-	* Use the first two examples as guide for all regions. 
 	*/
+/* Low specifity selector to style blocks in both sidebars. */
+.sidebar .block {}
+
+/* High specifity selectors to style blocks in one sidebar. */
 #sidebar-left .block {}
 #sidebar-left .block h2 {}
 #sidebar-left .block-inner {}
@@ -517,6 +529,10 @@ tr .block {
 #sidebar-right .block-inner {}
 #sidebar-right .block .block-content {}
 
+/* Low specifity selector to style blocks in all regions. */
+.region .block {}
+
+/* High specifity selectors to style blocks in one region. */
 #leaderboard .block       {}
 #header-blocks .block     {}
 #secondary-content .block {}
@@ -625,6 +641,7 @@ div.comment .picture img {
 }
 
 div.comment .submitted {
+  color: #888;
 	 margin: 0;
 }
 
