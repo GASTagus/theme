@@ -9,7 +9,7 @@
  * @see template_preprocess_node()
  */
 ?>
-<div class="node <?php print $node_classes; ?>" id="node_<?php print $node->nid; ?>">
+<div class="node <?php print $node_classes; ?>" id="node-<?php print $node->nid; ?>">
   <div class="node-inner inner">
 
 		<?php if ($page == 0): ?>
@@ -20,19 +20,9 @@
 			<div class="unpublished"><?php print t('Unpublished'); ?></div>
 		<?php endif; ?>
 
-  <?php
-		/**
-		 * To customize the long and short dates see "function genesis_preprocess_node" in
-			* template.php (genesis/template.php).
-			* Copy the code snippet for the long and short dates to your subthemes template.php 
-			* preprocess node function, i.e. "function genesis_SUBTHEME_preprocess_node". 
-			* You need to clear the theme registry for your changes to take effect.
-			*/
-		?>
 		<?php if ($submitted): ?>
 			<div class="submitted">
-				<abbr class="date" title="<?php print $long_date; ?>"> <?php print $short_date; ?></abbr>
-				<span class="author"><?php print t(' by ') . $name; ?></span>
+			  <?php print $submitted; ?>
 			</div>
 		<?php endif; ?>
 

@@ -17,18 +17,14 @@
   <div class="comment-inner inner">
 
 		<?php if ($title): ?>
-			<h3 class="comment-title">
-				<?php print '#'. $id .' '. $title; ?>
-				<?php if ($comment->new): ?>
-					<span class="new"><?php print $new; ?></span>
-				<?php endif; ?>
-			</h3>
-		<?php elseif ($comment->new): ?>
-			<div class="new"><?php print $new; ?></div>
+		  <h3 class="comment-title">
+		    <?php print '#'. $id .' '. $title; ?> <?php if ($comment->new): ?><span class="new"><?php print $new; ?></span><?php endif; ?>
+		  </h3>
+		  <?php elseif ($comment->new): ?><div class="new"><?php print $new; ?></div>
 		<?php endif; ?>
 
 		<?php if ($unpublished): ?>
-			<div class="unpublished"><?php print t('Unpublished'); ?></div>
+			 <div class="unpublished"><?php print t('Unpublished'); ?></div>
 		<?php endif; ?>
 
 		<?php if ($picture): ?>
@@ -36,25 +32,24 @@
 		<?php endif; ?>
 
 		<?php if ($submitted): ?>
-			<div class="submitted">
-				<abbr class="date" title="<?php print $long_date; ?>"> <?php print $short_date; ?></abbr> 
-				<span class="author"><?php print t(' by ') . $author; ?></span>
-			</div>
+		  <div class="submitted">
+				  <?php print $submitted; ?>
+			 </div>
 		<?php endif; ?>
 
 		<div class="comment-content">
 			<?php print $content; ?>
 			<?php if ($signature): ?>
-				<div class="user-signature clear-block">
-					<?php print $signature; ?>
-				</div>
+			  <div class="user-signature clear-block">
+					  <?php print $signature; ?>
+				 </div>
 			<?php endif; ?>
 		</div>
 
 		<?php if ($links): ?>
-			<div class="links">
-				<?php print $links; ?>
-			</div>
+			 <div class="links">
+				  <?php print $links; ?>
+			 </div>
 		<?php endif; ?>
 
   </div>
