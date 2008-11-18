@@ -202,9 +202,9 @@
 								<?php endif; ?>
 								
 								<?php if (!empty($footer_message)): ?>
-								<div id="footer-message">
-										<?php print $footer_message; ?>
-								</div> <!-- /footer-message -->
+								  <div id="footer-message">
+										  <?php print $footer_message; ?>
+								  </div> <!-- /footer-message -->
 								<?php endif; ?>
 		
 						</div> <!-- /foot-wrapper -->

@@ -47,7 +47,8 @@ stylesheets[all][] = layout.css
 ;stylesheets[all][] = css/grid.css
 
 		; To work around IE7's 31 max stylesheets issue uncomment all-in-one.css and 
-		; comment out all the mini-stylesheets.
+		; comment out all the mini-stylesheets. Do this in your subthemes .info file
+		; if you only want to do this for one subtheme.
 ;stylesheets[all][] = css/all-in-one.css
 
   ; The "features" control which check boxes display on the admin/build/themes 

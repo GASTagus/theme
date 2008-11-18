@@ -1,13 +1,16 @@
 /* $Id$ */
 
+
 /**
 	* @file genesis_SUBTHEME.css
 	* This stylesheet provides the main styles for this theme.
 	*/
 
+
 /**
 	* Remove unused styles for performace.
 	*/
+
 
 /**********************************************************
  *                          Body
@@ -21,6 +24,7 @@
 	* the default widths, paddings, margins and typographical styles!
 	*/
 body {}
+
 
 /**********************************************************
  *                     The wrapper divs
@@ -64,7 +68,7 @@ body {}
 	* design contingencies.
 	*/
 /* Leaderboard is a full width region at the very top, ideal for displaying banners. */
-#leaderboard   {}
+#leaderboard {}
 
 /* Header blocks region is embedded in the header, usefull for displaying small banners. */
 #header-blocks {}
@@ -79,7 +83,7 @@ body {}
 #tertiary-content .inner {}
 
 /* Content top and bottom are above and below the main content, within the main content column. */
-#content-top    {}
+#content-top {}
 #content-bottom {}
 
 
@@ -122,7 +126,7 @@ a.active  {}
 a.active-trail {}
 
 /* Drupal sets this to black. */
-li a.active  {}
+li a.active {}
 
 /* Remove borders on linked images. */
 a img {border: none;}
@@ -231,7 +235,7 @@ div#site-name  {
 /**
 	* #nav is the containing div for Primary & Secondary Links.
 	*/
-#nav       {
+#nav {
   clear: both; 
 		margin: 0.75em 0;
 }
@@ -377,9 +381,9 @@ ul.menu li.last  {}
  **********************************************************/
 /**
 	* Genesis places the breadcrumb directly below the header, 
-	* giving it the full width of theme to expand in to.
+	* giving it the full width of theme to expand into.
 	* You can eaisly drag the breadcrumb html to the main 
-	* content colum if you need to.
+	* content column if you need to.
 	*/
 #breadcrumb {
   margin: 0;
@@ -510,7 +514,7 @@ tr .block {
 	*/
 
 /**
-	* Region Specific Block Styles
+	* Sidebar and Region Specific Block Styles
 	*
 	* You can target blocks in one or more regions and 
 	* style them differently. 
@@ -725,6 +729,7 @@ div.comment.comment-mine      {}
   padding: 1.5em 0 0 3em;
   margin: 0 0 1.5em 0;
 }
+
 
 /**********************************************************
  *                    Polls
@@ -956,6 +961,7 @@ body.page-admin-build-themes-select #sidebar-left,
 body.page-admin-build-themes-select #sidebar-right {
   height: 240px; overflow: scroll;
 }
+
 
 /**********************************************************
  *                   Buttons
