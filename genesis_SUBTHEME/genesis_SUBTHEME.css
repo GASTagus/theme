@@ -62,6 +62,7 @@ body {}
  **********************************************************/
 /* Target all regions with this low specifity selector. */
 .region {}
+.region-inner {}
 
 /**
 	* Most regions have an .inner div to set paddings or other
@@ -72,15 +73,18 @@ body {}
 
 /* Header blocks region is embedded in the header, usefull for displaying small banners. */
 #header-blocks {}
-.header-blocks-inner {}
+#header-blocks .inner {}
+#header-blocks .region-inner {}
 
 /* Secondary content is a full width region between the header and the main columns. */
 #secondary-content {}
 #secondary-content .inner {}
+#secondary-content .region-inner {}
 
 /* Tertiary content is a full width region above the footer, below the main content. */
 #tertiary-content {}
 #tertiary-content .inner {}
+#tertiary-content .region-inner {}
 
 /* Content top and bottom are above and below the main content, within the main content column. */
 #content-top {}
@@ -92,13 +96,16 @@ body {}
  **********************************************************/
 	/* Target both sidebars with this low specifity selector. */
 .sidebar {}
+.sidebar-inner {}
 
 /* Target a specific sidebar or its sidebar-inner. */
 #sidebar-left {}
 #sidebar-left .inner {}
+#sidebar-left .sidebar-inner {}
 
 #sidebar-right {}
 #sidebar-right .inner {}
+#sidebar-right .sidebar-inner {}
 
 
 /**********************************************************

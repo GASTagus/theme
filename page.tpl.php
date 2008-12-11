@@ -76,7 +76,7 @@
 		
 										<?php if (!empty($header)): ?>
 												<div id="header-blocks" class="region">
-														<div class="header-blocks-inner">
+														<div class="region-inner inner">
 																<?php print $header; ?>
 														</div>
 												</div>
@@ -119,7 +119,7 @@
 		
 				<?php if (!empty($secondary_content)): ?>
 						<div id="secondary-content" class="region clear">
-								<div class="inner">
+								<div class="region-inner inner">
 										<?php print $secondary_content; ?>
 								</div>
 						</div> <!-- /secondary-content -->
@@ -168,7 +168,7 @@
 
 						<?php if (!empty($left)): ?>
 								<div id="sidebar-left" class="sidebar">
-										<div class="inner">
+										<div class="sidebar-inner inner">
 												<?php print $left; ?>
 										</div>
 								</div> <!-- /sidebar-left -->
@@ -176,7 +176,7 @@
 
 						<?php if (!empty($right)): ?>
 								<div id="sidebar-right" class="sidebar">
-										<div class="inner">
+										<div class="sidebar-inner inner">
 												<?php print $right; ?>
 										</div>
 								</div> <!-- /sidebar-right -->
@@ -186,7 +186,7 @@
 
 				<?php if (!empty($tertiary_content)): ?>
 						<div id="tertiary-content" class="region clear">
-								<div class="inner">
+								<div class="region-inner inner">
 										<?php print $tertiary_content; ?>
 								</div> 
 						</div> <!-- /tertiary_content -->
