@@ -20,3 +20,7 @@ div.admin .right {margin:0;}
 #node-admin-filter ul li {list-style: none;}
 
 .more-help-link {font-size: 0.9em; line-height: 1.667em;}
+
+.section-admin dt {font-weight: bold;}
+.section-admin dd {margin: 0 0 1em 1em;}
+.section-admin ul {margin: 0 0 1.5em 1.6em;}
