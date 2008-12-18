@@ -53,6 +53,8 @@ regions[footer]             = Footer
 ;stylesheets[all][] = css/lists.css
 ;stylesheets[all][] = css/tables.css
 ;stylesheets[all][] = css/tabs.css
+;stylesheets[all][] = css/block-edit.css
+;stylesheets[all][] = css/admin.css
 
 
   ; Features.
