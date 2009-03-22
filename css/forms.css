@@ -87,3 +87,6 @@ html.js fieldset.collapsed legend a {
   color: #0066B3;
   background: url(../images/arrow-right.gif) no-repeat 0% 50%; /* LTR */
 }
+
+/* Add support for Vertical Tabs module */
+#node-form .vertical-tabs ul.vertical-tabs-list {margin: 0;}
