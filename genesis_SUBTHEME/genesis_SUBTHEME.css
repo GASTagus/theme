@@ -92,23 +92,6 @@ body {}
 
 
 /**********************************************************
- *                      Sidebars
- **********************************************************/
-	/* Target both sidebars with this low specifity selector. */
-.sidebar {}
-.sidebar-inner {}
-
-/* Target a specific sidebar or its sidebar-inner. */
-#sidebar-left {}
-#sidebar-left .inner {}
-#sidebar-left .sidebar-inner {}
-
-#sidebar-right {}
-#sidebar-right .inner {}
-#sidebar-right .sidebar-inner {}
-
-
-/**********************************************************
  *                    Global padding
  **********************************************************/
 /**
@@ -120,6 +103,24 @@ body {}
 
 /* #content-inner is the main content wrapper */
 #content-inner {padding: 0 0.375em;}
+
+
+/**********************************************************
+ *                      Sidebars
+ **********************************************************/
+	/* Target both sidebars with this low specifity selector. */
+.sidebar {}
+.sidebar .inner {}
+.sidebar-inner {}
+
+/* Target a specific sidebar or its sidebar-inner. */
+#sidebar-left {}
+#sidebar-left .inner {}
+#sidebar-left .sidebar-inner {}
+
+#sidebar-right {}
+#sidebar-right .inner {}
+#sidebar-right .sidebar-inner {}
 
 
 /**********************************************************
@@ -211,7 +212,7 @@ div#site-name  {
 #search-box-top {float: right;}
 
 /* Pad the serch box 1.5em top and bottom. */
-#search-box-inner {padding: 1.5em 0;}
+.search-box-inner {padding: 1.5em 0;}
 
 #search-box-inner #edit-search-theme-form-1 {}
 #search-box-inner #edit-search-theme-form-1:hover,
@@ -287,12 +288,12 @@ div#site-name  {
 .primary-inner {}
 
 /* Modify the margin to positing the menu. */
-#primary ul.links {
+#primary .links {
  	margin: 0; /* RTL */
 }
 
 /* Modify the margin to set tab spacings. */
-#primary ul.links li {
+#primary .links li {
 		display: inline;
 		list-style: none;
 		line-height: 3;
@@ -300,14 +301,22 @@ div#site-name  {
 		margin: 0 1em;
 }
 
-#primary ul.links li a {
+#primary .links li a {
 		text-decoration: none;
 		white-space: nowrap;
 }
 
-#primary ul.links li a:hover,
-#primary ul.links li a.active,
-#primary ul.links li a.active-trail {text-decoration: underline;}
+#primary .links li.active {}
+
+#primary .links li a:hover {}
+#primary .links li a.active {}
+#primary .links li a.visited {}
+#primary .links li a.active-trail {}
+
+/* Primary first and last classes */
+#primary .links li.first {}
+#primary .links li.last {}
+
 
 /* Set unique active-trail styles */
 /*#primary ul.links li a.active-trail {}*/
@@ -341,28 +350,34 @@ div#site-name  {
 .secondary-inner {}
 
 /* Modify the margin to positing the menu. */
-#secondary ul.links {
+#secondary .links {
 	 margin: 0; /* RTL */
 }
 
 /* Modify the margin to set tab spacings. */
-#secondary ul.links li {
+#secondary .links li {
 		display: inline;
 		list-style: none;
 		line-height: 3;
 		padding: 0;
 		margin: 0 1em;
 }
-#secondary ul.links li a {
+
+#secondary .links li a {
 		text-decoration: none;
 		white-space: nowrap;
 }
-#secondary ul.links li a:hover,
-#secondary ul.links li a.active,
-#secondary ul.links li a.active-trail {text-decoration: underline;}
 
-/* Set unique active-trail styles */
-/*#secondary ul.links li a.active-trail {}*/
+#secondary .links li.active {}
+
+#secondary .links li a:hover  {}
+#secondary .links li a.active {}
+#secondary .links li a.visited {}
+#secondary .links li a.active-trail {}
+
+/* Secondary first and last classes */
+#secondary .links li.first {}
+#secondary .links li.last {}
 
 
 /**********************************************************
@@ -424,43 +439,48 @@ ul.menu li.last  {}
 .node-inner {}
 
 /* Node title on teasers and other lists. */
-.node h2.node-title {}
+.node-title {}
 
-.node h2 a:link,
-.node h2 a:visited,
-.node h2 a:active {
+.node-title a:link,
+.node-title a:visited,
+.node-title a:active {
   text-decoration: none;
 }
 
-.node h2 a:hover {
+.node-title a:hover {
   text-decoration: underline;
 }
 
-.node div.picture {
+.node .user-picture {
   float: left;
   margin: 0.3em 0.5em 0.1em 0;
 }
 
-.node div.submitted {
+.node .user-picture img {}
+
+.node-submitted {
   color: #888;
 	 margin: 0;	
 }
 
-/* Node content wrapper. */
-.node .node-content {}
+.node-submitted a {}
+.node-submitted a:hover {}
 
-.node ul.links {
+/* Node content wrapper. */
+.node-content {}
+
+.node-terms {}
+
+.node-links {
   display: block; 
 	 text-align: right;
 }
 
-/* Theme the node teaser seperatly. */
-.node-teaser {}
-.node-teaser .node-inner {}
-
-
-/* Theme Sticky nodes. */
+/* Theme sticky nodes. */
 .node .sticky {}
+
+/* Theme node status. */
+.node .unpublished {}
 
 /* Theme node types. */
 .node-type-blog  {}
@@ -475,6 +495,10 @@ ul.menu li.last  {}
  
 /* Theme nodes that belong to the author. */
 .node-mine {}
+
+/* Theme the node teaser seperatly. */
+.node-teaser {}
+.node-teaser .node-inner {}
 
 
 /**********************************************************
@@ -494,10 +518,10 @@ ul.menu li.last  {}
 .block-inner {}
 
 /* Default node title. */
-.block h2.block-title {}
+block-title {}
 
 /* Block content wrapper. */
-.block .block-content {
+.block-content {
   padding: 0;
 }
 
@@ -557,11 +581,14 @@ tr .block {
 	* Each region can have alternating styles for Odd and Even 
 	* count blocks, such as;
 	*/
-#sidebar-left .odd   {}
-#sidebar-left .even  {}
+.sidebar .odd-block  {}
+.sidebar .even-block {}
 
-#sidebar-right .odd  {}
-#sidebar-right .even {}
+#sidebar-left .odd-block  {}
+#sidebar-left .even-block {}
+
+#sidebar-right .odd-block  {}
+#sidebar-right .even-block {}
 
 /**
 	* Alternative Approach to Region Block Styling
@@ -578,26 +605,20 @@ tr .block {
 	* please post an issue if I have missed any :)
 	*/
 #block-system-0  {} /* Powered by Drupal block */
- 
 #block-user-0    {} /* Login block             */
 #block-user-1    {} /* Navigation Menu block   */
 #block-user-2    {} /* Who's New block         */
 #block-user-3    {} /* Who's Online block      */
-
 #block-comment-0 {} /* Recent Comments block   */
-
 #block-search-0  {} /* Search form block       */
-
 #block-forum-0   {} /* Active Forum topics     */
 #block-forum-1   {} /* New Forum topics        */
-
 #block-blog-0    {} /* Recent Blog posts       */
-
 #block-node-0    {} /* Syndicate block         */
-
 #block-locale-0  {} /* Language Switcher block */
 
 /* The class selector applies to all blocks of these types. */
+.block-user {} 
 .block-book {} 
 .block-aggregator {}
 
@@ -610,68 +631,73 @@ tr .block {
 	*/
 /* Comment wrapper */
 #comments {}
+#comment-wrapper-title {}
 	
-div.comment {
+.comment {
   margin: 0 0 0.375em 0;
 	 padding: 0.375em; 
 }
 
 /* Over-ride default .inner styles. */
-div.comment-inner {}
+.comment-inner {}
 
-div.indented {
+.comment .indented {
   margin-left: 2em; /* RTL */
 }
 
 /* The title of each comment. */
-div.comment h3.comment-title {
+.comment-title {
 	 margin-bottom: 0;
 }
 
-h3#comment-number {
-  margin-top: 1.5em;
-}
+.comment-id {}
 
-div.comment h3.comment-title a:link,
-div.comment h3.comment-title a:visited,
-div.comment h3.comment-title a:active {
+.comment-title a:link,
+.comment-title a:visited,
+.comment-title a:active {
   text-decoration: none;
 }
 
-div.comment h3.comment-title a:hover {
+.comment-title a:hover {
   text-decoration: underline;
 }
 
-div.comment .picture {
+.comment .user-picture {
   float: right; /* RTL */
 	 margin: 0.3em 0 0.1em 0.3em; /* RTL */
 }
 
-div.comment .picture img {
+.comment .user-picture img {
 	padding: 0;
 }
 
-div.comment .submitted {
+.comment-submitted {
   color: #888;
 	 margin: 0;
 }
 
-/* Comment content wrapper. */
-div.comment .comment-content {}
+.comment-submitted a {}
+.comment-submitted a:hover {}
 
-div.comment .links {
+/* Comment content wrapper. */
+.comment-content {}
+
+.comment .links {
 	 text-align: right; 
 	 clear: both;
 }
 
 /* Zebra styles for comments. */
-div.comment.odd  {}
-div.comment.even {}
+.comment.odd  {}
+.comment.even {}
 
 /* Style comments depending on the comment author. */
-div.comment.comment-by-author {}
-div.comment.comment-by-anon   {}
-div.comment.comment-mine      {}
+.comment-by-author {}
+.comment-by-anon   {}
+.comment-mine      {}
+
+/* Theme comment status. */
+.comment .unpublished {}
 
 
 /**********************************************************
@@ -760,26 +786,26 @@ div.comment.comment-mine      {}
 /* Search form on the results page, includes advanced search. */
 .section-search .box {}
 .section-search .box-inner {}
-.section-search .box h2.box-title    {}
+.section-search .box-title {}
 
 /* Comment form on a seperate page. */
 .section-comment .box {}
 .section-comment .box-inner {}
-.section-comment .box h2.box-title    {}
+.section-comment .box-title {}
 
 /* Comment form below content. */
 #comments .box {}
 #comments .box-inner {}
-#comments .box h2.box-title    {}
+#comments .box-title {}
 
 /* Generic box selectors. */
 .box {}
 .box-inner {}
-.box h2.box-title {}
-.box .box-content {}
-.box form         {}
-.box .form-item   {}
-.box fieldset     {}
+.box-title {}
+.box-content {}
+.box form       {}
+.box .form-item {}
+.box fieldset   {}
 
 
 /**********************************************************
@@ -889,7 +915,6 @@ table.system-status-report th {}
 	* basic style over-rides.
 	*/
 fieldset {}
- 
 fieldset legend {}
 
 html.js fieldset.collapsible legend a {}
@@ -900,7 +925,6 @@ html.js fieldset.collapsed legend a   {}
 input.form-text, textarea {}
 
 .resizable-textarea .grippie {}
-
 
 
 /**********************************************************
@@ -965,13 +989,39 @@ span.admin-disabled {}
 body.page-admin-build-themes #sidebar-left,
 body.page-admin-build-themes #sidebar-right,
 body.page-admin-build-themes-select #sidebar-left,
-body.page-admin-build-themes-select #sidebar-right {
-  height: 240px; overflow: scroll;
-}
+body.page-admin-build-themes-select #sidebar-right {}
+
+/**
+	* Admin panels.
+	*/
+div.admin {}
+div.admin .left  {}
+div.admin .right {}
+div.admin-panel  {}
+div.admin-panel h3 {}
+div.admin-panel .body {}
+div.admin-panel .description {}
 
 
 /**********************************************************
- *                   Buttons
+ *                   Local tasks (tabs)
+ **********************************************************/
+.local-tasks ul.primary {}
+.local-tasks ul.primary li {}
+.local-tasks ul.primary li a {}
+.local-tasks ul.primary li a:hover {}
+.local-tasks ul.primary li.active a {}
+
+.local-tasks ul.secondary {}
+.local-tasks ul.secondary li {}
+.local-tasks ul.secondary li a {}
+.local-tasks ul.primary li a:hover {}
+.local-tasks ul.secondary li.active {}
+.local-tasks ul.secondary li a.active {}
+
+
+/**********************************************************
+ *                      Buttons
  **********************************************************/
 /**
 	* Restyle form buttons.
