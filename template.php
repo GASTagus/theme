@@ -23,7 +23,7 @@ function genesis_preprocess_page(&$vars, $hook) {
   global $theme;
 
   // Don't display empty help from node_help().
-  if ($vars['help'] == "<div class=\"help\"><p></p>\n</div>") {
+  if ($vars['help'] == "<div class=\"help\"> \n</div>") {
     $vars['help'] = '';
   }
 
@@ -90,16 +90,18 @@ function genesis_preprocess_page(&$vars, $hook) {
 		$vars['header_classes'] = implode(' ', $header_classes); // Concatenate with spaces.
 		
   // Primary and Secondary links wrapper class.
-  if ($vars['primary_links'] && $vars['secondary_links']) {
-    $vars['nav_class'] = 'primary-secondary';
+		$nav_classes = array();
+		$nav_classes[] = 'menu';
+  if (!empty($vars['primary_menu']) && !empty($vars['secondary_menu'])) {
+    $nav_classes[] = 'primary-secondary';
   }
-  if ($vars['primary_links'] && !$vars['secondary_links']) {
-    $vars['nav_class'] = 'with-primary';
+  if (!empty($vars['primary_menu']) && empty($vars['secondary_menu'])) {
+    $nav_classes[] = 'with-primary';
   }
-  if (!$vars['primary_links'] && $vars['secondary_links']) {
-    $vars['nav_class'] = 'with-secondary';
+  if (empty($vars['primary_menu']) && !empty($vars['secondary_menu'])) {
+    $nav_classes[] = 'with-secondary';
   }
-		
+		$vars['nav_classes'] = implode(' ', $nav_classes); // Concatenate with spaces.
 }
 
 /**
@@ -115,6 +117,7 @@ function genesis_preprocess_node(&$vars, $hook) {
 
   // Special classes for nodes
   $node_classes = array();
+		$node_classes[] = 'node';
   if ($vars['sticky']) {
     $node_classes[] = 'sticky';
   }
@@ -156,12 +159,11 @@ function genesis_preprocess_comment(&$vars, $hook) {
   $vars['author_comment'] = $vars['comment']->uid == $node->uid ? TRUE : FALSE;
 
   $comment_classes = array();
-
+  $comment_classes[] = 'comment';
   // Odd/even handling
   static $comment_odd = TRUE;
   $comment_classes[] = $comment_odd ? 'odd' : 'even';
   $comment_odd = !$comment_odd;
-
   if ($vars['comment']->status == COMMENT_NOT_PUBLISHED) {
     $comment_classes[] = 'comment-unpublished';
     $vars['unpublished'] = TRUE;
@@ -203,8 +205,9 @@ function genesis_preprocess_block(&$vars, $hook) {
 
   // Special classes for blocks
   $block_classes = array();
+		$block_classes[] = 'block';
   $block_classes[] = 'block-'. $block->module;
-  $block_classes[] = 'block-'. $vars['block_zebra'];
+  $block_classes[] = $vars['block_zebra'] .'-block';
 		$block_classes[] = $block->region;
   $vars['block_classes'] = implode(' ', $block_classes);
 
@@ -243,65 +246,6 @@ function genesis_id_safe($string) {
     $string = 'id'. $string;
   }
   return $string;
-}
-
-/**
- * Implements theme_menu_item_link()
- */
-function genesis_menu_item_link($link) {
-  if (empty($link['localized_options'])) {
-    $link['localized_options'] = array();
-  }
-		
-  // If an item is a LOCAL TASK, render it as a tab.
-  if ($link['type'] & MENU_IS_LOCAL_TASK) {
-    $link['title'] = '<span class="tab">'. check_plain($link['title']) .'</span>';
-    $link['localized_options']['html'] = TRUE;
-  }
-
-  return l($link['title'], $link['href'], $link['localized_options']);
-}
-
-/**
- * Duplicate of theme_menu_local_tasks() but adds clear-block to tabs.
- */
-function genesis_menu_local_tasks() {
-  $output = '';
-
-  if ($primary = menu_primary_local_tasks()) {
-    $output .= '<ul class="tabs primary clear-block">'. $primary .'</ul>';
-  }
-  if ($secondary = menu_secondary_local_tasks()) {
-    $output .= '<ul class="tabs secondary clear-block">'. $secondary .'</ul>';
-  }
-
-  return $output;
-}
-
-/**
- * Theme override for user_picture.
- *
- * @return
- *  The un-themed variable.
- */
-function phptemplate_user_picture(&$account) {
-  if (variable_get('user_pictures', 0)) {
-    if ($account->picture && file_exists($account->picture)) {
-      $picture = file_create_url($account->picture);
-    }
-    else if (variable_get('user_picture_default', '')) {
-      $picture = variable_get('user_picture_default', '');
-    }
-    if (isset($picture)) {
-      $alt = t("@user's picture", array('@user' => $account->name ? $account->name : variable_get('anonymous', t('Anonymous'))));
-      $picture = theme('image', $picture, $alt, $alt, '', FALSE);
-      if (!empty($account->uid) && user_access('access user profiles')) {
-        $attributes = array('attributes' => array('title' => t('View user profile.')), 'html' => TRUE);
-        $picture = l($picture, "user/$account->uid", $attributes);
-      }
-      return $picture;
-    }
-  }
 }
 
 /**
