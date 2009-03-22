@@ -9,7 +9,7 @@
  * @see template_preprocess_node()
  */
 ?>
-<div class="node <?php print $node_classes; ?>" id="node-<?php print $node->nid; ?>">
+<div id="node-<?php print $node->nid; ?>" class="<?php print $node_classes; ?>">
   <div class="node-inner inner">
 
 				<?php if ($page == 0): ?>
@@ -21,27 +21,23 @@
 				<?php endif; ?>
 
 				<?php if ($submitted): ?>
-					<div class="submitted">
+					<div class="node-submitted">
 							<?php print $submitted; ?>
 					</div>
 				<?php endif; ?>
 
-				<?php if (!empty($picture)): ?>
-						<div class="picture">
-								<?php print $picture; ?>
-						</div>
-				<?php endif; ?>
+				<?php print $picture; ?>
 
 				<div class="node-content">
 						<?php print $content; ?>
 				</div>
 
 				<?php if (count($taxonomy)): ?>
-						<div class="tags"><?php print $terms; ?></div>
+						<div class="node-terms"><?php print $terms; ?></div>
 				<?php endif; ?>
 
 				<?php if ($links): ?>
-						<div class="actions"><?php print $links; ?></div>
+						<div class="node-links"><?php print $links; ?></div>
 				<?php endif; ?>
 
 	 </div>
