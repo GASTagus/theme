@@ -31,7 +31,7 @@
  */ 
 ?>
 <body id="genesis_1" <?php print $page_classes; ?>>
-  <div id="container" class="width <?php print $body_classes; ?> <?php //print 'grid' ;?>">
+  <div id="container" class="width <?php print $body_classes; ?><?php //print ' grid' ;?>">
 
     <?php if (!empty($leaderboard)): ?>
 		    <div id="leaderboard" class="region">
@@ -44,7 +44,7 @@
 						<div id="header" class="clear-block">
 								<div class="header-inner inner">
 								
-										<?php if ($site_logo || $site_name || $site_slogan): ?>
+										<?php if ($site_logo or $site_name or $site_slogan): ?>
 												<div id="branding">
 														<?php
 														/**
@@ -68,7 +68,7 @@
 		
 										<?php if (!empty($search_box)): ?>
 												<div id="search-box-top">
-														<div id="search-box-inner">
+														<div class="search-box-inner inner">
 																<?php print $search_box; ?>
 														</div>
 												</div>
@@ -85,8 +85,8 @@
 								</div> <!-- /header-inner -->
 						</div>  <!-- /header -->
 		
-						<?php if ($primary_menu || $secondary_menu): ?>
-								<div id="nav" class="menu <?php print $nav_class; ?>">
+						<?php if ($primary_menu or $secondary_menu): ?>
+								<div id="nav" class="<?php print $nav_classes; ?>">
 										<div class="nav-inner">
 				
 												<?php if (!empty($primary_menu)): ?>
@@ -144,7 +144,7 @@
 												  <h1 id="page-title"><?php print $title; ?></h1>
 												<?php endif; ?>
 												<?php if (!empty($tabs)): ?>
-												  <div class="tabs"><?php print $tabs; ?></div>
+												  <div class="local-tasks"><?php print $tabs; ?></div>
 												<?php endif; ?>
 												<?php if (!empty($messages)): print $messages; endif; ?>
 												<?php if (!empty($help)): print $help; endif; ?>
@@ -192,7 +192,7 @@
 						</div> <!-- /tertiary_content -->
 				<?php endif; ?>
 
-    <?php if ($footer || $footer_message): ?>
+    <?php if ($footer or $footer_message): ?>
 						<div id="foot-wrapper">
 				
 								<?php if (!empty($footer)): ?>
