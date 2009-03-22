@@ -8,19 +8,43 @@
 /***********************************************************
 *                  Admin, Misc.
 **********************************************************/
-div.admin       {padding-top: 0;}
-div.admin-panel {padding: 1.5em 0 0 0;}
-div.admin-panel .body {padding: 0;}
-div.admin-panel .description {margin: 0 0 1.5em 0; padding: 0;}
+/** 
+ * Experimental workaround for the theme list page for very narrow themes.
+ * When both sidebars are active, the left sidebar overlaps the theme list table,
+	* this forces the sidebars to be a set height with scroll bars. 
+ */
+body.page-admin-build-themes #sidebar-left,
+body.page-admin-build-themes #sidebar-right,
+body.page-admin-build-themes-select #sidebar-left,
+body.page-admin-build-themes-select #sidebar-right {
+  height: 240px; overflow: scroll;
+}
 
-div.admin .left,
-div.admin .right {margin:0;}
+/**
+	* Admin panels.
+	*/
+div.admin {padding-top: 0;}
+div.admin .left  {float: left;}
+div.admin .right {float: right;}
+div.admin .left, 
+div.admin .right {
+  margin: 0;
+  width: 49%;
+}
+div.admin-panel {
+  border: 1px solid #BBB;
+  margin: 0 0 0.75em;
+  padding: 0;
+}
+div.admin-panel h3 {background: #EEE; border-bottom: 1px solid #BBB; padding: 0 0.375em;}
+div.admin-panel .body {padding: 0.375em;}
+div.admin-panel .description {
+  margin: 0 0 1.5em 0; 
+		padding: 0; 
+		font-style: italic;
+}
 
 #user-admin-filter ul li,
 #node-admin-filter ul li {list-style: none;}
 
 .more-help-link {font-size: 0.9em; line-height: 1.667em;}
-
-.section-admin dt {font-weight: bold;}
-.section-admin dd {margin: 0 0 1em 1em;}
-.section-admin ul {margin: 0 0 1.5em 1.6em;}
