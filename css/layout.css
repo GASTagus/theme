@@ -18,10 +18,8 @@ html, body {margin: 0; padding: 0;}
 
 /**
  * Width
-	*
  * Over ride this default in your subthemes CSS file.
  * 80 * 12 = 960px
-	*
  * See the long note in your genesis_SUBTHEME.css file
  * for more information.
  */
@@ -38,8 +36,7 @@ html, body {margin: 0; padding: 0;}
  *                     The Layouts
  **********************************************************/
 /**
- * USAGE
- *										
+ * USAGE						
  * Replace the body id="..." (in page.tpl.php) with the your 
  * preferred layout.
  * 
@@ -48,20 +45,14 @@ html, body {margin: 0; padding: 0;}
 	* If your site uses a page-front.tpl.php or any other page-xxx.tpl.php
  * your site can have multiple layouts.
  *
- *
- * OVER RIDING THE WIDTHS AND MARGINS
-	*			 
+ * OVER RIDING THE WIDTHS AND MARGINS 
  * To over ride the defaults I suggest copying the specific layout to your 
  * subthemes CSS file and making the changes there. See the Genesis Zine 
 	* subtheme for an example (around line 32 of genesis_zine.css).
  * 
- *
 	* ABOUT THE LAYOUTS
- *
  * genesis_1, 2 & 3 place the sidebars left & right of the content column.
- *
  * genesis_4, 5, & 6 place both sidebars on the right.
- *
  * genesis_7 only supports a 2 col layout - please read the notes
  * attributed to it in the source below.
  */
