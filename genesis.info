@@ -4,7 +4,7 @@ name         = Genesis
 description  = Rapid Development Theme Framework for Drupal.
 core         = 6.x
 engine       = phptemplate
-screenshot   = screenshot.png
+screenshot   = images/screenshot.png
 
   ; The regions defined in the page.tpl.php files. The name in brackets is the 
 		; name of the variable. The text after the = sign is the short description 
