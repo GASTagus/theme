@@ -2,23 +2,20 @@
 
 	 ; Change the name, description and stylesheet file name to 
 	 ; match your new subthemes name.
-
+		
 name         = Genesis SUBTHEME
 description  = My Kickn' Sub-theme
 
-
 	 ; Change the Stylesheet name to your subthemes name. E.g genesis_mytheme.css
 
-stylesheets[all][] = genesis_SUBTHEME.css
-
+stylesheets[all][] = css/genesis_SUBTHEME.css
 
   ; Do not change core, engine, screenshot or base theme - these are required defaults.
 
 core         = 6.x
 engine       = phptemplate
-screenshot   = screenshot.png
+screenshot   = images/screenshot.png
 base theme   = genesis
-
 
   ; Regions.
 	 ; You can define new regions here.
@@ -35,14 +32,12 @@ regions[left]               = Sidebar Left
 regions[right]              = Sidebar Right
 regions[footer]             = Footer
 
-
 		; To work around IE7's 31 max stylesheets issue:
-		; 1. COPY/PASTE the all-in-one.css file to your subthemes folder.
+		; 1. COPY/PASTE the all-in-one.css file to your subthemes CSS folder.
 		; 2. Uncomment all the mini-stylesheets (remove the semicolons).
 		; 3. Uncomment the following:
 
-;stylesheets[all][] = all-in-one.css
-
+;stylesheets[all][] = css/all-in-one.css
 
   ; The mini-stylesheets.
 		; Uncomment to unset any of the Genesis core CSS files.
@@ -54,7 +49,6 @@ regions[footer]             = Footer
 ;stylesheets[all][] = css/tables.css
 ;stylesheets[all][] = css/block-edit.css
 ;stylesheets[all][] = css/admin.css
-
 
   ; Features.
 		; The "features" control which of these check boxes display on the
