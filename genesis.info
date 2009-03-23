@@ -32,13 +32,9 @@ stylesheets[all][] = css/forms.css
 stylesheets[all][] = css/messages.css
 stylesheets[all][] = css/lists.css
 stylesheets[all][] = css/tables.css
-stylesheets[all][] = css/tabs.css
 stylesheets[all][] = css/block-edit.css
 stylesheets[all][] = css/admin.css
-
-  ; Core styles
-stylesheets[all][] = base.css
-stylesheets[all][] = layout.css
+stylesheets[all][] = css/layout.css
 
   ; Use the reset to override Genesis default styles - uncomment to use.
 ;stylesheets[all][] = reset.css
