@@ -9,35 +9,35 @@
 *                     Lists
 **********************************************************/
 ul, ol {
-  margin: 0 0 1.5em;
+  margin: 0 0 1.5em 1.75em; /* LTR */
   padding: 0;
 }
 
 .block ul, .block ol,
 .item-list ul, .item-list ol {
-  margin: 0 0 0 1.75em; /* RTL */
+  margin: 0 0 0 1.75em; /* LTR */
   padding: 0;  
 }
 
 ul ul, ul ol,
 ol ol, ol ul,
-.block ul ul, 
+.block ul ul,
 .block ul ol,
-.block ol ol, 
+.block ol ol,
 .block ol ul,
-.item-list ul ul, 
+.item-list ul ul,
 .item-list ul ol,
-.item-list ol ol, 
+.item-list ol ol,
 .item-list ol ul {
-  margin: 0 0 0 1.5em; /* RTL */
+  margin: 0 0 0 1.5em; /* LTR */
 }
 
 li {margin: 0; padding: 0;}
 
-.item-list ul li, 
-ul.menu li, 
-li.expanded, 
-li.collapsed, 
+.item-list ul li,
+ul.menu li,
+li.expanded,
+li.collapsed,
 li.leaf {
   margin: 0; 
 		padding: 0;
@@ -52,4 +52,4 @@ ol ol       {list-style-type: lower-alpha;}
 ol ol ol    {list-style-type: decimal;}
 
 dt {font-weight: bold;}
-dd {margin: 0 0 1.5em 1.75em;}
+dd {margin: 0 0 1.5em 1.75em;} /* LTR */

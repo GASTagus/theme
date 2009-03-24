@@ -2,19 +2,22 @@
 
 /**
 	* @file layout.css
-	* CSS layout styles for sub-themes.
+	* LTR layout styles.
 	*/
 
-/**
- * Main Containers
- */
+/* Main containers*/
 html, body {margin: 0; padding: 0;}
 
 /* Automatic centering for widths less than 100% */
 #container {margin: 0 auto;} 
 
-/* Without this everything fails */
-#content   {float: left; width: 100%;}
+/* Float the columns */
+#content,
+#sidebar-left,
+#sidebar-right {float: left;}
+
+/* Set width on main content column */
+#content {width: 100%;}
 
 /**
  * Width
@@ -24,12 +27,6 @@ html, body {margin: 0; padding: 0;}
  * for more information.
  */
 .width {width: 80em;}
-
-/**
- * Default inner div padding
- */
-.inner         {padding: 0;}
-#content-inner {padding: 0;}
 
 
 /***********************************************************
@@ -58,115 +55,106 @@ html, body {margin: 0; padding: 0;}
  */
  
 /**
- * #genesis_1 - left & right same width.
- *  _______________________________________________
+ * #genesis_1
+	* Left & Right are the same width.
  * | Left        |     Content       | Right       |
 	* | 20em        |                   | 20em        |
-	* |_____________|___________________|_____________|
 	*/
-#genesis_1 .two-sidebars  #content-inner  {margin      : 0 20em;}
-#genesis_1 .sidebar-left  #content-inner  {margin-left :   20em;}
-#genesis_1 .sidebar-right #content-inner  {margin-right:   20em;}
+#genesis_1 .two-sidebars  #content-inner {margin      : 0 20em; padding: 0 0.75em;}
+#genesis_1 .sidebar-left  #content-inner {margin-left :   20em; padding: 0 0 0 0.75em;}
+#genesis_1 .sidebar-right #content-inner {margin-right:   20em; padding: 0 0.75em 0 0;}
 
-#genesis_1 #sidebar-left  {float: left; width: 20em; margin-left: -100%;}
-#genesis_1 #sidebar-right {float: left; width: 20em; margin-left: -20em;}
+#genesis_1 #sidebar-left  {width: 20em; margin-left: -100%;}
+#genesis_1 #sidebar-right {width: 20em; margin-left: -20em;}
 
 /**
- * #genesis_2 - variable width left & right.
- *  _______________________________________________
+ * #genesis_2
+	* Variable left & right sidebar widths.
  * | Left      |     Content      | Right          |
 	* | 14.1667em |                  | 25.8333em      |
-	* |___________|__________________|________________|
 	*/
-#genesis_2 .two-sidebars  #content-inner  {margin      : 0 25.8333em 0 14.1667em; }
-#genesis_2 .sidebar-left  #content-inner  {margin-left :               14.1667em; }
-#genesis_2 .sidebar-right #content-inner  {margin-right:   25.8333em; }
+#genesis_2 .two-sidebars  #content-inner {margin      : 0 25.8333em 0 14.1667em; padding: 0 0.75em;}
+#genesis_2 .sidebar-left  #content-inner {margin-left :               14.1667em; padding: 0 0 0 0.75em;}
+#genesis_2 .sidebar-right #content-inner {margin-right:   25.8333em            ; padding: 0 0.75em 0 0;}
 
-#genesis_2 #sidebar-left  {float: left; width: 14.1667em; margin-left: -100%; }
-#genesis_2 #sidebar-right {float: left; width: 25.8333em; margin-left: -25.8333em; }
+#genesis_2 #sidebar-left  {width: 14.1667em; margin-left: -100%; }
+#genesis_2 #sidebar-right {width: 25.8333em; margin-left: -25.8333em; }
 
 /**
- * #genesis_3 - variable width left & right (opposite of genesis_2).
- *  _______________________________________________
+ * #genesis_3
+	* Variable sidebar widths (opposite of genesis_2).
  * | Left           |     Content      | Right     |
 	* | 25.8333em      |                  | 14.1667em |
-	* |________________|__________________|___________|
  */
-#genesis_3 .two-sidebars  #content-inner  {margin     : 0 14.1667em 0 25.8333em; }
-#genesis_3 .sidebar-left  #content-inner  {margin-left:               25.8333em; }
-#genesis_3 .sidebar-right #content-inner  {margin-right:  14.1667em; }
+#genesis_3 .two-sidebars  #content-inner {margin     : 0 14.1667em 0 25.8333em; padding: 0 0.75em;}
+#genesis_3 .sidebar-left  #content-inner {margin-left:               25.8333em; padding: 0 0 0 0.75em;}
+#genesis_3 .sidebar-right #content-inner {margin-right:  14.1667em            ; padding: 0 0.75em 0 0;}
 
-#genesis_3 #sidebar-left  {float: left; width: 25.8333em; margin-left: -100%; }
-#genesis_3 #sidebar-right {float: left; width: 14.1667em; margin-left: -14.1667em; }
+#genesis_3 #sidebar-left  {width: 25.8333em; margin-left: -100%; }
+#genesis_3 #sidebar-right {width: 14.1667em; margin-left: -14.1667em; }
 
 /**
- * #genesis_4 - 2 col Right, left & right same width.
- *  _______________________________________________
+ * #genesis_4
+	* Both sidebars on the right; left & right are the same width.
  * | Content             |  Left      |  Right     |
 	* |                     |  20em      |  20em      |
-	* |_____________________|____________|____________|
 	*/
-#genesis_4 .two-sidebars  #content-inner  {margin-right: 40em;}
-#genesis_4 .sidebar-left  #content-inner  {margin-right: 20em;}
-#genesis_4 .sidebar-right #content-inner  {margin-right: 20em;}
+#genesis_4 .two-sidebars  #content-inner {margin-right: 40em; padding: 0 0.75em 0 0;}
+#genesis_4 .sidebar-left  #content-inner {margin-right: 20em; padding: 0 0.75em 0 0;}
+#genesis_4 .sidebar-right #content-inner {margin-right: 20em; padding: 0 0.75em 0 0;}
 
-#genesis_4 #sidebar-left  {float: left; width: 20em; margin-left: -40em;}
-#genesis_4 #sidebar-right {float: left; width: 20em; margin-left: -20em;}
+#genesis_4 #sidebar-left  {width: 20em; margin-left: -40em;}
+#genesis_4 #sidebar-right {width: 20em; margin-left: -20em;}
 
-#genesis_4 .sidebar-left #sidebar-left { float:left; width:20em; margin-left: -20em;}
+#genesis_4 .sidebar-left #sidebar-left {width:20em; margin-left: -20em;}
 
 /**
- * #genesis_5 - 2 col Right, variable width left & right.
- *  _______________________________________________
+ * #genesis_5 
+	* Both sidebars on the right; variable width left & right.
  * | Content            | Left      |  Right       |
 	* |                    | 14.1667em |  25.8333em   |
-	* |____________________|___________|______________|
  */
-#genesis_5 .two-sidebars  #content-inner  {margin-right: 40em;}
-#genesis_5 .sidebar-left  #content-inner  {margin-right: 14.1667em;}
-#genesis_5 .sidebar-right #content-inner  {margin-right: 25.8333em;}
+#genesis_5 .two-sidebars  #content-inner {margin-right: 40em     ; padding: 0 0.75em 0 0;}
+#genesis_5 .sidebar-left  #content-inner {margin-right: 14.1667em; padding: 0 0.75em 0 0;}
+#genesis_5 .sidebar-right #content-inner {margin-right: 25.8333em; padding: 0 0.75em 0 0;}
 
-#genesis_5 #sidebar-left  {float: left; width: 14.1667em; margin-left: -40em;}
-#genesis_5 #sidebar-right {float: left; width: 25.8333em; margin-left: -25.8333em;}
+#genesis_5 #sidebar-left  {width: 14.1667em; margin-left: -40em;}
+#genesis_5 #sidebar-right {width: 25.8333em; margin-left: -25.8333em;}
 
-#genesis_5 .sidebar-left #sidebar-left { float:left; width: 14.1667em; margin-left: -14.1667em;}
+#genesis_5 .sidebar-left #sidebar-left {width: 14.1667em; margin-left: -14.1667em;}
 
 /**
- * #genesis_6 - 2 col Right, variable width left & right (opposite of genesis_5).
- *  _______________________________________________
+ * #genesis_6 
+	* Both sidebars on the right; variable width left & right (opposite of genesis_5).
  * | Content            |  Left        | Right     |
 	* |                    |  25.8333em   | 14.1667em |
-	* |____________________|______________|___________|
  */
-#genesis_6 .two-sidebars  #content-inner  {margin-right: 40em;}
-#genesis_6 .sidebar-left  #content-inner  {margin-right: 25.8333em;}
-#genesis_6 .sidebar-right #content-inner  {margin-right: 14.1667em;}
+#genesis_6 .two-sidebars  #content-inner {margin-right: 40em     ; padding: 0 0.75em 0 0;}
+#genesis_6 .sidebar-left  #content-inner {margin-right: 25.8333em; padding: 0 0.75em 0 0;}
+#genesis_6 .sidebar-right #content-inner {margin-right: 14.1667em; padding: 0 0.75em 0 0;}
 
-#genesis_6 #sidebar-left  {float: left; width: 25.8333em; margin-left: -40em;}
-#genesis_6 #sidebar-right {float: left; width: 14.1667em; margin-left: -14.1667em;}
+#genesis_6 #sidebar-left  {width: 25.8333em; margin-left: -40em;}
+#genesis_6 #sidebar-right {width: 14.1667em; margin-left: -14.1667em;}
 
-#genesis_6 .sidebar-left #sidebar-left { float:left; width: 25.8333em; margin-left: -25.8333em;}
+#genesis_6 .sidebar-left #sidebar-left {width: 25.8333em; margin-left: -25.8333em;}
 
 /**
- * #genesis_7 - Golden Rule Layout 1:1.618, 2 columns, adaptive width.
+ * #genesis_7
+	* Golden Rule Layout 1:1.618, 2 columns, adaptive width.
 	*
 	* NOTE: With this layout you can only use either the Left or Right sidebars, 
 	* but never both on the same page.
- *  _______________________________________________
  * | Content                  |  Left OR Right     |
 	* | 62%                      |  38%               |
-	* |__________________________|____________________|
  */
-#genesis_7 .two-sidebars  #content-inner  {margin-right: 38%;}
-#genesis_7 .sidebar-left  #content-inner  {margin-right: 38%;}
-#genesis_7 .sidebar-right #content-inner  {margin-right: 38%;}
+#genesis_7 .two-sidebars  #content-inner {margin-right: 38%; padding: 0 0.75em 0 0;}
+#genesis_7 .sidebar-left  #content-inner {margin-right: 38%; padding: 0 0.75em 0 0;}
+#genesis_7 .sidebar-right #content-inner {margin-right: 38%; padding: 0 0.75em 0 0;}
 
-#genesis_7 #sidebar-left  {float: left; width: 38%; margin-left: -38%;}
-#genesis_7 #sidebar-right {float: left; width: 38%; margin-left: -38%;}
+#genesis_7 #sidebar-left  {width: 38%; margin-left: -38%;}
+#genesis_7 #sidebar-right {width: 38%; margin-left: -38%;}
 
-#genesis_7 .sidebar-left #sidebar-left {float:left; width: 38%; margin-left: -38%;}
+#genesis_7 .sidebar-left #sidebar-left {width: 38%; margin-left: -38%;}
 
-/**
- * Clear both
- */
+/* Clear both */
 .clear {clear: both;}
