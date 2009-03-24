@@ -167,7 +167,7 @@
 						</div>
 
 						<?php if (!empty($left)): ?>
-								<div id="sidebar-left" class="sidebar">
+								<div id="sidebar-left" class="sidebars">
 										<div class="sidebar-inner inner">
 												<?php print $left; ?>
 										</div>
@@ -175,7 +175,7 @@
 						<?php endif; ?>
 
 						<?php if (!empty($right)): ?>
-								<div id="sidebar-right" class="sidebar">
+								<div id="sidebar-right" class="sidebars">
 										<div class="sidebar-inner inner">
 												<?php print $right; ?>
 										</div>

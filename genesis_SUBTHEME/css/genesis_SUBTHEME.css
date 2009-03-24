@@ -99,18 +99,18 @@ body {}
 	* using a more specific selector such as "#sidebar-left .inner".
 	*/
 /* Global default inner padding */
-.inner         {padding: 0 0.375em;}
+.inner {}
 
 /* #content-inner is the main content wrapper */
-#content-inner {padding: 0 0.375em;}
+#content-inner {}
 
 
 /**********************************************************
  *                      Sidebars
  **********************************************************/
 	/* Target both sidebars with this low specifity selector. */
-.sidebar {}
-.sidebar .inner {}
+.sidebars {}
+.sidebars .inner {}
 .sidebar-inner {}
 
 /* Target a specific sidebar or its sidebar-inner. */
@@ -281,7 +281,7 @@ div#site-name  {
 	*/
 #primary { 
 	 padding: 0;
-	 background: #FFFF99; /* Default yellow for dev only. */
+	 background: #CCC; /* Default gray for dev only. */
 		font-weight: bold;
 }
 
@@ -343,7 +343,7 @@ div#site-name  {
 	*/
 #secondary { 
 	 padding: 0;
-	 background: #99CCFF; /* Default blue for dev only. */
+	 background: #EEE; /* Default gray for dev only. */
 		font-weight: bold;
 }
 
@@ -421,7 +421,7 @@ ul.menu li.last  {}
  **********************************************************/
 #mission {
   margin: 0 0 1.5em 0;
-		padding: 0 0.375em;
+		padding: 0;
 		font-weight: bold;
 }
 
@@ -630,7 +630,7 @@ tr .block {
 	* Implimentation of comment styles.
 	*/
 /* Comment wrapper */
-#comments {}
+#comment-wrapper {}
 #comment-wrapper-title {}
 	
 .comment {
