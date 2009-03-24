@@ -10,7 +10,7 @@
  */
 ?>
 <?php if ($content): ?>
-  <div id="comments">
+  <div id="comment-wrapper">
 
     <?php if ($node->type != 'forum'): ?>
       <h2 id="comment-wrapper-title"><?php print t('Comments'); ?></h2>
