@@ -48,3 +48,7 @@ div.admin-panel .description {
 #node-admin-filter ul li {list-style: none;}
 
 .more-help-link {font-size: 0.9em; line-height: 1.667em;}
+
+/* Experimental column backgrounds on the permissions page */
+#user-admin-perm td[title~="anonymous"] {background: #E2E2E2!important;}
+#user-admin-perm td[title~="authenticated"] {background: #DDD!important;}
