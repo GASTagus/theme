@@ -21,7 +21,7 @@ tr.even,
 tr.odd,
 tbody th {border: solid #CCC; border-width: 1px 0;}
 tr.odd, 
-tr.info {background-color: #F7F7F7;}
+tr.info {background-color: #F5F5F5;}
 tr.even {background-color: #FFF;}
 
 tr.drag {background-color: #FFFFF0;}

@@ -26,39 +26,39 @@ body.page-admin-build-themes .description {color: #888;}
 /**
 	* Admin panels.
 	*/
-.admin .compact-link {margin: 0 0 1em;}
-div.admin {padding-top: 0;}
-div.admin .left  {float: left;}
-div.admin .right {float: right;}
-div.admin .left, 
-div.admin .right {
-  margin: 0;
-  width: 49%;
-}
 div.admin-panel {
-  margin: 0 0 0.75em;
+  background: #EEE;
+  border: 1px solid #CCC;
+  margin: 0 0 0.5em;
   padding: 0;
 }
-div.admin-panel h3 {border-bottom: 4px solid #DDD;}
-div.admin-panel .body {padding: 0.375em 0;}
-div.admin-panel .description {
-  margin: 0 0 1.5em 0; 
-		padding: 0; 
-		font-style: italic;
+div.admin-panel h3 {
+  float: left;
+  padding: 1em 0 0 1em;
+  width: 13.3333em;
+		color: #222;
 }
-div.admin-panel dd {color: #888;}
+div.admin-panel .body {
+  background: #FFF;
+  margin: 0 0 0 13.3333em;
+  padding: 0 1em;
+}
+div.admin-panel p  {margin: 0; padding: 1em 0 0;}
+div.admin-panel ul {margin: 0; padding: 1em 0;}
+div.admin-panel ul li {list-style: none; padding: 0 0 0.6em;}
+div.admin-panel dl {margin: 0; padding: 1em 0;}
+div.admin-panel dt {float: left; font-weight: normal;}
+div.admin-panel dd {color: #888; font-size: 0.94em; padding: 0 0 0.75em;	margin: 0 0 0 14em;}
+
+.admin .compact-link {margin: 0 0 1em;}
 
 #user-admin-filter ul li,
 #node-admin-filter ul li {list-style: none;}
 
-.more-help-link {
-  font-size: 0.94em; 
-		line-height: 1.667em;
-}
+.more-help-link {font-size: 0.94em;	line-height: 1.667em;}
 
-/* Experimental column backgrounds on the permissions page */
-#user-admin-perm td[title~="anonymous"] {background: #E2E2E2!important;}
-#user-admin-perm td[title~="authenticated"] {background: #DDD!important;}
+#permissions td.permission {padding-left:0.5em;}
+#permissions td.module {background: #EEE; color: #222; font-weight: bold;}
 
 /* Local tasks */
 .local-tasks {margin-bottom: 0.75em;}
@@ -68,12 +68,6 @@ ul.secondary {
 		margin: 0 0 1em;
 		padding: 1em 0;
 }
-ul.secondary li {
-  border-right: none;
-  padding:0 0.75em;
-}
+ul.secondary li {border-right: none; padding:0 0.75em;}
 ul.secondary a:hover,
-ul.secondary a.active {
-  border-bottom: none;
-		text-decoration: underline;
-}
+ul.secondary a.active {border-bottom: none;text-decoration: underline;}
