@@ -20,7 +20,6 @@
     <link rel="stylesheet" href="<?php print $base_path . $directory; ?>/css/ie.css" type="text/css" />
   <![endif]-->
   <?php print $scripts; ?>
-  <script type="text/javascript"><?php /* Needed to avoid Flash of Unstyled Content in IE */ ?> </script>
 </head>
 <?php
 /**
