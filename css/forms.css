@@ -79,12 +79,12 @@ html.js fieldset.collapsed {
   padding-bottom: .75em;
 }
 html.js fieldset.collapsible legend a {
-  color: #0066B3;
+  /*color: #0066B3;*/
   padding-left: 1em; /* LTR */
   background: url(../images/arrow-down.gif) no-repeat 0% 50%; /* LTR */
 }
 html.js fieldset.collapsed legend a {
-  color: #0066B3;
+  /*color: #0066B3;*/
   background: url(../images/arrow-right.gif) no-repeat 0% 50%; /* LTR */
 }
 

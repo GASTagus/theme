@@ -281,7 +281,7 @@ div#site-name  {
 	*/
 #primary { 
 	 padding: 0;
-	 background: #CCC; /* Default gray for dev only. */
+	 background: #EEE; /* Default gray for dev only. */
 		font-weight: bold;
 }
 
@@ -343,7 +343,7 @@ div#site-name  {
 	*/
 #secondary { 
 	 padding: 0;
-	 background: #EEE; /* Default gray for dev only. */
+	 background: #F8F8F8; /* Default gray for dev only. */
 		font-weight: bold;
 }
 
@@ -649,8 +649,8 @@ tr .block {
 .comment-title {
 	 margin-bottom: 0;
 }
-
-.comment-id {}
+.comment-id {color: #888;}
+.comment-title .new {color: #FF8000;}
 
 .comment-title a:link,
 .comment-title a:visited,
@@ -817,7 +817,7 @@ tr .block {
 #foot-wrapper { 
   text-align: center;
 	 margin: 0.375em 0;
-	 padding: 0.75em;
+	 padding: 0;
 }
 
 #footer {}
@@ -928,39 +928,6 @@ input.form-text, textarea {}
 
 
 /**********************************************************
- *                    Messages
- **********************************************************/
-/**
-	* Drupal + messages.css do a good job of messages already, but
-	* you can over-ride all of it. See the Genesis Darkmatter or Typo #1 
-	* theme as examples. 
-	*/
-div.messages.success {}
-
-.status {}
-
-.error    {}
-div.error {}
-
-.notice {}
-
-div.help    {}
-.help ul li {}
-
-.warning    {}
-div.warning, 
-tr.warning  {}
-div.warning {}
-
-div.error, tr.error, 
-span.form-required, span.marker {}
-
-.ok    {}
-div.ok {}
-div.ok, tr.ok {}
-
-
-/**********************************************************
  *                     Admin
  **********************************************************/
 /**
@@ -1006,11 +973,20 @@ div.admin-panel .description {}
 /**********************************************************
  *                   Local tasks (tabs)
  **********************************************************/
-.local-tasks ul.primary {}
+.local-tasks ul.primary {border-bottom-color: #CCC;}
 .local-tasks ul.primary li {}
-.local-tasks ul.primary li a {}
-.local-tasks ul.primary li a:hover {}
-.local-tasks ul.primary li.active a {}
+.local-tasks ul.primary li a {
+  background-color: #EEE;
+  border-color: #CCC;
+}
+.local-tasks ul.primary li a:hover  {
+  background-color: #F5F5F5;
+  border-color: #DDD;
+}
+.local-tasks ul.primary li.active a {
+  background-color: #FFF;		
+		border-bottom-color: #FFF;
+}
 
 .local-tasks ul.secondary {}
 .local-tasks ul.secondary li {}
