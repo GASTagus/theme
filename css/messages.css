@@ -8,17 +8,23 @@
 /***********************************************************
 *                   Messages
 **********************************************************/
-div.messages         {font-weight: bold; margin: 1em 0; padding: 0.75em;}
-div.messages ul      {margin: 0 0 0 2em;}
+div.messages {
+  font-weight: bold; 
+		margin: 1em 0; 
+		padding: 0.75em;
+}
+div.messages ul {
+  margin: 0 0 0 2em;
+}
 
 div.success {color: #55872E; background: #F1F8EB; border: 1px solid #7AC142;}
 div.status  {color: #264409; background: #E6EFC2; border: 1px solid #C6D880;}
-div.error, tr.error
-            {color: #8A1F11; background: #FFDFDF; border: 1px solid #DD7777;}
+div.error, 
+tr.error    {color: #8A1F11; background: #FFDFDF; border: 1px solid #DD7777;}
 div.notice  {color: #514721; background: #FFF6BF; border-color: #FFD324;}
-.error a   {color: #8a1f11; text-decoration: underline;}
-.notice a  {color: #514721; text-decoration: underline;}
-.success a {color: #264409; text-decoration: underline;}
+.error a    {color: #8a1f11; text-decoration: underline;}
+.notice a   {color: #514721; text-decoration: underline;}
+.success a  {color: #264409; text-decoration: underline;}
 
 div.help {
   background: #FFC;
@@ -28,7 +34,9 @@ div.help {
 }
 
 div.help p:last-child,
-div.help ul:last-child {margin-bottom: 0;}  
+div.help ul:last-child {
+  margin-bottom: 0;
+}  
 
 .form-item input.error,
 .form-item textarea.error,
@@ -73,8 +81,14 @@ div.comment div.unpublished {
   display: none;
   padding-left: 36px;
 }
-#saving p {margin: 0;}
-#saving-notice {font-size: 0.9em;font-style: italic;background: #FFC;}
+#saving p {
+  margin: 0;
+}
+#saving-notice {
+  font-size: 0.9em;
+		font-style: italic;
+		background: #FFC;
+}
 
 /* Un-used helpers.
 .help ul li {}

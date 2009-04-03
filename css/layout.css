@@ -2,35 +2,11 @@
 
 /**
 	* @file layout.css
-	* LTR layout styles.
+	* layout styles.
 	*/
 
-/* Main containers*/
-html, body {margin: 0; padding: 0;}
-
-/* Automatic centering for widths less than 100% */
-#container {margin: 0 auto;} 
-
-/* Float the columns */
-#content,
-#sidebar-left,
-#sidebar-right {float: left;}
-
-/* Set width on main content column */
-#content {width: 100%;}
-
-/**
- * Width
- * Over ride this default in your subthemes CSS file.
- * 80 * 12 = 960px
- * See the long note in your genesis_SUBTHEME.css file
- * for more information.
- */
-.width {width: 80em;}
-
-
 /***********************************************************
- *                     The Layouts
+ *                     The 7 Layouts
  **********************************************************/
 /**
  * USAGE						
@@ -155,6 +131,33 @@ html, body {margin: 0; padding: 0;}
 #genesis_7 #sidebar-right {width: 38%; margin-left: -38%;}
 
 #genesis_7 .sidebar-left #sidebar-left {width: 38%; margin-left: -38%;}
+
+
+/***********************************************************
+ *                    Containers
+ **********************************************************/
+/* Main containers*/
+html, body {margin: 0; padding: 0;}
+
+/* Automatic centering for widths less than 100% */
+#container {margin: 0 auto;} 
+
+/* Float the columns */
+#content,
+#sidebar-left,
+#sidebar-right {float: left;}
+
+/* Set width on main content column */
+#content {width: 100%;}
+
+/**
+ * Width
+ * Over ride this default in your subthemes CSS file.
+ * 80 * 12 = 960px
+ * See the long note in your genesis_SUBTHEME.css file
+ * for more information.
+ */
+.width {width: 80em;}
 
 /* Clear both */
 .clear {clear: both;}

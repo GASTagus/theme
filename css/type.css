@@ -37,33 +37,80 @@ body {
   line-height: 1.5; /* unitless line height */
 }
 
-h1 {font-size: 2em  ; line-height: 1; margin: 0 0 0.5em 0; padding: 0;}
-h2 {font-size: 1.5em; line-height: 1; margin: 0; padding: 0;}
-h3, h4, h5, h6 {font-size: 1em ; margin: 0; padding: 0;}
+h1 {
+  font-size: 2em; 
+		line-height: 1;
+		margin: 0 0 0.5em 0; 
+		padding: 0;
+}
+h2 {
+  font-size: 1.5em; 
+		line-height: 1; 
+		margin: 0; 
+		padding: 0;
+}
+h3, h4, h5, h6 {
+  font-size: 1em; 
+		margin: 0; 
+		padding: 0;
+}
 
 h1 img, h2 img, h3 img, 
-h4 img, h5 img, h6 img {margin: 0; padding: 0;}
+h4 img, h5 img, h6 img {
+  margin: 0; padding: 0;
+}
 
-a             {margin: 0; padding: 0;}
-p             {margin: 0 0 1.5em; padding: 0;}
-blockquote p  {margin: 0;}
-strong        {font-weight: bold;}
-em, dfn       {font-style:  italic; margin: 0; padding: 0;}
-dfn           {font-weight: bold;}
-sup, sub      {line-height: 0;}
-del           {color:#666; margin: 0; padding: 0;}
-pre, code     {margin: 1.5em 0; padding: 0; white-space: pre;}
-pre, code, tt {font: 1em 'andale mono', 'lucida console', monospace; line-height: 1.5;} 
+a {
+  margin: 0; 
+		padding: 0;
+}
+p {
+  margin: 0 0 1.5em; 
+		padding: 0;
+}
+blockquote p {
+  margin: 0;
+}
+strong {
+  font-weight: bold;
+}
+em, dfn {
+  font-style: italic; 
+		margin: 0; 
+		padding: 0;
+}
+dfn {
+  font-weight: bold;
+}
+sup, sub {
+  line-height: 0;
+}
+del {
+  color: #666; 
+		margin: 0; 
+		padding: 0;
+}
+pre, code {
+  margin: 1.5em 0; 
+		padding: 0; 
+		white-space: pre;
+}
+pre, code, tt {
+  font: 1em 'andale mono', 'lucida console', monospace;
+} 
 
 /* Preserve line-height and selector appearance */
-sup {vertical-align:text-top;}
-sub {vertical-align:text-bottom;}
+sup {
+  vertical-align:text-top;
+}
+sub {
+  vertical-align:text-bottom;
+}
 
 /* Mitigate relative shrinkage */
-li li, li p, td p, blockquote p {font-size:1em;} 
-
-/* Remove border bottom */
-abbr, acronym {border: none;}
+li li, li p, td p, blockquote p {
+  font-size:1em;
+}
 
 blockquote, q {
   font-style: italic;  /* LTR */
@@ -73,5 +120,9 @@ blockquote, q {
 /* Remove possible quote marks (") from <q>, <blockquote>. */
 blockquote:before, 
 blockquote:after, 
-q:before, q:after {content: "";}
-blockquote, q     {quotes: "" "";}
+q:before, q:after {
+  content: "";
+}
+blockquote, q {
+  quotes: "" "";
+}

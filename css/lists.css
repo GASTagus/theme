@@ -32,7 +32,10 @@ ol ol, ol ul,
   margin: 0 0 0 1.5em; /* LTR */
 }
 
-li {margin: 0; padding: 0;}
+li {
+  margin: 0; 
+		padding: 0;
+}
 
 .item-list ul li,
 ul.menu li,

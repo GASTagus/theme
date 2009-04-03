@@ -21,7 +21,9 @@ body.page-admin-build-themes-select #sidebar-right {
 		overflow-y: scroll;
 		background: #F7F7F7;
 }
-body.page-admin-build-themes .description {color: #888;}
+body.page-admin-build-themes .description {
+  color: #888;
+}
 
 /**
 	* Admin panels.
@@ -43,31 +45,87 @@ div.admin-panel .body {
   margin: 0 0 0 13.3333em;
   padding: 0 1em;
 }
-div.admin-panel p  {margin: 0; padding: 1em 0 0;}
-div.admin-panel ul {margin: 0; padding: 1em 0;}
-div.admin-panel ul li {list-style: none; padding: 0 0 0.6em;}
-div.admin-panel dl {margin: 0; padding: 1em 0;}
-div.admin-panel dt {float: left; font-weight: normal;}
-div.admin-panel dd {color: #888; font-size: 0.94em; padding: 0 0 0.75em;	margin: 0 0 0 14em;}
+div.admin-panel p  {
+  margin: 0; 
+		padding: 1em 0 0;
+}
+div.admin-panel ul {
+  margin: 0; 
+		padding: 1em 0;
+}
+div.admin-panel ul li {
+  list-style: none; 
+		padding: 0 0 0.6em;
+}
+div.admin-panel dl {
+  margin: 0; 
+		padding: 1em 0;
+}
+div.admin-panel dt {
+  float: left; 
+		font-weight: normal;
+}
+div.admin-panel dd {
+  color: #888; 
+		font-size: 0.94em; 
+		padding: 0 0 0.75em;	
+		margin: 0 0 0 14em;
+}
 
-.admin .compact-link {margin: 0 0 1em;}
+.admin .compact-link {
+  margin: 0 0 1em;
+}
 
 #user-admin-filter ul li,
-#node-admin-filter ul li {list-style: none;}
+#node-admin-filter ul li {
+  list-style: none;
+}
 
-.more-help-link {font-size: 0.94em;	line-height: 1.667em;}
+.more-help-link {
+  font-size: 0.94em;	
+		line-height: 1.667em;
+}
 
-#permissions td.permission {padding-left:0.5em;}
-#permissions td.module {background: #EEE; color: #222; font-weight: bold;}
+#permissions td.permission {
+  padding-left:0.5em;
+}
+#permissions td.module {
+  background: #EEE; 
+		color: #222; 
+		font-weight: bold;
+}
 
 /* Local tasks */
 .local-tasks {margin-bottom: 0.75em;}
-ul.primary {margin: 0.75em 0 0 0;}
+ul.primary {
+  margin: 1.5em 0 0 0; 
+		padding: 0 0 0.35em 1em;
+		border-bottom-color: #CCC;
+}
+ul.primary li a {
+  padding: 0.3em 1em 0.4em;
+		background-color: #EEE;
+  border-color: #CCC;
+}
+.local-tasks ul.primary li a:hover  {
+  background-color: #F5F5F5;
+  border-color: #DDD;
+}
+.local-tasks ul.primary li.active a {
+  background-color: #FFF;		
+		border-bottom-color: #FFF;
+}
 ul.secondary {
-		border-bottom: 1px solid #BBB;
 		margin: 0 0 1em;
 		padding: 1em 0;
+		border-bottom: 1px solid #BBB;
 }
-ul.secondary li {border-right: none; padding:0 0.75em;}
+ul.secondary li {
+		padding:0 0.75em;
+		border-right: none;
+}
 ul.secondary a:hover,
-ul.secondary a.active {border-bottom: none;text-decoration: underline;}
+ul.secondary a.active {
+  border-bottom: none;
+		text-decoration: underline;
+}
