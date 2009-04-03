@@ -973,27 +973,17 @@ div.admin-panel .description {}
 /**********************************************************
  *                   Local tasks (tabs)
  **********************************************************/
-.local-tasks ul.primary {border-bottom-color: #CCC;}
+.local-tasks ul.primary {}
 .local-tasks ul.primary li {}
-.local-tasks ul.primary li a {
-  background-color: #EEE;
-  border-color: #CCC;
-}
-.local-tasks ul.primary li a:hover  {
-  background-color: #F5F5F5;
-  border-color: #DDD;
-}
-.local-tasks ul.primary li.active a {
-  background-color: #FFF;		
-		border-bottom-color: #FFF;
-}
+.local-tasks ul.primary li a {}
+.local-tasks ul.primary li a:hover  {}
+.local-tasks ul.primary li.active a {}
 
 .local-tasks ul.secondary {}
 .local-tasks ul.secondary li {}
 .local-tasks ul.secondary li a {}
 .local-tasks ul.primary li a:hover {}
-.local-tasks ul.secondary li.active {}
-.local-tasks ul.secondary li a.active {}
+.local-tasks ul.secondary li.active a {}
 
 
 /**********************************************************
