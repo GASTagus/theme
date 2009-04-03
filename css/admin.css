@@ -24,68 +24,84 @@ body.page-admin-build-themes-select #sidebar-right {
 body.page-admin-build-themes .description {
   color: #888;
 }
-
 /**
 	* Admin panels.
 	*/
-div.admin-panel {
+.admin-panel {
   background: #EEE;
   border: 1px solid #CCC;
   margin: 0 0 0.5em;
   padding: 0;
 }
-div.admin-panel h3 {
+.admin-panel h3 {
   float: left;
   padding: 1em 0 0 1em;
   width: 13.3333em;
 		color: #222;
 }
-div.admin-panel .body {
+.admin-panel .body {
   background: #FFF;
   margin: 0 0 0 13.3333em;
   padding: 0 1em;
 }
-div.admin-panel p  {
+.admin-panel p  {
   margin: 0; 
 		padding: 1em 0 0;
 }
-div.admin-panel ul {
+.admin-panel ul {
   margin: 0; 
 		padding: 1em 0;
 }
-div.admin-panel ul li {
+.admin-panel ul li {
   list-style: none; 
 		padding: 0 0 0.6em;
 }
-div.admin-panel dl {
+.admin-panel dl {
   margin: 0; 
 		padding: 1em 0;
 }
-div.admin-panel dt {
+.admin-panel dt {
   float: left; 
 		font-weight: normal;
 }
-div.admin-panel dd {
+.admin-panel dd {
   color: #888; 
 		font-size: 0.94em; 
 		padding: 0 0 0.75em;	
 		margin: 0 0 0 14em;
 }
-
 .admin .compact-link {
   margin: 0 0 1em;
 }
-
+.page-admin-by-module .admin h3 {
+  float: none;
+		padding: 1em;
+}
+.page-admin-by-module .admin .left {
+  float: left;
+  width: 49%;
+}
+.page-admin-by-module .admin .right {
+  float: right;
+  width: 49%;
+		margin: 0;
+}
+.page-admin-by-module .admin-panel .body {
+  margin: 0;
+}
+.page-admin-by-module .admin-panel .body p {  
+  color: #888; 
+		font-size: 0.94em; 
+}
+/* Misc */
 #user-admin-filter ul li,
 #node-admin-filter ul li {
   list-style: none;
 }
-
 .more-help-link {
   font-size: 0.94em;	
 		line-height: 1.667em;
 }
-
 #permissions td.permission {
   padding-left:0.5em;
 }
@@ -94,8 +110,9 @@ div.admin-panel dd {
 		color: #222; 
 		font-weight: bold;
 }
-
-/* Local tasks */
+/**
+ * Local tasks 
+	*/
 .local-tasks {margin-bottom: 0.75em;}
 ul.primary {
   margin: 1.5em 0 0 0; 
