@@ -129,7 +129,38 @@ html.js fieldset.collapsed legend a {
   background: url(../images/arrow-right.gif) no-repeat 0% 50%; /* LTR */
 }
 
-/* Add support for Vertical Tabs module */
+/**
+ * Add support for Vertical Tabs module 
+	*/
 #node-form .vertical-tabs ul.vertical-tabs-list {
   margin: 0;
+}
+/**
+ * OpenID icon fix for Drupal 6
+	*/
+#user-login-form li.openid-link,
+#user-login-form li.user-link {
+  text-align: center;
+}
+html.js #user-login-form li.openid-link,
+html.js #user-login li.openid-link {
+  list-style: none;
+}
+#user-login-form ul {
+  margin-top: 0;
+}
+#user-login ul {
+  margin: 0 0 5px;
+}
+#user-login ul li {
+  margin: 0;
+}
+#user-login-form li.openid-link,
+#user-login li.openid-link {
+  background: none;
+}
+#user-login-form li.openid-link a,
+#user-login li.openid-link a {
+  background: transparent url("../images/login-bg.png") no-repeat 0 0;
+  padding: 0 20px;
 }
