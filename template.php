@@ -193,6 +193,15 @@ function genesis_preprocess_comment(&$vars, $hook) {
 }
 
 /**
+ * Add a "Comments" heading above comments except on forum pages.
+ */
+function genesis_preprocess_comment_wrapper(&$vars) {
+  if ($vars['content'] && $vars['node']->type != 'forum') {
+    $vars['content'] = '<h2 class="comment-wrapper-title">'. t('Comments') .'</h2>'.  $vars['content'];
+  }
+}
+
+/**
  * Override or insert variables into block templates.
  *
  * @param $vars
@@ -246,15 +255,6 @@ function genesis_id_safe($string) {
     $string = 'id'. $string;
   }
   return $string;
-}
-
-/**
- * Return a themed breadcrumb trail.
- */
-function phptemplate_breadcrumb($breadcrumb) {
-  if (!empty($breadcrumb)) {
-    return '<div class="breadcrumb">'. implode(' &raquo; ', $breadcrumb) .'</div>';
-  }
 }
 
 /**
