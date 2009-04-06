@@ -135,6 +135,9 @@ html.js fieldset.collapsed legend a {
 #node-form .vertical-tabs ul.vertical-tabs-list {
   margin: 0;
 }
+#node-form .vertical-tabs ul.vertical-tabs-list li {
+  list-style: none;
+}
 /**
  * OpenID icon fix for Drupal 6
 	*/
