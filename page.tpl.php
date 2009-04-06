@@ -112,12 +112,14 @@
 				
 				<?php if (!empty($breadcrumb)): ?>
 						<div id="breadcrumb">
-								<?php print $breadcrumb; ?>
+						  <div class="breadcrumb-inner inner">
+								  <?php print $breadcrumb; ?>
+						  </div>
 						</div> <!-- /breadcrumb -->
 				<?php endif; ?>
 		
 				<?php if (!empty($secondary_content)): ?>
-						<div id="secondary-content" class="region clear">
+						<div id="secondary-content" class="region clear clear-block">
 								<div class="region-inner inner">
 										<?php print $secondary_content; ?>
 								</div>
@@ -168,7 +170,7 @@
 						<?php if (!empty($left)): ?>
 								<div id="sidebar-left" class="sidebar">
 										<div class="sidebar-inner inner">
-												<?php print $left; ?>
+										  <?php print $left; ?>
 										</div>
 								</div> <!-- /sidebar-left -->
 						<?php endif; ?>
@@ -184,7 +186,7 @@
 				</div> <!-- /col wrapper -->
 
 				<?php if (!empty($tertiary_content)): ?>
-						<div id="tertiary-content" class="region clear">
+						<div id="tertiary-content" class="region clear clear-block">
 								<div class="region-inner inner">
 										<?php print $tertiary_content; ?>
 								</div> 
