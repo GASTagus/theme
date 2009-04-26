@@ -1,0 +1,38 @@
+/* $Id$ */
+
+/**
+ * @file block-edit.css
+ * Style the block editing links.
+ */
+
+/***********************************************************
+*                    Block Edit
+**********************************************************/
+/**
+ * Edit links for blocks.
+ */
+div.block {
+  position: relative;
+}
+div.block div.edit {
+  display: none;
+  position: absolute;
+  right: 0; /* LTR */
+  top: 0;
+  z-index: 40;
+  border: 1px solid #EEE;
+  padding: 0 2px;
+  font-size: 11px;
+  background-color: #FFF;
+}
+div.block:hover div.edit {
+  display: block;
+}
+.block .node,
+.block .comment {
+  margin-bottom: 0;
+}
+/* blocks page table */
+tr .block {
+  border: none;
+}

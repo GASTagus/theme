@@ -1,0 +1,108 @@
+/* $Id$ */
+
+/**
+ * Genesis layout methods
+ * 
+ * This file includes all layout declarations. Should you
+	* need to override a layout, copy it to your subthemes
+	* page.css file and modify it there.
+ * 
+	* @file      layout.css
+ * @project   http://drupal.org/projects/genesis
+ * @author    Jeff Burnz
+ *
+	*
+ * Usage
+	*				
+ * Replace the body id="genesis_1" (in page.tpl.php) with 
+ * your  preferred layout.
+ * 
+ * e.g. <body id="genesis_2">
+ * 
+ * Tip: If your site uses a page-front.tpl.php or any other
+ * template suggestion your site can have multiple layouts.
+ */
+
+/*********************************************************
+*                     Layouts
+**********************************************************/
+/**
+ * #genesis_1
+ * Standard 3 col; left/content/right  content-inner
+ */
+#genesis_1 .two-sidebars  .content-inner {margin      : 0 22em;}
+#genesis_1 .sidebar-left  .content-inner {margin-left :   22em;}
+#genesis_1 .sidebar-right .content-inner {margin-right:   22em;}
+
+#genesis_1 #sidebar-left  {width: 20em; margin-left: -100%;}
+#genesis_1 #sidebar-right {width: 20em; margin-left: -20em;}
+
+/**
+ * #genesis_2
+ * Both sidebars on the right; content/left/right
+ */
+#genesis_2 .two-sidebars  .content-inner {margin-right: 44em;}
+#genesis_2 .sidebar-left  .content-inner {margin-right: 22em;}
+#genesis_2 .sidebar-right .content-inner {margin-right: 22em;}
+
+#genesis_2 #sidebar-left  {width: 20em; margin-left: -42em;}
+#genesis_2 #sidebar-right {width: 20em; margin-left: -20em;}
+
+#genesis_2 .sidebar-left #sidebar-left {width:20em; margin-left: -20em;}
+
+/**
+ * #genesis_3 - percentage based layout only!
+ * Both sidebars on the left; left/right/content
+ */
+#genesis_3 .two-sidebars  .content-inner {margin-left: 52%;}
+#genesis_3 .sidebar-left  .content-inner {margin-left: 26%;}
+#genesis_3 .sidebar-right .content-inner {margin-left: 26%;}
+
+#genesis_3 #sidebar-left  {width: 25%; margin-left: -100%;}
+#genesis_3 #sidebar-right {width: 25%; margin-left: -100%;}
+
+#genesis_3 .two-sidebars #sidebar-right {width:25%; margin-left: -74%;}
+
+
+/**
+ * #genesis_4
+ * Golden Rule Layout 1:1.618, 2 columns, adaptive width.
+ * 
+ * NOTE: Please see docs on how to refactor page.tpl.php to
+ * take full advantage of this layout.
+ * |  Content 62%  |  Left/Right 38%  |
+ */
+#genesis_4 .two-sidebars  .content-inner {margin-right: 39%;}
+#genesis_4 .sidebar-left  .content-inner {margin-right: 39%;}
+#genesis_4 .sidebar-right .content-inner {margin-right: 39%;}
+
+#genesis_4 #sidebar-left  {width: 37%; margin-left: -37%;}
+#genesis_4 #sidebar-right {width: 37%; margin-left: -37%;}
+
+#genesis_4 .sidebar-left #sidebar-left {width: 37%; margin-left: -37%;}
+
+
+/*********************************************************
+*                     Containers
+**********************************************************/
+/* Main containers*/
+html, body {margin: 0; padding: 0;}
+
+/* Automatic centering for widths less than 100% */
+#container {margin: 0 auto;} 
+
+/* Trigger hasLayout */
+#columns {display: inline-block;}
+/* Reset for compliant browses */
+#container > #columns {display: block;}
+
+/* Float the columns */
+#content-column,
+#sidebar-left,
+#sidebar-right {float: left;}
+
+/* Set width on main content column */
+#content-column {width: 100%;}
+
+/* Clear both */
+.clear {clear: both;}

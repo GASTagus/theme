@@ -1,0 +1,134 @@
+/* $Id$ */
+
+/**
+ * @file nodes.css
+ * Basic styles for nodes.
+ */
+
+/**********************************************************
+ *                      Nodes
+ **********************************************************/
+/* section type class when viewing a node */
+.page-node   {}
+
+/* section type classes for node workflow states */
+.node-add    {}
+.node-edit   {}
+.node-delete {}
+
+.node {
+  margin: 0 0 1.5em;
+}
+
+/* Over-ride default .inner styles. */
+.node-inner {}
+
+/* Node title on teasers and other lists. */
+.node-title {}
+
+.node-title a:link,
+.node-title a:visited,
+.node-title a:active {
+  text-decoration: none;
+}
+
+.node-title a:hover {
+  text-decoration: underline;
+}
+
+.node .user-picture {
+  float: left;
+  margin: 0.3em 1em 0.1em 0;
+}
+
+.node .user-picture img {}
+
+.node-submitted {}
+
+.node-submitted a {}
+.node-submitted a:hover {}
+
+/* Node content wrapper. */
+.node-content {}
+
+.node-terms {}
+
+.node-links {
+  display: block; 
+  text-align: right;
+}
+
+/* Theme sticky nodes. */
+.node .sticky {}
+
+/* Theme node status. */
+.node .unpublished {}
+ 
+/* Theme nodes that belong to the author. */
+.node-mine {}
+
+/* Theme the node teaser seperatly. */
+.node-teaser {}
+.node-teaser .node-inner {}
+
+
+/**********************************************************
+ *                   Core node types
+ **********************************************************/
+.node-type-blog  {}
+.node-type-page  {}
+.node-type-story {}
+.node-type-forum {}
+.node-type-book  {}
+.node-type-poll  {}
+
+/* Clear the user picture on Polls. */
+.node-type-poll .node-content {clear: both;}
+
+
+/**********************************************************
+ *                 Custom node types
+ **********************************************************/
+/** 
+ * Replace CONTENT_TYPE with the content type 
+ * machine-readable name. 
+ */
+.node-type-CONTENT_TYPE {}
+
+
+/**********************************************************
+ *                    CCK Fields
+ **********************************************************/
+/* Wrapper for any CCK field. */
+.field {}
+
+/* Use "datetime" when creating new CCK date fields. */
+.field-type-datetime {}
+
+/* Filefield field. */
+.field-type-filefield {}
+
+/* Imagefield field. */
+.field-type-image {}
+
+/* Node reference field. */
+.field-type-nodereference {}
+
+/* User reference field. */
+.field-type-userreference {}
+
+/* Number fields. */
+.field-type-number-decimal {}
+.field-type-number-float {}
+.field-type-number-integer {}
+
+/* Text field. */
+.field-type-text {}
+
+/**
+ * Specific field names.
+ */
+/* Underscores in field name are replaced with dashes. */
+.field-field-FIELDNAME {}
+
+
