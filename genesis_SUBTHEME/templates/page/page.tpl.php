@@ -25,7 +25,7 @@
  * @see layout.css
  */
 ?>
-<body id="genesis_1" <?php print $page_classes; ?>>
+<body id="genesis_1" <?php if(!empty($page_classes)) {print $page_classes;} ?>>
   <div id="container" class="width <?php print $body_classes; ?>">
 
     <div id="skip-nav" class="clear-block">
