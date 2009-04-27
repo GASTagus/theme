@@ -37,8 +37,8 @@ function genesis_preprocess_page(&$vars, $hook) {
   }
 
   // Set variables for the primary and secondary links.
-  $vars['primary_menu'] = theme('links', $vars['primary_links'], array('class' => 'links primary-links'));
-  $vars['secondary_menu'] = theme('links', $vars['secondary_links'], array('class' => 'links secondary-links'));
+  $vars['primary_menu'] = theme('links', $vars['main_menu'], array('class' => 'links primary-links'));
+  $vars['secondary_menu'] = theme('links', $vars['secondary_menu'], array('class' => 'links secondary-links'));
 
   // Page classes (these are not $body_classes, they are seperate variables in Genesis).
   $page_classes = array();

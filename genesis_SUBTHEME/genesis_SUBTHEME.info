@@ -30,7 +30,7 @@ stylesheets[all][] = css/page.css
 ;stylesheets[all][] = css/_all-subtheme-tidy.css
 
   ; Do not change core, engine, screenshot or base theme - these are required defaults.
-core         = 6.x
+core         = 7.x
 engine       = phptemplate
 screenshot   = images/screenshot_subtheme.png
 base theme   = genesis

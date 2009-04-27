@@ -2,7 +2,7 @@
   
 name         = Genesis
 description  = An elegant, flexible and powerful starter theme by <a href="http://adaptivethemes.com">Adaptivethemes</a>.
-core         = 6.x
+core         = 7.x
 engine       = phptemplate
 screenshot   = images/screenshot_base.png
 
