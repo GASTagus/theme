@@ -9,10 +9,10 @@
  * @see template_preprocess_page()
  */
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php print $language->language; ?>" lang="<?php print $language->language; ?>" dir="<?php print $language->dir; ?>">
-
-<head>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN" "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php print $language->language ?>" dir="<?php print $language->dir ?>"
+<?php print $rdf_namespaces ?>>
+<head profile="<?php print $grddl_profile ?>">
   <title><?php print $head_title; ?></title>
   <?php print $head; ?>
   <?php print $styles; ?>
@@ -28,18 +28,18 @@
 <body id="genesis_1" <?php if(!empty($page_classes)) {print $page_classes;} ?>>
   <div id="container" class="width <?php print $body_classes; ?>">
 
-    <div id="skip-nav" class="clear-block">
+    <div id="skip-nav" class="clearfix">
       <a href="#main-content"><?php print t('Skip to main content'); ?></a>
     </div>
 
     <?php if ($leaderboard): ?>
-      <div id="leaderboard" class="region clear-block">
+      <div id="leaderboard" class="region clearfix">
         <div class="leaderboard-inner inner"><?php print $leaderboard; ?></div>
       </div>
     <?php endif; ?>
 
     <div id="header-nav">
-      <div id="header" class="clear-block">
+      <div id="header" class="clearfix">
         <div class="header-inner inner">
 
           <?php if ($site_logo or $site_name or $site_slogan): ?>
@@ -89,13 +89,13 @@
           <div class="nav-inner">
 
             <?php if ($primary_menu): ?>
-              <div id="primary" class="clear-block">
+              <div id="primary" class="clearfix">
                 <div class="primary-inner"><?php print $primary_menu; ?></div>
               </div>
             <?php endif; ?>
 
             <?php if ($secondary_menu): ?>
-              <div id="secondary" class="clear-block">
+              <div id="secondary" class="clearfix">
                 <div class="secondary-inner"><?php print $secondary_menu; ?></div>
               </div>
             <?php endif; ?>
@@ -113,7 +113,7 @@
     <?php endif; ?>
 
     <?php if ($secondary_content): ?>
-      <div id="secondary-content" class="region clear clear-block">
+      <div id="secondary-content" class="region clear clearfix">
         <div class="region-inner inner"><?php print $secondary_content; ?></div>
       </div>
     <?php endif; ?>
@@ -170,16 +170,16 @@
     </div>
 
     <?php if ($tertiary_content): ?>
-      <div id="tertiary-content" class="region clear clear-block">
+      <div id="tertiary-content" class="region clear clearfix">
         <div class="region-inner inner"><?php print $tertiary_content; ?></div> 
       </div>
     <?php endif; ?>
 
     <?php if ($footer or $footer_message): ?>
-      <div id="foot-wrapper" class="clear clear-block">
+      <div id="foot-wrapper" class="clear clearfix">
 				
         <?php if ($footer): ?>
-          <div id="footer" class="region clear-block">
+          <div id="footer" class="region clearfix">
             <div class="region-inner inner"><?php print $footer; ?></div>
           </div>
         <?php endif; ?>
