@@ -22,11 +22,6 @@
 function genesis_preprocess_page(&$vars, $hook) {
   global $theme;
 
-  // Don't display empty help from node_help().
-  if ($vars['help'] == "<div class=\"help\"> \n</div>") {
-    $vars['help'] = '';
-  }
-
   // Set variables for the logo and site_name.
   if ($vars['logo']) {
     $vars['site_logo'] = '<a href="'. $vars['front_page'] .'" title="'. t('Home page') .'" rel="home"><img src="'. $vars['logo'] .'" alt="'. $vars['site_name'] .' '. t('logo') .'" /></a>';
@@ -125,42 +120,6 @@ function genesis_preprocess_node(&$vars, $hook) {
 function genesis_preprocess_comment(&$vars, $hook) {
   global $user;
 
-  // Load the node object that the current comment is attached to.
-  $node = node_load($vars['comment']->nid);
-  // If the author is equal to the author of the node, set a variable.
-  $vars['author_comment'] = $vars['comment']->uid == $node->uid ? TRUE : FALSE;
-
-  $comment_classes = array();
-  $comment_classes[] = 'comment';
-  // Odd/even handling
-  static $comment_odd = TRUE;
-  $comment_classes[] = $comment_odd ? 'odd' : 'even';
-  $comment_odd = !$comment_odd;
-  if ($vars['comment']->status == COMMENT_NOT_PUBLISHED) {
-    $comment_classes[] = 'comment-unpublished';
-    $vars['unpublished'] = TRUE;
-  }
-  else {
-    $vars['unpublished'] = FALSE;
-  }
-  if ($vars['author_comment']) {
-    // Comment is by the node author.
-    $comment_classes[] = 'comment-by-author';
-  }
-  if ($vars['comment']->uid == 0) {
-    // Comment is by an anonymous user.
-    $comment_classes[] = 'comment-by-anon';
-  }
-  if ($user->uid && $vars['comment']->uid == $user->uid) {
-    // Comment was posted by current user.
-    $comment_classes[] = 'comment-mine';
-  }
-  $vars['comment_classes'] = implode(' ', $comment_classes);
-
-  // If comment subjects are disabled, don't display them.
-  if (variable_get('comment_subject_field', 1) == 0) {
-    $vars['title'] = '';
-  }
 		
 		// Set messages if comment is unpublished.
 		$message = t('Comment'). ' #'. $vars['id'] . t(' is currently unpublished.');
@@ -170,14 +129,7 @@ function genesis_preprocess_comment(&$vars, $hook) {
   }
 }
 
-/**
- * Add a "Comments" heading above comments except on forum pages.
- */
-function genesis_preprocess_comment_wrapper(&$vars) {
-  if ($vars['content'] && $vars['node']->type != 'forum') {
-    $vars['content'] = '<h2 id="comment-wrapper-title">'. t('Comments') .'</h2>'.  $vars['content'];
-  }
-}
+
 
 /**
  * Override or insert variables into block templates.
@@ -235,19 +187,7 @@ function safe_string($string) {
   return $string;
 }
 
-/**
- * Return a themed breadcrumb trail.
- *
- * @param $breadcrumb
- *   An array containing the breadcrumb links.
- * @return
- *   A string containing the breadcrumb output.
- */
-function genesis_breadcrumb($breadcrumb) {
-  if (!empty($breadcrumb)) {
-    return implode(' » ', $breadcrumb);
-  }
-}
+
 
 /**
  * Implements HOOK_theme().

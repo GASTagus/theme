@@ -9,32 +9,10 @@
  * @see template_preprocess_page()
  */
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN" "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php print $language->language ?>" dir="<?php print $language->dir ?>"
-<?php print $rdf_namespaces ?>>
-<head profile="<?php print $grddl_profile ?>">
-  <title><?php print $head_title; ?></title>
-  <?php print $head; ?>
-  <?php print $styles; ?>
-  <?php print $scripts; ?>
-</head>
-<?php
-/**
- * Change the body id selector to your preferred layout.
- * E.g body id="genesis_1"
- * @see layout.css
- */
-?>
-<body id="genesis_1" <?php if(!empty($page_classes)) {print $page_classes;} ?>>
-  <div id="container" class="width <?php print $body_classes; ?>">
 
-    <div id="skip-nav" class="clearfix">
-      <a href="#main-content"><?php print t('Skip to main content'); ?></a>
-    </div>
-
-    <?php if ($leaderboard): ?>
+    <?php if ($page['leaderboard']): ?>
       <div id="leaderboard" class="region clearfix">
-        <div class="leaderboard-inner inner"><?php print $leaderboard; ?></div>
+        <div class="leaderboard-inner inner"><?php print render($page['leaderboard']); ?></div>
       </div>
     <?php endif; ?>
 
@@ -42,64 +20,67 @@
       <div id="header" class="clearfix">
         <div class="header-inner inner">
 
-          <?php if ($site_logo or $site_name or $site_slogan): ?>
+          <?php if ($logo || $site_name || $site_slogan): ?>
             <div id="branding">
-              <?php
-              /**
-               * See "function genesis_preprocess_page" if you need to modify
-               * the the $site_logo or $site_name variables.
-               */
-              ?>
-              <?php if ($site_logo): ?>
-                <div id="logo"><?php print $site_logo; ?></div>
-              <?php endif; ?>
+            
+    <!-- default site information -->
+      <?php if ($logo): ?>
+        <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo">
+          <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
+        </a>
+      <?php endif; ?>
 
-              <?php if ($site_name): ?>
-                <?php if ($title): ?>
-                  <div id="site-name"><strong><?php print $site_name; ?></strong></div>
-                <?php else: /* Use h1 when the page title is empty */ ?>
-                  <h1 id="site-name"><?php print $site_name; ?></h1>
-                <?php endif; ?>
-              <?php endif; ?>
+      <?php if ($site_name || $site_slogan): ?>
+        <div id="name-and-slogan">
+          <?php if ($site_name): ?>
+            <?php if ($title): ?>
+              <div id="site-name"><strong>
+                <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"><span><?php print $site_name; ?></span></a>
+              </strong></div>
+            <?php else: /* Use h1 when the content title is empty */ ?>
+              <h1 id="site-name">
+                <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"><span><?php print $site_name; ?></span></a>
+              </h1>
+            <?php endif; ?>
+          <?php endif; ?>
 
-              <?php if ($site_slogan): ?>
-                <div id="site-slogan"><?php print $site_slogan; ?></div>
-              <?php endif; ?>
-
+          <?php if ($site_slogan): ?>
+            <div id="site-slogan"><?php print $site_slogan; ?></div>
+          <?php endif; ?>
+        </div> <!-- /#name-and-slogan -->
+      <?php endif; ?>
+      <!-- // END default site information -->
+      
             </div>
           <?php endif; ?>
 
-          <?php if ($search_box): ?>
-            <div id="search-box-top">
-              <div class="search-box-inner inner"><?php print $search_box; ?></div>
-            </div>
-          <?php endif; ?>
-
-          <?php if ($header): ?>
+          <?php if ($page['header']): ?>
             <div id="header-blocks" class="region">
-              <div class="region-inner inner"><?php print $header; ?></div>
+              <div class="region-inner inner"><?php print render($page['header']); ?></div>
             </div>
           <?php endif; ?>
 
         </div>
       </div>
 
-      <?php if ($primary_menu or $secondary_menu): ?>
+      <?php if ($main_menu or $secondary_menu): ?>
         <div id="nav">
           <div class="nav-inner">
-
-            <?php if ($primary_menu): ?>
+            <?php if ($main_menu): ?>
               <div id="primary" class="clearfix">
-                <div class="primary-inner"><?php print $primary_menu; ?></div>
+                <div class="primary-inner">
+<?php print theme('links__system_main_menu', array('links' => $main_menu, 'attributes' => array('id' => 'main-menu', 'class' => array('links', 'clearfix')), 'heading' => t('Main menu'))); ?>
+                </div>
               </div>
             <?php endif; ?>
 
             <?php if ($secondary_menu): ?>
               <div id="secondary" class="clearfix">
-                <div class="secondary-inner"><?php print $secondary_menu; ?></div>
+                <div class="secondary-inner">
+ <?php print theme('links__system_secondary_menu', array('links' => $secondary_menu, 'attributes' => array('id' => 'secondary-menu', 'class' => array('links', 'clearfix')), 'heading' => t('Secondary menu'))); ?>
+                </div>
               </div>
             <?php endif; ?>
-
           </div>
         </div>
       <?php endif; ?>
@@ -112,9 +93,9 @@
       </div>
     <?php endif; ?>
 
-    <?php if ($secondary_content): ?>
+    <?php if ($page['secondary_content']): ?>
       <div id="secondary-content" class="region clear clearfix">
-        <div class="region-inner inner"><?php print $secondary_content; ?></div>
+        <div class="region-inner inner"><?php print render($page['secondary_content']); ?></div>
       </div>
     <?php endif; ?>
 
@@ -123,77 +104,63 @@
       <div id="content-column">
         <div class="content-inner">
 
-          <?php if ($mission): ?>
-            <div id="mission"><?php print $mission; ?></div>
+          <?php if ($page['content_top']): ?>
+            <div id="content-top" class="region"><?php print render($page['content_top']); ?></div>
           <?php endif; ?>
-
-          <?php if ($content_top): ?>
-            <div id="content-top" class="region"><?php print $content_top; ?></div>
-          <?php endif; ?>
-
-          <div id="main-content">								
+          
+        <?php if ($page['highlight']): ?><div id="highlight"><?php print render($page['highlight']); ?></div><?php endif; ?>
+        <a id="main-content"></a>
+        
+          <div id="main-content">
+            <?php print render($title_prefix); ?>							
             <?php if ($title): ?>
               <h1 id="page-title"><?php print $title; ?></h1>
             <?php endif; ?>
-
+            <?php print render($title_suffix); ?>
+            
             <?php if ($tabs): ?>
-              <div class="local-tasks"><?php print $tabs; ?></div>
+              <div class="local-tasks"><?php print render($tabs); ?></div>
             <?php endif; ?>
 
-            <?php if ($messages): print $messages; endif; ?>
-            <?php if ($help): print $help; endif; ?>
+            <?php print $messages; ?>
+            <?php print render($page['help']); ?>
 
+            <?php if ($action_links): ?><ul class="action-links"><?php print render($action_links); ?></ul><?php endif; ?>
+        
             <div id="content">
-              <?php print $content; ?>
+              <?php print render($page['content']); ?>
             </div>								
           </div>
 
-          <?php if ($content_bottom): ?>
-            <div id="content-bottom" class="region"><?php print $content_bottom; ?></div>
+          <?php if ($page['content_bottom']): ?>
+            <div id="content-bottom" class="region"><?php print render($page['content_bottom']); ?></div>
           <?php endif; ?>
 
         </div>
       </div>
 
-      <?php if ($left): ?>
-        <div id="sidebar-left" class="sidebar">
-          <div class="sidebar-inner inner"><?php print $left; ?></div>
-        </div>
+      <?php if ($page['sidebar_first']): ?>
+        <div id="sidebar-first"><?php print render($page['sidebar_first']); ?></div>
       <?php endif; ?>
 
-      <?php if ($right): ?>
-        <div id="sidebar-right" class="sidebar">
-          <div class="sidebar-inner inner"><?php print $right; ?></div>
-        </div>
+      <?php if ($page['sidebar_second']): ?>
+        <div id="sidebar-second"><?php print render($page['sidebar_second']); ?></div>
       <?php endif; ?>
 
     </div>
 
-    <?php if ($tertiary_content): ?>
+    <?php if ($page['tertiary_content']): ?>
       <div id="tertiary-content" class="region clear clearfix">
-        <div class="region-inner inner"><?php print $tertiary_content; ?></div> 
+        <div class="region-inner inner"><?php print render($page['tertiary_content']); ?></div> 
       </div>
     <?php endif; ?>
 
-    <?php if ($footer or $footer_message): ?>
+    <?php if ($page['footer']): ?>
       <div id="foot-wrapper" class="clear clearfix">
 				
-        <?php if ($footer): ?>
-          <div id="footer" class="region clearfix">
-            <div class="region-inner inner"><?php print $footer; ?></div>
-          </div>
-        <?php endif; ?>
 
-        <?php if ($footer_message or $feed_icons): ?>
-          <div id="footer-message"><?php print $footer_message; ?><?php print $feed_icons; ?></div>
-        <?php endif; ?>
+        <?php print render($page['footer']); ?>
+        <?php print $feed_icons; ?>
 
       </div>
     <?php endif; ?>
-
-  </div>
-
-  <?php print $closure ?>
-
-</body>
-</html>
