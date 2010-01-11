@@ -69,10 +69,6 @@
     <div id="columns" class="clear clearfix">
       <div id="content-column">
         <div class="content-inner">
-
-          <?php if ($page['content_top']): ?>
-            <div id="content-top"><?php print render($page['content_top']); ?></div>
-          <?php endif; ?>
           
           <?php if ($page['highlight']): ?>
             <div id="highlight"><?php print render($page['highlight']); ?></div>
@@ -97,10 +93,6 @@
               <?php print render($page['content']); ?>
             </div>								
           </div>
-
-          <?php if ($page['content_bottom']): ?>
-            <div id="content-bottom"><?php print render($page['content_bottom']); ?></div>
-          <?php endif; ?>
 
         </div>
       </div>

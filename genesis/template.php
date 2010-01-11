@@ -71,8 +71,14 @@ function genesis_preprocess_page(&$vars) {
  */
 function genesis_preprocess_node(&$vars) {
   global $user;
+  
+  $node = $vars['node'];
+  
+  // node_title is inconsistant
+  $vars['title'] = $node->title;
+  
   // Add to node classes.
-  if ($vars['node']->uid && $vars['node']->uid == $user->uid) {
+  if ($node->uid && $node->uid == $user->uid) {
     // Node is authored by current user.
    $vars['classes_array'][] = 'node-mine';
   }
@@ -80,6 +86,8 @@ function genesis_preprocess_node(&$vars) {
     // Node is displayed as teaser.
     $vars['classes_array'][] = 'node-view';
   }
+  
+  // setup booleen for unpublished
   if (!$vars['status']) {
     $vars['unpublished'] = TRUE;
   }
@@ -99,7 +107,6 @@ function genesis_preprocess_node(&$vars) {
 function genesis_preprocess_comment(&$vars) {
   // Add odd and even classes to comments
   $vars['classes_array'][] = $vars['zebra'];
-
 }
 
 /**
@@ -112,6 +119,7 @@ function genesis_preprocess_comment(&$vars) {
  */
 function genesis_preprocess_block(&$vars) {
   $block = $vars['block'];
+  $vars['title'] = $block->subject;
   // Special classes for blocks
   $vars['classes_array'][] = $vars['block_zebra'] .'-block';
   $vars['classes_array'][] = 'block-'. $block->region;

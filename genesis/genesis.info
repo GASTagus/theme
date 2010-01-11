@@ -9,39 +9,24 @@ screenshot   = images/screenshot_base.png
   ; The regions defined in the page.tpl.php files. The name in brackets is the 
   ; name of the variable. The text after the = sign is the short description 
   ; you see on the block configuration page.
+
+regions[page_top]           = Page top
 regions[leaderboard]        = Leaderboard
-regions[header]             = Header Blocks
+regions[header]             = Header
+regions[help]               = Help
 regions[secondary_content]  = Secondary Content
-regions[content_top]        = Content top
-regions[content]            = Main Content
-regions[content_bottom]     = Content bottom
+regions[highlight]          = Highlighted content
+regions[content]            = Content
+regions[sidebar_first]      = First sidebar
+regions[sidebar_second]     = Second sidebar
 regions[tertiary_content]   = Tertiary Content
-regions[left]               = Sidebar Left
-regions[right]              = Sidebar Right
 regions[footer]             = Footer
+regions[page_bottom]        = Page bottom
 
   ; Genesis core styles for layout and block editing.
 stylesheets[all][] = css/layout.css
 stylesheets[all][] = css/admin-styles.css
 stylesheets[all][] = css/messages.css
-stylesheets[all][] = css/block-edit.css
-
-  ; Uncomment to show the grid, uncomment the grid class in page.tpl.php also.
-;stylesheets[all][] = css/grid.css
 
   ; Redefine the default location of scripts.js
 scripts[] = js/script.js
-
-  ; The "features" control which check boxes display on the admin/build/themes 
-  ; configuration page. This is useful for suppressing check boxes for elements 
-  ; not used by your theme.
-features[] = logo
-features[] = name
-features[] = slogan
-features[] = mission
-features[] = node_user_picture
-features[] = comment_user_picture
-features[] = search
-features[] = favicon
-features[] = primary_links
-features[] = secondary_links

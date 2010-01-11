@@ -59,12 +59,14 @@
 <div class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
   <?php print $picture ?>
 
-  <?php if ($new): ?>
-    <span class="new"><?php print $new ?></span>
-  <?php endif; ?>
-
   <?php print render($title_prefix); ?>
-  <h3 class="comment-title"<?php print $title_attributes; ?>><?php print $title ?></h3>
+    <h3 class="comment-title"<?php print $title_attributes; ?>>
+      <span class="comment-id"><?php print '#'. $id; ?></span> 
+      <?php print $title ?>
+      <?php if ($new): ?>
+        <span class="new"><?php print $new ?></span>
+      <?php endif; ?>
+    </h3>
   <?php print render($title_suffix); ?>
 
   <div class="comment-submitted">

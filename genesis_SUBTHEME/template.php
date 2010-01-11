@@ -34,7 +34,7 @@ function genesis_SUBTHEME_preprocess(&$vars, $hook) {
  */
 /*
 function genesis_SUBTHEME_preprocess_page(&$vars) {
-  //$vars['sample_variable'] = t('Lorem ipsum.');
+  $vars['sample_variable'] = t('Lorem ipsum.');
 }
 */
 

@@ -5,68 +5,40 @@
 		
 name         = Genesis SUBTHEME
 description  = My Kickn' Sub-theme
+core         = 7.x
+engine       = phptemplate
+screenshot   = images/screenshot_subtheme.png
+base theme   = genesis
 
+  ; Genesis subtheme modular-stylesheets.
 
-  ; Genesis subtheme mini-stylesheets, unset what you don't need or want.
+  ; HTML elements.
 
-  ; XHTML elements.
 stylesheets[all][] = css/type.css
 stylesheets[all][] = css/lists.css
 stylesheets[all][] = css/forms.css
 stylesheets[all][] = css/tables.css
 
   ; Node, block, comment and page elements.
+
 stylesheets[all][] = css/nodes.css
 stylesheets[all][] = css/blocks.css
 stylesheets[all][] = css/comments.css
 stylesheets[all][] = css/page.css
-  
-  
-  ; To work around IE7's 30 max stylesheets issue:
-  ; 1. Unset by the mini-stylesheets (add semicolons).
-  ; 2. Uncomment the following:
-;stylesheets[all][] = css/_all-subtheme.css
-  ; Optionally use the compressed and tidy version.
-;stylesheets[all][] = css/_all-subtheme-tidy.css
-
-  ; Do not change core, engine, screenshot or base theme - these are required defaults.
-core         = 7.x
-engine       = phptemplate
-screenshot   = images/screenshot_subtheme.png
-base theme   = genesis
-
 
   ; Regions.
   ; You can define new regions here.
   ; The default Genesis regions are included by default.
+
+regions[page_top]           = Page top
 regions[leaderboard]        = Leaderboard
-
+regions[header]             = Header
+regions[help]               = Help
 regions[secondary_content]  = Secondary Content
-regions[content_top]        = Content top
-
-regions[content_bottom]     = Content bottom
+regions[highlight]          = Highlighted content
+regions[content]            = Content
+regions[sidebar_first]      = First sidebar
+regions[sidebar_second]     = Second sidebar
 regions[tertiary_content]   = Tertiary Content
-
-
-regions[help]           = Help
-regions[sidebar_first]  = First sidebar
-regions[sidebar_second] = Second sidebar
-regions[highlight]      = Highlighted content
-regions[content]        = Content
-regions[header]         = Header
-regions[footer]         = Footer
-regions[bottom]         = Page bottom
-regions[page_top]       = Page top
-regions[page_bottom]    = Page bottom
-
-features[] = logo
-features[] = name
-features[] = slogan
-features[] = node_user_picture
-features[] = comment_user_picture
-features[] = favicon
-features[] = main_menu
-features[] = secondary_menu
-
-
-
+regions[footer]             = Footer
+regions[page_bottom]        = Page bottom
