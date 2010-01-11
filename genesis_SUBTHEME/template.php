@@ -32,11 +32,11 @@ function genesis_SUBTHEME_preprocess(&$vars, $hook) {
  * @param $hook
  *   The name of the template being rendered.
  */
-/**/
+/*
 function genesis_SUBTHEME_preprocess_page(&$vars) {
-  $vars['sample_variable'] = t('Lorem ipsum.');
+  //$vars['sample_variable'] = t('Lorem ipsum.');
 }
-
+*/
 
 /**
  * Override or insert variables into the node templates.
