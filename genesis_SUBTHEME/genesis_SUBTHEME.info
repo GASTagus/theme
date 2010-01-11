@@ -12,24 +12,31 @@ base theme   = genesis
 
   ; Genesis subtheme modular-stylesheets.
 
-  ; HTML elements.
+  ; Options Dark style theme
+;stylesheets[all][] = css/dark/dark.css
 
-stylesheets[all][] = css/type.css
-stylesheets[all][] = css/lists.css
-stylesheets[all][] = css/forms.css
-stylesheets[all][] = css/tables.css
+  ; Uncomment if using Gpanels. There are two: 960 Grids based and Fluid.
+;stylesheets[all][] = css/gpanels/gpanels-960-fixed.css
+;stylesheets[all][] = css/gpanels/gpanels-fluid.css
+
+  ; HTML elements.
+stylesheets[all][] = css/html-elements/type.css
+stylesheets[all][] = css/html-elements/lists.css
+stylesheets[all][] = css/html-elements/forms.css
+stylesheets[all][] = css/html-elements/tables.css
 
   ; Node, block, comment and page elements.
-
+stylesheets[all][] = css/fields.css
+stylesheets[all][] = css/views.css
 stylesheets[all][] = css/nodes.css
 stylesheets[all][] = css/blocks.css
 stylesheets[all][] = css/comments.css
 stylesheets[all][] = css/page.css
+stylesheets[all][] = css/style.css
 
   ; Regions.
   ; You can define new regions here.
   ; The default Genesis regions are included by default.
-
 regions[page_top]           = Page top
 regions[leaderboard]        = Leaderboard
 regions[header]             = Header
