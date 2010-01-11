@@ -5,17 +5,16 @@
  * This stylesheet provides the page main styles for this theme.
  */
 
-/**
- * Remove unused styles for performace.
- */
-
 /**********************************************************
  *              Section, Page and Body Classes
  **********************************************************/
-/**
- * Normally you will use these in combination with other
- * selectors. I include them here for completedness.
- */
+
+body {}
+
+/* workaround for Admin menu bar shadow */
+html body.admin-menu {
+  margin-top:45px !important;
+}
 	
 /** 
  * Section Class
@@ -53,8 +52,8 @@
  */
 .one-sidebar   {}
 .two-sidebars  {}
-.sidebar-right {}
-.sidebar-left  {}
+.sidebar-first {}
+.sidebar-second  {}
 
 /** 
  * Optional Region body classes
@@ -125,41 +124,29 @@ body > #container {
 /**********************************************************
  *                       Regions
  **********************************************************/
-/* Target all regions with this low specifity selector. */
-.region {}
-.region-inner {}
 
-/**
- * Most regions have an .inner div to set paddings or other
- * design contingencies.
- */
- 
 /* Leaderboard is a full width region at the very top, 
    ideal for displaying banners. */
 #leaderboard {}
+#leaderboard .region {}
 
-/* Header blocks region is embedded in the header, floated
-   between the logo/site_name and the search box. */
-#header-blocks {
-  float: left;
-  margin-left: 2em; /* LTR */
-}
-#header-blocks .region-inner {}
+/* Header blocks region is embedded in the header. */
+#header-blocks {float: right;}
+#header-blocks .region {}
+
+/* New highlight region replaces content-top . */
+#highlight {}
+#highlight .region {}
 
 /* Secondary content is a full width region between 
    the header and the main columns. */
 #secondary-content {}
-#secondary-content .region-inner {}
+#secondary-content .region {}
 
 /* Tertiary content is a full width region above the footer, 
    below the main content. */
 #tertiary-content {}
-#tertiary-content .region-inner {}
-
-/* Content top and bottom are above and below the main content, 
-   within the main content column. */
-#content-top {}
-#content-bottom {}
+#tertiary-content .region {}
 
 
 /**********************************************************
@@ -167,14 +154,14 @@ body > #container {
  **********************************************************/
 /* Target both sidebars with this low specifity selector. */
 .sidebar {}
-.sidebar-inner {}
+.sidebar .region {}
 
-/* Target a specific sidebar, inner or sidebar-inner. */
-#sidebar-left {}
-#sidebar-left .sidebar-inner {}
+/* Target a specific sidebar. */
+#sidebar-first {}
+#sidebar-first .region-sidebar-first {}
 
-#sidebar-right {}
-#sidebar-right .sidebar-inner {}
+#sidebar-second {}
+#sidebar-first .region-sidebar-second {}
 
 
 /*********************************************************
@@ -306,40 +293,9 @@ div.logo-site-name strong {}
 
 
 /**********************************************************
- *    Search box, Advanced search form, Search results
+ *          Advanced search form, Search results
  *          For the search block see blocks.css
  **********************************************************/
-/**
- * Search box
- */
-/* Float the serch box right. */
-#search-box {
-  float: right; /* LTR */
-}
-
-/* Reset form element margins. */
-#search-theme-form {
-  margin: 1.5em 0;
-}
-
-/* Use the child selector because the inner div has no class. */
-#search-theme-form > div {}
-
-/* #search and .container-inline apply to the same div. */
-#search-theme-form #search {}
-#search-theme-form .container-inline {}
-
-#search-theme-form label {}
-#search-theme-form input {}
-#search-theme-form .form-item {}
-#search-theme-form .form-submit {}
-
-#edit-search-theme-form-1 {}
-
-/* Override forms.css focus style */
-#edit-search-theme-form-1:hover,
-#edit-search-theme-form-1:focus {}
-
 
 /**
  * Advanced search form
@@ -395,28 +351,27 @@ dl.search-results dd .search-info {}
  * can easily identify them.
  */
 
-/**
- * #nav is the containing div for Primary & Secondary Links.
- */
-#nav {
+/* Hide menu headers. */
+#main-menu-wrapper h2,
+#secondary-menu-wrapper h2 {
+  height: 0;
+  overflow: hidden;
+  position: absolute;
+}
+
+/* Main Menu */
+
+/* FLOAT RIGHT */
+/* #main-menu-wrapper .main-menu-inner {float: right;} */
+
+/* ALIGN CENTER */
+/* #main-menu-wrapper .main-menu-inner {display: table; margin: 0 auto; text-align: center;} */
+
+#main-menu-wrapper {
   margin: 0.75em 0;
 }
 
-/**
- * Primary Links Positioning
- */
-/* FLOAT PRIMARY RIGHT */
-/* #primary .primary-inner {float: right;} */
-/* ALIGN PRIMARY CENTER */
-/* #primary .primary-inner {display: table; margin: 0 auto; text-align: center;} */
-
-/**
- * Primary Links Style
- * Example styles to get you started.
- */
-#primary {}
-
-#nav .primary-links {
+#main-menu {
   background: #DDD; /* Default gray for dev only. */
   font-weight: bold;
   margin: 0;
@@ -424,7 +379,7 @@ dl.search-results dd .search-info {}
 }
 
 /* Modify the margin to set tab spacings. */
-#nav .primary-links li {
+#main-menu li {
   display: inline;
   line-height: 2;
   list-style: none;
@@ -432,41 +387,42 @@ dl.search-results dd .search-info {}
   padding: 0;
 }
 
-#nav .primary-links li a {
+#main-menu li a {
   text-decoration: none;
   white-space: nowrap;
 }
 
 /* Set pseudo class styles. */
-#nav .primary-links li a:hover {}
-#nav .primary-links li a:focus {}
-#nav .primary-links li a:active {}
-#nav .primary-links li a:visited {}
+#main-menu li a:link {}
+#main-menu li a:visited {}
+#main-menu li a:hover {}
+#main-menu li a:focus {}
+#main-menu li a:active {}
+
 
 /* Primary first and last classes. */
-#nav .primary-links li.first {}
-#nav .primary-links li.last {}
+#main-menu li.first {}
+#main-menu li.last {}
 
 /* Active trail classes. */
-#nav .primary-links li.active {}
-#nav .primary-links li.active-trail {}
-#nav .primary-links li.active-trail a {}
+#main-menu li.active {}
+#main-menu li.active-trail {}
+#main-menu li.active-trail a {}
 
 
-/**
- * Secondary Links Positioning
- */
-/* FLOAT SECONDARY RIGHT */
+/* Secondary menu */
+
+/* FLOAT RIGHT */
 /* #secondary .secondary-inner {float: right;} */
-/* ALIGN SECONDARY CENTER */
+
+/* ALIGN CENTER */
 /* #secondary .secondary-inner {display: table; margin: 0 auto; text-align: center;} */
 
-/**
- * Secondary Links Style
- */
-#secondary {}
+#secondary-menu-wrapper  {
+  margin: 0.75em 0;
+}
 
-#nav .secondary-links {
+#secondary-menu {
   background: #EEE; /* Default gray for dev only. */
   font-weight: bold;
   margin: 0;
@@ -474,7 +430,7 @@ dl.search-results dd .search-info {}
 }
 
 /* Modify the margin to set tab spacings. */
-#nav .secondary-links li {
+#secondary-menu li {
   display: inline;
   line-height: 2;
   list-style: none;
@@ -482,25 +438,25 @@ dl.search-results dd .search-info {}
   padding: 0;
 }
 
-#nav .secondary-links li a {
+#secondary-menu li a {
   text-decoration: none;
   white-space: nowrap;
 }
 
 /* Set pseudo class styles. */
-#nav .secondary-links li a:hover {}
-#nav .secondary-links li a:focus {}
-#nav .secondary-links li a:active {}
-#nav .secondary-links li a:visited {}
+#secondary-menu li a:hover {}
+#secondary-menu li a:focus {}
+#secondary-menu li a:active {}
+#secondary-menu li a:visited {}
 
 /* Secondary first and last classes. */
-#nav .secondary-links li.first {}
-#nav .secondary-links li.last {}
+#secondary-menu li.first {}
+#secondary-menu li.last {}
 
 /* Active trail classes. */
-#nav .secondary-links li.active {}
-#nav .secondary-links li.active-trail {}
-#nav .secondary-links li.active-trail a {}
+#secondary-menu li.active {}
+#secondary-menu li.active-trail {}
+#secondary-menu li.active-trail a {}
 
 
 /**********************************************************

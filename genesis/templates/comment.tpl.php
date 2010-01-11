@@ -61,7 +61,6 @@
 
   <?php print render($title_prefix); ?>
     <h3 class="comment-title"<?php print $title_attributes; ?>>
-      <span class="comment-id"><?php print '#'. $id; ?></span> 
       <?php print $title ?>
       <?php if ($new): ?>
         <span class="new"><?php print $new ?></span>
@@ -70,7 +69,7 @@
   <?php print render($title_suffix); ?>
 
   <div class="comment-submitted">
-    <?php print $permalink; ?>
+    <span class="comment-id"><?php print $permalink; ?></span> 
     <?php
       print t('Submitted by !username on !datetime.',
         array('!username' => $author, '!datetime' => $created));
