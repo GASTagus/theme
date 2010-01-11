@@ -59,7 +59,7 @@ div.status  {
   padding-left: 2.4em;
 }
 
-div.help {
+#block-system-help {
   background: #E6EFF8 url(../images/info.png) no-repeat 0.5em 0.5em;
   border: 1px solid #66BEF4;
   margin: 1em 0;
@@ -121,11 +121,11 @@ div.help ul:last-child {
 .node-unpublished .unpublished,
 .comment-unpublished .unpublished {
   background: transparent url(../images/warning.png) no-repeat 0 0;
-		color: #FFB900;
-		font-size: 0.94em;
-		margin-left: 0.5em; /* LTR */
-		padding-left: 18px; /* LTR */
-		visibility: visible;
+  color: #FFB900;
+  font-size: 0.94em;
+  margin-left: 0.5em; /* LTR */
+  padding-left: 18px; /* LTR */
+  visibility: visible;
 }
 
 /* Animated saving throbber */

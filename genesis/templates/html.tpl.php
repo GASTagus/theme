@@ -45,7 +45,7 @@
   <?php print $scripts; ?>
 </head>
 <!-- need some thinking around this -->
-<body id="genesis_1" <?php print $attributes;?>>
+<body id="genesis-1a" <?php print $attributes;?>>
   <div id="container" class="<?php print $classes; ?>">
   <div id="skip-nav">
     <a href="#main-content"><?php print t('Skip to main content'); ?></a>
