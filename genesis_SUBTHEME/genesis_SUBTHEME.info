@@ -7,7 +7,7 @@ name         = Genesis SUBTHEME
 description  = My Kickn' Sub-theme
 core         = 7.x
 engine       = phptemplate
-screenshot   = images/screenshot_subtheme.png
+screenshot   = screenshot_subtheme.png
 base theme   = genesis
 
   ; Genesis subtheme modular-stylesheets.
