@@ -262,7 +262,7 @@ input.form-text,
 textarea {
   border: 1px solid #CCC;
   height: auto; 
-  padding: 0.1875em;
+  padding: 0.1875em 0;
 }
 
 textarea, 
