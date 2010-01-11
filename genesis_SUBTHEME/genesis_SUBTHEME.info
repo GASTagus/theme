@@ -10,8 +10,6 @@ engine       = phptemplate
 screenshot   = screenshot_subtheme.png
 base theme   = genesis
 
-  ; Genesis subtheme modular-stylesheets.
-
   ; Options Dark style theme
 ;stylesheets[all][] = css/dark/dark.css
 
@@ -19,13 +17,8 @@ base theme   = genesis
 ;stylesheets[all][] = css/gpanels/gpanels-960-fixed.css
 ;stylesheets[all][] = css/gpanels/gpanels-fluid.css
 
-  ; HTML elements.
-stylesheets[all][] = css/html-elements/type.css
-stylesheets[all][] = css/html-elements/lists.css
-stylesheets[all][] = css/html-elements/forms.css
-stylesheets[all][] = css/html-elements/tables.css
-
-  ; Node, block, comment and page elements.
+  ; Subtheme modular stylsheets
+stylesheets[all][] = css/html-elements.css
 stylesheets[all][] = css/fields.css
 stylesheets[all][] = css/views.css
 stylesheets[all][] = css/nodes.css
