@@ -9,7 +9,9 @@
  *              Section, Page and Body Classes
  **********************************************************/
 
-body {}
+body {
+  padding: 0 10px;
+}
 
 /* workaround for Admin menu bar shadow */
 html body.admin-menu {
@@ -100,12 +102,13 @@ html body.admin-menu {
  * Fixed widths use pixels,       e.g. 960px
  */
 #container {
-  width: 980px;     /* Width for IE6 */
+  width: 100%;      /* Width for IE6 */
 }
+
 body > #container {
   width: 100%;      /* Width for all other browsers */
-  max-width: 980px; /* set a maximum width */
   min-width: 760px; /* set a minimum width */
+/*max-width: 960px;    set a maximum width */
 }
 
 /* Column wrappers */
@@ -474,15 +477,6 @@ dl.search-results dd .search-info {}
 
 
 /**********************************************************
- *                       Mission
- **********************************************************/
-#mission {
-  font-weight: bold;
-  margin: 0 0 1.5em;
-}
-
-
-/**********************************************************
  *                    H1 Page Title
  **********************************************************/
 /* The main title on each page. */
@@ -515,29 +509,19 @@ h1#page-title {}
 
 
 /**********************************************************
- *               Footer, Footer Message
+ *                Footer, RSS Feed Icon
  **********************************************************/
-#foot-wrapper {
+#footer {
   margin: 0.375em 0;
 }
 
-#footer {}
-#footer .region-inner {}
+#footer .region {}
 
-#footer-message {}
-
-#footer a, 
-#footer-message a {}
-
-
-/**********************************************************
- *                 RSS Feed Icon
- **********************************************************/
 .feed-icon {}
 .feed-icon img {
   padding:0 0.5em;
 }
-#footer-message a.feed-icon {}
+
 
 
 

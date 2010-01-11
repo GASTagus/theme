@@ -75,29 +75,30 @@
  * For contributed module blocks the pattern is the same,
  * i.e. #block-[module]-[delta]
  */
-#block-book-0       {} /* Book navigation block   */
-#block-blog-0       {} /* Recent Blog posts       */
-#block-comment-0    {} /* Recent Comments block   */
-#block-forum-0      {} /* Active Forum topics     */
-#block-forum-1      {} /* New Forum topics        */
-#block-locale-0     {} /* Language Switcher block */
-#block-node-0       {} /* Syndicate block         */
-#block-poll-0       {} /* Most recent poll        */
-#block-profile-0    {} /* Author information      */
-#block-search-0     {} /* Search form block       */
-#block-statistics-0 {} /* Popular content         */
-#block-system-0     {} /* Powered by Drupal       */
-#block-user-0       {} /* Login block             */
-#block-user-1       {} /* Navigation Menu block   */
-#block-user-2       {} /* Who's New block         */
-#block-user-3       {} /* Who's Online block      */
+#block-book-navigation             {} /* Book navigation block   */
+#block-blog-recent                 {} /* Recent Blog posts       */
+#block-comment-recent              {} /* Recent Comments block   */
+#block-forum-active                {} /* Active Forum topics     */
+#block-forum-new                   {} /* New Forum topics        */
+#block-locale-language-switcher    {} /* Language Switcher block */
+#block-node-syndicate              {} /* Syndicate block         */
+#block-poll-recent                 {} /* Most recent poll        */
+#block-profile-author-information  {} /* Author information      */
+#block-statistics-popular          {} /* Popular content         */
+#block-system-help                 {} /* Help block        */
+#block-system-management           {} /* Management block        */
+#block-system-powered-by           {} /* Powered by Drupal       */
+#block-user-login                  {} /* Login block             */
+#block-system-navigation           {} /* Navigation Menu block   */
+#block-user-new                    {} /* Who's New block         */
+#block-user-online                 {} /* Who's Online block      */
 
 /* Primary and Secondary links blocks */
-#block-menu-primary-links   {}
+#block-menu-main-menu-links   {}
 #block-menu-secondary-links {}
 
 /* The class selector applies to all blocks of these types. */
-.block-user {} 
+.block-user {}
 .block-book {} 
 .block-aggregator {}
 
