@@ -7,7 +7,7 @@
 ; Dont touch these.
   core         = 7.x
   engine       = phptemplate
-  screenshot   = screenshot_subtheme.png
+  screenshot   = genesis-subtheme.png
   base theme   = genesis
 
 ; Uncomment for a Dark style theme.
