@@ -11,18 +11,6 @@
  */
 
 /**
- * Implementation of HOOK_theme().
- */
-function genesis_SUBTHEME_theme(&$existing, $type, $theme, $path) {
-  $hooks = genesis_theme($existing, $type, $theme, $path);
-  // Add your theme hooks like this:
-  /*
-  $hooks['hook_name_here'] = array( // Details go here );
-  */
-  return $hooks;
-}
-
-/**
  * Override or insert variables into all templates.
  *
  * @param $vars
@@ -44,11 +32,11 @@ function genesis_SUBTHEME_preprocess(&$vars, $hook) {
  * @param $hook
  *   The name of the template being rendered.
  */
-/*
-function genesis_SUBTHEME_preprocess_page(&$vars, $hook) {
+/**/
+function genesis_SUBTHEME_preprocess_page(&$vars) {
   $vars['sample_variable'] = t('Lorem ipsum.');
 }
-*/
+
 
 /**
  * Override or insert variables into the node templates.

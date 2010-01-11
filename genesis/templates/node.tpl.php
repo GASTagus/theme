@@ -77,43 +77,43 @@
  */
 ?>
 <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
-
-  <?php print $user_picture; ?>
-
-  <?php print render($title_prefix); ?>
-  <?php if (!$page): ?>
-    <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $node_title; ?></a></h2>
-  <?php endif; ?>
-  <?php print render($title_suffix); ?>
-
-  <?php if ($display_submitted || !empty($content['links']['terms'])): ?>
-    <div class="meta">
-      <?php if ($display_submitted): ?>
-        <span class="submitted">
-          <?php
-            print t('Submitted by !username on !datetime',
-              array('!username' => $name, '!datetime' => $date));
-          ?>
-        </span>
+  <div class="node-inner">
+    
+    <?php print render($title_prefix); ?>
+      <?php if (!$page): ?>
+        <h2 class="node-title"<?php print $title_attributes; ?>>
+          <a href="<?php print $node_url; ?>"><?php print $node_title; ?></a>
+          <?php if ($unpublished) : print '<span class="unpublished">'. t('Unpublished') .'</span>'; endif; ?>
+        </h2>
       <?php endif; ?>
+    <?php print render($title_suffix); ?>
 
-      <?php if (!empty($content['links']['terms'])): ?>
-        <div class="terms terms-inline"><?php print render($content['links']['terms']); ?></div>
-      <?php endif; ?>
+    <?php print $user_picture; ?>
+
+    <?php if ($display_submitted): ?>
+      <div class="node-submitted">
+        <?php print t('Submitted by !username on !datetime', array('!username' => $name, '!datetime' => $date)); ?>
+      </div>
+    <?php endif; ?>
+   
+    <div class="node-content"<?php print $content_attributes; ?>>
+      <?php
+        // Hide comments and links and render them later.
+        hide($content['comments']);
+        hide($content['links']);
+        print render($content);
+      ?>
     </div>
-  <?php endif; ?>
+  
+    <?php if (!empty($content['links']['terms'])): ?>
+      <div class="node-terms"><?php print render($content['links']['terms']); ?></div>
+    <?php endif; ?>
 
-  <div class="content"<?php print $content_attributes; ?>>
-    <?php
-      // We hide the comments and links now so that we can render them later.
-      hide($content['comments']);
-      hide($content['links']);
-      print render($content);
-    ?>
+    <?php if (!empty($content['links'])): ?>
+      <div class="node-links"><?php print render($content['links']); ?></div>
+    <?php endif; ?>
+
+    <?php print render($content['comments']); ?>
+
   </div>
-
-  <?php print render($content['links']); ?>
-
-  <?php print render($content['comments']); ?>
-
 </div>

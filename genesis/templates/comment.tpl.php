@@ -64,10 +64,10 @@
   <?php endif; ?>
 
   <?php print render($title_prefix); ?>
-  <h3<?php print $title_attributes; ?>><?php print $title ?></h3>
+  <h3 class="comment-title"<?php print $title_attributes; ?>><?php print $title ?></h3>
   <?php print render($title_suffix); ?>
 
-  <div class="submitted">
+  <div class="comment-submitted">
     <?php print $permalink; ?>
     <?php
       print t('Submitted by !username on !datetime.',
@@ -75,7 +75,7 @@
     ?>
   </div>
 
-  <div class="content"<?php print $content_attributes; ?>>
+  <div class="comment-content"<?php print $content_attributes; ?>>
     <?php
       // We hide the comments and links now so that we can render them later.
       hide($content['links']);
