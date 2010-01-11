@@ -1,43 +1,41 @@
-  ; $Id$
+; $Id$
 
+; Change the name to match your new subthemes name and modify the description.	
+  name         = Genesis SUBTHEME
+  description  = My Kickn' Sub-theme
+  
+; Dont touch these.
+  core         = 7.x
+  engine       = phptemplate
+  screenshot   = screenshot_subtheme.png
+  base theme   = genesis
 
-  ; Change the name to match your new subthemes name. Modify the optional description.
-		
-name         = Genesis SUBTHEME
-description  = My Kickn' Sub-theme
-core         = 7.x
-engine       = phptemplate
-screenshot   = screenshot_subtheme.png
-base theme   = genesis
+; Uncomment for a Dark style theme.
+  ;stylesheets[all][] = css/dark/dark.css
 
-  ; Uncomment for a Dark style theme.
-;stylesheets[all][] = css/dark/dark.css
+; Uncomment if using Gpanels.
+  ;stylesheets[all][] = css/gpanels/gpanels-fluid.css
 
-  ; Uncomment if using Gpanels.
-;stylesheets[all][] = css/gpanels/gpanels-fluid.css
+; Subtheme modular stylsheets.
+  stylesheets[all][] = css/html-elements.css
+  stylesheets[all][] = css/fields.css
+  stylesheets[all][] = css/views-styles.css
+  stylesheets[all][] = css/nodes.css
+  stylesheets[all][] = css/blocks.css
+  stylesheets[all][] = css/comments.css
+  stylesheets[all][] = css/page.css
+  stylesheets[all][] = css/style.css
 
-  ; Subtheme modular stylsheets
-stylesheets[all][] = css/html-elements.css
-stylesheets[all][] = css/fields.css
-stylesheets[all][] = css/views-styles.css
-stylesheets[all][] = css/nodes.css
-stylesheets[all][] = css/blocks.css
-stylesheets[all][] = css/comments.css
-stylesheets[all][] = css/page.css
-stylesheets[all][] = css/style.css
-
-  ; Regions.
-  ; You can define new regions here.
-  ; The default Genesis regions are included by default.
-regions[page_top]           = Page top
-regions[leaderboard]        = Leaderboard
-regions[header]             = Header
-regions[help]               = Help
-regions[secondary_content]  = Secondary Content
-regions[highlight]          = Highlighted content
-regions[content]            = Content
-regions[sidebar_first]      = First sidebar
-regions[sidebar_second]     = Second sidebar
-regions[tertiary_content]   = Tertiary Content
-regions[footer]             = Footer
-regions[page_bottom]        = Page bottom
+; Regions. You can define new regions here.
+  regions[page_top]           = Page top
+  regions[leaderboard]        = Leaderboard
+  regions[header]             = Header Blocks
+  regions[help]               = Help
+  regions[secondary_content]  = Secondary Content
+  regions[highlight]          = Highlighted content
+  regions[content]            = Content
+  regions[sidebar_first]      = First sidebar
+  regions[sidebar_second]     = Second sidebar
+  regions[tertiary_content]   = Tertiary Content
+  regions[footer]             = Footer
+  regions[page_bottom]        = Page bottom
