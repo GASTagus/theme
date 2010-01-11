@@ -20,7 +20,7 @@
  *   The name of the template being rendered ("html" in this case.)
  */
 function genesis_preprocess_html(&$vars) {
-  $vars['classes_array'][] = 'width';
+
   // Additional body classes to help out themers.
   if (!$vars['is_front']) {
     // Add unique class for each page.

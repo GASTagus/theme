@@ -125,7 +125,7 @@ ul.primary {
 ul.primary li a {
   background-color: #EEE;
   border-color: #CCC;
-		margin-right: 0.08em;
+  margin-right: 0.08em;
   padding: 0.1em 0.75em 0.2em;
 }
 
@@ -134,9 +134,14 @@ ul.primary li a {
   border-color: #DDD;
 }
 
+.local-tasks ul.primary li.active {
+  margin-right:0.4em;
+}
+
 .local-tasks ul.primary li.active a {
   background-color: #FFF;		
   border-bottom-color: #FFF;
+  padding-right:0.35em;
 }
 
 ul.secondary {
