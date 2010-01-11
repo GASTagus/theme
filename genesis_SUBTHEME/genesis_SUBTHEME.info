@@ -10,11 +10,10 @@ engine       = phptemplate
 screenshot   = screenshot_subtheme.png
 base theme   = genesis
 
-  ; Options Dark style theme
+  ; Uncomment for a Dark style theme.
 ;stylesheets[all][] = css/dark/dark.css
 
-  ; Uncomment if using Gpanels. There are two: 960 Grids based and Fluid.
-;stylesheets[all][] = css/gpanels/gpanels-960-fixed.css
+  ; Uncomment if using Gpanels.
 ;stylesheets[all][] = css/gpanels/gpanels-fluid.css
 
   ; Subtheme modular stylsheets

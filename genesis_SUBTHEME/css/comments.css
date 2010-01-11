@@ -64,7 +64,7 @@ h2#comment-wrapper-title {}
 .comment.even {}
 
 /* Style comments depending on the comment author. */
-.comment-by-author {}
+.comment-by-node-author {}
 .comment-by-anon   {}
 .comment-mine      {}
 
