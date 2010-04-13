@@ -84,4 +84,4 @@
 #container > #columns{display:block;}
 #content-column,#sidebar-first,#sidebar-second{float:left;}
 #content-column{width:100%;margin-bottom:1em;}
-.clear,#main-menu-wrapper,#secondary-menu-wrapper,#columns,#breadcrumb,#secondary-content,#tertiary-content,#footer-wrapper,#footer,{clear:both;}
+.clear,#main-menu-wrapper,#secondary-menu-wrapper,#columns,#breadcrumb,#secondary-content,#tertiary-content,#footer-wrapper,#footer{clear:both;}
