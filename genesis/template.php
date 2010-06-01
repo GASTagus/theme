@@ -40,6 +40,38 @@ function genesis_preprocess_html(&$vars) {
 }
 
 /**
+ * Override or insert variables into the all templates.
+ */
+function genesis_process(&$variables) {
+  // Provide a variable to check if the page is in the overlay.
+  if (module_exists('overlay')) {
+    $variables['in_overlay'] = (overlay_get_mode() == 'child');
+  }
+  else {
+    $variables['in_overlay'] = FALSE;
+  }
+}
+
+/**
+ * Override or insert variables into the page template.
+ */
+function genesis_process_page(&$variables) {
+  // Add a wrapper div using the title_prefix and title_suffix render elements.
+  if (!empty($variables['title_suffix']['add_or_remove_shortcut']) ) {
+    $variables['title_prefix']['shortcut_wrapper'] = array(
+      '#markup' => '<div class="shortcut-wrapper clearfix">',
+      '#weight' => 100,
+    );
+    $variables['title_suffix']['shortcut_wrapper'] = array(
+      '#markup' => '</div>',
+      '#weight' => -99,
+    );
+    // Make sure the shortcut link is the first item in title_suffix.
+    $variables['title_suffix']['add_or_remove_shortcut']['#weight'] = -100;
+  }
+}
+
+/**
  * Override or insert variables into page templates.
  *
  * @param $vars
@@ -71,12 +103,12 @@ function genesis_preprocess_page(&$vars) {
  */
 function genesis_preprocess_node(&$vars) {
   global $user;
-  
+
   $node = $vars['node'];
-  
+
   // node_title is inconsistant
   $vars['title'] = $node->title;
-  
+
   // Add to node classes.
   if ($node->uid && $node->uid == $user->uid) {
     // Node is authored by current user.
@@ -86,7 +118,7 @@ function genesis_preprocess_node(&$vars) {
     // Node is displayed as teaser.
     $vars['classes_array'][] = 'node-view';
   }
-  
+
   // setup booleen for unpublished
   if (!$vars['status']) {
     $vars['unpublished'] = TRUE;

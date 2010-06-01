@@ -3,8 +3,6 @@
 ; Change the name to match your new subthemes name and modify the description.	
   name         = Genesis SUBTHEME
   description  = My Kickn' Sub-theme
-  
-; Dont touch these.
   core         = 7.x
   engine       = phptemplate
   screenshot   = genesis-subtheme.png
@@ -26,16 +24,21 @@
   stylesheets[all][] = css/page.css
   stylesheets[all][] = css/style.css
 
-; Regions. You can define new regions here.
-  regions[page_top]           = Page top
+; The regions defined in the page.tpl.php file. The name in brackets is the 
+; name of the variable. The text after the = sign is the short description 
+; you see on the block configuration page.
+  regions[sidebar_first]      = Sidebar first
+  regions[sidebar_second]     = Sidebar second
+  regions[content]            = Main Content
+  regions[highlight]          = Highlighted
   regions[leaderboard]        = Leaderboard
-  regions[header]             = Header Blocks
-  regions[help]               = Help
-  regions[secondary_content]  = Secondary Content
-  regions[highlight]          = Highlighted content
-  regions[content]            = Content
-  regions[sidebar_first]      = First sidebar
-  regions[sidebar_second]     = Second sidebar
-  regions[tertiary_content]   = Tertiary Content
+  regions[header]             = Header
+  regions[secondary_content]  = Secondary
+  regions[tertiary_content]   = Tertiary
   regions[footer]             = Footer
+  regions[help]               = Help
+  regions[page_top]           = Page top
   regions[page_bottom]        = Page bottom
+
+; Shorcuts link, set to 0 disable.
+  settings[shortcut_module_link] = 1

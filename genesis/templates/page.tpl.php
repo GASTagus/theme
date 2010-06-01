@@ -9,6 +9,8 @@
  * @see template_preprocess_page()
  */
 ?>
+  <?php if (!$in_overlay): // hide in overlay ?>
+
     <?php if ($page['leaderboard']): ?>
       <div id="leaderboard" class="clearfix">
         <?php print render($page['leaderboard']); ?>
@@ -25,8 +27,8 @@
               <div class="logo-site-name"><strong>
                 <?php if ($site_logo): ?><span id="logo"><?php print $site_logo; ?></span><?php endif; ?>
                 <?php if ($site_name): ?><span id="site-name"><?php print $site_name; ?></span><?php endif; ?>
-              </strong></div>           
-            <?php else: /* Use h1 when the content title is empty */ ?>     
+              </strong></div>
+            <?php else: /* Use h1 when the content title is empty */ ?>
               <h1 class="logo-site-name">
                 <?php if ($site_logo): ?><span id="logo"><?php print $site_logo; ?></span><?php endif; ?>
                 <?php if ($site_name): ?><span id="site-name"><?php print $site_name; ?></span><?php endif; ?>
@@ -46,41 +48,45 @@
       <?php endif; ?>
 
     </div> <!-- /header -->
- 
+
     <?php if ($main_menu_links): ?>
       <div id="main-menu-wrapper" class="clearfix">
         <div class="main-menu-inner"><?php print $main_menu_links; ?></div>
       </div>
     <?php endif; ?>
 
+  <?php endif; // end hide in overlay ?>
+
     <?php if ($breadcrumb): ?>
       <div id="breadcrumb"><?php print $breadcrumb; ?></div>
     <?php endif; ?>
-    
+
     <?php print $messages; ?>
     <?php print render($page['help']); ?>
 
+  <?php if (!$in_overlay): // hide in overlay ?>
     <?php if ($page['secondary_content']): ?>
       <div id="secondary-content">
         <?php print render($page['secondary_content']); ?>
       </div>
     <?php endif; ?>
+  <?php endif; // end hide in overlay ?>
 
     <div id="columns" class="clear clearfix">
       <div id="content-column">
         <div class="content-inner">
-          
+
           <?php if ($page['highlight']): ?>
             <div id="highlight"><?php print render($page['highlight']); ?></div>
           <?php endif; ?>
-        
+
           <div id="main-content">
-            <?php print render($title_prefix); ?>							
+            <?php print render($title_prefix); ?>
             <?php if ($title): ?>
               <h1 id="page-title"><?php print $title; ?></h1>
             <?php endif; ?>
             <?php print render($title_suffix); ?>
-            
+
             <?php if ($tabs): ?>
               <div class="local-tasks"><?php print render($tabs); ?></div>
             <?php endif; ?>
@@ -88,10 +94,10 @@
             <?php if ($action_links): ?>
               <ul class="action-links"><?php print render($action_links); ?></ul>
             <?php endif; ?>
-        
+
             <div id="content">
               <?php print render($page['content']); ?>
-            </div>								
+            </div>
           </div>
 
         </div>
@@ -106,6 +112,8 @@
       <?php endif; ?>
 
     </div> <!-- /columns -->
+
+  <?php if (!$in_overlay): // hide in overlay ?>
 
     <?php if ($page['tertiary_content']): ?>
       <div id="tertiary-content">
@@ -124,3 +132,5 @@
         <?php print $feed_icons; ?>
       </div>
     <?php endif; ?>
+
+  <?php endif; // end hide in overlay ?>

@@ -69,10 +69,9 @@
   <?php print render($title_suffix); ?>
 
   <div class="comment-submitted">
-    <span class="comment-id"><?php print $permalink; ?></span> 
+    <span class="comment-id"><?php print $permalink; ?></span>
     <?php
-      print t('Submitted by !username on !datetime.',
-        array('!username' => $author, '!datetime' => $created));
+      print t('Submitted by !username on !datetime.', array('!username' => $author, '!datetime' => $created));
     ?>
   </div>
 

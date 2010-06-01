@@ -1,32 +1,31 @@
-  ; $Id$
-  
-name         = Genesis
-description  = An elegant, flexible and powerful starter theme by <a href="http://adaptivethemes.com">Adaptivethemes</a>.
-core         = 7.x
-engine       = phptemplate
-screenshot   = genesis-base.png
+; $Id$
 
-  ; The regions defined in the page.tpl.php files. The name in brackets is the 
-  ; name of the variable. The text after the = sign is the short description 
-  ; you see on the block configuration page.
+  name         = Genesis
+  description  = An elegant, flexible and powerful starter theme by <a href="http://adaptivethemes.com">Adaptivethemes</a>.
+  core         = 7.x
+  engine       = phptemplate
+  screenshot   = genesis-base.png
 
-regions[page_top]           = Page top
-regions[leaderboard]        = Leaderboard
-regions[header]             = Header
-regions[help]               = Help
-regions[secondary_content]  = Secondary Content
-regions[highlight]          = Highlighted content
-regions[content]            = Content
-regions[sidebar_first]      = First sidebar
-regions[sidebar_second]     = Second sidebar
-regions[tertiary_content]   = Tertiary Content
-regions[footer]             = Footer
-regions[page_bottom]        = Page bottom
+; The regions defined in the page.tpl.php file. The name in brackets is the 
+; name of the variable. The text after the = sign is the short description 
+; you see on the block configuration page.
+  regions[sidebar_first]      = Sidebar first
+  regions[sidebar_second]     = Sidebar second
+  regions[content]            = Main Content
+  regions[highlight]          = Highlighted
+  regions[leaderboard]        = Leaderboard
+  regions[header]             = Header
+  regions[secondary_content]  = Secondary
+  regions[tertiary_content]   = Tertiary
+  regions[footer]             = Footer
+  regions[help]               = Help
+  regions[page_top]           = Page top
+  regions[page_bottom]        = Page bottom
 
-  ; Genesis core styles for layout and block editing.
-stylesheets[all][] = css/layout.css
-stylesheets[all][] = css/admin-styles.css
-stylesheets[all][] = css/messages.css
+; Genesis core styles.
+  stylesheets[all][] = css/layout.css
+  stylesheets[all][] = css/admin-styles.css
+  stylesheets[all][] = css/messages.css
 
-  ; Redefine the default location of scripts.js
-scripts[] = js/script.js
+; Redefine the default location of scripts.js
+  scripts[] = js/script.js

@@ -44,26 +44,14 @@
   <?php print $styles; ?>
   <?php print $scripts; ?>
 </head>
-<!-- need some thinking around this -->
 <body id="genesis-1a" <?php print $attributes;?>>
   <div id="container" class="<?php print $classes; ?>">
-  <div id="skip-nav">
-    <a href="#main-content"><?php print t('Skip to main content'); ?></a>
-  </div>
+  <?php if (!$in_overlay): // Hide in overlay ?>
+    <div id="skip-nav"><a href="#main-content"><?php print t('Skip to main content'); ?></a></div>
+  <?php endif; // End hide in overlay ?>
   <?php print $page_top; ?>
   <?php print $page; ?>
   <?php print $page_bottom; ?>
   </div>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-

@@ -251,7 +251,7 @@ body > #container {
 /**********************************************************
  *                 Header Elements
  **********************************************************/
-/* #header wraps #branding, #search-box-top and #header-blocks. */
+/* #header wraps #branding and #header-blocks. */
 #header {}
 
 /* #branding wraps #logo, #site-name and #site-slogan. */
@@ -296,20 +296,23 @@ div.logo-site-name strong {}
 
 
 /**********************************************************
- *          Advanced search form, Search results
+ *          Search form, Search results
  *          For the search block see blocks.css
  **********************************************************/
 
-/**
- * Advanced search form
- */
-/* Advanced search-form id. */
+/* Search page fieldset. */
 #search-form {}
+
+/* Basic search form. */
+#search-form #edit-basic {}
+
+/* Advanced search form. */
+#search-form #edit-advanced {}
 
 /* Use the child selector because the inner div has no class. */
 #search-form > div {}
 #search-form .container-inline {}
-#search-form #edit-keys-wrapper {}
+#search-form #edit-keys {}
 
 #search-form label {}
 #search-form input {}
@@ -317,11 +320,8 @@ div.logo-site-name strong {}
 #search-form .form-submit {}
 
 /* Override forms.css text field focus style. */
-#search-form #edit-keys-wrapper input:hover,
-#search-form #edit-keys-wrapper input:focus {}
-
-/* Advanced search fieldset. */
-fieldset #search-advanced {}
+#search-form #edit-keys:hover,
+#search-form #edit-keys:focus {}
 
 /**
  * Search results
@@ -335,13 +335,16 @@ fieldset #search-advanced {}
 .section-search .box ul {}
 .section-search .box ul li {}
 
-/* Search results document list. */
-dl.search-results {}
-dl.search-results dt {}
-dl.search-results dd {}
-dl.search-results dd p {}
-dl.search-results dd .search-snippet {}
-dl.search-results dd .search-info {}
+/* Search results list. */
+ol.search-results {
+  padding: 0;
+  margin: 0;
+}
+ol.search-results li {}
+ol.search-results .title {}
+ol.search-results p {}
+ol.search-results .search-snippet {}
+ol.search-results .search-info {}
 
 
 /**********************************************************

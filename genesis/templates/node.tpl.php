@@ -78,7 +78,7 @@
 ?>
 <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
   <div class="node-inner">
-    
+
     <?php print render($title_prefix); ?>
       <?php if ($teaser): ?>
         <h2 class="node-title"<?php print $title_attributes; ?>>
@@ -95,7 +95,7 @@
         <?php print t('Submitted by !username on !datetime', array('!username' => $name, '!datetime' => $date)); ?>
       </div>
     <?php endif; ?>
-   
+
     <div class="node-content"<?php print $content_attributes; ?>>
       <?php
         // Hide comments and links and render them later.
@@ -104,10 +104,6 @@
         print render($content);
       ?>
     </div>
-  
-    <?php if (!empty($content['links']['terms'])): ?>
-      <div class="node-terms"><?php print render($content['links']['terms']); ?></div>
-    <?php endif; ?>
 
     <?php if (!empty($content['links'])): ?>
       <div class="node-links"><?php print render($content['links']); ?></div>
