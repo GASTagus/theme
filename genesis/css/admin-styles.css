@@ -113,52 +113,21 @@ tr .block {
  *                 Local tasks tabs
  **********************************************************/
 .local-tasks {
-  margin-bottom: 0.75em;
-}
-
-ul.primary {
-  border-bottom-color: #CCC;
-  margin: 1.5em 0 0 0; 
-  padding: 0 0 0.2em 0.3em;
+  margin: 1em 0;
 }
 
 ul.primary li a {
-  background-color: #EEE;
-  border-color: #CCC;
-  margin-right: 0.08em;
-  padding: 0.1em 0.75em 0.2em;
+  padding: 0.3em 1em;
 }
 
-.local-tasks ul.primary li a:hover  {
-  background-color: #F5F5F5;
-  border-color: #DDD;
-}
-
-.local-tasks ul.primary li.active {
-  margin-right:0.4em;
-}
-
-.local-tasks ul.primary li.active a {
-  background-color: #FFF;		
-  border-bottom-color: #FFF;
-  padding-right:0.35em;
+ul.primary {
+  padding: 0 0 0.3em 0.5em;
 }
 
 ul.secondary {
-  border-bottom: 1px solid #BBB;
-  margin: 0 0 1em;
-  padding: 1em 0;
-}
-
-ul.secondary li {
-  border-right: none;
-  padding:0 0.75em;
-}
-
-ul.secondary a:hover,
-ul.secondary a.active {
   border-bottom: none;
-  text-decoration: underline;
+  margin: 0;
+  padding: 0.5em;
 }
 
 /**********************************************************

@@ -7,20 +7,27 @@
 
 /**
  * Automatically rebuild the theme registry.
-	* Uncomment to use during development.
-	*/
-//drupal_rebuild_theme_registry();
+ * Uncomment to use during development.
+ */
+// drupal_theme_rebuild();
+
+/**
+ * Override or insert variables into all templates.
+ */
+function genesis_process(&$vars) {
+  // Provide a variable to check if the page is in the overlay.
+  if (module_exists('overlay')) {
+    $vars['in_overlay'] = (overlay_get_mode() == 'child');
+  }
+  else {
+    $vars['in_overlay'] = FALSE;
+  }
+}
 
 /**
  * Override or insert variables into the html template.
- *
- * @param $vars
- *   An array of variables to pass to the theme template.
- * @param $hook
- *   The name of the template being rendered ("html" in this case.)
  */
 function genesis_preprocess_html(&$vars) {
-
   // Additional body classes to help out themers.
   if (!$vars['is_front']) {
     // Add unique class for each page.
@@ -40,44 +47,26 @@ function genesis_preprocess_html(&$vars) {
 }
 
 /**
- * Override or insert variables into the all templates.
- */
-function genesis_process(&$variables) {
-  // Provide a variable to check if the page is in the overlay.
-  if (module_exists('overlay')) {
-    $variables['in_overlay'] = (overlay_get_mode() == 'child');
-  }
-  else {
-    $variables['in_overlay'] = FALSE;
-  }
-}
-
-/**
  * Override or insert variables into the page template.
  */
-function genesis_process_page(&$variables) {
+function genesis_process_page(&$vars) {
   // Add a wrapper div using the title_prefix and title_suffix render elements.
-  if (!empty($variables['title_suffix']['add_or_remove_shortcut']) ) {
-    $variables['title_prefix']['shortcut_wrapper'] = array(
+  if (!empty($vars['title_suffix']['add_or_remove_shortcut']) ) {
+    $vars['title_prefix']['shortcut_wrapper'] = array(
       '#markup' => '<div class="shortcut-wrapper clearfix">',
       '#weight' => 100,
     );
-    $variables['title_suffix']['shortcut_wrapper'] = array(
+    $vars['title_suffix']['shortcut_wrapper'] = array(
       '#markup' => '</div>',
       '#weight' => -99,
     );
     // Make sure the shortcut link is the first item in title_suffix.
-    $variables['title_suffix']['add_or_remove_shortcut']['#weight'] = -100;
+    $vars['title_suffix']['add_or_remove_shortcut']['#weight'] = -100;
   }
 }
 
 /**
  * Override or insert variables into page templates.
- *
- * @param $vars
- *   A sequential array of variables to pass to the theme template.
- * @param $hook
- *   The name of the theme function being called.
  */
 function genesis_preprocess_page(&$vars) {
   global $theme;
@@ -95,20 +84,10 @@ function genesis_preprocess_page(&$vars) {
 
 /**
  * Override or insert variables into the node templates.
- *
- * @param $vars
- *   A sequential array of variables to pass to the theme template.
- * @param $hook
- *   The name of the theme function being called.
  */
 function genesis_preprocess_node(&$vars) {
   global $user;
-
   $node = $vars['node'];
-
-  // node_title is inconsistant
-  $vars['title'] = $node->title;
-
   // Add to node classes.
   if ($node->uid && $node->uid == $user->uid) {
     // Node is authored by current user.
@@ -118,8 +97,7 @@ function genesis_preprocess_node(&$vars) {
     // Node is displayed as teaser.
     $vars['classes_array'][] = 'node-view';
   }
-
-  // setup booleen for unpublished
+  // Set variable for status.
   if (!$vars['status']) {
     $vars['unpublished'] = TRUE;
   }
@@ -130,11 +108,6 @@ function genesis_preprocess_node(&$vars) {
 
 /**
  * Override or insert variables in comment templates.
- *
- * @param $vars
- *   A sequential array of variables to pass to the theme template.
- * @param $hook
- *   The name of the theme function being called.
  */
 function genesis_preprocess_comment(&$vars) {
   // Add odd and even classes to comments
@@ -143,11 +116,6 @@ function genesis_preprocess_comment(&$vars) {
 
 /**
  * Override or insert variables into block templates.
- *
- * @param $vars
- *   A sequential array of variables to pass to the theme template.
- * @param $hook
- *   The name of the theme function being called.
  */
 function genesis_preprocess_block(&$vars) {
   $block = $vars['block'];

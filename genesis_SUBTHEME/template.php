@@ -3,12 +3,18 @@
 
 /**
  * @file template.php
- * 
+ *
  * USAGE
-	* 1. Rename each function to match your subthemes name, 
+	* 1. Rename each function to match your subthemes name,
 	*    i.e replace genesis_SUBTHEME with your subthemes name.
 	* 2. Uncomment the required fucntion to use.
  */
+
+/**
+ * Automatically rebuild the theme registry.
+ * Uncomment to use during development.
+ */
+drupal_theme_rebuild();
 
 /**
  * Override or insert variables into all templates.

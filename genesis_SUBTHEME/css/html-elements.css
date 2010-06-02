@@ -32,11 +32,7 @@ html {
 
 body {
   font-family: Verdana, Geneva, "DejaVu Sans", sans-serif;
-  line-height: 1.5; /* unitless line height */
-}
-
-h1, h2 {
-  /*line-height: 1; */
+  line-height: 1.5;
 }
 
 h1 {
@@ -50,11 +46,11 @@ h2 {
 }
 
 h3 {
-  font-size: 1.33em;
+  font-size: 1.333em;
 }
 
 h4 {
-  font-size: 1.17em;
+  font-size: 1.167em;
 }
 
 h5, h6 {
@@ -114,7 +110,7 @@ pre, code {
 }
 
 pre, code, tt {
-  font: 1em 'andale mono', 'lucida console', monospace;
+  font: 1em "Andale Mono", "Lucida Console", monospace;
 }
 
 p code {
@@ -231,7 +227,6 @@ form {
 }
 
 input {
-  margin: 0.375em 0.1875em 0 0.1875em;
 }
 
 input.text, 
@@ -265,9 +260,9 @@ textarea {
   padding: 0.1875em 0;
 }
 
-textarea, 
-input {
-  font: 1em normal Arial, Helvetica, sans-serif;
+input.form-checkbox, 
+input.form-radio {
+  vertical-align: top;
 }
 
 div.form-item {
@@ -303,16 +298,6 @@ div.form-item div.description img {
 
 #edit-operation-wrapper select {
   margin: 0.375em;
-}
-
-div.resizable-textarea textarea {
-  margin-top: 0;
-}
-
-.tips {
-  font-size: 1em;
-  margin-left: 3em; /* LTR */
-  padding: 0.1875em 0.375em 0.1875em 1.5em; /* LTR */
 }
 
 label, legend {

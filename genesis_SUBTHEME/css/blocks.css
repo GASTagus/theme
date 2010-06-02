@@ -17,13 +17,13 @@
   margin: 0 0 1.5em;
 }
 
-.block-inner   {} /* Block inner div */
-.block-title   {} /* h2 block title */
-.block-content {} /* Block content wrapper */
+.block-inner    {} /* Block inner div */
+.block-title    {} /* h2 block title */
+.block .content {} /* Block content wrapper */
 
 
 /**********************************************************
- *                   Sidebar blocks
+ *                  Sidebar blocks
  **********************************************************/
 /**
  * You can target blocks in one or more regions and 
@@ -31,40 +31,82 @@
  */
 /* Low specifity selector to style blocks in both sidebars. */
 .sidebar .block {}
-.sidebar .block h2 {}
+.sidebar .block-title {}
 .sidebar .block-inner {}
-.sidebar .block .block-content {}
+.sidebar .block .content {}
 
-/* Low specifity selector to style blocks in all regions. */
-.region .block {}
-.region .block h2 {}
-.region .block-inner {}
-.region .block .block-content {}
+/* Low specifity selector to style blocks in one sidebar. */
+.region-sidebar-first .block {}
+.region-sidebar-first .block-title {}
+.region-sidebar-first .block-inner {}
+.region-sidebar-first .block .content {}
 
-/* High specifity selectors to style blocks in one sidebar. */
+.region-sidebar-second .block {}
+.region-sidebar-second .block-title {}
+.region-sidebar-second .block-inner {}
+.region-sidebar-second .block .content {}
+
+/* Very high specifity selectors to style blocks in one sidebar. */
 #sidebar-first .block {}
-#sidebar-first .block h2 {}
+#sidebar-first .block-title {}
 #sidebar-first .block-inner {}
-#sidebar-first .block .block-content {}
+#sidebar-first .block .content {}
 
 #sidebar-second .block {}
-#sidebar-second .block h2 {}
+#sidebar-second .block-title {}
 #sidebar-second .block-inner {}
-#sidebar-second .block .block-content {}
+#sidebar-second .block .content {}
 
 
 /**********************************************************
  *                  Region blocks
  **********************************************************/
-/* High specifity selectors to style blocks in one region. */
-#leaderboard       .block {}
-#header-blocks     .block {}
-#help              .block {}
-#secondary-content .block {}
-#tertiary-content  .block {}
-#highlight         .block {}
-#content           .block {}
-#footer            .block {}
+/* Low specifity selector to style blocks in all regions. */
+.region .block {}
+.region .block-title {}
+.region .block-inner {}
+.region .block .content {}
+
+/* Low specifity selector to style blocks in one region. */
+.region-leaderboard .block {}
+.region-leaderboard .block-title {}
+.region-leaderboard .block-inner {}
+.region-leaderboardt .block .content {}
+
+.region-header .block {}
+.region-header .block-title {}
+.region-header .block-inner {}
+.region-header .block .content {}
+
+.region-help .block {}
+.region-help .block-title {}
+.region-help .block-inner {}
+.region-help .block .content {}
+
+.region-highlight .block {}
+.region-highlight .block-title {}
+.region-highlight .block-inner {}
+.region-highlight .block .content {}
+
+.region-content .block {}
+.region-content .block-title {}
+.region-content .block-inner {}
+.region-content .block .content {}
+
+.region-secondary-content .block {}
+.region-secondary-content .block-title {}
+.region-secondary-content .block-inner {}
+.region-secondary-content .block .content {}
+
+.region-tertiary-content .block {}
+.region-tertiary-content .block-title {}
+.region-tertiary-content .block-inner {}
+.region-tertiary_content .block .content {}
+
+.region-footer .block {}
+.region-footer .block-title {}
+.region-footer .block-inner {}
+.region-footer .block .content {}
 
 
 /**********************************************************
@@ -75,12 +117,15 @@
  * For contributed module blocks the pattern is the same,
  * i.e. #block-[module]-[delta]
  */
+
+#block-system-main                 {} /* The Main Content block  */
 #block-book-navigation             {} /* Book navigation block   */
+#block-node-recent                 {} /* Recent posts            */
 #block-blog-recent                 {} /* Recent Blog posts       */
 #block-comment-recent              {} /* Recent Comments block   */
 #block-forum-active                {} /* Active Forum topics     */
 #block-forum-new                   {} /* New Forum topics        */
-#block-locale-language-switcher    {} /* Language Switcher block */
+#block-locale-language             {} /* Language Switcher block */
 #block-node-syndicate              {} /* Syndicate block         */
 #block-poll-recent                 {} /* Most recent poll        */
 #block-profile-author-information  {} /* Author information      */
@@ -98,9 +143,16 @@
 #block-menu-secondary-links {}
 
 /* The class selector applies to all blocks of these types. */
-.block-user {}
-.block-book {} 
+.block-system     {}
+.block-user       {}
+.block-node       {}
+.block-blog       {}
+.block-poll       {}
+.block-book       {}
+.block-comment    {}
+.block-locale     {}
 .block-aggregator {}
+.block-devel      {}
 
 
 /**********************************************************
@@ -109,7 +161,7 @@
  
 #block-search-form {}
 #block-search-form .block-inner {}
-#block-search-form .block-content {}
+#block-search-form .block .content {}
 
 #search-block-form {}
 

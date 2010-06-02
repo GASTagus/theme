@@ -28,6 +28,7 @@
  *   content.
  * - $classes String of classes that can be used to style contextually through
  *   CSS.
+ * - $in_overlay: TRUE if the page is in the overlay.
  *
  * @see template_preprocess()
  * @see template_preprocess_html()
@@ -46,12 +47,12 @@
 </head>
 <body id="genesis-1a" <?php print $attributes;?>>
   <div id="container" class="<?php print $classes; ?>">
-  <?php if (!$in_overlay): // Hide in overlay ?>
-    <div id="skip-nav"><a href="#main-content"><?php print t('Skip to main content'); ?></a></div>
-  <?php endif; // End hide in overlay ?>
-  <?php print $page_top; ?>
-  <?php print $page; ?>
-  <?php print $page_bottom; ?>
+    <?php if (!$in_overlay): // Hide in overlay ?>
+      <div id="skip-nav"><a href="#main-content"><?php print t('Skip to main content'); ?></a></div>
+    <?php endif; // End hide in overlay ?>
+    <?php print $page_top; ?>
+    <?php print $page; ?>
+    <?php print $page_bottom; ?>
   </div>
 </body>
 </html>

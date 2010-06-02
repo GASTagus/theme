@@ -7,8 +7,8 @@
  *
  * Available variables:
  * - $title: the (sanitized) title of the node.
- * - $content: An array of node items. Use render($content) to print them all, or
- *   print a subset such as render($content['field_example']). Use
+ * - $content: An array of node items. Use render($content) to print them all,
+ *   or print a subset such as render($content['field_example']). Use
  *   hide($content['field_example']) to temporarily suppress the printing of a
  *   given element.
  * - $user_picture: The node author's picture from user-picture.tpl.php.
@@ -16,11 +16,11 @@
  *   calling format_date() with the desired parameters on the $created variable.
  * - $name: Themed username of node author output from theme_username().
  * - $node_url: Direct url of the current node.
- * - $terms: the themed list of taxonomy term links output from theme_links().
  * - $display_submitted: whether submission information should be displayed.
  * - $classes: String of classes that can be used to style contextually through
  *   CSS. It can be manipulated through the variable $classes_array from
- *   preprocess functions. The default values can be one or more of the following:
+ *   preprocess functions. The default values can be one or more of the
+ *   following:
  *   - node: The current template type, i.e., "theming hook".
  *   - node-[type]: The current node type. For example, if the node is a
  *     "Blog entry" it would result in "node-blog". Note that the machine
@@ -29,7 +29,8 @@
  *   - node-preview: Nodes in preview mode.
  *   The following are controlled through the node publishing options.
  *   - node-promoted: Nodes promoted to the front page.
- *   - node-sticky: Nodes ordered above other non-sticky nodes in teaser listings.
+ *   - node-sticky: Nodes ordered above other non-sticky nodes in teaser
+ *     listings.
  *   - node-unpublished: Unpublished nodes visible only to administrators.
  * - $title_prefix (array): An array containing additional output populated by
  *   modules, intended to be displayed in front of the main title tag that
@@ -80,19 +81,21 @@
   <div class="node-inner">
 
     <?php print render($title_prefix); ?>
-      <?php if ($teaser): ?>
-        <h2 class="node-title"<?php print $title_attributes; ?>>
-          <a href="<?php print $node_url; ?>"><?php print $title; ?></a>
-          <?php if ($unpublished) : print '<span class="unpublished">'. t('Unpublished') .'</span>'; endif; ?>
-        </h2>
-      <?php endif; ?>
+    <?php if ($teaser): ?>
+      <h2 class="node-title"<?php print $title_attributes; ?>>
+        <a href="<?php print $node_url; ?>" rel="bookmark"><?php print $title; ?></a>
+      </h2>
+    <?php endif; ?>
     <?php print render($title_suffix); ?>
 
     <?php print $user_picture; ?>
 
     <?php if ($display_submitted): ?>
       <div class="node-submitted">
-        <?php print t('Submitted by !username on !datetime', array('!username' => $name, '!datetime' => $date)); ?>
+        <?php
+          print t('Submitted by !username on !datetime',
+          array('!username' => $name, '!datetime' => $date));
+        ?>
       </div>
     <?php endif; ?>
 
@@ -105,8 +108,19 @@
       ?>
     </div>
 
-    <?php if (!empty($content['links'])): ?>
-      <div class="node-links"><?php print render($content['links']); ?></div>
+    <?php
+      // Remove the "Add new comment" link on the teaser page or if the comment
+      // form is being displayed on the same page.
+      if ($teaser || !empty($content['comments']['comment_form'])) {
+        unset($content['links']['comment']['#links']['comment-add']);
+      }
+      // Only display the wrapper div if there are links.
+      $links = render($content['links']);
+      if ($links):
+    ?>
+      <div class="node-links">
+        <?php print $links; ?>
+      </div>
     <?php endif; ?>
 
     <?php print render($content['comments']); ?>

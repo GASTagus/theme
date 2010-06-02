@@ -35,6 +35,7 @@
  * - $is_front: Flags true when presented in the front page.
  * - $logged_in: Flags true when the current user is a logged-in member.
  * - $is_admin: Flags true when the current user is an administrator.
+ * - $block_html_id: A valid HTML ID and guaranteed unique.
  *
  * @see template_preprocess()
  * @see template_preprocess_block()
@@ -50,7 +51,7 @@
       <?php endif;?>
     <?php print render($title_suffix); ?>
 
-    <div class="content block-content"<?php print $content_attributes; ?>>
+    <div class="content"<?php print $content_attributes; ?>>
       <?php print $content ?>
     </div>
 

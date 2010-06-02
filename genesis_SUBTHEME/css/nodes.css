@@ -8,82 +8,73 @@
 /**********************************************************
  *                      Nodes
  **********************************************************/
-/* section type class when viewing a node */
-.page-node   {}
-
-/* section type classes for node workflow states */
-.node-add    {}
-.node-edit   {}
-.node-delete {}
 
 .node {
   margin: 0 0 1.5em;
 }
 
-/* Over-ride default .inner styles. */
+/* Inner DIV */
 .node-inner {}
 
-/* Node title on teasers and other lists. */
+/* Title */
 .node-title {}
-
-.node-title a:link,
-.node-title a:visited,
-.node-title a:active {
+.node-title a {
   text-decoration: none;
 }
 
-.node-title a:hover {
+.node-title a:hover,
+.node-title a:focus {
   text-decoration: underline;
 }
 
+/* User picture */
 .node .user-picture {
-  float: left;
-  margin: 0.3em 1em 0.1em 0;
+  float: right;
+  margin: 0.3em 0 0.5em 1em;
 }
 
-.node .user-picture img {}
-
+/* Submitted */
 .node-submitted {}
+.node-submitted span {}
+.node-submitted a    {}
 
-.node-submitted a {}
-.node-submitted a:hover {}
-
-/* Node content wrapper. */
+/* Node content wrapper */
 .node-content {}
 
-.node-terms {}
+/* Links */
+.node-links {}
+.node-links ul.links {}
+.node-links ul.links li {}
+.node-links ul.links li a{}
 
-.node-links {
-  display: block; 
-  text-align: right;
-}
+/* Page view */
+.node-view {}
 
-/* Theme sticky nodes. */
-.node .sticky {}
-
-/* Theme node status. */
-.node .unpublished {}
- 
-/* Theme nodes that belong to the author. */
-.node-mine {}
-
-/* Theme the node teaser seperatly. */
+/* Teaser view */
 .node-teaser {}
-.node-teaser .node-inner {}
+
+/* Sticky */
+.node-sticky {}
+
+/* Promoted */
+.node-promoted {}
+
+/* Status */
+.node-unpublished {}
+ 
+/* Theme nodes that belong to the author */
+.node-mine {}
 
 
 /**********************************************************
  *                   Core node types
  **********************************************************/
-.node-type-blog  {}
-.node-type-page  {}
-.node-type-story {}
-.node-type-forum {}
-.node-type-book  {}
-.node-type-poll  {}
-
-/* Clear the user picture on Polls. */
-.node-type-poll .node-content {clear: both;}
+.node-article {}
+.node-blog    {}
+.node-page    {}
+.node-forum   {}
+.node-book    {}
+.node-poll    {}
 
 
 /**********************************************************
@@ -94,41 +85,4 @@
  * machine-readable name. 
  */
 .node-type-CONTENT_TYPE {}
-
-
-/**********************************************************
- *                    CCK Fields
- **********************************************************/
-/* Wrapper for any CCK field. */
-.field {}
-
-/* Use "datetime" when creating new CCK date fields. */
-.field-type-datetime {}
-
-/* Filefield field. */
-.field-type-filefield {}
-
-/* Imagefield field. */
-.field-type-image {}
-
-/* Node reference field. */
-.field-type-nodereference {}
-
-/* User reference field. */
-.field-type-userreference {}
-
-/* Number fields. */
-.field-type-number-decimal {}
-.field-type-number-float {}
-.field-type-number-integer {}
-
-/* Text field. */
-.field-type-text {}
-
-/**
- * Specific field names.
- */
-/* Underscores in field name are replaced with dashes. */
-.field-field-FIELDNAME {}
-
 

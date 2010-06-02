@@ -127,29 +127,46 @@ body > #container {
 /**********************************************************
  *                       Regions
  **********************************************************/
+/* Target all regions - be careful with this one, its easily 
+ * over-ridden and will target sidebars as well.
+ */
+.region {}
 
-/* Leaderboard is a full width region at the very top, 
-   ideal for displaying banners. */
+/**
+ * Each region has a main wrapper DIV and an inner DIV.
+ * The following selectors are follow the patter of:
+ * #region-name
+ * .region-inner-div-name
+ */
+/* Leaderboard */
 #leaderboard {}
-#leaderboard .region {}
+.region-leaderboard {}
 
-/* Header blocks region is embedded in the header. */
+/* Header blocks */
 #header-blocks {float: right;}
-#header-blocks .region {}
+.region-header {}
 
-/* New highlight region replaces content-top . */
+/* Highlight */
+#help {}
+.region-help {}
+
+/* Highlight */
 #highlight {}
-#highlight .region {}
+.region-highlight {}
 
-/* Secondary content is a full width region between 
-   the header and the main columns. */
+/* Secondary content */
 #secondary-content {}
-#secondary-content .region {}
+.region-secondary-content {}
 
-/* Tertiary content is a full width region above the footer, 
-   below the main content. */
+/* Tertiary content */
 #tertiary-content {}
-#tertiary-content .region {}
+.region-tertiary-content {}
+
+/* Tertiary content */
+#footer {}
+.region-footer {}
+
+
 
 
 /**********************************************************
@@ -161,10 +178,10 @@ body > #container {
 
 /* Target a specific sidebar. */
 #sidebar-first {}
-#sidebar-first .region-sidebar-first {}
+.sidebar .region-sidebar-first {}
 
 #sidebar-second {}
-#sidebar-first .region-sidebar-second {}
+.sidebar .region-sidebar-second {}
 
 
 /*********************************************************
