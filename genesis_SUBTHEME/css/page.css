@@ -13,7 +13,7 @@ body {
   padding: 0 10px;
 }
 
-/* workaround for Admin menu bar shadow */
+/* Workaround for Admin menu bar shadow */
 html body.admin-menu {
   margin-top:45px !important;
 }
@@ -102,13 +102,8 @@ html body.admin-menu {
  * Fixed widths use pixels,       e.g. 960px
  */
 #container {
-  width: 100%;      /* Width for IE6 */
-}
-
-body > #container {
-  width: 100%;      /* Width for all other browsers */
+  width: 100%;
   min-width: 760px; /* set a minimum width */
-/*max-width: 960px;    set a maximum width */
 }
 
 /* Column wrappers */
@@ -541,7 +536,3 @@ h1#page-title {}
 .feed-icon img {
   padding:0 0.5em;
 }
-
-
-
-
