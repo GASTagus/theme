@@ -6,5 +6,5 @@
  * @file gpanels-fluid-rtl.css
  */
 .gpanel .region {
-float:left;
+  float: right;
 }

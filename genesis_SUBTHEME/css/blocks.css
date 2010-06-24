@@ -1,10 +1,5 @@
 /* $Id$ */
 
-/**
- * @file blocks.css
- * Basic styles for blocks.
- */
-
 /**********************************************************
  *                       Blocks
  **********************************************************/
@@ -158,7 +153,6 @@
 /**********************************************************
  *                 Search block form
  **********************************************************/
- 
 #block-search-form {}
 #block-search-form .block-inner {}
 #block-search-form .block .content {}
@@ -183,39 +177,6 @@
 
 
 /**********************************************************
- *                   Menu blocks
- **********************************************************/
-/**
- * Prefix these with the block id to style one menu only.
- */
-ul.menu,
-ul.menu ul, 
-ul.menu ul ul, 
-ul.menu ul ul ul {
-  margin: 0 0 0 0.75em; /* LTR */
-  padding: 0;
-}
-
-/* Menu li styles */
-ul.menu li {
-  padding: 0.35em 0 0 0; /* LTR */
-}
-
-ul.menu li.collapsed {}
-ul.menu li.expanded  {}
-ul.menu li.leaf      {}
-
-ul.menu li a:link    {}
-ul.menu li a:hover   {}
-ul.menu li a:visited {}
-ul.menu li.active a  {}
-ul.menu li.active-trail {}
-
-ul.menu li.first {}
-ul.menu li.last  {}
-
-
-/**********************************************************
  *                   Block item-list
  **********************************************************/
 .block .item-list ul {
@@ -227,13 +188,12 @@ ul.menu li.last  {}
 /**********************************************************
  *                  Gpanel blocks
  **********************************************************/
-/* Examples to get started. Add col specific selectors to style
-   blocks in different Gpanel columns, or element selectors to
-   style specific elements */
-.two-col-50 .block {}
-.two-col-50.with-nested .block {}
-.three-col-33 .block {}
-.four-col-25 .block {}
+.gpanel div.block {
+  margin: 0 10px;
+}
+
+
+
 
 
 

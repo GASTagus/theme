@@ -157,10 +157,13 @@ blockquote, q {
   padding: 0;
 }
 
-a:link    {}
+a:link,
 a:visited {}
-a:hover   {}
+
+a:hover,
+a:focus,
 a:active  {}
+
 a.active  {}
 a.active-trail {}
 
@@ -168,7 +171,9 @@ a.active-trail {}
 li a.active {}
 
 /* Remove borders on linked images. */
-a img {border: none;}
+a img {
+  border: none;
+}
 
 
 /*********************************************************
@@ -217,6 +222,7 @@ dd {margin: 0 0 1.5em 1.75em;} /* LTR */
 }
 
 .item-list ul li {}
+
 
 /*********************************************************
 *                     Forms
@@ -305,15 +311,12 @@ label, legend {
   padding: 0;
 }
 
-/*********************************************************
-*                     Fieldsets
-**********************************************************/
+/* Fieldsets */
 fieldset {
   background: transparent;
   border: 1px solid #dadada;
   margin: 1.5em 0;
   padding: 0.75em;
-
 }
 
 /* Targets IE 7. Fixes background image in field sets (if one is set). */
@@ -348,12 +351,6 @@ html.js fieldset.collapsed {
 /**********************************************************
  *                   Tables
  **********************************************************/
- 
- /** 
- * The selector groupings are from Garland which offers a
- * sensible starting point for styling Drupal tables.
- */
- 
 table {
   border-spacing: 0;
   margin: 1em 0; 
@@ -435,9 +432,7 @@ tr:first-child td.container {
 }
 
 
-/**********************************************************
- *                   Table links
- **********************************************************/
+/* Table links */
 table a:link, 
 table a:visited {}
 table a:visited, 
@@ -445,7 +440,7 @@ table a.active  {}
 
 
 /**********************************************************
- *                     Forum tables
+ *                     Forums
  **********************************************************/
 /* Position forum icons. */
 #forum tr td.forum { 

@@ -2,72 +2,43 @@
  * $Id$ 
  * adaptivethemes.com 
  *
+ * All Gpanels widths add up to 99.98% to account for sub-pixel rounding in Internet Explorer.
  * @file gpanels-fluid.css
  */
-.gpanel div.block {
-padding:0 10px;
-}
-
 .gpanel {
-clear:both;
+  clear: both;
 }
-
 .gpanel .region {
-display:inline;
-position:relative;
-float:left;
+  display: inline;
+  position: relative;
+  float: left; /* LTR */
 }
-
-.two-col-33-66 .col-2 {
-width:66.333%;
+.two-33-66 .region-two-33-66-second,
+.two-66-33 .region-two-66-33-first {
+  width: 66.653%;
 }
-
-.two-col-66-33 .col-1 {
-width:66.666%;
+.three-25-25-50 .region-three-25-25-50-third,
+.three-50-25-25 .region-three-50-25-25-first,
+.two-50 .region {
+  width: 49.99%;
 }
-
-/* 5 column */
-.five-col-5x20 .region {
-width:20%;
+.two-33-66 .region-two-33-66-first,
+.two-66-33 .region-two-66-33-second,
+.three-3x33 .region {
+  width: 33.326%;
 }
-
-.five-col-5x20 .col-5 {
-width:19.75%;
+.three-25-25-50 .region-three-25-25-50-first,
+.three-25-25-50 .region-three-25-25-50-second,
+.three-50-25-25 .region-three-50-25-25-second,
+.three-50-25-25 .region-three-50-25-25-third {
+  width: 24.995%;
 }
-
-/* 6 column */
-.six-col-6x16 .region {
-width:16.666%;
+.four-4x25 .region {
+  width: 24.995%;
 }
-
-.six-col-6x16 .col-6 {
-width:16.333%;
+.five-5x20 .region {
+  width: 19.96%;
 }
-
-.two-col-2x50 .col-1,.three-col-50-25-25 .col-1 {
-width:50%;
-}
-
-.two-col-2x50 .col-2,.three-col-25-25-50 .col-3 {
-width:49.5%;
-}
-
-.two-col-33-66 .region,.two-col-66-33 .region {
-float:left;
-}
-
-.two-col-33-66 .col-1,.three-col-3x33 .region {
-width:33.333%;
-}
-
-.two-col-66-33 .col-2,.three-col-3x33 .col-3 {
-width:33%;
-}
-
-.three-col-25-25-50 .col-1,.three-col-25-25-50 .col-2,.three-col-50-25-25 .col-2,.four-col-4x25 .region {
-width:25%;
-}
-
-.three-col-50-25-25 .col-3,.four-col-4x25 .col-4 {
-width:24.5%;
+.six-6x16 .region {
+  width: 16.633%;
 }

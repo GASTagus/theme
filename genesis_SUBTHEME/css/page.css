@@ -1,34 +1,12 @@
 /* $Id$ */
 
-/**
- * @file page.css
- * This stylesheet provides the page main styles for this theme.
- */
-
 /**********************************************************
- *              Section, Page and Body Classes
+ *                    Body Classes
  **********************************************************/
 
 body {
   padding: 0 10px;
 }
-
-/* Workaround for Admin menu bar shadow */
-html body.admin-menu {
-  margin-top:45px !important;
-}
-	
-/** 
- * Section Class
- * The section class takes the 2nd part of the URL and
- * builds a section-[arg] class from it. If you emulate
- * site sections using the Pathauto module this can be a 
- * powerful way to style site sections.
- *
- * Look in body element for the section you want to style
- * to find the class to replace section-[arg]:
- */
-/* .section-arg {} */
 
 /* Front or not front. */
 .front {}
@@ -60,7 +38,7 @@ html body.admin-menu {
 /** 
  * Optional Region body classes
  * When any of the following regions are active a body class can be set.
- * To use you need to uncomment the conditional statements in 
+ * To use you need to un-comment the conditional statements in 
  * genesis_preprocess_page(), @see template.php.
  */
 /*
@@ -123,7 +101,7 @@ html body.admin-menu {
  *                       Regions
  **********************************************************/
 /* Target all regions - be careful with this one, its easily 
- * over-ridden and will target sidebars as well.
+ * over-ridden and will target sidebar inner DIVS as well.
  */
 .region {}
 
@@ -138,7 +116,9 @@ html body.admin-menu {
 .region-leaderboard {}
 
 /* Header blocks */
-#header-blocks {float: right;}
+#header-blocks {
+  float: right;
+}
 .region-header {}
 
 /* Highlight */
@@ -160,8 +140,6 @@ html body.admin-menu {
 /* Tertiary content */
 #footer {}
 .region-footer {}
-
-
 
 
 /**********************************************************
@@ -206,61 +184,6 @@ html body.admin-menu {
 
 
 /**********************************************************
- *                   Skip navigation
- **********************************************************/
-/**
- * To hide the skip-nav you can use: 
- * 
- * height: 0; 
- * overflow: hidden;
- * 
- * Do not use display:none as this hides it from screen readers!
- */
-#skip-nav {
-   text-align: right; /* LTR */
-}
-
-/* Override default pseudo class styles */
-#skip-nav a:link    {}
-#skip-nav a:visited {}
-#skip-nav a:hover   {}
-#skip-nav a:focus   {}
-#skip-nav a:active  {}
-
-/**
- * An alternative method is to position the skip-nav link offscreen
- * until the user tabs the link into focus. Uncomment the following to use.
- * 
- * Adjust the style of the active/focused link to suit.
- */
-/*
-#skip-nav {
-   text-align: left;
-}
-#skip-nav a:link, 
-#skip-nav a:hover, 
-#skip-nav a:visited {
-  height: 1px;
-  overflow: hidden;
-  position: absolute;
-  top: -999em;
-}
-#skip-nav a:active,
-#skip-nav a:focus {
-  background: #FFF;
-  color: #C00000;
-  height: 1.5em;
-  overflow: visible;
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: auto;
-  z-index: 1000;
-}
-*/
-
-
-/**********************************************************
  *                 Header Elements
  **********************************************************/
 /* #header wraps #branding and #header-blocks. */
@@ -272,15 +195,14 @@ html body.admin-menu {
 }
 
 /* h1 is for the front page only, all others use the div. */
-#branding h1 {font-size: 1em;} /* reset h1, do not change! */
+#branding h1 {
+  font-size: 1em; /* reset h1, do not change! */
+} 
 
 /* Logo and site_name wrapper. */
 .logo-site-name {}
-div.logo-site-name {}
+div.logo-site-name,
 h1.logo-site-name  {}
-
-/* DIV/strong combo when when title is set. */
-div.logo-site-name strong {}
 
 /* Remove display:block if you want the site name inline with the logo. */
 .logo-site-name span {
@@ -297,10 +219,11 @@ div.logo-site-name strong {}
 }
 
 /* Override default pseudo class styles. */
-#site-name a:link    {}
+#site-name a:link,
 #site-name a:visited {}
-#site-name a:hover   {}
-#site-name a:focus   {}
+
+#site-name a:hover,
+#site-name a:focus,
 #site-name a:active  {}
 
 /* Site slogan. */
@@ -311,7 +234,6 @@ div.logo-site-name strong {}
  *          Search form, Search results
  *          For the search block see blocks.css
  **********************************************************/
-
 /* Search page fieldset. */
 #search-form {}
 
@@ -335,18 +257,6 @@ div.logo-site-name strong {}
 #search-form #edit-keys:hover,
 #search-form #edit-keys:focus {}
 
-/**
- * Search results
- */
-/* Box styles for the results page. */
-.section-search .box {}
-.section-search .box-inner {}
-.section-search .box-title {}
-
-/* Style the no results messages. */
-.section-search .box ul {}
-.section-search .box ul li {}
-
 /* Search results list. */
 ol.search-results {
   padding: 0;
@@ -360,167 +270,10 @@ ol.search-results .search-info {}
 
 
 /**********************************************************
- *               Primary & Secondary Links
- **********************************************************/
-/**
- * Implimentation of Primary and Secondary Links.
- *
- * Primary & Secondary Links are colored by default so you 
- * can easily identify them.
- */
-
-/* Hide menu headers. */
-#main-menu-wrapper h2,
-#secondary-menu-wrapper h2 {
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-/* Main Menu */
-
-/* FLOAT RIGHT */
-/* #main-menu-wrapper .main-menu-inner {float: right;} */
-
-/* ALIGN CENTER */
-/* #main-menu-wrapper .main-menu-inner {display: table; margin: 0 auto; text-align: center;} */
-
-#main-menu-wrapper {
-  margin: 0.75em 0;
-}
-
-#main-menu {
-  background: #DDD; /* Default gray for dev only. */
-  font-weight: bold;
-  margin: 0;
-  padding: 0;
-}
-
-/* Modify the margin to set tab spacings. */
-#main-menu li {
-  display: inline;
-  line-height: 2;
-  list-style: none;
-  margin: 0 1em;
-  padding: 0;
-}
-
-#main-menu li a {
-  text-decoration: none;
-  white-space: nowrap;
-}
-
-/* Set pseudo class styles. */
-#main-menu li a:link {}
-#main-menu li a:visited {}
-#main-menu li a:hover {}
-#main-menu li a:focus {}
-#main-menu li a:active {}
-
-
-/* Primary first and last classes. */
-#main-menu li.first {}
-#main-menu li.last {}
-
-/* Active trail classes. */
-#main-menu li.active {}
-#main-menu li.active-trail {}
-#main-menu li.active-trail a {}
-
-
-/* Secondary menu */
-
-/* FLOAT RIGHT */
-/* #secondary .secondary-inner {float: right;} */
-
-/* ALIGN CENTER */
-/* #secondary .secondary-inner {display: table; margin: 0 auto; text-align: center;} */
-
-#secondary-menu-wrapper  {
-  margin: 0.75em 0;
-}
-
-#secondary-menu {
-  background: #EEE; /* Default gray for dev only. */
-  font-weight: bold;
-  margin: 0;
-  padding: 0;
-}
-
-/* Modify the margin to set tab spacings. */
-#secondary-menu li {
-  display: inline;
-  line-height: 2;
-  list-style: none;
-  margin: 0 1em;
-  padding: 0;
-}
-
-#secondary-menu li a {
-  text-decoration: none;
-  white-space: nowrap;
-}
-
-/* Set pseudo class styles. */
-#secondary-menu li a:hover {}
-#secondary-menu li a:focus {}
-#secondary-menu li a:active {}
-#secondary-menu li a:visited {}
-
-/* Secondary first and last classes. */
-#secondary-menu li.first {}
-#secondary-menu li.last {}
-
-/* Active trail classes. */
-#secondary-menu li.active {}
-#secondary-menu li.active-trail {}
-#secondary-menu li.active-trail a {}
-
-
-/**********************************************************
- *                      Breadcrumb
- **********************************************************/
-/**
- * Genesis places the breadcrumb directly below the header, 
- * giving it the full width of theme to expand into.
- * You can eaisly drag the breadcrumb html to the main 
- * content column if you need to.
- */
-#breadcrumb {
-  padding: 0 0 0.75em;
-}
-
-
-/**********************************************************
  *                    H1 Page Title
  **********************************************************/
 /* The main title on each page. */
 h1#page-title {}
-
-
-/**********************************************************
- *                     Pager 
- **********************************************************/
-/* The first 2 classes provide the base pager styles. */
-.item-list ul.pager    {}
-.item-list ul.pager li {
-  margin: 0;
-}
-
-/* Theme the various states of pager links. */
-.item-list ul.pager li a:link    {}
-.item-list ul.pager li a:visited {}
-.item-list ul.pager li a:hover   {}
-
-/* Note: .pager-current is for the current page. */
-.item-list ul.pager li.pager-item     {}
-.item-list ul.pager li.first          {}
-.item-list ul.pager li.last           {}
-.item-list ul.pager li.pager-current  {}
-.item-list ul.pager li.pager-first    {}
-.item-list ul.pager li.pager-previous {}
-.item-list ul.pager li.pager-next     {}
-.item-list ul.pager li.pager-last     {}
 
 
 /**********************************************************
