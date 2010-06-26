@@ -93,5 +93,6 @@
   ;regions[six_fifth]  = GP 6 x 16% - Fifth
   ;regions[six_sixth]  = GP 6 x 16% - Sixth
 
-; Shorcuts link, set to 0 disable.
-  settings[shortcut_module_link] = 1
+; Shorcuts link, set to 1 enable. Disabled by default since this 
+; will seldom make sense in a front end theme.
+  settings[shortcut_module_link] = 0

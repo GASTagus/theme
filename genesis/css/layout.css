@@ -72,24 +72,6 @@
 #genesis-4 #sidebar-second{width:37%;margin-left:-37%;}
 #genesis-4 .sidebar-first #sidebar-first{width:37%;margin-left:-37%;}
 
-.gpanel{clear:both;margin:.75em 0;}
-.gpanel .region{display:inline;position:relative;}
-.two-col-50 .region{width:49.5%;}
-.two-col-50 .col-1{float:left;}
-.two-col-50 .col-2{float:right;}
-.two-col-50 .gpanel{margin:0;}
-#two-col-50-nested .col-2{width:48.5%;}
-.col-1 #two-col-50-nested .region,.col-2 #two-col-50-nested .col-2{width:49%;}
-.three-col-33 .region{float:left;width:32%;}
-.three-col-33 .col-2{right:-1%;width:34%;}
-.three-col-33 .col-3{right:-2%;}
-.four-col-25 .section-1{float:left;width:49.5%;}
-.four-col-25 .section-2{float:right;width:49.5%;}
-.four-col-25 .col-1,.four-col-25 .col-3{float:left;width:49%;}
-.four-col-25 .col-2,.four-col-25 .col-4{float:right;width:49%;}
-.gpanel .region .inner{margin:0;}
-.gpanel .last .inner{margin-right:0;}
-
 #container{position:relative;margin:0 auto;}
 #columns{display:inline-block;margin-bottom:1em;}
 #container > #columns{display:block;}

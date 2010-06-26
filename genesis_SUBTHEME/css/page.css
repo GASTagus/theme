@@ -70,18 +70,18 @@ body {
  * Width Setting
  *
  * Genesis supports Elastic, Fluid and Fixed width values.
- * Elastic layouts are dynamic and will expand or contract when 
- * the font size is changed. Fluid widths change when the browser 
- * is resized and fixed width layouts stay the same width even 
- * when the broswer is resized or the font size is changed.
+ * - Elastic layouts expand or contract when the font size is changed. 
+ * - Fluid widths change when the browser is resized.
+ * - Fixed width layouts stay the same even when the browser
+ *   is resized or the font size is changed.
  *
  * Elastic layouts use ems,       e.g. 80em
  * Fluid layouts use percentages, e.g. 85%
  * Fixed widths use pixels,       e.g. 960px
  */
 #container {
-  width: 100%;
-  min-width: 760px; /* set a minimum width */
+  width: 85%;
+  min-width: 960px;
 }
 
 /* Column wrappers */

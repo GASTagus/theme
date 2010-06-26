@@ -116,59 +116,56 @@
 
   <?php endif; // end hide in overlay ?>
 
-    <?php if ($breadcrumb): ?>
-      <div id="breadcrumb"><?php print $breadcrumb; ?></div>
-    <?php endif; ?>
+  <?php print $breadcrumb; ?>
+  <?php print $messages; ?>
+  <?php print render($page['help']); ?>
 
-    <?php print $messages; ?>
-    <?php print render($page['help']); ?>
+  <?php if ($page['secondary_content'] && !$in_overlay): // hide in overlay ?>
+    <div id="secondary-content">
+      <?php print render($page['secondary_content']); ?>
+    </div>
+  <?php endif; ?>
 
-    <?php if ($page['secondary_content'] && !$in_overlay): ?>
-      <div id="secondary-content">
-        <?php print render($page['secondary_content']); ?>
-      </div>
-    <?php endif; ?>
+  <div id="columns" class="clear clearfix">
+    <div id="content-column">
+      <div class="content-inner">
 
-    <div id="columns" class="clear clearfix">
-      <div id="content-column">
-        <div class="content-inner">
+        <?php if ($page['highlight']): ?>
+          <div id="highlight"><?php print render($page['highlight']); ?></div>
+        <?php endif; ?>
 
-          <?php if ($page['highlight']): ?>
-            <div id="highlight"><?php print render($page['highlight']); ?></div>
+        <div id="main-content">
+          <?php print render($title_prefix); ?>
+          <?php if ($title): ?>
+            <h1 id="page-title"><?php print $title; ?></h1>
+          <?php endif; ?>
+          <?php print render($title_suffix); ?>
+
+          <?php if ($tabs): ?>
+            <div class="local-tasks"><?php print render($tabs); ?></div>
           <?php endif; ?>
 
-          <div id="main-content">
-            <?php print render($title_prefix); ?>
-            <?php if ($title): ?>
-              <h1 id="page-title"><?php print $title; ?></h1>
-            <?php endif; ?>
-            <?php print render($title_suffix); ?>
+          <?php if ($action_links): ?>
+            <ul class="action-links"><?php print render($action_links); ?></ul>
+          <?php endif; ?>
 
-            <?php if ($tabs): ?>
-              <div class="local-tasks"><?php print render($tabs); ?></div>
-            <?php endif; ?>
-
-            <?php if ($action_links): ?>
-              <ul class="action-links"><?php print render($action_links); ?></ul>
-            <?php endif; ?>
-
-            <div id="content">
-              <?php print render($page['content']); ?>
-            </div>
+          <div id="content">
+            <?php print render($page['content']); ?>
           </div>
-
         </div>
+
       </div>
+    </div>
 
-      <?php if ($page['sidebar_first']): ?>
-        <div id="sidebar-first" class="sidebar"><?php print render($page['sidebar_first']); ?></div>
-      <?php endif; ?>
+    <?php if ($page['sidebar_first']): ?>
+      <div id="sidebar-first" class="sidebar"><?php print render($page['sidebar_first']); ?></div>
+    <?php endif; ?>
 
-      <?php if ($page['sidebar_second']): ?>
-        <div id="sidebar-second" class="sidebar"><?php print render($page['sidebar_second']); ?></div>
-      <?php endif; ?>
+    <?php if ($page['sidebar_second']): ?>
+      <div id="sidebar-second" class="sidebar"><?php print render($page['sidebar_second']); ?></div>
+    <?php endif; ?>
 
-    </div> <!-- /columns -->
+  </div> <!-- /columns -->
 
   <?php if (!$in_overlay): // hide in overlay ?>
 

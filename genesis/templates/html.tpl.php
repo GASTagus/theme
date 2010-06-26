@@ -44,7 +44,7 @@
   <?php print $styles; ?>
   <?php print $scripts; ?>
 </head>
-<body id="genesis-1a" <?php print $attributes;?>>
+<body id="genesis-1b" <?php print $attributes;?>>
   <div id="container" class="<?php print $classes; ?>">
     <?php if (!$in_overlay): // Hide in overlay ?>
       <div id="skip-nav" class="element-invisible"><a href="#main-content"><?php print t('Skip to main content'); ?></a></div>
