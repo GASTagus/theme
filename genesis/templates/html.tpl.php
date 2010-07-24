@@ -45,13 +45,18 @@
   <?php print $scripts; ?>
 </head>
 <body id="genesis-1b" <?php print $attributes;?>>
+
+  <?php if (!$in_overlay): // Hide the skip-link in overlay ?>
+    <div id="skip-link">
+      <a href="#main-content"><?php print t('Skip to main content'); ?></a>
+    </div>
+  <?php endif; ?>
+
+  <?php print $page_top; ?>
   <div id="container" class="<?php print $classes; ?>">
-    <?php if (!$in_overlay): // Hide in overlay ?>
-      <div id="skip-nav" class="element-invisible"><a href="#main-content"><?php print t('Skip to main content'); ?></a></div>
-    <?php endif; // End hide in overlay ?>
-    <?php print $page_top; ?>
     <?php print $page; ?>
-    <?php print $page_bottom; ?>
   </div>
+  <?php print $page_bottom; ?>
+
 </body>
 </html>
