@@ -130,8 +130,8 @@
     <div id="content-column">
       <div class="content-inner">
 
-        <?php if ($page['highlight']): ?>
-          <div id="highlight"><?php print render($page['highlight']); ?></div>
+        <?php if ($page['highlighted']): ?>
+          <div id="highlighted"><?php print render($page['highlighted']); ?></div>
         <?php endif; ?>
 
         <div id="main-content">

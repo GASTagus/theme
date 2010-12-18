@@ -122,13 +122,13 @@ body {
 }
 .region-header {}
 
-/* Highlight */
+/* Help */
 #help {}
 .region-help {}
 
 /* Highlight */
-#highlight {}
-.region-highlight {}
+#highlighted {}
+.region-highlighted {}
 
 /* Secondary content */
 #secondary-content {}
