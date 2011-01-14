@@ -1,7 +1,7 @@
 ; $Id$
 
 ; Change the name to match your new subthemes name and modify the description.	
-  name         = Genesis SUBTHEME
+  name         = GASTagus theme
   description  = My Kickn' Sub-theme
   core         = 7.x
   engine       = phptemplate
