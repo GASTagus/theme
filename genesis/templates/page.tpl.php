@@ -76,6 +76,12 @@
       </div>
     <?php endif; ?>
 
+    <?php if ($secondary_menu_links): ?>
+      <div id="secondary-menu-wrapper" class="clearfix">
+        <div class="secondary-menu-inner"><?php print $secondary_menu_links; ?></div>
+      </div>
+    <?php endif; ?>
+
     <div id="header" class="clearfix">
 
       <?php if ($site_logo || $site_name || $site_slogan): ?>
@@ -175,16 +181,9 @@
       </div>
     <?php endif; ?>
 
-    <?php if ($page['footer'] || $secondary_menu_links || $feed_icons): ?>
+    <?php if ($page['footer'] || $feed_icons): ?>
       <div id="footer">
         <?php print render($page['footer']); ?>
-
-        <?php if ($secondary_menu_links): ?>
-          <div id="secondary-menu-wrapper" class="clearfix">
-            <div class="secondary-menu-inner"><?php print $secondary_menu_links; ?></div>
-          </div>
-        <?php endif; ?>
-
         <?php print $feed_icons; ?>
       </div>
     <?php endif; ?>
