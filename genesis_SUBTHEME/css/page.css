@@ -8,60 +8,6 @@ body {
   padding: 0 10px;
   margin: 0;
 }
-
-/* Front or not front. */
-.front {}
-.not-front {}
-
-/* Is the user logged in. */
-.logged-in {}
-.not-logged-in {}
-
-/* Node type body classes. */
-.node-type-book  {}
-.node-type-blog  {}
-.node-type-forum {}
-.node-type-page  {}
-.node-type-poll  {}
-.node-type-story {}
-
-/**
- * Warning! 
- * The sidebar body classes are integral to how genesis
- * applies the layout - do not add margin, padding, borders,
- * or positioning styles to these classes! @see layout.css. 
- */
-.one-sidebar   {}
-.two-sidebars  {}
-.sidebar-first {}
-.sidebar-second  {}
-
-/** 
- * Optional Region body classes
- * When any of the following regions are active a body class can be set.
- * To use you need to un-comment the conditional statements in 
- * genesis_preprocess_page(), @see template.php.
- */
-/*
-.leaderboard       {}
-.header-blocks     {}
-.secondary-content {}
-.tertiary-content  {}
-.footer            {}
-*/
-
-/** 
- * Page Path Class
- * The page path class takes the entire URL and builds a page-[path] 
- * class from it. See examplebelow. You need to use Firebug or view 
- * source to find out what the actual class will be, and be aware
- * that this will change if your URL alias changes!
- *
- * Replace [example-node-path] with the path you want
- * to style.
- */
-/* .page-example-node-path {} */
-
 	
 /**********************************************************
  *                  The wrapper divs
@@ -96,6 +42,53 @@ body {
 /* Main content wrappers*/
 #main-content {}
 #content {}
+
+
+/**********************************************************
+ *                 Header Elements
+ **********************************************************/
+/* #header wraps #branding and #header-blocks. */
+#header {}
+
+/* #branding wraps #logo, #site-name and #site-slogan. */
+#branding {
+  float: left; /* LTR */
+}
+
+/* h1 is for the front page only, all others use the div. */
+#branding h1 {
+  font-size: 1em; /* reset h1, do not change! */
+} 
+
+/* Logo and site_name wrapper. */
+.logo-site-name {}
+div.logo-site-name,
+h1.logo-site-name  {}
+
+/* Remove display:block if you want the site name inline with the logo. */
+.logo-site-name span {
+  display: block;
+}
+
+/* Logo. */
+#logo {}
+
+#site-name {
+  font-weight: bold; /* Bold or else the line heights vary. */
+  font-size: 2em;
+  line-height: 1.5;
+}
+
+/* Override default pseudo class styles. */
+#site-name a:link,
+#site-name a:visited {}
+
+#site-name a:hover,
+#site-name a:focus,
+#site-name a:active  {}
+
+/* Site slogan. */
+#site-slogan {}
 
 
 /**********************************************************
@@ -158,79 +151,6 @@ body {
 .sidebar .region-sidebar-second {}
 
 
-/*********************************************************
-*                     GPanel Regions
-**********************************************************/
-.two-col-50 {}
-.two-col-50 .col-1 {}
-.two-col-50 .col-2 {}
-
-.two-col-50.with-nested {}
-#two-col-50-nested {}
-.two-col-50.with-nested .col-1 {}
-.two-col-50.with-nested .col-2 {}
-.two-col-50.with-nested #two-col-50-nested .col-1 {}
-.two-col-50.with-nested #two-col-50-nested .col-2 {}
-
-.three-col-33 {}
-.three-col-33 .col-1 {}
-.three-col-33 .col-2 {}
-.three-col-33 .col-3 {}
-
-.four-col-25 {}
-.four-col-25 .col-1 {}
-.four-col-25 .col-2 {}
-.four-col-25 .col-3 {}
-.four-col-25 .col-4 {}
-
-
-/**********************************************************
- *                 Header Elements
- **********************************************************/
-/* #header wraps #branding and #header-blocks. */
-#header {}
-
-/* #branding wraps #logo, #site-name and #site-slogan. */
-#branding {
-  float: left; /* LTR */
-}
-
-/* h1 is for the front page only, all others use the div. */
-#branding h1 {
-  font-size: 1em; /* reset h1, do not change! */
-} 
-
-/* Logo and site_name wrapper. */
-.logo-site-name {}
-div.logo-site-name,
-h1.logo-site-name  {}
-
-/* Remove display:block if you want the site name inline with the logo. */
-.logo-site-name span {
-  display: block;
-}
-
-/* Logo. */
-#logo {}
-
-#site-name {
-  font-weight: bold; /* Bold or else the line heights vary. */
-  font-size: 2em;
-  line-height: 1.5;
-}
-
-/* Override default pseudo class styles. */
-#site-name a:link,
-#site-name a:visited {}
-
-#site-name a:hover,
-#site-name a:focus,
-#site-name a:active  {}
-
-/* Site slogan. */
-#site-slogan {}
-
-
 /**********************************************************
  *          Search form, Search results
  *          For the search block see blocks.css
@@ -268,13 +188,6 @@ ol.search-results .title {}
 ol.search-results p {}
 ol.search-results .search-snippet {}
 ol.search-results .search-info {}
-
-
-/**********************************************************
- *                    H1 Page Title
- **********************************************************/
-/* The main title on each page. */
-h1#page-title {}
 
 
 /**********************************************************

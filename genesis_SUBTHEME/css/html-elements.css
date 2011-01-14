@@ -70,7 +70,7 @@ em, dfn, del, ins {
 }
 
 p {
-  margin: 0 0 1.5em; 
+  margin: 0 0 0.75em; 
   padding: 0;
 }
 
@@ -225,7 +225,7 @@ dd {margin: 0 0 1.5em 1.75em;} /* LTR */
 
 
 /*********************************************************
-*                     Forms
+*                     Form elements
 **********************************************************/
 form {
   margin: 0 0 1.5em 0; 
@@ -431,7 +431,6 @@ tr:first-child td.container {
   border-top-width: 0;
 }
 
-
 /* Table links */
 table a:link, 
 table a:visited {}
@@ -439,20 +438,3 @@ table a:visited,
 table a.active  {}
 
 
-/**********************************************************
- *                     Forums
- **********************************************************/
-/* Position forum icons. */
-#forum tr td.forum { 
-  background-position: 5px 5px!important;
-  padding-left: 1.67em; 
-}
-
-/* Add padding left to the forum name. */
-#forum tr td.forum .name {
-  padding-left: 0.375em;
-}
-
-#forum div.indent  {
-  margin-left: 0.5em;
-}

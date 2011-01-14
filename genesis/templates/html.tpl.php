@@ -44,7 +44,8 @@
   <?php print $styles; ?>
   <?php print $scripts; ?>
 </head>
-<body id="genesis-1b" <?php print $attributes;?>>
+<?php // modify the layout by changing the id, see layout.css ?>
+<body id="genesis-1c" <?php print $attributes;?>>
 
   <?php if (!$in_overlay): // Hide the skip-link in overlay ?>
     <div id="skip-link">

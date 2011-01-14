@@ -8,11 +8,11 @@
   screenshot   = genesis-subtheme.png
   base theme   = genesis
 
-; Uncomment for a Dark style theme.
+; Uncomment for a Dark style theme. @TODO - need to revamp dark css.
   ;stylesheets[all][] = css/dark/dark.css
 
 ; Uncomment if using Gpanels.
-  stylesheets[all][] = css/gpanels/gpanels-fluid.css
+  ;stylesheets[all][] = css/gpanels/gpanels-fluid.css
 
 ; Subtheme modular stylsheets.
   stylesheets[all][] = css/html-elements.css

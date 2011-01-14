@@ -189,14 +189,6 @@
  *                  Gpanel blocks
  **********************************************************/
 /* Debug Gpanel blocks */
-.gpanel .block {
-  border: 1px solid #CCC;
-  background: #EEE;
-  margin: 0;
-  padding: 10px;
-}
-
-
 .gpanel .block {}
 .gpanel .block-inner {}
 
