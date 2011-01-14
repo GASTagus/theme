@@ -25,7 +25,6 @@
 ; Genesis core styles.
   stylesheets[all][] = css/layout.css
   stylesheets[all][] = css/admin-styles.css
-  stylesheets[all][] = css/messages.css
 
 ; Redefine the default location of scripts.js
   scripts[] = js/script.js

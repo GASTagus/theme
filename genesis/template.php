@@ -72,10 +72,10 @@ function genesis_preprocess_page(&$vars) {
   global $theme;
   // Set variables for the logo and site_name.
   if ($vars['logo']) {
-    $vars['site_logo'] = '<a href="'. $vars['front_page'] .'" title="'. t('Home page') .'" rel="home"><img src="'. $vars['logo'] .'" alt="'. $vars['site_name'] .' '. t('logo') .'" /></a>';
+    $vars['site_logo'] = '<a href="' . $vars['front_page'] . '" title="' . t('Home page') . '" rel="home"><img src="' . $vars['logo'] . '" alt="' . $vars['site_name'] . ' ' . t('logo') . '" /></a>';
   }
   if ($vars['site_name']) {
-    $vars['site_name'] = '<a href="'. $vars['front_page'] .'" title="'. t('Home page') .'" rel="home">'. $vars['site_name'] .'</a>';
+    $vars['site_name'] = '<a href="' . $vars['front_page'] . '" title="' . t('Home page') . '" rel="home">' . $vars['site_name'] . '</a>';
   }
   // Set variables for the primary and secondary links.
   $vars['main_menu_links'] = theme('links__system_main_menu', array('links' => $vars['main_menu'], 'attributes' => array('id' => 'main-menu', 'class' => array('links', 'clearfix')), 'heading' => t('Main menu')));
@@ -121,9 +121,9 @@ function genesis_preprocess_block(&$vars) {
   $block = $vars['block'];
   $vars['title'] = $block->subject;
   // Special classes for blocks
-  $vars['classes_array'][] = $vars['block_zebra'] .'-block';
-  $vars['classes_array'][] = 'block-'. $block->region;
-  //$vars['classes_array'][] = 'block-count-'. $vars['id'];
+  $vars['classes_array'][] = 'block-' . $vars['block_zebra'];
+  $vars['classes_array'][] = 'block-' . drupal_html_class($block->region);
+  $vars['classes_array'][] = 'block-count-' . $vars['id'];
 }
 
 /**

@@ -2,86 +2,72 @@
 // $Id$
 
 /**
- * @file template.php
- *
- * USAGE
-	* 1. Rename each function to match your subthemes name,
-	*    i.e replace genesis_SUBTHEME with your subthemes name.
-	* 2. Uncomment the required fucntion to use.
+ * Preprocess and Process Functions SEE: http://drupal.org/node/254940#variables-processor
+ * 1. Rename each function to match your subthemes name,
+ *    e.g. if you name your theme "themeName" then the function
+ *    name will be "themeName_preprocess_hook". Tip - you can
+ *    search/replace on "genesis_SUBTHEME".
+ * 2. Uncomment the required function to use.
  */
-
-/**
- * Automatically rebuild the theme registry.
- * Uncomment to use during development.
- */
-//drupal_theme_rebuild();
 
 /**
  * Override or insert variables into all templates.
- *
- * @param $vars
- *   An array of variables to pass to the theme template.
- * @param $hook
- *   The name of the template being rendered.
  */
-/*
+/* -- Delete this line if you want to use these functions
 function genesis_SUBTHEME_preprocess(&$vars, $hook) {
-  $vars['sample_variable'] = t('Lorem ipsum.');
 }
-*/
+function genesis_SUBTHEME_process(&$vars, $hook) {
+}
+// */
+
+/**
+ * Override or insert variables into the html templates.
+ */
+/* -- Delete this line if you want to use these functions
+function genesis_SUBTHEME_preprocess_html(&$vars) {
+  // Uncomment the folowing line to add a conditional stylesheet for IE 7 or less.
+  // drupal_add_css(path_to_theme() . '/css/ie/ie-lte-7.css', array('weight' => CSS_THEME, 'browsers' => array('IE' => 'lte IE 7', '!IE' => FALSE), 'preprocess' => FALSE));
+}
+function genesis_SUBTHEME_process_html(&$vars) {
+}
+// */
 
 /**
  * Override or insert variables into the page templates.
- *
- * @param $vars
- *   An array of variables to pass to the theme template.
- * @param $hook
- *   The name of the template being rendered.
  */
-/*
+/* -- Delete this line if you want to use these functions
 function genesis_SUBTHEME_preprocess_page(&$vars) {
-  $vars['sample_variable'] = t('Lorem ipsum.');
 }
-*/
+function genesis_SUBTHEME_process_page(&$vars) {
+}
+// */
 
 /**
  * Override or insert variables into the node templates.
- *
- * @param $vars
- *   An array of variables to pass to the theme template.
- * @param $hook
- *   The name of the template being rendered.
  */
-/*
-function genesis_SUBTHEME_preprocess_node(&$vars, $hook) {
-  $vars['sample_variable'] = t('Lorem ipsum.');
+/* -- Delete this line if you want to use these functions
+function genesis_SUBTHEME_preprocess_node(&$vars) {
 }
-*/
+function genesis_SUBTHEME_process_node(&$vars) {
+}
+// */
 
 /**
  * Override or insert variables into the comment templates.
- *
- * @param $vars
- *   An array of variables to pass to the theme template.
- * @param $hook
- *   The name of the template being rendered.
  */
-/*
-function genesis_SUBTHEME_preprocess_comment(&$vars, $hook) {
-  $vars['sample_variable'] = t('Lorem ipsum.');
+/* -- Delete this line if you want to use these functions
+function genesis_SUBTHEME_preprocess_comment(&$vars) {
 }
-*/
+function genesis_SUBTHEME_process_comment(&$vars) {
+}
+// */
 
 /**
  * Override or insert variables into the block templates.
- *
- * @param $vars
- *   An array of variables to pass to the theme template.
- * @param $hook
- *   The name of the template being rendered.
  */
-/*
-function genesis_SUBTHEME_preprocess_block(&$vars, $hook) {
-  $vars['sample_variable'] = t('Lorem ipsum.');
+/* -- Delete this line if you want to use these functions
+function genesis_SUBTHEME_preprocess_block(&$vars) {
 }
-*/
+function genesis_SUBTHEME_process_block(&$vars) {
+}
+// */

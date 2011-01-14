@@ -70,10 +70,7 @@
 
   <div class="comment-submitted">
     <span class="comment-id"><?php print $permalink; ?></span>
-    <?php
-      print t('Submitted by !username on !datetime.',
-      array('!username' => $author, '!datetime' => $created));
-    ?>
+    <?php print $submitted; ?>
   </div>
 
   <div class="comment-content"<?php print $content_attributes; ?>>
