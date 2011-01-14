@@ -31,11 +31,14 @@ html {
 }
 
 body {
-  font-family: Verdana, Geneva, "DejaVu Sans", sans-serif;
+  font: 12px/18px helvetica,arial,sans-serif;
+  /*font-family: Verdana, Geneva, "DejaVu Sans", sans-serif;*/
   line-height: 1.5;
 }
 
-h1 {
+
+
+h1, #branding h1 a {
   font-size: 2em;
   margin: 0 0 0.5em 0;
   padding: 0;
@@ -45,12 +48,34 @@ h2 {
   font-size: 1.5em; 
 }
 
+#branding h1 {
+  text-indent: -9999px;
+  height: 59px;
+  width: 232px;
+  background: url(../logo.png);
+  float: left;
+}
+
+#branding h1 a {
+  text-decoration: none;
+}
+
+h1, h2, #branding h1 a {
+  margin: 10px 10px 10px 0px;
+  color: #cccc00;
+}
+
 h3 {
   font-size: 1.333em;
 }
 
 h4 {
   font-size: 1.167em;
+}
+
+h3, h4 {
+  margin: 5px 5px 5px 0px;
+  color: #966702;
 }
 
 h5, h6 {
@@ -65,6 +90,9 @@ h1, h2, h3, h4, h5, h6,
 h1 img, h2 img, h3 img, 
 h4 img, h5 img, h6 img,
 em, dfn, del, ins {
+  font-family: Georgia;
+  font-weight: normal;
+  overflow:visible;
   margin: 0; 
   padding: 0;
 }

@@ -74,9 +74,6 @@ h1.logo-site-name  {}
 #logo {}
 
 #site-name {
-  font-weight: bold; /* Bold or else the line heights vary. */
-  font-size: 2em;
-  line-height: 1.5;
 }
 
 /* Override default pseudo class styles. */

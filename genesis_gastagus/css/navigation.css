@@ -64,7 +64,6 @@ ul.menu li.last  {}
 }
 
 #main-menu {
-  background: #DDD; /* Default gray for dev only. */
   font-weight: bold;
   margin: 0;
   padding: 0;
@@ -115,7 +114,6 @@ ul.menu li.last  {}
 }
 
 #secondary-menu {
-  background: #EEE; /* Default gray for dev only. */
   font-weight: bold;
   margin: 0;
   padding: 0;

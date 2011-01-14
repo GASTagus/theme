@@ -13,6 +13,9 @@ html body.admin-menu {
   margin-top:45px !important;
 }
 
+html body > div#container.logged-in {
+  margin-top:45px !important;
+}
 
 
 

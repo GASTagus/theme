@@ -87,18 +87,22 @@
       <?php if ($site_logo || $site_name || $site_slogan): ?>
         <div id="branding">
 
-          <?php if ($site_logo or $site_name): ?>
+          <?php if ($site_name): ?>
             <?php if ($title): ?>
-              <div class="logo-site-name"><strong>
-                <?php if ($site_logo): ?><span id="logo"><?php print $site_logo; ?></span><?php endif; ?>
-                <?php if ($site_name): ?><span id="site-name"><?php print $site_name; ?></span><?php endif; ?>
-              </strong></div>
+<!--              <div class="logo-site-name"><strong>-->
+                <?php if ($site_name): ?><h1 id="site-name"><?php print $site_name; ?></h1><?php endif; ?>
+<!--              </strong></div>-->
             <?php else: /* Use h1 when the content title is empty */ ?>
               <h1 class="logo-site-name">
-                <?php if ($site_logo): ?><span id="logo"><?php print $site_logo; ?></span><?php endif; ?>
                 <?php if ($site_name): ?><span id="site-name"><?php print $site_name; ?></span><?php endif; ?>
              </h1>
             <?php endif; ?>
+          <?php endif; ?>
+
+          <?php if ($main_menu_links): ?>
+            <div id="main-menu-wrapper" class="clearfix">
+              <div class="main-menu-inner"><?php print $main_menu_links; ?></div>
+            </div>
           <?php endif; ?>
 
           <?php if ($site_slogan): ?>
@@ -114,11 +118,6 @@
 
     </div> <!-- /header -->
 
-    <?php if ($main_menu_links): ?>
-      <div id="main-menu-wrapper" class="clearfix">
-        <div class="main-menu-inner"><?php print $main_menu_links; ?></div>
-      </div>
-    <?php endif; ?>
 
   <?php endif; // end hide in overlay ?>
 
