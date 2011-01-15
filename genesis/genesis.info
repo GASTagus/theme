@@ -27,4 +27,4 @@
   stylesheets[all][] = css/admin-styles.css
 
 ; Redefine the default location of scripts.js
-  scripts[] = js/script.js
+  

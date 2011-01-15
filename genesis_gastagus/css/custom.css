@@ -9,13 +9,108 @@
  */
 
 /* Workaround for Admin menu bar shadow */
-html body.admin-menu {
-  margin-top:45px !important;
-}
-
+html body.admin-menu,
 html body > div#container.logged-in {
   margin-top:45px !important;
 }
 
+.little_boxes {
+    background-color: #F9FFE8;
+    border: 2px solid #BCC907;
+    border-radius: 5px 5px 5px 5px;
+    padding: 10px 10px;
+    margin-left:10px;
+    width:280px;
+    float:left;
+}
+
+.little_boxes .little_boxes-inner {
+  height:150px;
+}
+
+.little_boxes:hover {
+    box-shadow: 0 0 5px #CCCC00;
+}
+
+div.book-navigation {
+  display:none;
+}
+
+a {
+  text-decoration:none;
+}
+
+a,
+a:visited{
+  color: #6A6C6F;
+  border-bottom: solid 1px;
+}
+
+a:hover {
+  color: #000000;
+}
+
+a.arrow {
+  border: 0px;
+  text-transform: uppercase;
+  background-image: url(images/go.png);
+  background-repeat:no-repeat;
+  padding-right:20px;
+  background-position: right center;
+  line-height: 20px;
+  padding: 4px 22px 4px 0;
+}
+
+#block-search-form,#block-search-form form {
+  margin:0;
+}
+
+.element-invisible {
+  display:none;
+}
+a.more {
+  text-align:right;
+}
+
+#main-menu h2 {
+  display:none;
+}
+div#skip-link {
+  display:none;
+}
+#site-slogan {
+  clear:left;
+  float:left;
+  display:block;
+}
+
+#search-block-form input.form-text:active,
+#search-block-form input.form-text:focus {
+  outline: none;
+  background-image: none;
+}
+
+#search-block-form input.form-text {
+  background-image: url(images/search.png);
+  background-repeat: no-repeat;
+  background-position: 7px center;
+  border: none;
+  padding-left:10px;
+  width:120px;
+}
+#search-block-form div.container-inline {
+  border: 1px solid #cccc00;
+}
+
+#search-block-form input#edit-submit {
+  border-style: none;
+  background-color:#fff;
+  background-image: url(images/magnifying_glass.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-left: 0px;
+  text-indent:-99999px;
+  width:20px;
+}
 
 

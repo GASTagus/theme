@@ -27,8 +27,7 @@ body {
  * Fixed widths use pixels,       e.g. 960px
  */
 #container {
-  width: 85%;
-  min-width: 960px;
+  width: 960px;
 }
 
 /* Column wrappers */
@@ -52,6 +51,7 @@ body {
 
 /* #branding wraps #logo, #site-name and #site-slogan. */
 #branding {
+  /*
   float: left; /* LTR */
 }
 
