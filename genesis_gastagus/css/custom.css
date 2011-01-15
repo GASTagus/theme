@@ -28,7 +28,7 @@ html body > div#container.logged-in {
   height:150px;
 }
 
-.little_boxes:hover {
+.little_boxes:hover, .little_boxes:focus,.little_boxes:active{
     box-shadow: 0 0 5px #CCCC00;
 }
 
@@ -59,6 +59,7 @@ a.arrow {
   background-position: right center;
   line-height: 20px;
   padding: 4px 22px 4px 0;
+  float:right;
 }
 
 #block-search-form,#block-search-form form {
@@ -78,10 +79,30 @@ a.more {
 div#skip-link {
   display:none;
 }
-#site-slogan {
+.front #site-slogan,
+.breadcrumb {
   clear:left;
   float:left;
   display:block;
+  line-height: 2;
+  color: #6A6C6F;
+  font-size:1.2em;
+}
+
+.field-name-field-image img {
+  border: 1px solid #000;
+}
+
+.front .field-name-body {
+  width: 100%;
+}
+
+.field-name-body {
+  width: 650px;
+}
+
+#site-slogan {
+  display:none;
 }
 
 #search-block-form input.form-text:active,
@@ -113,4 +134,47 @@ div#skip-link {
   width:20px;
 }
 
+/*
+ * BLOG
+ *
+ */
+#block-blog-recent h2 {
+  border-bottom: 2px solid #DDDDDD;
+  margin-bottom:1em; 
+}
+
+#block-blog-recent a {
+  text-decoration: none;
+  border:none;
+}
+
+.node-blog {
+    background-color: #F9FFE8;
+    border: 2px solid #DDDDDD;
+    border-radius: 5px 5px 5px 5px;
+    padding: 10px 10px;
+} 
+
+.node-blog:hover, .node-blog:focus,.node-blog:active{
+    box-shadow: 0 0 5px #DDDDDD;
+}
+
+.user-picture a{
+ border:none; 
+}
+
+.node-blog .node-title {
+  float: right;
+  font-size: 2em;
+  width: 600px;
+}
+.node-blog .user-picture {
+  float: left;
+}
+
+.node-blog .node-submitted {
+  float: left;
+  padding-left:10px;
+  clear:right;
+}
 

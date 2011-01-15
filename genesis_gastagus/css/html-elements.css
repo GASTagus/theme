@@ -74,14 +74,12 @@ h1, h2 {
 h3, h4 {
     margin: 5px 5px 5px 0px;
 }
-h1 a, h2 a, h3 a, h4 a, h5 a, h6 a,
-h1 a:visited, h2 a:visited, h3 a:visited, h4 a:visited, h5 a:visited, h6 a:visited{
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, h1 a:visited, h2 a:visited, h3 a:visited, h4 a:visited, h5 a:visited, h6 a:visited {
     border-bottom: 0;
     color: #000000;
     text-decoration:none;
 }
-h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover,
-h1 a:active, h2 a:active, h3 a:active, h4 a:active, h5 a:active, h6 a:active {
+h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover, h1 a:active, h2 a:active, h3 a:active, h4 a:active, h5 a:active, h6 a:active {
     color: #6A6C6F;
 }
 h3 {
@@ -90,7 +88,6 @@ h3 {
 h4 {
     font-size: 1.167em;
 }
-
 h5, h6 {
     font-size: 1em;
 }
@@ -100,6 +97,7 @@ h1#page-title {
 p {
     margin: 0 0 0.75em;
     padding: 0;
+    clear:both;
 }
 blockquote p {
     margin: 0;
@@ -145,7 +143,23 @@ sub {
 li li, li p, td p, blockquote p {
     font-size: 1em;
 }
-blockquote, q {
+blockquote p {
+    padding-bottom:20px;
+    padding-right:20px;
+    font-size: 1.4em;
+    float: left;
+    background: url(images/quote_down.png) bottom right no-repeat;
+}
+blockquote {
+    padding: 20px;
+    background: url(images/quote_up.png) top left no-repeat;
+}
+cite {
+    font-size: 1.2em;
+    float: right;
+    padding-right:10%;
+}
+q {
     font-style: italic;  /* LTR */
     margin: 0 0 1.5em;
     padding: 0 0 0 3em;  /* LTR */

@@ -61,13 +61,13 @@ ul.menu li.last  {}
 
 #main-menu-wrapper {
   margin: 0.75em 0;
+  margin-left: 251px;
   display: block;
   height: 59px;
   clear:none;
 }
 
 #main-menu {
-  
   margin: 0;
   padding: 0;
   font-size:1.2em;
@@ -76,7 +76,8 @@ ul.menu li.last  {}
 /* Modify the margin to set tab spacings. */
 #main-menu li {
   display: inline;
-  line-height: 3.8; 
+  /*line-height: 3.8;*/
+  line-height:6; 
   list-style: none;
   
   background-image: url(images/dot.png);

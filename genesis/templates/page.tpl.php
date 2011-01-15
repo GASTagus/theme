@@ -110,6 +110,7 @@
           <?php if ($site_slogan): ?>
             <div id="site-slogan"><?php print $site_slogan; ?></div>
           <?php endif; ?>
+		  <?php print $breadcrumb; ?>
 
         </div> <!-- /branding -->
       <?php endif; ?>
@@ -123,7 +124,6 @@
 
   <?php endif; // end hide in overlay ?>
 
-  <?php print $breadcrumb; ?>
   <?php print $messages; ?>
   <?php print render($page['help']); ?>
 
