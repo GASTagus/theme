@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 // $Id$
 
 /**
@@ -10,6 +10,20 @@
  * Uncomment to use during development.
  */
 drupal_theme_rebuild();
+
+function genesis_breadcrumb($variables) {
+$breadcrumb = $variables['breadcrumb'];
+if (!empty($breadcrumb)) {
+      $breadcrumb_separator = ' » ';
+      $trailing_separator = $title = '';
+	  if ($title = drupal_get_title()) {
+	    $trailing_separator = $breadcrumb_separator;
+	  }
+      return '<div class="breadcrumb">' . implode($breadcrumb_separator, $breadcrumb) . "$trailing_separator$title</div>";
+    }
+return '';
+}
+
 
 /**
  * Override or insert variables into all templates.

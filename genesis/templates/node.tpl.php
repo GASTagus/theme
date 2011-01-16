@@ -86,6 +86,7 @@
         <a href="<?php print $node_url; ?>" rel="bookmark"><?php print $title; ?></a>
       </h2>
     <?php endif; ?>
+	
     <?php print render($title_suffix); ?>
 
     <?php print $user_picture; ?>

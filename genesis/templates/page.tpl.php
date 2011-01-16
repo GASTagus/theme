@@ -76,14 +76,6 @@
       </div>
     <?php endif; ?>
 
-    <?php if ($secondary_menu_links): ?>
-      <!--
-      <div id="secondary-menu-wrapper" class="clearfix">
-        <div class="secondary-menu-inner"><?php //print $secondary_menu_links; ?></div>
-      </div>
-      -->
-    <?php endif; ?>
-
     <div id="header" class="clearfix">
 
       <?php if ($site_logo || $site_name || $site_slogan): ?>
@@ -148,6 +140,14 @@
           <?php endif; ?>
           <?php print render($title_suffix); ?>
 
+		  <?php if ($secondary_menu_links): ?>
+      
+      <div id="secondary-menu-wrapper" class="clearfix">
+        <div class="secondary-menu-inner"><?php print $secondary_menu_links; ?></div>
+      </div>
+      
+    <?php endif; ?>
+		  
           <?php if ($tabs): ?>
             <div class="local-tasks"><?php print render($tabs); ?></div>
           <?php endif; ?>

@@ -46,9 +46,7 @@ ul.menu li.last  {}
 /* Hide menu headers. */
 #main-menu-wrapper h2,
 #secondary-menu-wrapper h2 {
-  height: 0;
-  overflow: hidden;
-  position: absolute;
+  display:none;
 }
 
 /* Main Menu */
@@ -60,8 +58,7 @@ ul.menu li.last  {}
 /* #main-menu-wrapper .main-menu-inner {display: table; margin: 0 auto; text-align: center;} */
 
 #main-menu-wrapper {
-  margin: 0.75em 0;
-  margin-left: 251px;
+  float:right;
   display: block;
   height: 59px;
   clear:none;
@@ -70,43 +67,54 @@ ul.menu li.last  {}
 #main-menu {
   margin: 0;
   padding: 0;
-  font-size:1.2em;
 }
 
 /* Modify the margin to set tab spacings. */
 #main-menu li {
   display: inline;
-  /*line-height: 3.8;*/
-  line-height:6; 
+  line-height: 5;
+  
   list-style: none;
   
-  background-image: url(images/dot.png);
+  font-size:1.4em;
+ 
+ 
   background-position:right center;
   background-repeat:no-repeat;
-  padding-right: 8px;
-  padding-left: 3px;
-  padding-bottom: 4px;
-  padding-top: 4px;
 }
 
 #main-menu li a {
+  color: #000;
+  padding:5px;
+  margin-left: 4px;
   text-decoration: none;
   white-space: nowrap;
   border-bottom: none;
-  text-transform: uppercase;
-  color: #000;
+  font-weight: bold;
 }
 
 /* Set pseudo class styles. */
 #main-menu li a:link {}
 #main-menu li a:visited {}
+
+ul#main-menu li.menu-236 a:hover,
+ul#main-menu li.menu-237 a:hover,
+ul#main-menu li.menu-253 a:hover,
 #main-menu li a:hover,
 #main-menu li a:focus,
-#main-menu li a:active,
+#main-menu li a:active {
+  /*border-bottom:3px solid #cccc00;*/
+  border: 1px solid #000;
+  padding:4px;
+  color: #cccc00;
+}
+
 /* Active trail classes. */
 #main-menu li.active a,
-#main-menu li.active-trail a {
-  border-bottom:3px solid #cccc00;
+#main-menu li.active-trail a{
+  border: 1px solid #000;
+  color: #cccc00;
+  padding:4px;
 }
 
 
@@ -132,9 +140,9 @@ ul#main-menu li.last {
   background-image: none;
 }
 
-ul#main-menu li.menu-236,
-ul#main-menu li.menu-237,
-ul#main-menu li.menu-253 {
+ul#main-menu li.menu-236 a,
+ul#main-menu li.menu-237 a,
+ul#main-menu li.menu-253 a {
   font-weight: normal;
   color: #6A6C6F;
   font-weight: normal;
@@ -146,7 +154,7 @@ ul#main-menu li.menu-253 {
 /* #secondary .secondary-inner {float: right;} */
 
 /* ALIGN CENTER */
-/* #secondary .secondary-inner {display: table; margin: 0 auto; text-align: center;} */
+/*#secondary .secondary-inner {display: table; margin: 0 auto; text-align: center;}  */
 
 #secondary-menu-wrapper  {
   margin: 0.75em 0;
@@ -156,6 +164,7 @@ ul#main-menu li.menu-253 {
   font-weight: bold;
   margin: 0;
   padding: 0;
+  display:block;
 }
 
 /* Modify the margin to set tab spacings. */
@@ -170,6 +179,7 @@ ul#main-menu li.menu-253 {
 #secondary-menu li a {
   text-decoration: none;
   white-space: nowrap;
+  border: none;
 }
 
 /* Set pseudo class styles. */
@@ -211,6 +221,9 @@ ul#main-menu li.menu-253 {
 }
 
 /* Theme the various states of pager links. */
+.breadcrumb a {
+  border:none;
+}
 .item-list ul.pager li a:link    {}
 .item-list ul.pager li a:visited {}
 .item-list ul.pager li a:hover   {}
