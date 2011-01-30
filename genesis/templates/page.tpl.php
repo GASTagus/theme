@@ -77,42 +77,42 @@
     <?php endif; ?>
 
     <div id="header" class="clearfix">
+		<div id="header-wrapper">
+		  <?php if ($site_logo || $site_name || $site_slogan): ?>
+			<div id="branding">
 
-      <?php if ($site_logo || $site_name || $site_slogan): ?>
-        <div id="branding">
+			  <?php if ($site_name): ?>
+				<?php if ($title): ?>
+	<!--              <div class="logo-site-name"><strong>-->
+					<?php if ($site_name): ?><h1 id="site-name"><?php print $site_name; ?></h1><?php endif; ?>
+	<!--              </strong></div>-->
+				<?php else: /* Use h1 when the content title is empty */ ?>
+				  <h1 class="logo-site-name">
+					<?php if ($site_name): ?><span id="site-name"><?php print $site_name; ?></span><?php endif; ?>
+				 </h1>
+				<?php endif; ?>
+			  <?php endif; ?>
 
-          <?php if ($site_name): ?>
-            <?php if ($title): ?>
-<!--              <div class="logo-site-name"><strong>-->
-                <?php if ($site_name): ?><h1 id="site-name"><?php print $site_name; ?></h1><?php endif; ?>
-<!--              </strong></div>-->
-            <?php else: /* Use h1 when the content title is empty */ ?>
-              <h1 class="logo-site-name">
-                <?php if ($site_name): ?><span id="site-name"><?php print $site_name; ?></span><?php endif; ?>
-             </h1>
-            <?php endif; ?>
-          <?php endif; ?>
-
-          <?php if ($main_menu_links): ?>
-            <div id="main-menu-wrapper" class="clearfix">
-              <div class="main-menu-inner"><?php print $main_menu_links; ?></div>
-            </div>
-          <?php endif; ?>
-
-          <?php if ($site_slogan): ?>
-            <div id="site-slogan"><?php print $site_slogan; ?></div>
-          <?php endif; ?>
-		  <?php print $breadcrumb; ?>
-
-        </div> <!-- /branding -->
-      <?php endif; ?>
-
-      <?php if ($page['header']): ?>
-        <div id="header-blocks"><?php print render($page['header']); ?></div>
-      <?php endif; ?>
-
+			  <?php if ($site_slogan): ?>
+				<div id="site-slogan"><?php print $site_slogan; ?></div>
+			  <?php endif; ?>
+			</div> <!-- /branding -->
+		  <?php endif; ?>
+		  <div id="header-right">
+			  <a href="plataforma2011/">login para voluntários</a>
+			  <?php if ($page['header']): ?>
+				<div id="header-blocks"><?php print render($page['header']); ?></div>
+			  <?php endif; ?>
+		  </div>
+		</div>
     </div> <!-- /header -->
-
+	<?php if ($main_menu_links): ?>
+	<div id="main-menu-wrapper" class="clearfix">
+	  <div class="main-menu-inner"><?php print $main_menu_links; ?></div>
+	</div>
+  <?php endif; ?>
+  
+  <?php print $breadcrumb; ?>
 
   <?php endif; // end hide in overlay ?>
 

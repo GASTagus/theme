@@ -29,7 +29,7 @@ html body > div#container.logged-in {
 }
 
 .little_boxes:hover, .little_boxes:focus,.little_boxes:active{
-    box-shadow: 0 0 5px #CCCC00;
+    box-shadow: 0 0 5px #C8D000;
 }
 
 div.book-navigation {
@@ -122,7 +122,7 @@ div#skip-link {
   height: 1.8em;
 }
 #search-block-form div.container-inline {
-  border: 1px solid #cccc00;
+  border: 1px solid #C8D000;
 }
 
 #search-block-form .form-submit {
@@ -210,7 +210,7 @@ div#skip-link {
 
 #main-content h1{
 	border-bottom: 1px solid #000000;
-    color: #CCCC00;
+    color: #C8D000;
     font-size: 4em;
     line-height: 1;
     margin-bottom: 0;
@@ -245,4 +245,71 @@ div#skip-link {
 .strong {
   font-weight: bold;
   font-size: 1.2em;
+}
+
+/**
+ *
+ * footer
+ */
+
+#footer {
+  /*border-top: 3px solid #000;*/
+}
+
+#footer .block-menu h2 {
+  display:none;
+}
+
+#footer .apoios {
+ text-align: center;
+}
+
+#footer > div.region {
+  width: 960px;
+  margin-left:auto;
+  margin-right:auto;
+  color: #777777;
+}
+
+
+#footer a {
+  border: none;
+}
+
+ul#apoios li.entidade {
+  display: inline-block;
+  padding-top: 0.5em;
+  padding-bottom: 0.2em;
+  padding-left:   1.1em;
+  padding-right: 0.1em;
+  list-style: none;
+  font-size:1.3em;
+  padding-top:10px;
+  margin-right:0;
+  width:270px;
+}
+
+#block-menu-menu-footer div.content {
+  display: table;
+  margin: 0 auto;
+}
+
+#block-menu-menu-footer ul{
+	display: table-row;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
+}
+
+#block-menu-menu-footer ul.menu li {
+  display: inline-block;
+  padding-top: 0.5em;
+  padding-bottom: 0.2em;
+  padding-left:   1.1em;
+  padding-right: 0.1em;
+  list-style: none;
+  font-size:1.3em;
+  padding-top:10px;
+  margin-right:0;
 }

@@ -58,63 +58,69 @@ ul.menu li.last  {}
 /* #main-menu-wrapper .main-menu-inner {display: table; margin: 0 auto; text-align: center;} */
 
 #main-menu-wrapper {
-  float:right;
-  display: block;
+  
   height: 59px;
-  clear:none;
+  clear:both;
+  width: 960px;
+  position: relative;
+  margin:0 auto;
+  padding:0;
+}
+
+.main-menu-inner {
+  float:left;
 }
 
 #main-menu {
   margin: 0;
   padding: 0;
+  margin-left: 20px;
+  height: 16px;
+  padding: 11px 16px 7px;
+  border-radius: 0px 0px 5px 5px;
+  background-color: #E2E67F;
 }
 
 /* Modify the margin to set tab spacings. */
+
+  
 #main-menu li {
-  display: inline;
-  line-height: 5;
-  
-  list-style: none;
-  
-  font-size:1.4em;
- 
- 
-  background-position:right center;
-  background-repeat:no-repeat;
+  list-style-type: none;
+  margin-right:1em;
+  float:left;
 }
 
 #main-menu li a {
-  color: #000;
-  padding:5px;
-  margin-left: 4px;
+  color: #333;
   text-decoration: none;
   white-space: nowrap;
   border-bottom: none;
-  font-weight: bold;
+  font-size: 10.4px;
+  font-weight:bold;
+  text-transform: uppercase;
+  padding: 15px 6px;
+  vertical-align: baseline;
 }
 
 /* Set pseudo class styles. */
 #main-menu li a:link {}
 #main-menu li a:visited {}
 
-ul#main-menu li.menu-236 a:hover,
-ul#main-menu li.menu-237 a:hover,
-ul#main-menu li.menu-253 a:hover,
-#main-menu li a:hover,
-#main-menu li a:focus,
-#main-menu li a:active {
-  /*border-bottom:3px solid #cccc00;*/
-  border: 1px solid #000;
-  padding:4px;
-  color: #cccc00;
+ul#main-menu li:hover,
+ul#main-menu li:active,
+ul#main-menu li:focus {
+}
+ul#main-menu li a:hover,
+ul#main-menu li a:focus,
+ul#main-menu li a:active {
+  border-top: 2px solid #C8D000;
+  background-color: #fff;
 }
 
 /* Active trail classes. */
 #main-menu li.active a,
 #main-menu li.active-trail a{
-  border: 1px solid #000;
-  color: #cccc00;
-  padding:4px;
+  color: #C8D000;  
 }
 
 
@@ -130,13 +136,37 @@ ul#main-menu li.menu-253 a:hover,
 ul#main-menu li.menu-236 {
   margin-left: 20px;
 }
+  
 
-ul#main-menu li.first a {
- 
+ul#main-menu li.menu-236,
+ul#main-menu li.menu-237,
+ul#main-menu li.menu-253 {
+  padding-left:   0.5em;
+  padding-right: 0.5em;
 }
 
-ul#main-menu li.menu-235,
-ul#main-menu li.last {
+ul#main-menu li.menu-253 a:hover,
+ul#main-menu li.menu-253 a:active,
+ul#main-menu li.menu-253 a:focus,
+ul#main-menu li.menu-236 a:hover,
+ul#main-menu li.menu-236 a:active,
+ul#main-menu li.menu-236 a:focus,
+ul#main-menu li.menu-237 a:hover,
+ul#main-menu li.menu-237 a:active,
+ul#main-menu li.menu-237 a:focus {
+  border-bottom: 0;
+  color: #000;
+}
+
+ul#main-menu li.menu-253:hover,
+ul#main-menu li.menu-253:active,
+ul#main-menu li.menu-253:focus,
+ul#main-menu li.menu-236:hover,
+ul#main-menu li.menu-236:active,
+ul#main-menu li.menu-236:focus,
+ul#main-menu li.menu-237:hover,
+ul#main-menu li.menu-237:active,
+ul#main-menu li.menu-237:focus {
   background-image: none;
 }
 

@@ -7,6 +7,8 @@
 body {
   /*padding: 0 10px;*/
   margin: 0;
+ background-image: url("images/back.png");
+ background-repeat: no-repeat;
 }
 	
 /**********************************************************
@@ -27,7 +29,13 @@ body {
  * Fixed widths use pixels,       e.g. 960px
  */
 #container {
+  
+}
+
+#header-wrapper,#columns {
   width: 960px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Column wrappers */
@@ -50,11 +58,15 @@ body {
  **********************************************************/
 /* #header wraps #branding and #header-blocks. */
 #header {
-  margin-top: 30px;
+
+}
+#header-wrapper {
+  display:block;
+  height:72px;
 }
 
 /* #branding wraps #logo, #site-name and #site-slogan. */
-#branding {
+#branding h1{
   /*
   float: left; /* LTR */
 }
@@ -111,7 +123,8 @@ h1.logo-site-name  {}
 .region-leaderboard {}
 
 /* Header blocks */
-#header-blocks {
+#header-right {
+  margin-top: 9px;
   float: right;
 }
 .region-header {}

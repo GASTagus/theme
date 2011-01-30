@@ -161,7 +161,9 @@
 
 /* Wrapper divs. */
 #search-block-form > div {}
-#search-block-form .container-inline {}
+#search-block-form .container-inline {
+  background-color: #fff;
+}
 
 #search-block-form .form-item-search-block-form {}
 

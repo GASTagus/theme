@@ -33,7 +33,13 @@ body {
     font: 12px helvetica,arial,sans-serif;
     /*font-family: Verdana, Geneva, "DejaVu Sans", sans-serif;*/
     line-height: 1.5;
-    border-top:3px solid #cccc00;
+}
+#header {
+  background-color: #f2f4cd;
+  border-bottom:1px solid #C8D000;
+}
+#header-right a{
+  border:0;
 }
 /* Micro reset */
 h1, h2, h3, h4, h5, h6, h1 img, h2 img, h3 img, h4 img, h5 img, h6 img, em, dfn, del, ins {
@@ -45,25 +51,28 @@ h1, h2, h3, h4, h5, h6, h1 img, h2 img, h3 img, h4 img, h5 img, h6 img, em, dfn,
 }
 #branding h1 {
     text-indent: -9999px;
-    height: 59px;
-    width: 232px;
-
-    display: block;
     float: left;
-    line-height: 59px;
+	margin: 0;
+	padding: 0;
 }
 #branding h1 a {
     text-decoration: none;
-    background: url(../logo.png);
+    background-image: url(../logo.png);
     display:block;
+	background-repeat: no-repeat;
+	top: 15px;
+  position: relative;
 }
 #container.front h1#page-title {
     display:none;
 }
 h1, #branding h1 a {
     font-size: 2em;
-    margin: 0 0 0.5em 0;
+    margin: 0 0 0 0;
     padding: 0;
+	display: block;
+	height: 42px;
+	width: 232px;
 }
 h2 {
     font-size: 1.5em;

@@ -75,7 +75,8 @@
     overflow:hidden;
     width:920px;
     height:350px;
-    padding:10px 0 15px;
+    padding:10px 0 0px;
+	border-bottom: 3px solid #000;
 }
 #carousel .item {
     position:relative;
