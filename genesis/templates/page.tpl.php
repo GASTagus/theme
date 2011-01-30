@@ -112,7 +112,7 @@
 	</div>
   <?php endif; ?>
   
-  <?php print $breadcrumb; ?>
+  <?php //print $breadcrumb; ?>
 
   <?php endif; // end hide in overlay ?>
 

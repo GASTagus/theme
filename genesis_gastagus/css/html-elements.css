@@ -61,7 +61,8 @@ h1, h2, h3, h4, h5, h6, h1 img, h2 img, h3 img, h4 img, h5 img, h6 img, em, dfn,
     display:block;
 	background-repeat: no-repeat;
 	top: 15px;
-  position: relative;
+    position: relative;
+    width: 232px;
 }
 #container.front h1#page-title {
     display:none;
@@ -72,7 +73,6 @@ h1, #branding h1 a {
     padding: 0;
 	display: block;
 	height: 42px;
-	width: 232px;
 }
 h2 {
     font-size: 1.5em;
