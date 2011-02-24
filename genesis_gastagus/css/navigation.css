@@ -57,6 +57,63 @@ ul.menu li.last  {}
 /* ALIGN CENTER */
 /* #main-menu-wrapper .main-menu-inner {display: table; margin: 0 auto; text-align: center;} */
 
+#external-menu {
+  float:right;
+/*  font-size: 10.4px;*/
+  position:relative;
+}
+
+#external-menu-wrapper {
+  margin-top: 45px;
+}
+#external-menu a {
+	border-bottom: none;
+}
+
+#external-menu li {
+  list-style-type: none;
+  margin-right:24px;
+  float:left;
+}
+
+#external-menu li.menu-378 {
+  background-image: url("images/doar.png");
+  background-repeat: no-repeat;
+  padding-left:28px;
+  height: 24px;
+}
+
+#external-menu li.menu-379 {
+  background-image: url("images/contactos.png");
+  background-repeat: no-repeat;
+  padding-left:15px;
+  height: 24px;
+}
+
+#external-menu li.menu-380 {
+  background-image: url("images/blog.png");
+  background-repeat: no-repeat;
+  padding-left:29px;
+  height: 24px;
+}
+
+#external-menu li.menu-381 {
+  background-image: url("images/parcerias.png");
+  background-repeat: no-repeat;
+  padding-left:22px;
+  height: 24px;
+}
+
+/* */
+/* */
+/* */
+/* */
+/* */
+/* */
+/* */
+/* */
+/* */
+
 #main-menu-wrapper {
   
   height: 59px;
@@ -69,16 +126,15 @@ ul.menu li.last  {}
 
 .main-menu-inner {
   float:left;
+  margin-left: 5px;
 }
 
 #main-menu {
   margin: 0;
   padding: 0;
-  margin-left: 20px;
-  height: 16px;
-  padding: 11px 16px 7px;
+  height: 49px;
+  padding: 14px 0px 0px;
   border-radius: 0px 0px 5px 5px;
-  background-color: #E2E67F;
 }
 
 /* Modify the margin to set tab spacings. */
@@ -86,7 +142,7 @@ ul.menu li.last  {}
   
 #main-menu li {
   list-style-type: none;
-  margin-right:1em;
+  margin-right:24px;
   float:left;
 }
 
@@ -98,7 +154,10 @@ ul.menu li.last  {}
   font-size: 10.4px;
   font-weight:bold;
   text-transform: uppercase;
-  padding: 15px 6px;
+  padding-top: 19px;
+  padding-bottom:18px;
+  padding-left:6px;
+  padding-right: 6px;
   vertical-align: baseline;
 }
 
@@ -119,8 +178,12 @@ ul#main-menu li a:active {
 
 /* Active trail classes. */
 #main-menu li.active a,
-#main-menu li.active-trail a{
-  color: #C8D000;  
+#main-menu li.active-trail a,
+#main-menu li.active-trail a:active,
+#main-menu li.active-trail a:focus,
+#main-menu li.active-trail a:hover{
+  border-top: 2px solid #000;
+  background-color: #fff;  
 }
 
 
@@ -187,7 +250,7 @@ ul#main-menu li.menu-253 a {
 /*#secondary .secondary-inner {display: table; margin: 0 auto; text-align: center;}  */
 
 #secondary-menu-wrapper  {
-  margin: 0.75em 0;
+  margin-bottom: 0.75em;
 }
 
 #secondary-menu {

@@ -92,23 +92,29 @@
 				 </h1>
 				<?php endif; ?>
 			  <?php endif; ?>
-
+			  <div id="external-menu">
+				<div id="external-menu-wrapper">
+					<?php print theme('links', array('links' => menu_navigation_links('menu-external-menu'))); ?>
+				</div>
+			  </div>
 			  <?php if ($site_slogan): ?>
 				<div id="site-slogan"><?php print $site_slogan; ?></div>
 			  <?php endif; ?>
 			</div> <!-- /branding -->
 		  <?php endif; ?>
-		  <div id="header-right">
-			  <a href="plataforma2011/">login para voluntários</a>
-			  <?php if ($page['header']): ?>
-				<div id="header-blocks"><?php print render($page['header']); ?></div>
-			  <?php endif; ?>
-		  </div>
 		</div>
     </div> <!-- /header -->
+	
 	<?php if ($main_menu_links): ?>
-	<div id="main-menu-wrapper" class="clearfix">
-	  <div class="main-menu-inner"><?php print $main_menu_links; ?></div>
+	<div id="header-menu">
+		<div id="main-menu-wrapper" class="clearfix">
+		  <div class="main-menu-inner"><?php print $main_menu_links; ?></div>
+		  <div id="header-right">
+				  <?php if ($page['header']): ?>
+					<div id="header-blocks"><?php print render($page['header']); ?></div>
+				  <?php endif; ?>
+			  </div>
+		</div>
 	</div>
   <?php endif; ?>
   
@@ -126,15 +132,9 @@
   <?php endif; ?>
 
   <div id="columns" class="clear clearfix">
-    <div id="content-column">
-      <div class="content-inner">
-
-        <?php if ($page['highlighted']): ?>
-          <div id="highlighted"><?php print render($page['highlighted']); ?></div>
-        <?php endif; ?>
-
-        <div id="main-content">
-          <?php print render($title_prefix); ?>
+    
+	<div>
+	       <?php print render($title_prefix); ?>
           <?php if ($title): ?>
             <h1 id="page-title"><?php print $title; ?></h1>
           <?php endif; ?>
@@ -142,11 +142,20 @@
 
 		  <?php if ($secondary_menu_links): ?>
       
-      <div id="secondary-menu-wrapper" class="clearfix">
-        <div class="secondary-menu-inner"><?php print $secondary_menu_links; ?></div>
-      </div>
-      
-    <?php endif; ?>
+			  <div id="secondary-menu-wrapper" class="clearfix">
+				<div class="secondary-menu-inner"><?php print $secondary_menu_links; ?></div>
+			  </div>
+			  
+			<?php endif; ?>
+	</div>
+	<div id="content-column">
+      <div class="content-inner">
+
+        <?php if ($page['highlighted']): ?>
+          <div id="highlighted"><?php print render($page['highlighted']); ?></div>
+        <?php endif; ?>
+
+        <div id="main-content">
 		  
           <?php if ($tabs): ?>
             <div class="local-tasks"><?php print render($tabs); ?></div>

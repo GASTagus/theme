@@ -7,6 +7,7 @@
 body {
   /*padding: 0 10px;*/
   margin: 0;
+  margin-top: 20px;
  background-image: url("images/back.png");
  background-repeat: no-repeat;
 }
@@ -40,7 +41,7 @@ body {
 
 /* Column wrappers */
 #columns {
-  margin-top: 4px;
+  margin-top: 6px;
 }
 .columns-inner {}
 
@@ -162,7 +163,6 @@ h1.logo-site-name  {}
 .sidebar .region-sidebar-first {}
 
 #sidebar-second { 
-  margin-top: 4em;
 }
 .page-blog #sidebar-second { 
   margin-top: 38px;

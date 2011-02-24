@@ -35,8 +35,13 @@ body {
     line-height: 1.5;
 }
 #header {
-  background-color: #f2f4cd;
+/*  background-color: #f2f4cd;*/
   border-bottom:1px solid #C8D000;
+}
+
+#header-menu {
+  background-image: url("images/header_background.png");
+  background-repeat: repeat-x;
 }
 #header-right a{
   border:0;
@@ -53,6 +58,8 @@ h1, h2, h3, h4, h5, h6, h1 img, h2 img, h3 img, h4 img, h5 img, h6 img, em, dfn,
     text-indent: -9999px;
     float: left;
 	margin: 0;
+	margin-top: 10px;
+	margin-bottom: 10px;
 	padding: 0;
 }
 #branding h1 a {
@@ -61,8 +68,7 @@ h1, h2, h3, h4, h5, h6, h1 img, h2 img, h3 img, h4 img, h5 img, h6 img, em, dfn,
     display:block;
 	background-repeat: no-repeat;
 	top: 15px;
-    position: relative;
-    width: 232px;
+    width: 333px;
 }
 #container.front h1#page-title {
     display:none;
@@ -72,7 +78,9 @@ h1, #branding h1 a {
     margin: 0 0 0 0;
     padding: 0;
 	display: block;
-	height: 42px;
+}
+#branding h1 a {
+	height: 60px;
 }
 h2 {
     font-size: 1.5em;
