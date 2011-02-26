@@ -14,14 +14,18 @@ html body > div#container.logged-in {
   margin-top:45px !important;
 }
 
+.little_boxes-fixed {
+    width:280px;
+}
+
 .little_boxes {
     background-color: #F9FFE8;
     border: 2px solid #BCC907;
     border-radius: 5px 5px 5px 5px;
     padding: 10px 10px;
     margin-left:10px;
-    width:280px;
     float:left;
+	margin-bottom:20px;
 }
 
 .little_boxes .little_boxes-inner {
@@ -52,7 +56,7 @@ a:hover {
 
 a.arrow {
   border: 0px;
-  text-transform: uppercase;
+  text-transform: lowercase;
   background-image: url(images/go.png);
   background-repeat:no-repeat;
   padding-right:20px;
@@ -81,12 +85,13 @@ div#skip-link {
 }
 .front #site-slogan,
 .breadcrumb {
-  clear:left;
-  float:left;
   display:block;
   color: #000;
-  font-size:1.2em;
+  float:left;
+  font-size:1em;
   margin-top: 0.3em;
+  padding-left: 20px;
+  margin-bottom: 20px;
 }
 
 .field-name-field-image img,
@@ -230,7 +235,7 @@ h1#page-title{
 }
 
 .view-display-id-dynamic_content  .views-row .text-arrow a { 
-  text-transform: uppercase;
+  text-transform: lowercase;
   border-bottom: none;
   float: right;
   padding-right:2em;
@@ -251,14 +256,26 @@ h1#page-title{
  */
 
 #footer {
-  /*border-top: 3px solid #000;*/
+   background-color: #F3F3F2;
+   border-top: 1px solid #E7E83C;
+   padding-top: 30px;
+   padding-bottom: 5px;
+   margin: 0;
+   margin-top: 100px;
 }
 
 #footer .block-menu h2 {
   display:none;
 }
 
-#footer .apoios {
+#block-views-footer_apoios-block_1 {
+ border-bottom: 1px solid #C0C0C0;
+ margin-bottom: 30px;
+ padding-bottom: 10px;
+}
+
+#footer #apoios {
+ 
 }
 
 #footer > div.region {
@@ -308,4 +325,131 @@ ul#apoios li.entidade {
   font-size:1.3em;
   padding-top:10px;
   margin-right:0;
+}
+
+
+/* FOLD */
+
+.front-image {
+  border-bottom: 2px solid #000;
+  height:353px;
+}
+
+.box h2 {
+  background-image: url("images/cubata.png");
+  background-repeat: no-repeat;
+  background-position: left 4px;
+  padding-left: 25px;
+}
+
+img.country-omega {
+  padding-left: 20px;
+}
+
+img.country-psi {
+  padding-left: 20px;
+  padding-right:20px;
+}
+
+.box {
+  float: left;
+  padding-left: 0;
+  margin: 0 0 45px;
+}
+
+.alpha {
+  border-right: 1px solid #D4D4D4;
+  margin: 0 0 45px;
+  width: 269px;
+  padding: 20px 30px 0 00px;
+}
+
+.beta {
+  border-right: 1px solid #D4D4D4;
+  width: 269px;
+  padding-left: 0;
+  padding: 20px 30px 0 30px;
+}
+.teta {
+  padding-left: 0;
+  width: 270px;
+  padding: 20px 30px 0 30px;
+}
+
+/**/
+
+.clearfix-right {
+  clear: right;
+}
+
+.clearfix-left {
+  clear: left;
+}
+
+.clearfix-both {
+  clear: both;
+}
+
+
+/**/
+
+.latest {
+  float:left;
+  width: 593px;
+}
+
+.latest-wrapper {
+  margin-left:auto;
+  margin-right: auto;
+  width: 480px;
+  
+}
+
+
+.news {
+    background-color: #F9FFE8;
+    border: 1px solid #BCC907;
+    border-radius: 5px 5px 5px 5px;
+    padding: 10px 10px;
+	margin-bottom:20px;
+	
+}
+
+.date {
+  color: #A17A50;
+  float: left;
+  font-weight: bold;
+  padding-left: 5px;
+  padding-right: 15px;
+  text-align: center;
+  text-transform: uppercase;
+  width: 25px;
+  font-size: 1.2em;
+}
+
+.title {
+  font-size:1.4em;
+  margin: 0px;
+  padding: 0px;
+}
+
+.sub {
+  color: #444;
+}
+
+.facebook {
+  margin-top:90px;
+}
+
+#sidebar-second .view-sidebar .view-header h2 {
+   background-image: url("images/cubata.png");
+    background-position: left 4px;
+    border-bottom: medium none;
+    font-size: 1.4em;
+    margin-top: 20px;
+    padding-left: 24px;
+}
+
+#content-column {
+  clear: both;
 }

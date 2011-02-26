@@ -118,9 +118,7 @@
 	</div>
   <?php endif; ?>
   
-  <?php //print $breadcrumb; ?>
-
-  <?php endif; // end hide in overlay ?>
+   <?php endif; // end hide in overlay ?>
 
   <?php print $messages; ?>
   <?php print render($page['help']); ?>
@@ -134,7 +132,7 @@
   <div id="columns" class="clear clearfix">
     
 	<div>
-	       <?php print render($title_prefix); ?>
+	      <?php print render($title_prefix); ?>
           <?php if ($title): ?>
             <h1 id="page-title"><?php print $title; ?></h1>
           <?php endif; ?>
@@ -178,7 +176,10 @@
     <?php endif; ?>
 
     <?php if ($page['sidebar_second']): ?>
-      <div id="sidebar-second" class="sidebar"><?php print render($page['sidebar_second']); ?></div>
+      <div id="sidebar-second" class="sidebar">
+	    <?php //print $breadcrumb; ?>
+	    <?php print render($page['sidebar_second']); ?>
+      </div>
     <?php endif; ?>
 
   </div> <!-- /columns -->

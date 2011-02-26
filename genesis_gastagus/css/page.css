@@ -6,8 +6,8 @@
 
 body {
   /*padding: 0 10px;*/
-  margin: 0;
-  margin-top: 20px;
+ margin: 0;
+ margin-top: 20px;
  background-image: url("images/back.png");
  background-repeat: no-repeat;
 }
@@ -163,13 +163,18 @@ h1.logo-site-name  {}
 .sidebar .region-sidebar-first {}
 
 #sidebar-second { 
+  width: 367px;
 }
 .page-blog #sidebar-second { 
   margin-top: 38px;
 }
 .sidebar .region-sidebar-second {
   padding-left:20px;
-  border: 1px solid #ddd;
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  background-color: #FDFDFD;
 }
 
 

@@ -19,8 +19,7 @@
 #genesis-1c .sidebar-first .content-inner{margin-left:367px;}
 #genesis-1c .sidebar-second .content-inner{/*margin-right:367px;*/ padding-right:20px}
 #genesis-1c #sidebar-first{width:367px;margin-left:-100%;}
-#genesis-1c #sidebar-second{width:367px;/*margin-left:-367px;*/
-	background-color: #FAFAFA;}
+#genesis-1c #sidebar-second{width:367px;/*margin-left:-367px;*/}
 
 /* Both sidebars right, em based widths. */
 #genesis-2a .two-sidebars .content-inner{margin-right:44em;}

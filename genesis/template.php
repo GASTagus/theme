@@ -19,7 +19,14 @@ if (!empty($breadcrumb)) {
 	  if ($title = drupal_get_title()) {
 	    $trailing_separator = $breadcrumb_separator;
 	  }
-      return '<div class="breadcrumb">' . implode($breadcrumb_separator, $breadcrumb) . "$trailing_separator$title</div>";
+	  $yada = array_splice( $breadcrumb , 0 , 1 );
+	  $bla = implode($breadcrumb_separator, $breadcrumb);
+	  
+//	  if ( count($breadcrumb) > 0) {
+		return '<div class="breadcrumb">' . $bla . "$breadcrumb_separator$title</div>";
+//	  } else {
+//	    return '<div class="breadcrumb">' . count($breadcrumb)/*$title*/ . '</div>';
+//	  }
     }
 return '';
 }
