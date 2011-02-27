@@ -330,7 +330,21 @@ ul#apoios li.entidade {
 
 /* FOLD */
 
-.front-image {
+.fold-inner {
+  height: 260px;
+}
+
+.fold-images {
+  height: 128px;
+}
+
+.box img.center-image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#front-image {
   border-bottom: 2px solid #000;
   height:353px;
 }
@@ -343,12 +357,13 @@ ul#apoios li.entidade {
 }
 
 img.country-omega {
-  padding-left: 20px;
+  margin-left: 19px;
 }
 
 img.country-psi {
-  padding-left: 20px;
-  padding-right:20px;
+  margin-left: 18px;
+  margin-right:18px;
+  outline:0px;
 }
 
 .box {
@@ -390,29 +405,40 @@ img.country-psi {
   clear: both;
 }
 
+.clear {
+  clear: both;
+}
 
 /**/
 
 .latest {
-  float:left;
-  width: 593px;
+
 }
 
 .latest-wrapper {
-  margin-left:auto;
-  margin-right: auto;
-  width: 480px;
-  
+ 
 }
 
+.news-eta {
+  margin-right: 30px;
+}
+
+.news-tau  {
+  margin-left: 30px;
+}
+
+.news-header {
+  height: 60px;
+}
 
 .news {
+	width: 249px;
+	float: left;
     background-color: #F9FFE8;
     border: 1px solid #BCC907;
     border-radius: 5px 5px 5px 5px;
     padding: 10px 10px;
 	margin-bottom:20px;
-	
 }
 
 .date {
@@ -434,11 +460,13 @@ img.country-psi {
 }
 
 .sub {
+  margin-top: 20px;
+  clear:both;
   color: #444;
 }
 
 .facebook {
-  margin-top:90px;
+  margin-top: 25px;
 }
 
 #sidebar-second .view-sidebar .view-header h2 {
@@ -452,4 +480,8 @@ img.country-psi {
 
 #content-column {
   clear: both;
+}
+
+img.image {
+  border: 1px solid #000;
 }

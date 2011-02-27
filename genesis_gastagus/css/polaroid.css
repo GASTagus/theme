@@ -1,0 +1,20 @@
+.voluntarios {
+    margin: 0 0 0 10px;
+    padding: 0;
+}
+.voluntarios li {
+    border-bottom: 1px solid #F6F6F6;
+    float: left;
+    height: 80px;
+    list-style: none outside none;
+    margin: 10px 0;
+    padding: 10px 10px 25px 10px;
+    width: 250px;
+}
+.voluntarios li span {
+    border: 1px solid #DDDDDD;
+    float: left;
+    margin-right: 10px;
+    padding: 5px 5px 10px;
+    text-align: center;
+}
