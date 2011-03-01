@@ -3,7 +3,6 @@
     padding: 0;
 }
 .voluntarios li {
-    border-bottom: 1px solid #F6F6F6;
     float: left;
     height: 80px;
     list-style: none outside none;

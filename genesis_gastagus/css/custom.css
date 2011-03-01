@@ -111,25 +111,30 @@ div#skip-link {
   display:none;
 }
 
-#search-block-form input.form-text:active,
-#search-block-form input.form-text:focus {
+/**            **/
+/** Search **/
+/**            **/
+
+#header-menu #search-block-form input.form-text:active,
+#header-menu #search-block-form input.form-text:focus {
   outline: none;
   background-image: none;
 }
 
-#search-block-form input.form-text {
-  background-image: url(images/search.png);
-  background-repeat: no-repeat;
-  background-position: 7px center;
+#header-menu #search-block-form input.form-text {
   border: none;
   width:330px;
   height: 1.8em;
 }
-#search-block-form div.container-inline {
+#header-menu #search-block-form div.container-inline {
   border: 1px solid #C8D000;
 }
 
-#search-block-form .form-submit {
+#header-menu input#edit-submit {
+  text-indent: -999px;
+}
+
+#header-menu #search-block-form .form-submit {
   border-style: none;
   background-color:#fff;
   background-image: url(images/magnifying_glass.png);
@@ -261,7 +266,6 @@ h1#page-title{
    padding-top: 30px;
    padding-bottom: 5px;
    margin: 0;
-   margin-top: 100px;
 }
 
 #footer .block-menu h2 {
@@ -302,30 +306,6 @@ ul#apoios li.entidade {
   margin-right:0;
 }
 
-#block-menu-menu-footer div.content {
-  display: table;
-  margin: 0 auto;
-}
-
-#block-menu-menu-footer ul{
-	display: table-row;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    white-space: nowrap;
-}
-
-#block-menu-menu-footer ul.menu li {
-  display: inline-block;
-  padding-top: 0.5em;
-  padding-bottom: 0.2em;
-  padding-left:   1.1em;
-  padding-right: 0.1em;
-  list-style: none;
-  font-size:1.3em;
-  padding-top:10px;
-  margin-right:0;
-}
 
 
 /* FOLD */
@@ -484,4 +464,12 @@ img.country-psi {
 
 img.image {
   border: 1px solid #000;
+}
+
+#tertiary-content {
+    clear: both;
+    margin: 0 auto;
+    padding: 0;
+    position: relative;
+    width: 960px;
 }

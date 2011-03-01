@@ -80,14 +80,14 @@ ul.menu li.last  {}
   float:left;
 }
 
-#external-menu li.menu-378 a{
+#external-menu li.menu-383 a{
   background-image: url("images/doar.png");
   background-repeat: no-repeat;
   padding-left:28px;
   height: 24px;
 }
 
-#external-menu li.menu-379 a {
+#external-menu li.menu-384 a {
   background-image: url("images/contactos.png");
   background-repeat: no-repeat;
   padding-left:15px;
@@ -101,7 +101,7 @@ ul.menu li.last  {}
   height: 24px;
 }
 
-#external-menu li.menu-381 a {
+#external-menu li.menu-385 a {
   background-image: url("images/parcerias.png");
   background-repeat: no-repeat;
   padding-left:22px;
@@ -391,3 +391,49 @@ ul#main-menu li.menu-253 a {
   padding: 1px 10px 2px 10px;
 }
 
+
+#block-menu-menu-footer div.content {
+  display: table;
+  margin: 0 auto;
+}
+
+#block-menu-menu-footer ul{
+	display: table-row;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
+}
+
+#block-menu-menu-footer {
+  margin-top: 50px;
+}
+
+#block-menu-menu-footer ul.menu li {
+  display: inline-block;
+  padding-top: 0.5em;
+  padding-bottom: 0.2em;
+  padding-left:   1.1em;
+  padding-right: 0.1em;
+  list-style: none;
+  padding-top:10px;
+  margin-right:0;
+}
+
+#block-menu-menu-footer li a:hover,
+#block-menu-menu-footer li a:active,
+#block-menu-menu-footer li a:focus {
+  border-bottom: 1px solid;
+}
+
+#block-menu-menu-footer li a {
+  border-bottom: none;
+}
+
+#block-menu-menu-footer li {
+  font-size: 100%;
+}
+
+#block-menu-menu-footer h2 {
+  display: none;
+}
