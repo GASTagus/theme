@@ -1,0 +1,52 @@
+/*
+ * BLOG
+ *
+ */
+ .node-blog .node-content {
+   clear: both;
+   padding-top: 2em;
+ }
+ .node-blog .node-content img {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+#block-blog-recent h2 {
+  margin-bottom:1em; 
+}
+
+#block-blog-recent a {
+  text-decoration: none;
+  border:none;
+}
+
+.node-blog {
+    background-color: #F9FFE8;
+    border: 2px solid #DDDDDD;
+    border-radius: 5px 5px 5px 5px;
+    padding: 10px 10px;
+} 
+
+.node-blog:hover, .node-blog:focus,.node-blog:active{
+    box-shadow: 0 0 5px #DDDDDD;
+}
+
+.user-picture a{
+ border:none; 
+}
+
+.node-blog .node-title {
+  float: right;
+  font-size: 2em;
+  width: 470px;
+}
+.node-blog .user-picture {
+  float: left;
+}
+
+.node-blog .node-submitted {
+  float: left;
+  padding-left:1em;
+  clear:right;
+}
