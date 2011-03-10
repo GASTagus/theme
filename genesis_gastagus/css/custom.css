@@ -132,7 +132,6 @@ h1#page-title{
   text-transform: lowercase;
   border-bottom: none;
   float: right;
-  padding-right:2em;
 }
 
 .node-book .field-name-body {
@@ -145,17 +144,26 @@ h1#page-title{
 }
 
 
+#main-content h2 {
+  padding-top: 30px;
+}
 
-
+#main-content h2.first {
+  padding-top: 0px;
+}
 
 /* FOLD */
+
+#main-content .fold-inner h2 {
+  padding-top: 0px;
+}
 
 .fold-inner {
   height: 260px;
 }
 
 .fold-images {
-  height: 128px;
+  height: 145px;
 }
 
 .box img.center-image {
@@ -309,6 +317,20 @@ img.country-psi {
 
 img.image {
   border: 1px solid #000;
+}
+
+img.logo-instituicao {
+  float: left;
+  padding-right: 10px;
+}
+
+div.logo {
+  width:120px;
+  float:left;
+}
+
+.sidebar div.logo {
+  padding-bottom:20px;
 }
 
 #tertiary-content {
