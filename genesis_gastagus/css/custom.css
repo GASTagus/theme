@@ -152,6 +152,10 @@ h1#page-title{
   padding-top: 0px;
 }
 
+#apoios a {
+  border-bottom: none;
+}
+
 /* FOLD */
 
 #main-content .fold-inner h2 {
