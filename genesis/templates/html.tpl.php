@@ -39,6 +39,7 @@
   <?php print $rdf_namespaces; ?>>
 <head profile="<?php print $grddl_profile; ?>">
   <?php print $head; ?>
+  <meta content="O GASTagus é uma associação juvenil sem fins lucrativos sediada no Instituto Superior Técnico, cujo objectivo é alertar e sensibilizar a juventude para a importância da dignidade da pessoa humana e para as desigualdades sociais que persistem no mundo em que vivemos, através do trabalho voluntário em Portugal e África." />
   <title><?php print $head_title; ?></title>
   <?php print $styles; ?>
   <?php print $scripts; ?>

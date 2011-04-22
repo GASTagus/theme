@@ -71,3 +71,15 @@ function genesis_gastagus_preprocess_block(&$vars) {
 function genesis_gastagus_process_block(&$vars) {
 }
 // */
+
+// Put this in template.tpl - Yodiaditya - yoodey.com
+function genesis_gastagus_page_alter($page) {
+   $meta_description = array(
+            '#type' => 'html_tag',
+            '#tag' => 'meta',
+            '#attributes' => array(
+                'name' => 'description',
+                'content' =>  'O GASTagus é uma associação juvenil sem fins lucrativos sediada no Instituto Superior Técnico, cujo objectivo é alertar e sensibilizar a juventude para a importância da dignidade da pessoa humana e para as desigualdades sociais que persistem no mundo em que vivemos, através do trabalho voluntário em Portugal e África.'
+            )
+   ); 
+}

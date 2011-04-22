@@ -156,6 +156,11 @@ h1#page-title{
   border-bottom: none;
 }
 
+#content-column #apoios li {
+  margin-bottom: 30px;
+  margin-left: 50px;
+}
+
 /* FOLD */
 
 #main-content .fold-inner h2 {
@@ -303,7 +308,8 @@ img.country-psi {
 }
 
 .facebook {
-  margin-top: 25px;
+  margin-top: 20px;
+  padding-left:19px;
 }
 
 #sidebar-second .view-sidebar .view-header h2 {

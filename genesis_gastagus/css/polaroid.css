@@ -4,13 +4,13 @@
 }
 .voluntarios li {
     float: left;
-    height: 80px;
+    height: 100px;
     list-style: none outside none;
     margin: 10px 0;
     padding: 10px 10px 25px 10px;
-    width: 250px;
+    width: 261px;
 }
-.voluntarios li span {
+.voluntarios li span.avatar {
     border: 1px solid #DDDDDD;
     float: left;
     margin-right: 10px;

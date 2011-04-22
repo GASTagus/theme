@@ -9,7 +9,7 @@
  * Automatically rebuild the theme registry.
  * Uncomment to use during development.
  */
-drupal_theme_rebuild();
+/*drupal_theme_rebuild();*/
 
 function genesis_breadcrumb($variables) {
 $breadcrumb = $variables['breadcrumb'];

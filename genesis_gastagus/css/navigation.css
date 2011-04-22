@@ -222,6 +222,8 @@ ul#main-menu li a:active {
   margin-left: 0px;
   margin-right:10px;
   text-indent:-99999px;
+  margin-top: 8px;
+  height: 16px;
   width:20px;
 }
 
