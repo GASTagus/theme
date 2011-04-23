@@ -128,7 +128,8 @@ h1#page-title{
   padding-bottom: 70px;
 }
 
-.view-display-id-dynamic_content  .views-row .text-arrow a { 
+.view-display-id-dynamic_content  .views-row .text-arrow a,
+p.text-arrow a { 
   text-transform: lowercase;
   border-bottom: none;
   float: right;
@@ -349,4 +350,5 @@ div.logo {
     padding: 0;
     position: relative;
     width: 960px;
+    margin-bottom:25px;
 }

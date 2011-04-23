@@ -8,8 +8,18 @@
     list-style: none outside none;
     margin: 10px 0;
     padding: 10px 10px 25px 10px;
-    width: 261px;
+/*    width: 261px;*/
+    width: 110px;
 }
+
+.voluntarios.historia img {
+  max-height: 80px;
+}
+
+.voluntarios li span.strong {
+  display: none;
+}
+
 .voluntarios li span.avatar {
     border: 1px solid #DDDDDD;
     float: left;
