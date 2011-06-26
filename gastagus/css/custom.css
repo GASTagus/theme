@@ -286,13 +286,13 @@ img.country-psi {
 
 .date {
   color: #A17A50;
-  float: left;
+/*  float: left;*/
   font-weight: bold;
   padding-left: 5px;
   padding-right: 15px;
   text-align: center;
   text-transform: uppercase;
-  width: 25px;
+/*  width: 25px;*/
   font-size: 1.2em;
 }
 
@@ -300,6 +300,7 @@ img.country-psi {
   font-size:1.4em;
   margin: 0px;
   padding: 0px;
+  text-align: center;
 }
 
 .sub {
