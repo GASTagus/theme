@@ -147,6 +147,7 @@ p.text-arrow a {
 
 #main-content h2 {
   padding-top: 30px;
+font-size: 1.8em;
 }
 
 #main-content h2.first {
@@ -168,8 +169,14 @@ p.text-arrow a {
   padding-top: 0px;
 }
 
+#main-content .latest-wrapper h2 {
+  padding-top: 0px;
+border-bottom: 1px solid #cccccc;
+font-size: 1.8em;
+margin-bottom: 20px;
+}
 .fold-inner {
-  height: 260px;
+  height: 300px;
 }
 
 .fold-images {
@@ -207,7 +214,7 @@ img.country-psi {
 .box {
   float: left;
   padding-left: 0;
-  margin: 0 0 45px;
+  margin: 0 0 25px;
 }
 
 .alpha {
@@ -272,10 +279,9 @@ img.country-psi {
 .news {
 	width: 249px;
 	float: left;
-    background-color: #F9FFE8;
     border: 1px solid #BCC907;
     border-radius: 5px 5px 5px 5px;
-    padding: 10px 10px;
+    padding: 10px;
 	margin-bottom:20px;
 }
 
@@ -290,7 +296,7 @@ img.country-psi {
   font-weight: bold;
   padding-left: 5px;
   padding-right: 15px;
-  text-align: center;
+  text-align: left;
   text-transform: uppercase;
 /*  width: 25px;*/
   font-size: 1.2em;
@@ -300,11 +306,11 @@ img.country-psi {
   font-size:1.4em;
   margin: 0px;
   padding: 0px;
-  text-align: center;
+  text-align: left;
 }
 
 .sub {
-  margin-top: 20px;
+  margin-top: 10px;
   clear:both;
   color: #444;
 }
