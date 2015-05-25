@@ -359,3 +359,18 @@ div.logo {
     width: 960px;
     margin-bottom:25px;
 }
+
+/* Custom GT14 */
+/* Nuno Amarante 2013.11.07 */
+
+#cartaz-home a {
+  border-bottom: none;
+}
+
+#cartaz-juntate a {
+  border-bottom: none;
+}
+
+#cartaz-juntate img {
+	margin-left: 123px;
+}

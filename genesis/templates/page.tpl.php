@@ -84,11 +84,11 @@
 			  <?php if ($site_name): ?>
 				<?php if ($title): ?>
 	<!--              <div class="logo-site-name"><strong>-->
-					<?php if ($site_name): ?><h1 id="site-name"><?php print $site_name; ?></h1><?php endif; ?>
+					<?php if ($site_name): ?><h1 id="site-name"><?php print $site_logo; ?></h1><?php endif; ?>
 	<!--              </strong></div>-->
 				<?php else: /* Use h1 when the content title is empty */ ?>
 				  <h1 class="logo-site-name">
-					<?php if ($site_name): ?><span id="site-name"><?php print $site_name; ?></span><?php endif; ?>
+			a		<?php if ($site_name): ?><span id="site-name"><?php print $site_name; ?></span><?php endif; ?>
 				 </h1>
 				<?php endif; ?>
 			  <?php endif; ?>

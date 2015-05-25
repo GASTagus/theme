@@ -55,7 +55,7 @@ h1, h2, h3, h4, h5, h6, h1 img, h2 img, h3 img, h4 img, h5 img, h6 img, em, dfn,
     padding: 0;
 }
 #branding h1 {
-    text-indent: -9999px;
+    /*text-indent: -9999px;*/
     float: left;
 	margin: 0;
 	margin-top: 10px;
@@ -64,7 +64,7 @@ h1, h2, h3, h4, h5, h6, h1 img, h2 img, h3 img, h4 img, h5 img, h6 img, em, dfn,
 }
 #branding h1 a {
     text-decoration: none;
-    background-image: url(../logo.png);
+/*    background-image: url(../logo.png);*/
     display:block;
 	background-repeat: no-repeat;
 	top: 15px;
