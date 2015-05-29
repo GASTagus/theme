@@ -82,7 +82,7 @@
 #columns{display:inline-block;margin-bottom:1em;}
 #container > #columns{display:block;}
 #content-column,#sidebar-first,#sidebar-second{float:left;}
-.front #content-column{width:960px;margin-bottom:1em;}
+.front #content-column{width:100%;margin-bottom:1em;}
 .node-type-book-full #content-column{width:960px;margin-bottom:1em;}
 #content-column{width:593px;margin-bottom:1em;}
 .clear,#main-menu-wrapper,#secondary-menu-wrapper,#columns,#breadcrumb,#secondary-content,#tertiary-content,#footer{clear:both;}

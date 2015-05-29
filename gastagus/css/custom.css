@@ -175,12 +175,9 @@ border-bottom: 1px solid #cccccc;
 font-size: 1.8em;
 margin-bottom: 20px;
 }
-.fold-inner {
-  height: 300px;
-}
 
 .fold-images {
-  height: 145px;
+  /*height: 145px;*/
 }
 
 .box img.center-image {
@@ -190,8 +187,8 @@ margin-bottom: 20px;
 }
 
 #front-image {
-  border-bottom: 2px solid #000;
-  height:353px;
+ /* border-bottom: 2px solid #000;*/
+ /* height:353px;*/
 }
 
 .box h2 {
@@ -202,12 +199,16 @@ margin-bottom: 20px;
 }
 
 img.country-omega {
-  margin-left: 19px;
+  width: 20%;
+  max-width: 63px;
+  margin-left: 2%;
 }
 
 img.country-psi {
-  margin-left: 18px;
-  margin-right:18px;
+  width: 20%;
+  max-width: 63px;
+  margin-left: 2%;
+  margin-right: 2%;
   outline:0px;
 }
 
@@ -218,22 +219,60 @@ img.country-psi {
 }
 
 .alpha {
-  border-right: 1px solid #D4D4D4;
   margin: 0 0 45px;
-  width: 269px;
-  padding: 20px 30px 0 00px;
+}
+
+@media screen and (min-width: 961px) {
+
+  .fold-inner {
+    height: 350px;
+  }
+  .alpha, .beta {
+    width: 269px;
+    border-right: 1px solid #D4D4D4;
+  }
+  .teta {
+    width: 270px;
+  }
+  .beta, .teta {
+    padding: 20px 30px 0 30px;
+  }
+  .alpha {
+    padding: 20px 30px 0  0px;
+  }
+}
+
+@media screen and (min-width: 0px) {
+
+  .fold-inner {
+    height: 100%;
+  }
+  .alpha, .beta, .teta {
+    width: 100%;
+    margin-bottom: 0px;
+  }
+  .beta, .alpha, .teta {
+    border-right: 0px solid #D4D4D4;
+    padding: 0px 10px 0 10px;
+  }
+}
+
+@media screen and (min-width: 600px) {
+
+  .alpha, .beta {
+    border-right: 1px solid #D4D4D4;
+  }
+  .alpha, .beta, .teta {
+    width: 28%;
+  }
+  .beta, .alpha, .teta {
+    padding: 0px 10px 0 10px;
+  }
 }
 
 .beta {
-  border-right: 1px solid #D4D4D4;
-  width: 269px;
-  padding-left: 0;
-  padding: 20px 30px 0 30px;
 }
 .teta {
-  padding-left: 0;
-  width: 270px;
-  padding: 20px 30px 0 30px;
 }
 
 /**/
@@ -356,7 +395,7 @@ div.logo {
     margin: 0 auto;
     padding: 0;
     position: relative;
-    width: 960px;
+  /*  width: 960px;*/
     margin-bottom:25px;
 }
 
@@ -373,4 +412,21 @@ div.logo {
 
 #cartaz-juntate img {
 	margin-left: 123px;
+}
+
+#slider {
+  max-width:960px;
+  margin-left: auto;
+  margin-right: auto;
+  /*background-color: #222;*/
+}
+
+.slider-wrapper {
+ /* background-color: #222;*/
+}
+
+.bg-black {
+  background-color: #222;
+  color: #bbb;
+  padding-bottom:1em;
 }

@@ -29,8 +29,19 @@
 html {
 
 }
-body {
+
+@media screen and (min-width: 700px) {
+  body {
+    font: 15px helvetica,arial,sans-serif;
+  }
+}
+@media screen and (max-width: 700px) {
+  body {
     font: 12px helvetica,arial,sans-serif;
+  }
+}
+
+body {
     /*font-family: Verdana, Geneva, "DejaVu Sans", sans-serif;*/
     line-height: 1.5;
 }
@@ -54,12 +65,17 @@ h1, h2, h3, h4, h5, h6, h1 img, h2 img, h3 img, h4 img, h5 img, h6 img, em, dfn,
     margin: 0;
     padding: 0;
 }
+
+#branding {
+ /* display: inline-block;*/
+  height:100%;
+}
 #branding h1 {
     /*text-indent: -9999px;*/
     float: left;
 	margin: 0;
-	margin-top: 10px;
-	margin-bottom: 10px;
+	margin-top: -1px;
+	margin-bottom: 0px;
 	padding: 0;
 }
 #branding h1 a {
@@ -68,7 +84,7 @@ h1, h2, h3, h4, h5, h6, h1 img, h2 img, h3 img, h4 img, h5 img, h6 img, em, dfn,
     display:block;
 	background-repeat: no-repeat;
 	top: 15px;
-    width: 333px;
+ /*   width: 333px;*/
 }
 #container.front h1#page-title {
     display:none;

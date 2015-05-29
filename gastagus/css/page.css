@@ -7,7 +7,7 @@
 body {
   /*padding: 0 10px;*/
  margin: 0;
- margin-top: 20px;
+ margin-top: 00px;
  background-image: url("images/back.png");
  background-repeat: no-repeat;
 }
@@ -33,10 +33,16 @@ body {
   
 }
 
-#header-wrapper,#columns {
-  width: 960px;
+
+#header-right {
+  display:none;
+}
+
+#header-wrapper, .w-960px, #tertiary-content, .not-front div#columns {
+  max-width: 960px;
   margin-left: auto;
   margin-right: auto;
+/*  font-size: 1.2em;*/
 }
 
 /* Column wrappers */
@@ -63,7 +69,7 @@ body {
 }
 #header-wrapper {
   display:block;
-  height:72px;
+  height:52px;
 }
 
 /* #branding wraps #logo, #site-name and #site-slogan. */

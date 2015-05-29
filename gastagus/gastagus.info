@@ -16,7 +16,8 @@
 
   stylesheets[all][] = css/polaroid.css
   
-  stylesheets[all][] = nivo/nivo.css
+  stylesheets[all][] = nivo/default/default.css
+  stylesheets[all][] = nivo/nivo-slider.css
   scripts[] = nivo/nivo.js
   scripts[] = libraries/custom.js
   scripts[] = libraries/jquery.nivo.slider.pack.js
