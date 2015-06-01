@@ -4,10 +4,11 @@
    padding-top: 30px;
    padding-bottom: 5px;
    color: #777777;
+   margin-bottom: 0px;
 }
 
 #footer div.region {
-  width: 960px;
+  max-width: 960px;
   margin-left:auto;
   margin-right:auto;
 }

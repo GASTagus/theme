@@ -120,10 +120,16 @@ ul.menu li.last  {}
 }
 
 .main-menu-inner {
-  float:left;
-  margin-left: 2em; /* center with logo */
+  float: left;
+  margin-left: 2em;
+}
+@media screen and (max-width: 599px) {
+.main-menu-inner {
+  float:none;
+  margin-left: none;
 }
 
+}
 #main-menu {
   height: 35px; /* height of background image */
   margin: 0;
@@ -137,8 +143,15 @@ ul.menu li.last  {}
 }
 
 #main-menu li a {
-  color: #333;
   border: 0px;
+}
+
+.slicknav_menu li a {
+  border-color: #C8D000;
+}
+#main-menu li a,
+.slicknav_menu li a {
+  color: #333;
   font-size: 10.4px;
   font-weight: bold;
   text-transform: uppercase;
@@ -154,11 +167,21 @@ ul#main-menu li:active,
 ul#main-menu li:focus {
 }
 
+ul#main-menu li a.no-active:hover,
+ul#main-menu li a.no-active:focus,
+ul#main-menu li a.no-active:active,
 ul#main-menu li a:hover,
 ul#main-menu li a:focus,
 ul#main-menu li a:active {
   border-top: 2px solid #C8D000;
   background-color: #fff;
+}
+
+/* noactive-link */
+#main-menu li.active a.no-active,
+#main-menu li.active-trail a.no-active{
+  border-top: none;
+  background-color: transparent;  
 }
 
 /* Active trail classes. */

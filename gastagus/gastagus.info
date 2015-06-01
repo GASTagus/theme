@@ -15,9 +15,12 @@
   ;stylesheets[all][] = css/gpanels/gpanels-fluid.css
 
   stylesheets[all][] = css/polaroid.css
+  stylesheets[all][] = libraries/slicknav.min.css
   
   stylesheets[all][] = nivo/default/default.css
   stylesheets[all][] = nivo/nivo-slider.css
+  
+  scripts[] = libraries/jquery.slicknav.min.js
   scripts[] = nivo/nivo.js
   scripts[] = libraries/custom.js
   scripts[] = libraries/jquery.nivo.slider.pack.js
