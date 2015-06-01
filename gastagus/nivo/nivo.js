@@ -6,16 +6,23 @@ jQuery(function($){
 		pauseTime:4000,
 	  manualAdvance:false,
 	        pauseOnHover:true //Stop animation while hovering
-		}
-   );
+		});
   });
 
-  $(function(){
-    $('#main-menu').slicknav({
-        label: '',
-        prependTo:'#main-menu-wrapper .main-menu-inner',
-        duration: 1000/*,
-        easingOpen: "easeOutBounce" //available with jQuery UI */
+  $('#main-menu').slicknav({
+    label: '',
+    prependTo:'#main-menu-wrapper .main-menu-inner',
+    duration: 1000
+  });
+  
+  var $root = $('html, body');
+  $('.slicknav_menu a.no-active.active, #main-menu a.no-active.active').click( function() {
+    var href = $.attr(this, 'href');
+    $root.animate({
+      scrollTop: $( $.attr(this,'href').replace(/^[^#]+/,"") ).offset().top
+    }, 500, function () {
+      window.location.hash = href;
     });
+    return false;
   });
 });
