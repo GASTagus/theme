@@ -219,7 +219,7 @@ img.country-psi {
 @media screen and (min-width: 961px) {
 
   .fold-inner {
-    height: 350px;
+/*    height: 350px;*/
   }
   .alpha, .beta {
     width: 269px;
@@ -243,18 +243,14 @@ img.country-psi {
   background-repeat: no-repeat;
   background-position: left 12px;
 }
+
 @media screen and (max-width: 700px) {
   .box h2 {
     background-position: left 7px;
   }
 }
-@media screen and (max-width: 600px) {
-  .box h2 {
-    /*background-image: none;
-    padding-left: 0px;*/
-  }
-}
-@media screen and (min-width: 0px) {
+
+@media screen and (max-width: 700px) {
   
   .box.teta .facebook iframe {
     max-height: 2.3em !important;
@@ -288,7 +284,7 @@ img.country-psi {
   }
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 700px) {
 
   #main-menu {
     display:block;
@@ -468,10 +464,22 @@ div.logo {
  /* background-color: #222;*/
 }
 
+.bg-black a {
+  color: #bbb;
+}
+.bg-black a:hover,
+.bg-black a:active
+{
+  color: #ddd;
+}
+
+.single-page-container {
+  padding-bottom:1em;
+}
+
 .bg-black {
   background-color: #222;
   color: #bbb;
-  padding-bottom:1em;
 }
 
 #main-menu-wrapper .slicknav_menu {

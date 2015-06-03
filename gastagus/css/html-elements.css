@@ -30,24 +30,46 @@ html {
 
 }
 
-@media screen and (min-width: 700px) {
+body {
+  font-size: 1em;
+}
+
+body #header, body #header-menu {
+  font-size: 1em;
+}
+
+#main-menu-inner {
+  border-bottom: 1px solid #BAD80A;
+}
+
+#main-menu {
+}
+
+@media screen and (max-width: 600px) {
   body {
-    font: 15px helvetica,arial,sans-serif;
+    font-size: .7em;
   }
 }
+
 @media screen and (max-width: 700px) {
   body {
-    font: 12px helvetica,arial,sans-serif;
+    font-size: .8em;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  body {
+    font-size: .9em;
   }
 }
 
 body {
-    /*font-family: Verdana, Geneva, "DejaVu Sans", sans-serif;*/
-    line-height: 1.5;
+  font-family: helvetica,arial,sans-serif;
+  line-height: 1.6875;
 }
 #header {
 /*  background-color: #f2f4cd;*/
-  border-bottom:1px solid #C8D000;
+  /*border-bottom:1px solid #C8D000;*/
 }
 
 #header-menu {
@@ -83,7 +105,7 @@ h1, h2, h3, h4, h5, h6, h1 img, h2 img, h3 img, h4 img, h5 img, h6 img, em, dfn,
 /*    background-image: url(../logo.png);*/
     display:block;
 	background-repeat: no-repeat;
-	top: 15px;
+	top: 1em;
  /*   width: 333px;*/
 }
 #container.front h1#page-title {

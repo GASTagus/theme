@@ -84,7 +84,6 @@
 				</div>
 			  </div>
 		</div>
-    </div> <!-- /header -->
 	
 	<?php if ($main_menu_links): ?>
 	<div id="header-menu">
@@ -117,6 +116,7 @@
 		</div>
 	</div>
   <?php endif; ?>
+    </div> <!-- /header -->
   
    <?php endif; // end hide in overlay ?>
 
@@ -146,7 +146,10 @@
 			  
 			<?php endif; ?>
 	</div>
-	<div id="content-column">
+  <div id="content-column">
+      <div id="to-top">
+        <a class="to-top" href="#container">Ir para o topo</a>
+      </div>
       <div class="content-inner">
 
         <?php if ($page['highlighted']): ?>
