@@ -114,7 +114,7 @@ ul.menu li.last  {}
  *                    Main Menu
  ********************************************************/
 
-#main-menu-wrapper {
+#main-menu-wrapper,.local-tasks, .node-links {
   max-width: 960px;
   margin:0 auto;
 }
@@ -122,6 +122,7 @@ ul.menu li.last  {}
 .main-menu-inner {
   float: left;
   margin-left: 20px;
+  height: 49px;
 }
 @media screen and (max-width: 699px) {
 .main-menu-inner {
@@ -144,23 +145,37 @@ ul.menu li.last  {}
 
 #main-menu li a {
   border: 0px;
-  margin: -1px;
+  margin: 0px;
 }
 
+#main-menu-wrapper .slicknav_menu {
+}
+.slicknav_menu li {
+  background-color: #fff;
+}
 .slicknav_menu li a {
   border-color: #C8D000;
 }
+
+.fix-menu #columns {
+  margin-top: 56px;
+}
+.fix-menu #external-menu {
+  display: none;
+}
+
 #main-menu li a,
 .slicknav_menu li a {
   color: #333;
   font-size: 14px;
   font-weight: bold;
-  text-transform: uppercase;
+  /*text-transform: uppercase;*/
   padding-top: 12px;
   padding-right: 6px;
   padding-left: 6px;
   padding-bottom: 12px;
   display:block;
+  margin-top: -1px;
 }
 
 /* Set pseudo class styles. */
@@ -354,15 +369,36 @@ ul#secondary-menu {
   height: 24px;
 }
 
+.fix-menu #external-menu {
+  height:117px;
+}
+.fix-menu #header-menu {
+  width: 100%;
+  position:fixed;
+  top: -1px;
+  z-index: 1000;
+}
 
+#to-top {
+  display:none;
+}
 @media screen and (min-width: 1080px) {
+  #to-top.fix-to-top {
+    display:block;
+  }
   #to-top {
+    z-index: 3000;
     background-color: #fff;
     position: fixed;
     right: 2em;
+    right: calc((100% - 960px - 100px)/2);
+    right: -moz-calc((100% - 960px - 100px)/2);
+    right: -webkit-calc((100% - 960px - 100px)/2);
     bottom: 1em;
     border-radius: 25px;
     padding: 5px;
+    border: 1px solid rgba(34, 34, 34,0.2);
+    display:none;
   }
   #to-top a.to-top {
     background-image: url("images/up.svg");

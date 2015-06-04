@@ -64,7 +64,7 @@ body #header, body #header-menu {
 }
 
 body {
-  font-family: helvetica,arial,sans-serif;
+  font-family: 'Alegreya Sans',helvetica,arial,sans-serif;
   line-height: 1.6875;
 }
 #header {
@@ -72,9 +72,16 @@ body {
   /*border-bottom:1px solid #C8D000;*/
 }
 
+#header-menu-wrapper {
+  border-bottom: 1px solid #fff; 
+}
+
 #header-menu {
-  background-image: url("images/header_background.png");
-  background-repeat: repeat-x;
+  /*background-image: url("images/header_background.png");
+  background-repeat: repeat-x;*/
+  border-bottom: 1px solid #BAD80A;
+  background-color: #BAD80A;
+  font-family: 'Alegreya Sans SC',helvetica,arial,sans-serif;
 }
 #header-right a{
   border:0;
@@ -118,7 +125,7 @@ h1, #branding h1 a {
 	display: block;
 }
 #branding h1 a {
-	height: 60px;
+	height: 50px;
 }
 h2 {
     font-size: 1.5em;

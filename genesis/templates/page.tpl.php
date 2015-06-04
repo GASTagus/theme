@@ -86,7 +86,8 @@
 		</div>
 	
 	<?php if ($main_menu_links): ?>
-	<div id="header-menu">
+  <div id="header-menu">
+    <div id="header-menu-wrapper">
 		<div id="main-menu-wrapper" class="clearfix">
 		  <?php if ($site_logo || $site_name || $site_slogan): ?>
 			<div id="branding">
@@ -113,7 +114,8 @@
 					<div id="header-blocks"><?php print render($page['header']); ?></div>
 				  <?php endif; ?>
 			  </div>
-		</div>
+    </div>
+  </div>
 	</div>
   <?php endif; ?>
     </div> <!-- /header -->

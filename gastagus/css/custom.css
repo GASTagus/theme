@@ -236,12 +236,16 @@ img.country-psi {
   }
 }
 
+#branding a img {
+  height:52px;
+  background-color: #fff;
+}
 
 .box h2 {
   padding-left: .9em;
   background-image: url("images/cubata.png");
   background-repeat: no-repeat;
-  background-position: left 12px;
+  background-position: left .5em;
 }
 
 @media screen and (max-width: 700px) {
